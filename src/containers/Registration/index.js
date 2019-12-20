@@ -6,12 +6,11 @@ import { RegistrationContainer, Title } from "./style";
 import PersonFormRegistration from "../../components/PersonFormRegistration";
 import TeamFormRegistration from "../../components/TeamFormRegistration";
 
-import { setTeamImage, addPlayer } from "./actions";
+import { setTeamImage, addPlayer, setIdCardImage } from "./actions";
 
 class Registration extends React.Component {
   render() {
     const { props } = this;
-    console.log(props.numberPlayer);
     return (
       <RegistrationContainer>
         <Title>FUTSAL REGRISTRATION</Title>
@@ -20,11 +19,19 @@ class Registration extends React.Component {
           setImage={props.setTeamImage}
         />
         <h3>Manager</h3>
-        <PersonFormRegistration />
+        <PersonFormRegistration
+          idCardImage={props.idCardImage}
+          setIdCardImage={props.setIdCardImage}
+        />
         <h3>Player</h3>
+
         {props.numberPlayer.map(() => (
-          <PersonFormRegistration />
+          <PersonFormRegistration
+            idCardImage={props.idCardImage}
+            setIdCardImage={props.setIdCardImage}
+          />
         ))}
+
         <button
           type="button"
           onClick={() => props.addPlayer(props.numberPlayer)}
@@ -41,13 +48,15 @@ Registration.propTypes = {};
 function mapStateToProps(state) {
   return {
     teamImage: state.registration.teamImage,
-    numberPlayer: state.registration.numberPlayer
+    numberPlayer: state.registration.numberPlayer,
+    idCardImage: state.registration.idCardImage
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     setTeamImage: e => dispatch(setTeamImage(e)),
+    setIdCardImage: e => dispatch(setIdCardImage(e)),
     addPlayer: numberPlayer => dispatch(addPlayer(numberPlayer))
   };
 }

@@ -5,22 +5,8 @@ import React from "react";
 import { PersonFormRegistrationContainer, Section } from "./style";
 
 class PersonFormRegistration extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      file: null
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({
-      file: URL.createObjectURL(event.target.files[0])
-    });
-  }
-
   render() {
+    const { idCardImage, setIdCardImage } = this.props;
     return (
       <PersonFormRegistrationContainer>
         <Section>
@@ -43,9 +29,11 @@ class PersonFormRegistration extends React.Component {
           Kartu Identitas
           <span className="input-info">KTM / KTP / Paspor</span>
           <div className="idcard-preview">
-            <img src={this.state.file} alt="idcard-preview" />
+            {idCardImage && (
+              <img src={URL.createObjectURL(idCardImage)} alt="" />
+            )}
           </div>
-          <input type="file" onChange={this.handleChange} />
+          <input type="file" onChange={setIdCardImage} />
         </Section>
       </PersonFormRegistrationContainer>
     );
