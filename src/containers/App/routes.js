@@ -1,8 +1,8 @@
-import SamplePage from "../SamplePage";
+import Registration from "../Registration";
 
 export const routes = [
   {
-    component: SamplePage,
+    component: Registration,
     exact: true,
     path: "/"
   }
