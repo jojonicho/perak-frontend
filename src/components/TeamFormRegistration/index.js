@@ -5,12 +5,12 @@ import { TeamFormRegistrationContainer } from "./style";
 
 class TeamFormRegistration extends React.Component {
   render() {
-    const { teamImage, setImage } = this.props;
+    const { teamImage, setImage, teamName, setName } = this.props;
     return (
       <TeamFormRegistrationContainer>
         <div className="section">
           Nama Tim
-          <input className="long" />
+          <input className="long" value={teamName} onChange={setName} />
         </div>
         <div className="section">
           Logo Tim

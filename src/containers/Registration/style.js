@@ -1,5 +1,47 @@
 import styled from "styled-components";
 
+export const Forms = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`;
+export const SubmitButton = styled.div`
+  width: 350px;
+  height: 40px;
+  border: solid black 3px;
+  color: white;
+  font-size: 1.5em;
+  margin-top: 10px;
+  background-color: #33b3a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  cursor: pointer;
+`;
+export const ChooseFileButton = styled.div`
+  background-color: #f2cf35;
+  border: solid black 2px;
+`;
+export const TambahButton = styled.div`
+  .plus {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  width: 450px;
+  height: 50px;
+  border: solid black 3px;
+  color: white;
+  font-size: 2em;
+  background-color: #f24e07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  cursor: pointer;
+`;
+
 export const RegistrationContainer = styled.div`
 font-family: "Calibri";
 display: flex;

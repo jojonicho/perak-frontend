@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "connected-react-router": "^6.3.2",
+    "dotenv": "^8.2.0",
+    "firebase": "^7.6.1",
     "history": "^4.9.0",
     "normalize.css": "^8.0.1",
     "plop": "^2.3.0",
