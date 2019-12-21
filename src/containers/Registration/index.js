@@ -2,6 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
 
 import {
   RegistrationContainer,
@@ -52,7 +53,7 @@ class Registration extends React.Component {
           {props.numberPlayer.map(function x(a, index) {
             console.log(props.showPlayer);
             return index + 1 === props.showPlayer ? (
-              <Slide top>
+              <Fade top distance={"10%"}>
                 <PersonFormRegistration
                   id={index + 1}
                   idCardImage={props.personData[index + 1][4]}
@@ -67,13 +68,15 @@ class Registration extends React.Component {
                     props.setPersonData(e, index + 1, props.personData)
                   }
                 />
-              </Slide>
+              </Fade>
             ) : (
-              <MinimizedPersonForm
-                namaLengkap={props.personData[index + 1][0]}
-                setShowPlayer={() => props.setShowPlayer(index + 1)}
-              />
-            );
+                <Fade when={true} cascade>
+                  <MinimizedPersonForm
+                    namaLengkap={props.personData[index + 1][0]}
+                    setShowPlayer={() => props.setShowPlayer(index + 1)}
+                  />
+                </Fade>
+              );
           })}
 
           <TambahButton
