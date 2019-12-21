@@ -20,6 +20,11 @@ export const SubmitButton = styled.div`
   padding-left: 20px;
   cursor: pointer;
 `;
+export const LeftDiv = styled.div`
+  width: 89%;
+  display: flex;
+  align-items: left;
+`;
 export const ChooseFileButton = styled.div`
   background-color: #f2cf35;
   border: solid black 2px;

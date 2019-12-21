@@ -1,7 +1,6 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Slide from "react-reveal/Slide";
 import Fade from "react-reveal/Fade";
 
 import {
@@ -9,7 +8,8 @@ import {
   Title,
   Forms,
   TambahButton,
-  SubmitButton
+  SubmitButton,
+  LeftDiv
 } from "./style";
 import PersonFormRegistration from "../../components/PersonFormRegistration";
 import TeamFormRegistration from "../../components/TeamFormRegistration";
@@ -53,32 +53,33 @@ class Registration extends React.Component {
           {props.numberPlayer.map(function x(a, index) {
             console.log(props.showPlayer);
             return index + 1 === props.showPlayer ? (
-              <Fade top distance={"10%"}>
-                <PersonFormRegistration
-                  id={index + 1}
-                  idCardImage={props.personData[index + 1][4]}
-                  setIdCardImage={e =>
-                    props.setIdCardImage(e, index + 1, props.personData)
-                  }
-                  namaLengkap={props.personData[index + 1][0]}
-                  kontak={props.personData[index + 1][1]}
-                  email={props.personData[index + 1][2]}
-                  nomorTelepon={props.personData[index + 1][3]}
-                  setPersonData={e =>
-                    props.setPersonData(e, index + 1, props.personData)
-                  }
-                />
-              </Fade>
-            ) : (
-                <Fade when={true} cascade>
-                  <MinimizedPersonForm
+              <LeftDiv>
+                <Fade top distance="10%">
+                  <PersonFormRegistration
+                    id={index + 1}
+                    idCardImage={props.personData[index + 1][4]}
+                    setIdCardImage={e =>
+                      props.setIdCardImage(e, index + 1, props.personData)
+                    }
                     namaLengkap={props.personData[index + 1][0]}
-                    setShowPlayer={() => props.setShowPlayer(index + 1)}
+                    kontak={props.personData[index + 1][1]}
+                    email={props.personData[index + 1][2]}
+                    nomorTelepon={props.personData[index + 1][3]}
+                    setPersonData={e =>
+                      props.setPersonData(e, index + 1, props.personData)
+                    }
                   />
                 </Fade>
-              );
+              </LeftDiv>
+            ) : (
+              <Fade when cascade>
+                <MinimizedPersonForm
+                  namaLengkap={props.personData[index + 1][0]}
+                  setShowPlayer={() => props.setShowPlayer(index + 1)}
+                />
+              </Fade>
+            );
           })}
-
           <TambahButton
             type="button"
             onClick={() =>
