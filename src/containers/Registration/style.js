@@ -62,7 +62,7 @@ border: 3px black solid;
 }
 input {
     // padding: 0px 10px;
-    margin: 0px  auto;
+    margin: 20px  5px;
     background-color: white;
     // border: none;
     border: 2px black solid;
@@ -70,7 +70,7 @@ input {
     color: #303030;
     font-size: 22px;
     font-weight: 400;
-    width: 40%;
+    width: 30%;
 
     -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
@@ -142,7 +142,7 @@ width: ${props => {
   return "60%";
 }}
 // padding: 0px 10px;
-margin: 0px  auto;
+margin: 0px auto;
 background-color: white;
 // border: none;
 border: 2px black solid;
