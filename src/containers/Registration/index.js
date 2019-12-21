@@ -20,21 +20,27 @@ class Registration extends React.Component {
         />
         <h3>Manager</h3>
         <PersonFormRegistration
-          idCardImage={props.idCardImage}
-          setIdCardImage={props.setIdCardImage}
+          id="0"
+          idCardImage={props.idCardImage[0]}
+          setIdCardImage={e => props.setIdCardImage(e, 0, props.idCardImage)}
         />
         <h3>Player</h3>
 
-        {props.numberPlayer.map(() => (
-          <PersonFormRegistration
-            idCardImage={props.idCardImage}
-            setIdCardImage={props.setIdCardImage}
-          />
-        ))}
+        {props.numberPlayer.map(function x(a, index) {
+          return (
+            <PersonFormRegistration
+              id={index + 1}
+              idCardImage={props.idCardImage[index + 1]}
+              setIdCardImage={e =>
+                props.setIdCardImage(e, index + 1, props.idCardImage)
+              }
+            />
+          );
+        })}
 
         <button
           type="button"
-          onClick={() => props.addPlayer(props.numberPlayer)}
+          onClick={() => props.addPlayer(props.numberPlayer, props.idCardImage)}
         >
           Tambah
         </button>
@@ -56,8 +62,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     setTeamImage: e => dispatch(setTeamImage(e)),
-    setIdCardImage: e => dispatch(setIdCardImage(e)),
-    addPlayer: numberPlayer => dispatch(addPlayer(numberPlayer))
+    setIdCardImage: (e, index, idCardImage) =>
+      dispatch(setIdCardImage(e, index, idCardImage)),
+    addPlayer: (numberPlayer, idCardImage) =>
+      dispatch(addPlayer(numberPlayer, idCardImage))
   };
 }
 

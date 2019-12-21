@@ -7,7 +7,7 @@ import {
 
 const initialState = {
   teamImage: null,
-  idCardImage: null,
+  idCardImage: [null],
   numberPlayer: [],
   a: ""
 };
