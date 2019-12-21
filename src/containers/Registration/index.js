@@ -1,6 +1,7 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Slide from "react-reveal/Slide";
 
 import {
   RegistrationContainer,
@@ -28,7 +29,7 @@ class Registration extends React.Component {
     const { props } = this;
     return (
       <RegistrationContainer>
-        <Title>FUTSAL REGRISTRATION</Title>
+        <Title>FUTSAL REGISTRATION</Title>
         <TeamFormRegistration
           teamImage={props.teamImage}
           setImage={props.setTeamImage}
@@ -51,20 +52,22 @@ class Registration extends React.Component {
           {props.numberPlayer.map(function x(a, index) {
             console.log(props.showPlayer);
             return index + 1 === props.showPlayer ? (
-              <PersonFormRegistration
-                id={index + 1}
-                idCardImage={props.personData[index + 1][4]}
-                setIdCardImage={e =>
-                  props.setIdCardImage(e, index + 1, props.personData)
-                }
-                namaLengkap={props.personData[index + 1][0]}
-                kontak={props.personData[index + 1][1]}
-                email={props.personData[index + 1][2]}
-                nomorTelepon={props.personData[index + 1][3]}
-                setPersonData={e =>
-                  props.setPersonData(e, index + 1, props.personData)
-                }
-              />
+              <Slide top>
+                <PersonFormRegistration
+                  id={index + 1}
+                  idCardImage={props.personData[index + 1][4]}
+                  setIdCardImage={e =>
+                    props.setIdCardImage(e, index + 1, props.personData)
+                  }
+                  namaLengkap={props.personData[index + 1][0]}
+                  kontak={props.personData[index + 1][1]}
+                  email={props.personData[index + 1][2]}
+                  nomorTelepon={props.personData[index + 1][3]}
+                  setPersonData={e =>
+                    props.setPersonData(e, index + 1, props.personData)
+                  }
+                />
+              </Slide>
             ) : (
               <MinimizedPersonForm
                 namaLengkap={props.personData[index + 1][0]}
