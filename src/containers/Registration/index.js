@@ -6,7 +6,12 @@ import { RegistrationContainer, Title } from "./style";
 import PersonFormRegistration from "../../components/PersonFormRegistration";
 import TeamFormRegistration from "../../components/TeamFormRegistration";
 
-import { setTeamImage, addPlayer, setIdCardImage } from "./actions";
+import {
+  setTeamImage,
+  addPlayer,
+  setIdCardImage,
+  setPersonData
+} from "./actions";
 
 class Registration extends React.Component {
   render() {
@@ -21,8 +26,13 @@ class Registration extends React.Component {
         <h3>Manager</h3>
         <PersonFormRegistration
           id="0"
-          idCardImage={props.idCardImage[0]}
-          setIdCardImage={e => props.setIdCardImage(e, 0, props.idCardImage)}
+          idCardImage={props.personData[0][4]}
+          setIdCardImage={e => props.setIdCardImage(e, 0, props.personData)}
+          namaLengkap={props.personData[0][0]}
+          kontak={props.personData[0][1]}
+          email={props.personData[0][2]}
+          nomorTelepon={props.personData[0][3]}
+          setPersonData={e => props.setPersonData(e, 0, props.personData)}
         />
         <h3>Player</h3>
 
@@ -30,9 +40,16 @@ class Registration extends React.Component {
           return (
             <PersonFormRegistration
               id={index + 1}
-              idCardImage={props.idCardImage[index + 1]}
+              idCardImage={props.personData[index + 1][4]}
               setIdCardImage={e =>
-                props.setIdCardImage(e, index + 1, props.idCardImage)
+                props.setIdCardImage(e, index + 1, props.personData)
+              }
+              namaLengkap={props.personData[index + 1][0]}
+              kontak={props.personData[index + 1][1]}
+              email={props.personData[index + 1][2]}
+              nomorTelepon={props.personData[index + 1][3]}
+              setPersonData={e =>
+                props.setPersonData(e, index + 1, props.personData)
               }
             />
           );
@@ -40,7 +57,7 @@ class Registration extends React.Component {
 
         <button
           type="button"
-          onClick={() => props.addPlayer(props.numberPlayer, props.idCardImage)}
+          onClick={() => props.addPlayer(props.numberPlayer, props.personData)}
         >
           Tambah
         </button>
@@ -55,15 +72,17 @@ function mapStateToProps(state) {
   return {
     teamImage: state.registration.teamImage,
     numberPlayer: state.registration.numberPlayer,
-    idCardImage: state.registration.idCardImage
+    personData: state.registration.personData
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     setTeamImage: e => dispatch(setTeamImage(e)),
-    setIdCardImage: (e, index, idCardImage) =>
-      dispatch(setIdCardImage(e, index, idCardImage)),
+    setIdCardImage: (e, index, personData) =>
+      dispatch(setIdCardImage(e, index, personData)),
+    setPersonData: (e, index, personData) =>
+      dispatch(setPersonData(e, index, personData)),
     addPlayer: (numberPlayer, idCardImage) =>
       dispatch(addPlayer(numberPlayer, idCardImage))
   };

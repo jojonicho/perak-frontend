@@ -3,7 +3,8 @@ import {
   DEFAULT_ACTION,
   SET_TEAM_IMAGE,
   SET_ID_CARD_IMAGE,
-  ADD_PLAYER
+  ADD_PLAYER,
+  SET_PERSON_DATA
 } from "./constants";
 
 export function defaultAction() {
@@ -18,22 +19,42 @@ export function setTeamImage(e) {
   };
 }
 
-export function setIdCardImage(e, id, idCard) {
-  const idCardImage = Array.from(idCard);
-  idCardImage[id] = e.currentTarget.files[0];
-  console.log(idCardImage);
+export function setIdCardImage(e, id, data) {
+  const personData = Array.from(data);
+  personData[id][4] = e.currentTarget.files[0];
+  console.log(personData);
   return {
     type: SET_ID_CARD_IMAGE,
-    payload: idCardImage
+    payload: personData
   };
 }
 
-export function addPlayer(nowPlayer, idCardImage) {
+export function setPersonData(e, id, data) {
+  const personData = Array.from(data);
+  const target = e.target;
+  let index;
+  if (target.id === "nama-lengkap") {
+    index = 0;
+  } else if (target.id === "kontak") {
+    index = 1;
+  } else if (target.id === "email") {
+    index = 2;
+  } else if (target.id === "telepon") {
+    index = 3;
+  }
+  personData[id][index] = target.value;
+  return {
+    type: SET_PERSON_DATA,
+    payload: personData
+  };
+}
+
+export function addPlayer(nowPlayer, personData) {
   const numberPlayer = Array.from(nowPlayer);
-  idCardImage.push(null);
+  personData.push(["", "", "", "", null]);
   numberPlayer.push("aa");
   console.log(numberPlayer);
-  console.log(idCardImage);
+  console.log(personData);
   return {
     type: ADD_PLAYER,
     payload: numberPlayer

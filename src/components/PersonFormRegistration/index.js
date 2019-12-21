@@ -6,24 +6,37 @@ import { PersonFormRegistrationContainer, Section } from "./style";
 
 class PersonFormRegistration extends React.Component {
   render() {
-    const { idCardImage, setIdCardImage } = this.props;
+    const {
+      idCardImage,
+      setIdCardImage,
+      namaLengkap,
+      kontak,
+      email,
+      nomorTelepon,
+      setPersonData
+    } = this.props;
     return (
       <PersonFormRegistrationContainer>
         <Section>
           Nama Lengkap
-          <input className="input-long" />
+          <input
+            className="input-long"
+            id="nama-lengkap"
+            value={namaLengkap}
+            onChange={setPersonData}
+          />
         </Section>
         <Section>
           ID Line / Whatsapp
-          <input />
+          <input value={kontak} id="kontak" onChange={setPersonData} />
         </Section>
         <Section>
           Email
-          <input />
+          <input value={email} id="email" onChange={setPersonData} />
         </Section>
         <Section>
           Nomor Telepon
-          <input />
+          <input value={nomorTelepon} id="telepon" onChange={setPersonData} />
         </Section>
         <Section>
           Kartu Identitas
