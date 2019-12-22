@@ -13,5 +13,5 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID
 };
 firebase.initializeApp(firebaseConfig);
-export const firestore = firebase.firestore().collection("futsal-team");
+export const futsalFirestore = firebase.firestore().collection("futsal-team");
 export const storage = firebase.storage().ref();
