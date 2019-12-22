@@ -54,7 +54,7 @@ class Registration extends React.Component {
             console.log(props.showPlayer);
             return index + 1 === props.showPlayer ? (
               <LeftDiv>
-                <Fade top distance="10%">
+                <Fade distance="10%" duration={2000} collapse top>
                   <PersonFormRegistration
                     id={index + 1}
                     idCardImage={props.personData[index + 1][4]}
