@@ -16,7 +16,7 @@ class MinimizedPersonForm extends React.Component {
           className="x-button"
           onClick={() => deletePlayer()}
         >
-          x
+          X
         </button>
       </MinimizedPersonFormContainer>
     );

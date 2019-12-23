@@ -17,6 +17,7 @@ export const MinimizedPersonFormContainer = styled.div`
     color: black;
     background-color: white;
     width: 30px;
+    font-weight: bold;
     height: 30px;
     margin-right: 20px;
     font-size: 0.7em;
