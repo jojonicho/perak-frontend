@@ -22,7 +22,8 @@ import {
   setPersonData,
   submit,
   setTeamName,
-  setShowPlayer
+  setShowPlayer,
+  deletePlayer
 } from "./actions";
 
 class Registration extends React.Component {
@@ -54,7 +55,7 @@ class Registration extends React.Component {
             console.log(props.showPlayer);
             return index + 1 === props.showPlayer ? (
               <LeftDiv>
-                <Fade distance="10%" duration={2000} collapse top>
+                <Fade distance="10%" duration={1000} collapse top>
                   <PersonFormRegistration
                     id={index + 1}
                     idCardImage={props.personData[index + 1][4]}
@@ -76,6 +77,13 @@ class Registration extends React.Component {
                 <MinimizedPersonForm
                   namaLengkap={props.personData[index + 1][0]}
                   setShowPlayer={() => props.setShowPlayer(index + 1)}
+                  deletePlayer={() =>
+                    props.deletePlayer(
+                      props.numberPlayer,
+                      props.personData,
+                      index + 1
+                    )
+                  }
                 />
               </Fade>
             );
@@ -127,7 +135,9 @@ function mapDispatchToProps(dispatch) {
     submit: (personData, teamImage, teamName) =>
       dispatch(submit(personData, teamImage, teamName)),
     setTeamName: e => dispatch(setTeamName(e)),
-    setShowPlayer: index => dispatch(setShowPlayer(index))
+    setShowPlayer: index => dispatch(setShowPlayer(index)),
+    deletePlayer: (numberPlayer, personData, index) =>
+      dispatch(deletePlayer(numberPlayer, personData, index))
   };
 }
 

@@ -4,6 +4,7 @@ import {
   SET_TEAM_IMAGE,
   SET_ID_CARD_IMAGE,
   ADD_PLAYER,
+  DELETE_PLAYER,
   SET_PERSON_DATA,
   SET_TEAM_NAME,
   SET_SHOW_PLAYER,
@@ -65,6 +66,20 @@ export function setShowPlayer(index) {
   return {
     type: SET_SHOW_PLAYER,
     showPlayer: index
+  };
+}
+export function deletePlayer(nowPlayer, personData, index) {
+  const newNumberPlayer = Array.from(nowPlayer);
+  newNumberPlayer.splice(index, 1); // delete from array
+  const newPersonData = Array.from(personData);
+  newPersonData.splice(index, 1); // delete from array
+  const newShowPlayer = newPersonData.length - 1;
+  console.log(newShowPlayer);
+  return {
+    type: DELETE_PLAYER,
+    personData: newPersonData,
+    numberPlayer: newNumberPlayer,
+    showPlayer: newShowPlayer
   };
 }
 

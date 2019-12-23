@@ -3,6 +3,7 @@ import {
   SET_TEAM_IMAGE,
   SET_ID_CARD_IMAGE,
   ADD_PLAYER,
+  DELETE_PLAYER,
   SET_PERSON_DATA,
   SET_TEAM_NAME,
   SET_SHOW_PLAYER,
@@ -32,6 +33,13 @@ function registrationReducer(state = initialState, action) {
       return { ...state, personData: action.payload };
     case SET_SHOW_PLAYER:
       return { ...state, showPlayer: action.showPlayer };
+    case DELETE_PLAYER:
+      return {
+        ...state,
+        numberPlayer: action.numberPlayer,
+        personData: action.personData,
+        showPlayer: action.showPlayer
+      };
     case ADD_PLAYER:
       return {
         ...state,

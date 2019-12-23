@@ -1,14 +1,23 @@
 import React from "react";
 
-import { MinimizedPersonFormContainer } from "./style";
+import { MinimizedPersonFormContainer, MinimizePersonButton } from "./style";
 
 class MinimizedPersonForm extends React.Component {
   render() {
-    const { namaLengkap, setShowPlayer } = this.props;
+    const { namaLengkap, setShowPlayer, deletePlayer } = this.props;
 
     return (
-      <MinimizedPersonFormContainer onClick={() => setShowPlayer()}>
-        + {namaLengkap}
+      <MinimizedPersonFormContainer>
+        <MinimizePersonButton onClick={() => setShowPlayer()}>
+          + {namaLengkap}
+        </MinimizePersonButton>
+        <button
+          type="button"
+          className="x-button"
+          onClick={() => deletePlayer()}
+        >
+          x
+        </button>
       </MinimizedPersonFormContainer>
     );
   }

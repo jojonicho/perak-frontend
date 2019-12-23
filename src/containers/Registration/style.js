@@ -99,7 +99,7 @@ input {
     width: 100%;
 }
 
-button{
+/* button{
     border-radius: 5px;
   background-color: #a1cdf1;
   color: #fff;
@@ -107,7 +107,7 @@ button{
   outline: none;
   border: 2px black solid;
   cursor: pointer;
-}
+} */
 h3 {
     Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-size: 32px;
