@@ -32,7 +32,6 @@ class Registration extends React.Component {
     const { props } = this;
     return (
       <RegistrationContainer>
-        {true ? <LoadingRegis now={10} base={10} /> : null}
         <Title>FUTSAL REGISTRATION</Title>
         <TeamFormRegistration
           teamImage={props.teamImage}
@@ -106,6 +105,9 @@ class Registration extends React.Component {
             SUBMIT
           </SubmitButton>
         </Forms>
+        {props.loading ? (
+          <LoadingRegis now={props.loadNow} base={props.loadBase} />
+        ) : null}
       </RegistrationContainer>
     );
   }
@@ -119,7 +121,10 @@ function mapStateToProps(state) {
     numberPlayer: state.registration.numberPlayer,
     personData: state.registration.personData,
     showPlayer: state.registration.showPlayer,
-    teamName: state.registration.teamName
+    teamName: state.registration.teamName,
+    loading: state.registration.loading,
+    loadNow: state.registration.loadNow,
+    loadBase: state.registration.loadBase
   };
 }
 

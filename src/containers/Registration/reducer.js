@@ -7,7 +7,9 @@ import {
   SET_PERSON_DATA,
   SET_TEAM_NAME,
   SET_SHOW_PLAYER,
-  SUBMIT
+  SUBMIT,
+  LOADING,
+  UPDATE_LOADING
 } from "./constants";
 
 const initialState = {
@@ -16,7 +18,10 @@ const initialState = {
   personData: [["", "", "", "", null]],
   numberPlayer: [],
   a: "",
-  showPlayer: 0
+  showPlayer: 0,
+  loading: false,
+  loadNow: 0,
+  loadBase: 0
 };
 
 function registrationReducer(state = initialState, action) {
@@ -48,6 +53,20 @@ function registrationReducer(state = initialState, action) {
       };
     case SUBMIT:
       return { ...state };
+    case LOADING:
+      return {
+        ...state,
+        loading: !state.loading,
+        loadNow: 0,
+        loadBase: action.loadBase
+      };
+    case UPDATE_LOADING:
+      return {
+        ...state,
+        loadNow: state.loadNow + 1,
+        loading: !(state.loadNow + 1 === state.loadBase),
+        loadBase: state.loadNow + 1 === state.loadBase ? 0 : state.loadBase
+      };
     default:
       return state;
   }

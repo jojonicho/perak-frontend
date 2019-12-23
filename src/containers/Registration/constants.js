@@ -7,3 +7,5 @@ export const SET_PERSON_DATA = "src/Registration/SET_PERSON_DATA";
 export const SET_TEAM_NAME = "src/Registration/SET_TEAM_NAME";
 export const SET_SHOW_PLAYER = "src/Registration/SET_SHOW_PLAYER";
 export const SUBMIT = "src/Registration/SUBMIT";
+export const LOADING = "src/Registration/LOADING";
+export const UPDATE_LOADING = "src/Registration/UPDATE_LOADING";

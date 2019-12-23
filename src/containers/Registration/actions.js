@@ -8,13 +8,28 @@ import {
   SET_PERSON_DATA,
   SET_TEAM_NAME,
   SET_SHOW_PLAYER,
-  SUBMIT
+  SUBMIT,
+  LOADING,
+  UPDATE_LOADING
 } from "./constants";
 
 import { futsalFirestore, storage } from "../../config/firebaseConfig";
 
 export function defaultAction() {
   return { type: DEFAULT_ACTION };
+}
+
+function loading(baseLoad) {
+  return {
+    type: LOADING,
+    loadBase: baseLoad
+  };
+}
+
+function updateLoad() {
+  return {
+    type: UPDATE_LOADING
+  };
 }
 
 export function setTeamName(e) {
@@ -114,6 +129,7 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
       .put(teamImage)
       .then(function() {
         console.log("team image uploaded");
+        dispatch(updateLoad());
         dispatch({
           type: SUBMIT
         });
@@ -123,6 +139,7 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
       .put(personData[0][4])
       .then(function() {
         console.log("manager image uploaded");
+        dispatch(updateLoad());
         dispatch({
           type: SUBMIT
         });
@@ -149,6 +166,7 @@ function uploadPlayer(idTeam, playerData, teamName) {
         .put(x[4])
         .then(function() {
           console.log("player image uploaded");
+          dispatch(updateLoad());
           dispatch({
             type: SUBMIT
           });
@@ -160,6 +178,7 @@ function uploadPlayer(idTeam, playerData, teamName) {
 export function submit(personData, teamImage, teamName) {
   let teams;
   return dispatch => {
+    dispatch(loading(personData.length + 1));
     futsalFirestore.get().then(response => {
       teams = response.docs;
       console.log(teams.length);
