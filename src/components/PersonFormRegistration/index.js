@@ -13,8 +13,10 @@ class PersonFormRegistration extends React.Component {
       kontak,
       email,
       nomorTelepon,
-      setPersonData
+      setPersonData,
+      id
     } = this.props;
+    const idForm = `file-in-player${id}`;
     return (
       <PersonFormRegistrationContainer>
         <Section>
@@ -46,7 +48,15 @@ class PersonFormRegistration extends React.Component {
               <img src={URL.createObjectURL(idCardImage)} alt="" />
             )}
           </div>
-          <input type="file" onChange={setIdCardImage} />
+          <label htmlFor={idForm} className="labelfile">
+            Choose File
+            <input
+              type="file"
+              className="hide-input"
+              id={idForm}
+              onChange={setIdCardImage}
+            />
+          </label>
         </Section>
       </PersonFormRegistrationContainer>
     );

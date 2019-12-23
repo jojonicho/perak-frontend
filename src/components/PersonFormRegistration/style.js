@@ -30,6 +30,35 @@ export const PersonFormRegistrationContainer = styled.div`
       height: 100%;
     }
   }
+  .hide-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    display: none;
+  }
+  .labelfile {
+    margin: 20px 0;
+    background-color: white;
+    border: 2px black solid;
+    opacity: 1;
+    color: #303030;
+    font-size: 22px;
+    font-weight: 400;
+    width: 30%;
+    min-width: 170px;
+    max-width: 270px;
+    background-color: yellow;
+    color: #000;
+    padding: 10px 15px;
+    outline: none;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
 `;
 
 export const Section = styled.div`

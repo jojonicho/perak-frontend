@@ -6,6 +6,7 @@ import { TeamFormRegistrationContainer } from "./style";
 class TeamFormRegistration extends React.Component {
   render() {
     const { teamImage, setImage, teamName, setName } = this.props;
+    const idForm = "file-input-logo-team";
     return (
       <TeamFormRegistrationContainer>
         <div className="section">
@@ -14,10 +15,20 @@ class TeamFormRegistration extends React.Component {
         </div>
         <div className="section">
           Logo Tim
-          <div className="logo-preview">
-            {teamImage && <img src={URL.createObjectURL(teamImage)} alt="" />}
+          <div className="logo-tim">
+            <div className="logo-preview">
+              {teamImage && <img src={URL.createObjectURL(teamImage)} alt="" />}
+            </div>
+            <label htmlFor={idForm} className="labelfile">
+              Choose File
+              <input
+                type="file"
+                className="hide-input"
+                id={idForm}
+                onChange={setImage}
+              />
+            </label>
           </div>
-          <input type="file" onChange={setImage} />
         </div>
       </TeamFormRegistrationContainer>
     );

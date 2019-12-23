@@ -7,7 +7,8 @@ export const Forms = styled.div`
   align-items: center;
 `;
 export const SubmitButton = styled.div`
-  width: 350px;
+  width: 40%;
+  max-width: 350px;
   height: 40px;
   border: solid black 3px;
   color: white;
@@ -17,7 +18,7 @@ export const SubmitButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 20px;
+  // padding-left: 20px;
   cursor: pointer;
 `;
 export const LeftDiv = styled.div`
@@ -34,7 +35,8 @@ export const TambahButton = styled.div`
     margin-right: 10px;
     font-weight: bold;
   }
-  width: 450px;
+  width: 50%;
+  max-width: 450px;
   height: 50px;
   border: solid black 3px;
   color: white;
@@ -43,7 +45,7 @@ export const TambahButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 20px;
+  // padding-left: 20px;
   cursor: pointer;
 `;
 
@@ -54,6 +56,8 @@ flex-direction: column;
 background-color: #d2d2d3;
 text-align: center;
 border: 3px black solid;
+padding-bottom: 30px;
+overflow-x: hidden;
 
 .section {
     margin: 0px auto;
@@ -76,7 +80,7 @@ input {
     font-size: 22px;
     font-weight: 400;
     width: 30%;
-
+    min-width: 170px;
     -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 

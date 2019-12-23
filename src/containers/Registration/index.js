@@ -14,6 +14,7 @@ import {
 import PersonFormRegistration from "../../components/PersonFormRegistration";
 import TeamFormRegistration from "../../components/TeamFormRegistration";
 import MinimizedPersonForm from "../../components/MinimizedPersonForm";
+import LoadingRegis from "../../components/LoadingRegis";
 
 import {
   setTeamImage,
@@ -31,6 +32,7 @@ class Registration extends React.Component {
     const { props } = this;
     return (
       <RegistrationContainer>
+        {true ? <LoadingRegis now={10} base={10} /> : null}
         <Title>FUTSAL REGISTRATION</Title>
         <TeamFormRegistration
           teamImage={props.teamImage}
@@ -89,7 +91,6 @@ class Registration extends React.Component {
             );
           })}
           <TambahButton
-            type="button"
             onClick={() =>
               props.addPlayer(props.numberPlayer, props.personData)
             }
@@ -98,7 +99,6 @@ class Registration extends React.Component {
           </TambahButton>
 
           <SubmitButton
-            type="button"
             onClick={() =>
               props.submit(props.personData, props.teamImage, props.teamName)
             }
