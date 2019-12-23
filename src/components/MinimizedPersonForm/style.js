@@ -25,7 +25,7 @@ export const MinimizedPersonFormContainer = styled.div`
   }
 `;
 export const MinimizePersonButton = styled.button`
-  background-color: blue;
+  background-color: #f24e07;
   cursor: pointer;
   color: white;
   border: none;
