@@ -117,7 +117,7 @@ export function setShowPlayer(index, nowIndex, personData) {
 }
 export function deletePlayer(nowPlayer, personData, index) {
   const newNumberPlayer = Array.from(nowPlayer);
-  newNumberPlayer.splice(index, 1); // delete from array
+  newNumberPlayer.splice(index - 1, 1); // delete from array
   const newPersonData = Array.from(personData);
   newPersonData.splice(index, 1); // delete from array
   const newShowPlayer = newPersonData.length - 1;

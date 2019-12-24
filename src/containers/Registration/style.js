@@ -25,6 +25,7 @@ export const LeftDiv = styled.div`
   width: 89%;
   display: flex;
   align-items: left;
+  justify-content: space-between;
 `;
 export const ChooseFileButton = styled.div`
   background-color: #f2cf35;
@@ -58,6 +59,18 @@ text-align: center;
 border: 3px black solid;
 padding-bottom: 30px;
 overflow-x: hidden;
+.x-button {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  width: 30px;
+  font-weight: bold;
+  height: 30px;
+  margin-right: 20px;
+  font-size: 1.4em;
+  border-radius: 50%;
+  border: solid black 2px;
+}
 
 .section {
     margin: 0px auto;
