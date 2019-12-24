@@ -17,7 +17,6 @@ const initialState = {
   teamName: "",
   personData: [["", "", "", "", null]],
   numberPlayer: [],
-  a: "",
   showPlayer: 0,
   loading: false,
   loadNow: 0,

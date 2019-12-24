@@ -40,7 +40,6 @@ export function setTeamName(e) {
 }
 
 export function setTeamImage(e) {
-  console.log(e);
   return {
     type: SET_TEAM_IMAGE,
     payload: e.currentTarget.files[0]
@@ -50,7 +49,6 @@ export function setTeamImage(e) {
 export function setIdCardImage(e, id, data) {
   const personData = Array.from(data);
   personData[id][4] = e.currentTarget.files[0];
-  console.log(personData);
   return {
     type: SET_ID_CARD_IMAGE,
     payload: personData
@@ -77,10 +75,16 @@ export function setPersonData(e, id, data) {
   };
 }
 
-export function setShowPlayer(index) {
-  return {
-    type: SET_SHOW_PLAYER,
-    showPlayer: index
+export function setShowPlayer(index, nowIndex, personData) {
+  return dispatch => {
+    if (personData[nowIndex][4] != null) {
+      dispatch({
+        type: SET_SHOW_PLAYER,
+        showPlayer: index
+      });
+    } else {
+      dispatch(defaultAction());
+    }
   };
 }
 export function deletePlayer(nowPlayer, personData, index) {
@@ -89,7 +93,6 @@ export function deletePlayer(nowPlayer, personData, index) {
   const newPersonData = Array.from(personData);
   newPersonData.splice(index, 1); // delete from array
   const newShowPlayer = newPersonData.length - 1;
-  console.log(newShowPlayer);
   return {
     type: DELETE_PLAYER,
     personData: newPersonData,
@@ -98,18 +101,19 @@ export function deletePlayer(nowPlayer, personData, index) {
   };
 }
 
-export function addPlayer(nowPlayer, personData) {
-  const numberPlayer = Array.from(nowPlayer);
-  personData.push(["", "", "", "", null]);
-  numberPlayer.push("aa");
-  const showPlayer = numberPlayer.length;
-  console.log(numberPlayer);
-  console.log(personData);
-  console.log(showPlayer);
-  return {
-    type: ADD_PLAYER,
-    payload: numberPlayer,
-    showplayer: showPlayer
+export function addPlayer(nowPlayer, personData, nowIndex) {
+  return dispatch => {
+    const numberPlayer = Array.from(nowPlayer);
+    if (nowIndex === 0 || personData[nowIndex][4] != null) {
+      personData.push(["", "", "", "", null]);
+      numberPlayer.push("aa");
+    }
+    const showPlayer = numberPlayer.length;
+    dispatch({
+      type: ADD_PLAYER,
+      payload: numberPlayer,
+      showplayer: showPlayer
+    });
   };
 }
 
@@ -176,16 +180,30 @@ function uploadPlayer(idTeam, playerData, teamName) {
 }
 
 export function submit(personData, teamImage, teamName) {
+  let check = true;
+  personData.forEach(x => {
+    if (x[4] == null) {
+      check = false;
+    }
+  });
+  if (teamImage == null) {
+    check = false;
+  }
   let teams;
-  return dispatch => {
-    dispatch(loading(personData.length + 1));
-    futsalFirestore.get().then(response => {
-      teams = response.docs;
-      console.log(teams.length);
-      dispatch(uploadTeam(teams.length, teamName, personData, teamImage));
+  if (check) {
+    return dispatch => {
+      dispatch(loading(personData.length + 1));
+      futsalFirestore.get().then(response => {
+        teams = response.docs;
+        console.log(teams.length);
+        dispatch(uploadTeam(teams.length, teamName, personData, teamImage));
 
-      const playerData = personData.slice(1);
-      dispatch(uploadPlayer(teams.length, playerData, teamName));
-    });
+        const playerData = personData.slice(1);
+        dispatch(uploadPlayer(teams.length, playerData, teamName));
+      });
+    };
+  }
+  return dispatch => {
+    dispatch(defaultAction());
   };
 }

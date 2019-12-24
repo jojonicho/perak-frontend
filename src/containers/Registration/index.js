@@ -40,17 +40,19 @@ class Registration extends React.Component {
           teamName={props.teamName}
         />
         <h3>Manager</h3>
-        <PersonFormRegistration
-          id="0"
-          idCardImage={props.personData[0][4]}
-          setIdCardImage={e => props.setIdCardImage(e, 0, props.personData)}
-          namaLengkap={props.personData[0][0]}
-          kontak={props.personData[0][1]}
-          email={props.personData[0][2]}
-          nomorTelepon={props.personData[0][3]}
-          setPersonData={e => props.setPersonData(e, 0, props.personData)}
-        />
-        <h3>Player</h3>
+        <LeftDiv>
+          <PersonFormRegistration
+            id="0"
+            idCardImage={props.personData[0][4]}
+            setIdCardImage={e => props.setIdCardImage(e, 0, props.personData)}
+            namaLengkap={props.personData[0][0]}
+            kontak={props.personData[0][1]}
+            email={props.personData[0][2]}
+            nomorTelepon={props.personData[0][3]}
+            setPersonData={e => props.setPersonData(e, 0, props.personData)}
+          />
+        </LeftDiv>
+        <h3>Pemain</h3>
         <Forms>
           {props.numberPlayer.map(function x(a, index) {
             console.log(props.showPlayer);
@@ -77,7 +79,13 @@ class Registration extends React.Component {
               <Fade when cascade>
                 <MinimizedPersonForm
                   namaLengkap={props.personData[index + 1][0]}
-                  setShowPlayer={() => props.setShowPlayer(index + 1)}
+                  setShowPlayer={() =>
+                    props.setShowPlayer(
+                      index + 1,
+                      props.showPlayer,
+                      props.personData
+                    )
+                  }
                   deletePlayer={() =>
                     props.deletePlayer(
                       props.numberPlayer,
@@ -90,11 +98,19 @@ class Registration extends React.Component {
             );
           })}
           <TambahButton
-            onClick={() =>
-              props.addPlayer(props.numberPlayer, props.personData)
+            onClick={
+              props.numberPlayer.length <= 15
+                ? () =>
+                    props.addPlayer(
+                      props.numberPlayer,
+                      props.personData,
+                      props.showPlayer
+                    )
+                : null
             }
           >
-            <span className="plus">+</span> Tambah
+            <span className="plus">+</span> Tambah ({props.numberPlayer.length}
+            /15)
           </TambahButton>
 
           <SubmitButton
@@ -135,12 +151,13 @@ function mapDispatchToProps(dispatch) {
       dispatch(setIdCardImage(e, index, personData)),
     setPersonData: (e, index, personData) =>
       dispatch(setPersonData(e, index, personData)),
-    addPlayer: (numberPlayer, idCardImage) =>
-      dispatch(addPlayer(numberPlayer, idCardImage)),
+    addPlayer: (numberPlayer, personData, nowIndex) =>
+      dispatch(addPlayer(numberPlayer, personData, nowIndex)),
     submit: (personData, teamImage, teamName) =>
       dispatch(submit(personData, teamImage, teamName)),
     setTeamName: e => dispatch(setTeamName(e)),
-    setShowPlayer: index => dispatch(setShowPlayer(index)),
+    setShowPlayer: (index, nowIndex, personData) =>
+      dispatch(setShowPlayer(index, nowIndex, personData)),
     deletePlayer: (numberPlayer, personData, index) =>
       dispatch(deletePlayer(numberPlayer, personData, index))
   };

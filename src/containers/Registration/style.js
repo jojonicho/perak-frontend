@@ -35,7 +35,7 @@ export const TambahButton = styled.div`
     margin-right: 10px;
     font-weight: bold;
   }
-  width: 50%;
+  width: 75%;
   max-width: 450px;
   height: 50px;
   border: solid black 3px;
