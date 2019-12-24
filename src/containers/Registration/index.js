@@ -30,6 +30,12 @@ import {
 class Registration extends React.Component {
   render() {
     const { props } = this;
+    if (props.done) {
+      // eslint-disable-next-line no-alert
+      // eslint-disable-next-line no-undef
+      alert("Your Team Registered");
+      window.location.reload();
+    }
     return (
       <RegistrationContainer>
         <Title>FUTSAL REGISTRATION</Title>
@@ -55,7 +61,6 @@ class Registration extends React.Component {
         <h3>Pemain</h3>
         <Forms>
           {props.numberPlayer.map(function x(a, index) {
-            console.log(props.showPlayer);
             return index + 1 === props.showPlayer ? (
               <LeftDiv>
                 <Fade distance="10%" duration={1000} collapse top>
@@ -140,7 +145,8 @@ function mapStateToProps(state) {
     teamName: state.registration.teamName,
     loading: state.registration.loading,
     loadNow: state.registration.loadNow,
-    loadBase: state.registration.loadBase
+    loadBase: state.registration.loadBase,
+    done: state.registration.done
   };
 }
 

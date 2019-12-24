@@ -20,7 +20,8 @@ const initialState = {
   showPlayer: 0,
   loading: false,
   loadNow: 0,
-  loadBase: 0
+  loadBase: 0,
+  done: false
 };
 
 function registrationReducer(state = initialState, action) {
@@ -57,14 +58,16 @@ function registrationReducer(state = initialState, action) {
         ...state,
         loading: !state.loading,
         loadNow: 0,
-        loadBase: action.loadBase
+        loadBase: action.loadBase,
+        done: false
       };
     case UPDATE_LOADING:
       return {
         ...state,
         loadNow: state.loadNow + 1,
         loading: !(state.loadNow + 1 === state.loadBase),
-        loadBase: state.loadNow + 1 === state.loadBase ? 0 : state.loadBase
+        loadBase: state.loadNow + 1 === state.loadBase ? 0 : state.loadBase,
+        done: state.loadNow + 1 === state.loadBase
       };
     default:
       return state;
