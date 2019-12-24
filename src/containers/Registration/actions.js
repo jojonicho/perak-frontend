@@ -84,7 +84,7 @@ export function setPersonData(e, id, data) {
 
 export function setShowPlayer(index, nowIndex, personData) {
   return dispatch => {
-    if (personData[nowIndex][4] != null) {
+    if (personData[nowIndex][4] != null && personData[nowIndex][0] !== "") {
       dispatch({
         type: SET_SHOW_PLAYER,
         showPlayer: index
@@ -111,7 +111,10 @@ export function deletePlayer(nowPlayer, personData, index) {
 export function addPlayer(nowPlayer, personData, nowIndex) {
   return dispatch => {
     const numberPlayer = Array.from(nowPlayer);
-    if (nowIndex === 0 || personData[nowIndex][4] != null) {
+    if (
+      nowIndex === 0 ||
+      (personData[nowIndex][4] != null && personData[nowIndex][0] !== "")
+    ) {
       personData.push(["", "", "", "", null]);
       numberPlayer.push("aa");
     } else {
@@ -191,7 +194,7 @@ function uploadPlayer(idTeam, playerData, teamName) {
 export function submit(personData, teamImage, teamName) {
   let check = true;
   personData.forEach(x => {
-    if (x[4] == null) {
+    if (x[4] == null || x[0] === "") {
       check = false;
     }
   });
