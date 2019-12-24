@@ -9,3 +9,4 @@ export const SET_SHOW_PLAYER = "src/Registration/SET_SHOW_PLAYER";
 export const SUBMIT = "src/Registration/SUBMIT";
 export const LOADING = "src/Registration/LOADING";
 export const UPDATE_LOADING = "src/Registration/UPDATE_LOADING";
+export const ERROR = "src/Registration/ERROR";
