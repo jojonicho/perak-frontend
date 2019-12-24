@@ -47,18 +47,39 @@ export function setTeamName(e) {
 }
 
 export function setTeamImage(e) {
-  return {
-    type: SET_TEAM_IMAGE,
-    payload: e.currentTarget.files[0]
+  return dispatch => {
+    const file = e.currentTarget.files[0];
+    if (
+      !file ||
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+    ) {
+      dispatch({
+        type: SET_TEAM_IMAGE,
+        payload: file
+      });
+    } else {
+      dispatch(error("Make Sure the file is Image and below 1 MB"));
+    }
   };
 }
 
 export function setIdCardImage(e, id, data) {
-  const personData = Array.from(data);
-  personData[id][4] = e.currentTarget.files[0];
-  return {
-    type: SET_ID_CARD_IMAGE,
-    payload: personData
+  return dispatch => {
+    const personData = Array.from(data);
+    const file = e.currentTarget.files[0];
+    console.log(e.currentTarget.files[0]);
+    if (
+      !file ||
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+    ) {
+      personData[id][4] = e.currentTarget.files[0];
+    } else {
+      dispatch(error("Make Sure the file is Image and below 1 MB"));
+    }
+    dispatch({
+      type: SET_ID_CARD_IMAGE,
+      payload: personData
+    });
   };
 }
 
