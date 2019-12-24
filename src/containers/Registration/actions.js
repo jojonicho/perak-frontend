@@ -18,6 +18,13 @@ import { futsalFirestore, storage } from "../../config/firebaseConfig";
 export function defaultAction() {
   return { type: DEFAULT_ACTION };
 }
+function error(message) {
+  // eslint-disable-next-line no-undef
+  alert(message);
+  return dispatch => {
+    dispatch(defaultAction());
+  };
+}
 
 function loading(baseLoad) {
   return {
@@ -83,7 +90,7 @@ export function setShowPlayer(index, nowIndex, personData) {
         showPlayer: index
       });
     } else {
-      dispatch(defaultAction());
+      dispatch(error("Please fill the last form"));
     }
   };
 }
@@ -107,6 +114,8 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     if (nowIndex === 0 || personData[nowIndex][4] != null) {
       personData.push(["", "", "", "", null]);
       numberPlayer.push("aa");
+    } else {
+      dispatch(error("Please fill the last form"));
     }
     const showPlayer = numberPlayer.length;
     dispatch({
@@ -204,6 +213,6 @@ export function submit(personData, teamImage, teamName) {
     };
   }
   return dispatch => {
-    dispatch(defaultAction());
+    dispatch(error("Please fill the last form"));
   };
 }
