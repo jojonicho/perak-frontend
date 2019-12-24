@@ -36,6 +36,9 @@ class Registration extends React.Component {
       alert("Your Team Registered");
       window.location.reload();
     }
+    console.log(props.personData);
+    console.log(props.showPlayer);
+    console.log(props.numberPlayer);
     return (
       <RegistrationContainer>
         <Title>FUTSAL REGISTRATION</Title>
@@ -79,6 +82,19 @@ class Registration extends React.Component {
                     }
                   />
                 </Fade>
+                <button
+                  type="button"
+                  className="x-button"
+                  onClick={() =>
+                    props.deletePlayer(
+                      props.numberPlayer,
+                      props.personData,
+                      props.showPlayer
+                    )
+                  }
+                >
+                  X
+                </button>
               </LeftDiv>
             ) : (
               <Fade when cascade>
