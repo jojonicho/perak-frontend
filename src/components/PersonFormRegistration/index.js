@@ -14,7 +14,9 @@ class PersonFormRegistration extends React.Component {
       email,
       nomorTelepon,
       setPersonData,
-      id
+      id,
+      foto,
+      setFoto
     } = this.props;
     const idForm = `file-in-player${id}`;
     return (
@@ -27,6 +29,21 @@ class PersonFormRegistration extends React.Component {
             value={namaLengkap}
             onChange={setPersonData}
           />
+        </Section>
+        <Section>
+          Foto Diri
+          <div className="foto-preview">
+            {foto && <img src={URL.createObjectURL(foto)} alt="" />}
+          </div>
+          <label htmlFor={`foto-${idForm}`} className="labelfile">
+            Choose File
+            <input
+              type="file"
+              className="hide-input"
+              id={`foto-${idForm}`}
+              onChange={setFoto}
+            />
+          </label>
         </Section>
         <Section>
           ID Line / Whatsapp

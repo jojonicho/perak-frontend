@@ -9,13 +9,14 @@ import {
   SET_SHOW_PLAYER,
   SUBMIT,
   LOADING,
-  UPDATE_LOADING
+  UPDATE_LOADING,
+  SET_SELF_IMAGE
 } from "./constants";
 
 const initialState = {
   teamImage: null,
   teamName: "",
-  personData: [["", "", "", "", null]],
+  personData: [["", "", "", "", null, null]],
   numberPlayer: [],
   showPlayer: 0,
   loading: false,
@@ -33,6 +34,8 @@ function registrationReducer(state = initialState, action) {
     case SET_TEAM_IMAGE:
       return { ...state, teamImage: action.payload };
     case SET_ID_CARD_IMAGE:
+      return { ...state, personData: action.payload };
+    case SET_SELF_IMAGE:
       return { ...state, personData: action.payload };
     case SET_PERSON_DATA:
       return { ...state, personData: action.payload };

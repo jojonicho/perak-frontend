@@ -24,7 +24,8 @@ import {
   submit,
   setTeamName,
   setShowPlayer,
-  deletePlayer
+  deletePlayer,
+  setFoto
 } from "./actions";
 
 class Registration extends React.Component {
@@ -53,7 +54,9 @@ class Registration extends React.Component {
           <PersonFormRegistration
             id="0"
             idCardImage={props.personData[0][4]}
+            foto={props.personData[0][5]}
             setIdCardImage={e => props.setIdCardImage(e, 0, props.personData)}
+            setFoto={e => props.setFoto(e, 0, props.personData)}
             namaLengkap={props.personData[0][0]}
             kontak={props.personData[0][1]}
             email={props.personData[0][2]}
@@ -70,9 +73,11 @@ class Registration extends React.Component {
                   <PersonFormRegistration
                     id={index + 1}
                     idCardImage={props.personData[index + 1][4]}
+                    foto={props.personData[index + 1][5]}
                     setIdCardImage={e =>
                       props.setIdCardImage(e, index + 1, props.personData)
                     }
+                    setFoto={e => props.setFoto(e, index + 1, props.personData)}
                     namaLengkap={props.personData[index + 1][0]}
                     kontak={props.personData[index + 1][1]}
                     email={props.personData[index + 1][2]}
@@ -171,6 +176,7 @@ function mapDispatchToProps(dispatch) {
     setTeamImage: e => dispatch(setTeamImage(e)),
     setIdCardImage: (e, index, personData) =>
       dispatch(setIdCardImage(e, index, personData)),
+    setFoto: (e, index, personData) => dispatch(setFoto(e, index, personData)),
     setPersonData: (e, index, personData) =>
       dispatch(setPersonData(e, index, personData)),
     addPlayer: (numberPlayer, personData, nowIndex) =>

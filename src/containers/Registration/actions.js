@@ -10,7 +10,8 @@ import {
   SET_SHOW_PLAYER,
   SUBMIT,
   LOADING,
-  UPDATE_LOADING
+  UPDATE_LOADING,
+  SET_SELF_IMAGE
 } from "./constants";
 
 import { futsalFirestore, storage } from "../../config/firebaseConfig";
@@ -63,6 +64,26 @@ export function setTeamImage(e) {
   };
 }
 
+export function setFoto(e, id, data) {
+  return dispatch => {
+    const personData = Array.from(data);
+    const file = e.currentTarget.files[0];
+    console.log(e.currentTarget.files[0]);
+    if (
+      !file ||
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+    ) {
+      personData[id][5] = e.currentTarget.files[0];
+    } else {
+      dispatch(error("Make Sure the file is Image and below 1 MB"));
+    }
+    dispatch({
+      type: SET_SELF_IMAGE,
+      payload: personData
+    });
+  };
+}
+
 export function setIdCardImage(e, id, data) {
   return dispatch => {
     const personData = Array.from(data);
@@ -105,7 +126,11 @@ export function setPersonData(e, id, data) {
 
 export function setShowPlayer(index, nowIndex, personData) {
   return dispatch => {
-    if (personData[nowIndex][4] != null && personData[nowIndex][0] !== "") {
+    if (
+      personData[nowIndex][4] != null &&
+      personData[nowIndex][5] != null &&
+      personData[nowIndex][0] !== ""
+    ) {
       dispatch({
         type: SET_SHOW_PLAYER,
         showPlayer: index
@@ -134,7 +159,9 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     const numberPlayer = Array.from(nowPlayer);
     if (
       nowIndex === 0 ||
-      (personData[nowIndex][4] != null && personData[nowIndex][0] !== "")
+      (personData[nowIndex][4] != null &&
+        personData[nowIndex][5] != null &&
+        personData[nowIndex][0] !== "")
     ) {
       personData.push(["", "", "", "", null]);
       numberPlayer.push("aa");
@@ -152,15 +179,21 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
 
 function uploadTeam(idTeam, teamName, personData, teamImage) {
   return dispatch => {
-    futsalFirestore.doc(`${teamName}-${idTeam}`).set({
-      nama: teamName,
-      teamLogo: `futsal/${teamName}-${idTeam}/${teamName}-logo.jpg`,
-      namaLengkap_manager: personData[0][0],
-      kontak_manager: personData[0][1],
-      email_manager: personData[0][2],
-      telepon_manager: personData[0][3],
-      idCard_manager: `futsal/${teamName}-${idTeam}/manager-idCard.jpg`
-    });
+    futsalFirestore
+      .doc(`${teamName}-${idTeam}`)
+      .set({
+        nama: teamName,
+        teamLogo: `futsal/${teamName}-${idTeam}/${teamName}-logo.jpg`,
+        namaLengkap_manager: personData[0][0],
+        kontak_manager: personData[0][1],
+        email_manager: personData[0][2],
+        telepon_manager: personData[0][3],
+        idCard_manager: `futsal/${teamName}-${idTeam}/manager-idCard.jpg`,
+        foto_manager: `futsal/${teamName}-${idTeam}/manager-foto.jpg`
+      })
+      .then(() => {
+        dispatch(updateLoad());
+      });
     storage
       .child(`futsal/${teamName}-${idTeam}/${teamName}-logo.jpg`)
       .put(teamImage)
@@ -174,6 +207,16 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
     storage
       .child(`futsal/${teamName}-${idTeam}/manager-idCard.jpg`)
       .put(personData[0][4])
+      .then(function() {
+        console.log("manager idcard uploaded");
+        dispatch(updateLoad());
+        dispatch({
+          type: SUBMIT
+        });
+      });
+    storage
+      .child(`futsal/${teamName}-${idTeam}/manager-foto.jpg`)
+      .put(personData[0][5])
       .then(function() {
         console.log("manager image uploaded");
         dispatch(updateLoad());
@@ -196,11 +239,25 @@ function uploadPlayer(idTeam, playerData, teamName) {
           kontak: x[1],
           email: x[2],
           telepon: x[3],
-          idCard: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`
+          idCard: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`,
+          foto: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-foto.jpg`
+        })
+        .then(() => {
+          dispatch(updateLoad());
         });
       storage
         .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`)
         .put(x[4])
+        .then(function() {
+          console.log("player idcard uploaded");
+          dispatch(updateLoad());
+          dispatch({
+            type: SUBMIT
+          });
+        });
+      storage
+        .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-foto.jpg`)
+        .put(x[5])
         .then(function() {
           console.log("player image uploaded");
           dispatch(updateLoad());
@@ -225,7 +282,7 @@ export function submit(personData, teamImage, teamName) {
   let teams;
   if (check) {
     return dispatch => {
-      dispatch(loading(personData.length + 1));
+      dispatch(loading(3 * personData.length + 1));
       futsalFirestore.get().then(response => {
         teams = response.docs;
         console.log(teams.length);

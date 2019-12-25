@@ -72,6 +72,7 @@ overflow-x: hidden;
   border: solid black 2px;
 }
 
+
 .section {
     margin: 0px auto;
     text-align: left;
@@ -103,6 +104,19 @@ input {
     width:50vw;
     height:50vw;
     max-height: 200px;
+    max-width: 200px;
+    background-color:white;
+    border: 2px black solid;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+  }
+
+  .foto-preview{
+    width:60vw;
+    height:40vw;
+    max-height: 300px;
     max-width: 200px;
     background-color:white;
     border: 2px black solid;
