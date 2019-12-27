@@ -2,6 +2,8 @@ import React from "react";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
+import SweetAlert from "sweetalert2-react";
+// import swal from 'sweetalert2';
 
 import {
   RegistrationContainer,
@@ -15,6 +17,7 @@ import PersonFormRegistration from "../../components/PersonFormRegistration";
 import TeamFormRegistration from "../../components/TeamFormRegistration";
 import MinimizedPersonForm from "../../components/MinimizedPersonForm";
 import LoadingRegis from "../../components/LoadingRegis";
+import HeaderFooter from "../../components/HeaderFooter";
 
 import {
   setTeamImage,
@@ -25,7 +28,8 @@ import {
   setTeamName,
   setShowPlayer,
   deletePlayer,
-  setFoto
+  setFoto,
+  stopAlert
 } from "./actions";
 
 class Registration extends React.Component {
@@ -34,123 +38,134 @@ class Registration extends React.Component {
     if (props.done) {
       // eslint-disable-next-line no-alert
       // eslint-disable-next-line no-undef
-      alert("Your Team Registered");
+      // alert("Your Team Registered");
       window.location.reload();
     }
     console.log(props.personData);
     console.log(props.showPlayer);
-    console.log(props.numberPlayer);
+    console.log(props.alert);
     return (
-      <RegistrationContainer>
-        <Title>FUTSAL REGISTRATION</Title>
-        <TeamFormRegistration
-          teamImage={props.teamImage}
-          setImage={props.setTeamImage}
-          setName={e => props.setTeamName(e)}
-          teamName={props.teamName}
-        />
-        <h3>Manager</h3>
-        <LeftDiv>
-          <PersonFormRegistration
-            id="0"
-            idCardImage={props.personData[0][4]}
-            foto={props.personData[0][5]}
-            setIdCardImage={e => props.setIdCardImage(e, 0, props.personData)}
-            setFoto={e => props.setFoto(e, 0, props.personData)}
-            namaLengkap={props.personData[0][0]}
-            kontak={props.personData[0][1]}
-            email={props.personData[0][2]}
-            nomorTelepon={props.personData[0][3]}
-            setPersonData={e => props.setPersonData(e, 0, props.personData)}
+      <HeaderFooter>
+        <RegistrationContainer>
+          <SweetAlert
+            show={props.alert || props.done}
+            title={props.done ? "You're registered" : props.alert}
+            type={props.done ? "success" : "warning"}
+            onConfirm={props.stopAlert}
           />
-        </LeftDiv>
-        <h3>Pemain</h3>
-        <Forms>
-          {props.numberPlayer.map(function x(a, index) {
-            return index + 1 === props.showPlayer ? (
-              <LeftDiv>
-                <Fade distance="10%" duration={1000} collapse top>
-                  <PersonFormRegistration
-                    id={index + 1}
-                    idCardImage={props.personData[index + 1][4]}
-                    foto={props.personData[index + 1][5]}
-                    setIdCardImage={e =>
-                      props.setIdCardImage(e, index + 1, props.personData)
+          <Title>FUTSAL REGISTRATION</Title>
+          <TeamFormRegistration
+            teamImage={props.teamImage}
+            setImage={props.setTeamImage}
+            setName={e => props.setTeamName(e)}
+            teamName={props.teamName}
+          />
+          <h3>Manager</h3>
+          <LeftDiv>
+            <PersonFormRegistration
+              id="0"
+              idCardImage={props.personData[0][4]}
+              foto={props.personData[0][5]}
+              setIdCardImage={e => props.setIdCardImage(e, 0, props.personData)}
+              // setFoto={e => props.setFoto(e, 0, props.personData)}
+              namaLengkap={props.personData[0][0]}
+              kontak={props.personData[0][1]}
+              email={props.personData[0][2]}
+              nomorTelepon={props.personData[0][3]}
+              setPersonData={e => props.setPersonData(e, 0, props.personData)}
+            />
+          </LeftDiv>
+          <h3>Pemain</h3>
+          <Forms>
+            {props.numberPlayer.map(function x(a, index) {
+              return index + 1 === props.showPlayer ? (
+                <LeftDiv>
+                  <Fade distance="10%" duration={1000} collapse top>
+                    <PersonFormRegistration
+                      id={index + 1}
+                      idCardImage={props.personData[index + 1][4]}
+                      foto={props.personData[index + 1][5]}
+                      setIdCardImage={e =>
+                        props.setIdCardImage(e, index + 1, props.personData)
+                      }
+                      setFoto={e =>
+                        props.setFoto(e, index + 1, props.personData)
+                      }
+                      namaLengkap={props.personData[index + 1][0]}
+                      kontak={props.personData[index + 1][1]}
+                      email={props.personData[index + 1][2]}
+                      nomorTelepon={props.personData[index + 1][3]}
+                      setPersonData={e =>
+                        props.setPersonData(e, index + 1, props.personData)
+                      }
+                    />
+                  </Fade>
+                  <button
+                    type="button"
+                    className="x-button"
+                    onClick={() =>
+                      props.deletePlayer(
+                        props.numberPlayer,
+                        props.personData,
+                        props.showPlayer
+                      )
                     }
-                    setFoto={e => props.setFoto(e, index + 1, props.personData)}
+                  >
+                    X
+                  </button>
+                </LeftDiv>
+              ) : (
+                <Fade when cascade>
+                  <MinimizedPersonForm
                     namaLengkap={props.personData[index + 1][0]}
-                    kontak={props.personData[index + 1][1]}
-                    email={props.personData[index + 1][2]}
-                    nomorTelepon={props.personData[index + 1][3]}
-                    setPersonData={e =>
-                      props.setPersonData(e, index + 1, props.personData)
+                    setShowPlayer={() =>
+                      props.setShowPlayer(
+                        index + 1,
+                        props.showPlayer,
+                        props.personData
+                      )
+                    }
+                    deletePlayer={() =>
+                      props.deletePlayer(
+                        props.numberPlayer,
+                        props.personData,
+                        index + 1
+                      )
                     }
                   />
                 </Fade>
-                <button
-                  type="button"
-                  className="x-button"
-                  onClick={() =>
-                    props.deletePlayer(
-                      props.numberPlayer,
-                      props.personData,
-                      props.showPlayer
-                    )
-                  }
-                >
-                  X
-                </button>
-              </LeftDiv>
-            ) : (
-              <Fade when cascade>
-                <MinimizedPersonForm
-                  namaLengkap={props.personData[index + 1][0]}
-                  setShowPlayer={() =>
-                    props.setShowPlayer(
-                      index + 1,
-                      props.showPlayer,
-                      props.personData
-                    )
-                  }
-                  deletePlayer={() =>
-                    props.deletePlayer(
-                      props.numberPlayer,
-                      props.personData,
-                      index + 1
-                    )
-                  }
-                />
-              </Fade>
-            );
-          })}
-          <TambahButton
-            onClick={
-              props.numberPlayer.length <= 15
-                ? () =>
-                    props.addPlayer(
-                      props.numberPlayer,
-                      props.personData,
-                      props.showPlayer
-                    )
-                : null
-            }
-          >
-            <span className="plus">+</span> Tambah ({props.numberPlayer.length}
-            /15)
-          </TambahButton>
+              );
+            })}
+            <TambahButton
+              onClick={
+                props.numberPlayer.length <= 15
+                  ? () =>
+                      props.addPlayer(
+                        props.numberPlayer,
+                        props.personData,
+                        props.showPlayer
+                      )
+                  : null
+              }
+            >
+              <span className="plus">+</span> Tambah (
+              {props.numberPlayer.length}
+              /15)
+            </TambahButton>
 
-          <SubmitButton
-            onClick={() =>
-              props.submit(props.personData, props.teamImage, props.teamName)
-            }
-          >
-            SUBMIT
-          </SubmitButton>
-        </Forms>
-        {props.loading ? (
-          <LoadingRegis now={props.loadNow} base={props.loadBase} />
-        ) : null}
-      </RegistrationContainer>
+            <SubmitButton
+              onClick={() =>
+                props.submit(props.personData, props.teamImage, props.teamName)
+              }
+            >
+              SUBMIT
+            </SubmitButton>
+          </Forms>
+          {props.loading ? (
+            <LoadingRegis now={props.loadNow} base={props.loadBase} />
+          ) : null}
+        </RegistrationContainer>
+      </HeaderFooter>
     );
   }
 }
@@ -167,7 +182,8 @@ function mapStateToProps(state) {
     loading: state.registration.loading,
     loadNow: state.registration.loadNow,
     loadBase: state.registration.loadBase,
-    done: state.registration.done
+    done: state.registration.done,
+    alert: state.registration.alert
   };
 }
 
@@ -187,7 +203,8 @@ function mapDispatchToProps(dispatch) {
     setShowPlayer: (index, nowIndex, personData) =>
       dispatch(setShowPlayer(index, nowIndex, personData)),
     deletePlayer: (numberPlayer, personData, index) =>
-      dispatch(deletePlayer(numberPlayer, personData, index))
+      dispatch(deletePlayer(numberPlayer, personData, index)),
+    stopAlert: () => dispatch(stopAlert())
   };
 }
 

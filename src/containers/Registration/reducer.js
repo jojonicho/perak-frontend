@@ -10,7 +10,8 @@ import {
   SUBMIT,
   LOADING,
   UPDATE_LOADING,
-  SET_SELF_IMAGE
+  SET_SELF_IMAGE,
+  ALERT
 } from "./constants";
 
 const initialState = {
@@ -22,7 +23,8 @@ const initialState = {
   loading: false,
   loadNow: 0,
   loadBase: 0,
-  done: false
+  done: false,
+  alert: null
 };
 
 function registrationReducer(state = initialState, action) {
@@ -72,6 +74,8 @@ function registrationReducer(state = initialState, action) {
         loadBase: state.loadNow + 1 === state.loadBase ? 0 : state.loadBase,
         done: state.loadNow + 1 === state.loadBase
       };
+    case ALERT:
+      return { ...state, alert: action.payload };
     default:
       return state;
   }

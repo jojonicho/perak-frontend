@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PersonFormRegistrationContainer = styled.div`
   height: 100%;
   margin-top: 18px;
-  font-family: "Calibri";
+  font-family: Helvetica;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -11,6 +11,8 @@ export const PersonFormRegistrationContainer = styled.div`
   margin: 0px auto;
   input {
     margin: 20px 5px !important;
+    background-color: #ffde17;
+    border-radius: 3px;
   }
   .input-long {
     width: 60%;
@@ -23,8 +25,9 @@ export const PersonFormRegistrationContainer = styled.div`
     height: 70vw;
     max-height: 300px;
     max-width: 500px;
-    background-color: white;
-    border: 2px black solid;
+    border: 2px white solid;
+    background-color: #ffde17;
+    border-radius: 3px;
     img {
       width: 100%;
       height: 100%;
@@ -42,18 +45,15 @@ export const PersonFormRegistrationContainer = styled.div`
   }
   .labelfile {
     margin: 20px 0;
-    background-color: white;
-    border: 2px black solid;
+    background-color: #22b3a5;
+    border: 2px white solid;
     opacity: 1;
-    color: #303030;
+    color: white;
     font-size: 22px;
-    font-weight: 400;
     width: 30%;
     min-width: 170px;
     max-width: 270px;
-    background-color: yellow;
-    color: #000;
-    padding: 10px 15px;
+    padding: 5px 0px;
     outline: none;
     text-align: center;
     font-weight: 600;
@@ -91,7 +91,7 @@ export const Input = styled.input`
   }}
   // padding: 0px 10px;
   margin: 5px 0px;
-  background-color: white;
+  background-color:#FFDE17;
   // border: none;
   border: 2px black solid;
   opacity: 1;

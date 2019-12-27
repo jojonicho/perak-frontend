@@ -22,18 +22,15 @@ align-items: center;
 .labelfile{
     margin: 20px 0;
     align-self: flex-end;
-    background-color: white;
-    border: 2px black solid;
+    background-color: #22B3A5;
+    border: 2px white solid;
     opacity: 1;
-    color: #303030;
+    color: white;
     font-size: 22px;
-    font-weight: 400;
     width: 30%;
     min-width: 170px;
     max-width: 270px;
-    background-color: yellow;
-    color: #000;
-    padding: 10px 15px;
+    padding: 5px 0px;
     outline: none;
     text-align:center;
     font-weight: 600;
@@ -42,9 +39,10 @@ align-items: center;
 input {
     // padding: 0px 10px;
     margin: 20px  5px;
-    background-color: white;
-    // border: none;
-    border: 2px black solid;
+    background-color: #FFDE17;
+    border: none;
+    border-radius: 3px;
+    // border: 2px black solid;
     opacity: 1;
     color: #303030;
     font-size: 22px;
@@ -63,8 +61,9 @@ input {
     height:50vw;
     max-height: 200px;
     max-width: 200px;
-    background-color:white;
-    border: 2px black solid;
+    border: 2px white solid;
+    background-color: #FFDE17;
+    border-radius: 3px;
     img {
         width: 100%;
         height: 100%;

@@ -10,11 +10,11 @@ export const SubmitButton = styled.div`
   width: 40%;
   max-width: 350px;
   height: 40px;
-  border: solid black 3px;
+  border: solid white 3px;
   color: white;
   font-size: 1.5em;
   margin-top: 10px;
-  background-color: #33b3a6;
+  background-color: #f24e07;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,10 +27,6 @@ export const LeftDiv = styled.div`
   align-items: left;
   justify-content: space-between;
 `;
-export const ChooseFileButton = styled.div`
-  background-color: #f2cf35;
-  border: solid black 2px;
-`;
 export const TambahButton = styled.div`
   .plus {
     margin-right: 10px;
@@ -39,10 +35,10 @@ export const TambahButton = styled.div`
   width: 75%;
   max-width: 450px;
   height: 50px;
-  border: solid black 3px;
+  border: solid white 3px;
   color: white;
   font-size: 2em;
-  background-color: #f24e07;
+  background-color: #22b3a5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,15 +50,17 @@ export const RegistrationContainer = styled.div`
 font-family: "Calibri";
 display: flex;
 flex-direction: column;
-background-color: #d2d2d3;
+background-color: #454FCB;
 text-align: center;
-border: 3px black solid;
+position: relative;
+font-family: Helvetica;
 padding-bottom: 30px;
 overflow-x: hidden;
+color: white;
 .x-button {
   cursor: pointer;
   color: black;
-  background-color: white;
+  background-color: #FFDE17;
   width: 30px;
   font-weight: bold;
   height: 30px;
@@ -87,8 +85,9 @@ input {
     // padding: 0px 10px;
     margin: 20px  5px;
     background-color: white;
-    // border: none;
-    border: 2px black solid;
+    border: none;
+    border-radius: 3px;
+    // border: 2px black solid;
     opacity: 1;
     color: #303030;
     font-size: 22px;
@@ -105,8 +104,9 @@ input {
     height:50vw;
     max-height: 200px;
     max-width: 200px;
-    background-color:white;
-    border: 2px black solid;
+    border: 2px white solid;
+    background-color: #FFDE17;
+    border-radius: 3px;
     img {
         width: 100%;
         height: 100%;
@@ -118,8 +118,9 @@ input {
     height:40vw;
     max-height: 300px;
     max-width: 200px;
-    background-color:white;
-    border: 2px black solid;
+    border: 2px white solid;
+    background-color: #FFDE17;
+    border-radius: 3px;
     img {
         width: 100%;
         height: 100%;
@@ -193,7 +194,9 @@ box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 `;
 
 export const Title = styled.h3`
-Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+// Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-family: Helvetica
 font-size: 32px;
+text-shadow: 2px 2px #F24E07;
 font-weight: 800;
 `;

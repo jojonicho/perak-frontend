@@ -11,7 +11,8 @@ import {
   SUBMIT,
   LOADING,
   UPDATE_LOADING,
-  SET_SELF_IMAGE
+  SET_SELF_IMAGE,
+  ALERT
 } from "./constants";
 
 import { futsalFirestore, storage } from "../../config/firebaseConfig";
@@ -19,11 +20,22 @@ import { futsalFirestore, storage } from "../../config/firebaseConfig";
 export function defaultAction() {
   return { type: DEFAULT_ACTION };
 }
+
+export function stopAlert() {
+  return {
+    type: ALERT,
+    payload: null
+  };
+}
+
 function error(message) {
   // eslint-disable-next-line no-undef
-  alert(message);
+  // alert(message);
   return dispatch => {
-    dispatch(defaultAction());
+    dispatch({
+      type: ALERT,
+      payload: message
+    });
   };
 }
 
@@ -136,7 +148,7 @@ export function setShowPlayer(index, nowIndex, personData) {
         showPlayer: index
       });
     } else {
-      dispatch(error("Please fill the last form"));
+      dispatch(error("Please fill all forms first"));
     }
   };
 }
@@ -163,7 +175,7 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
         personData[nowIndex][5] != null &&
         personData[nowIndex][0] !== "")
     ) {
-      personData.push(["", "", "", "", null]);
+      personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");
     } else {
       dispatch(error("Please fill the last form"));
@@ -214,16 +226,16 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
           type: SUBMIT
         });
       });
-    storage
-      .child(`futsal/${teamName}-${idTeam}/manager-foto.jpg`)
-      .put(personData[0][5])
-      .then(function() {
-        console.log("manager image uploaded");
-        dispatch(updateLoad());
-        dispatch({
-          type: SUBMIT
-        });
-      });
+    // storage // manager gaperlu pasfoto kyknya
+    //   .child(`futsal/${teamName}-${idTeam}/manager-foto.jpg`)
+    //   .put(personData[0][5])
+    //   .then(function() {
+    //     console.log("manager image uploaded");
+    //     dispatch(updateLoad());
+    //     dispatch({
+    //       type: SUBMIT
+    //     });
+    //   });
   };
 }
 
@@ -270,19 +282,26 @@ function uploadPlayer(idTeam, playerData, teamName) {
 }
 
 export function submit(personData, teamImage, teamName) {
+  let message;
   let check = true;
+  if (personData.length < 10) {
+    check = false;
+    message = "Minimum Player is 10";
+  }
   personData.forEach(x => {
     if (x[4] == null || x[0] === "") {
       check = false;
+      message = "Please fill up all Forms";
     }
   });
   if (teamImage == null) {
     check = false;
+    message = "Please insert Team Image";
   }
   let teams;
   if (check) {
     return dispatch => {
-      dispatch(loading(3 * personData.length + 1));
+      dispatch(loading(3 * personData.length));
       futsalFirestore.get().then(response => {
         teams = response.docs;
         console.log(teams.length);
@@ -294,6 +313,6 @@ export function submit(personData, teamImage, teamName) {
     };
   }
   return dispatch => {
-    dispatch(error("Please fill the last form"));
+    dispatch(error(message));
   };
 }
