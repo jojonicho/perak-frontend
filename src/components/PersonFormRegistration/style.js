@@ -11,18 +11,19 @@ export const PersonFormRegistrationContainer = styled.div`
   margin: 0px auto;
   input {
     margin: 20px 5px !important;
-    background-color: #ffde17;
+    background-color: #ffde17 !important;
     border-radius: 3px;
+    width: 80%;
   }
   .input-long {
-    width: 60%;
+    width: 90%;
   }
   .input-info {
     font-size: 15px;
   }
   .idcard-preview {
-    width: 80vw;
-    height: 70vw;
+    width: 70vw;
+    height: 40vw;
     max-height: 300px;
     max-width: 500px;
     border: 2px white solid;
@@ -49,7 +50,7 @@ export const PersonFormRegistrationContainer = styled.div`
     border: 2px white solid;
     opacity: 1;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     width: 30%;
     min-width: 170px;
     max-width: 270px;
@@ -91,12 +92,12 @@ export const Input = styled.input`
   }}
   // padding: 0px 10px;
   margin: 5px 0px;
-  background-color:#FFDE17;
+  background-color:#FFDE17 !important;
   // border: none;
   border: 2px black solid;
   opacity: 1;
   color: #303030;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 
   -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);

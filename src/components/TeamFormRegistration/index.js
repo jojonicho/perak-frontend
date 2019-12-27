@@ -11,7 +11,12 @@ class TeamFormRegistration extends React.Component {
       <TeamFormRegistrationContainer>
         <div className="section">
           Nama Tim
-          <input className="long" value={teamName} onChange={setName} />
+          <input
+            className="long"
+            value={teamName}
+            onChange={setName}
+            autoComplete="off"
+          />
         </div>
         <div className="section">
           Logo Tim
@@ -26,6 +31,7 @@ class TeamFormRegistration extends React.Component {
                 className="hide-input"
                 id={idForm}
                 onChange={setImage}
+                autoComplete="off"
               />
             </label>
           </div>

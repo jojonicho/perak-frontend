@@ -13,7 +13,7 @@ export const SubmitButton = styled.div`
   border: solid white 3px;
   color: white;
   font-size: 1.5em;
-  margin-top: 10px;
+  margin-top: 100px;
   background-color: #f24e07;
   display: flex;
   align-items: center;
@@ -70,7 +70,6 @@ color: white;
   border: solid black 2px;
 }
 
-
 .section {
     margin: 0px auto;
     text-align: left;
@@ -84,15 +83,15 @@ color: white;
 input {
     // padding: 0px 10px;
     margin: 20px  5px;
-    background-color: white;
+    background-color: #FFDE17 !important;
     border: none;
     border-radius: 3px;
     // border: 2px black solid;
     opacity: 1;
     color: #303030;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
-    width: 30%;
+    width: 40%;
     min-width: 170px;
     -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
@@ -114,8 +113,8 @@ input {
   }
 
   .foto-preview{
-    width:60vw;
-    height:40vw;
+    width:40vw;
+    height:60vw;
     max-height: 300px;
     max-width: 200px;
     border: 2px white solid;
@@ -185,7 +184,7 @@ background-color: white;
 border: 2px black solid;
 opacity: 1;
 color: #303030;
-font-size: 22px;
+font-size: 20px;
 font-weight: 400;
 
 -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);

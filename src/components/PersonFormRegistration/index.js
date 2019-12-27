@@ -28,6 +28,7 @@ class PersonFormRegistration extends React.Component {
             id="nama-lengkap"
             value={namaLengkap}
             onChange={setPersonData}
+            autoComplete="off"
           />
         </Section>
         {setFoto ? (
@@ -43,21 +44,37 @@ class PersonFormRegistration extends React.Component {
                 className="hide-input"
                 id={`foto-${idForm}`}
                 onChange={setFoto}
+                autoComplete="off"
               />
             </label>
           </Section>
         ) : null}
         <Section>
           ID Line / Whatsapp
-          <input value={kontak} id="kontak" onChange={setPersonData} />
+          <input
+            value={kontak}
+            id="kontak"
+            onChange={setPersonData}
+            autoComplete="off"
+          />
         </Section>
         <Section>
           Email
-          <input value={email} id="email" onChange={setPersonData} />
+          <input
+            value={email}
+            id="email"
+            onChange={setPersonData}
+            autoComplete="off"
+          />
         </Section>
         <Section>
           Nomor Telepon
-          <input value={nomorTelepon} id="telepon" onChange={setPersonData} />
+          <input
+            value={nomorTelepon}
+            id="telepon"
+            onChange={setPersonData}
+            autoComplete="off"
+          />
         </Section>
         <Section>
           Kartu Identitas
@@ -74,6 +91,7 @@ class PersonFormRegistration extends React.Component {
               className="hide-input"
               id={idForm}
               onChange={setIdCardImage}
+              autoComplete="off"
             />
           </label>
         </Section>
