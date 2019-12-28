@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import futsalImg from "../../asset/futsal.png";
 
 export const Forms = styled.div`
   display: flex;
@@ -11,6 +12,7 @@ export const SubmitButton = styled.div`
   max-width: 350px;
   height: 40px;
   border: solid white 3px;
+  font-weight: bold;
   color: white;
   font-size: 1.5em;
   margin-top: 100px;
@@ -35,6 +37,7 @@ export const TambahButton = styled.div`
   width: 75%;
   max-width: 450px;
   height: 50px;
+  font-weight: bold;
   border: solid white 3px;
   color: white;
   font-size: 2em;
@@ -50,7 +53,12 @@ export const RegistrationContainer = styled.div`
 font-family: inherit;
 display: flex;
 flex-direction: column;
+background-image: url(${futsalImg});
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center;
 background-color: #454FCB;
+background-size: cover;
 text-align: center;
 position: relative;
 font-family: Helvetica;
@@ -59,15 +67,15 @@ overflow-x: hidden;
 color: white;
 .x-button {
   cursor: pointer;
-  color: black;
-  background-color: #FFDE17;
-  width: 30px;
+  color: white;
+  background-color: #EA6229;
+  width: 35px;
   font-weight: bold;
-  height: 30px;
+  height: 35px;
   margin-right: 20px;
-  font-size: 1.4em;
+  font-size: 1.6em;
   border-radius: 50%;
-  border: solid black 2px;
+  border: solid white 2px;
 }
 
 .section {
@@ -113,6 +121,7 @@ input {
   }
 
   .foto-preview{
+    margin-top 18px;
     width:40vw;
     height:60vw;
     max-height: 300px;
@@ -195,7 +204,7 @@ box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 export const Title = styled.h3`
 // Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-family: Helvetica
-font-size: 32px;
+font-size: 48px !important; 
 text-shadow: 2px 2px #F24E07;
 font-weight: 800;
 `;

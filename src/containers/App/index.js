@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { routes } from "./routes";
 import { AppContainer } from "./style";
+import "../../index.css";
 
 class App extends React.Component {
   render() {
@@ -38,9 +39,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(App)
-);
+export default withRouter(connect(null, mapDispatchToProps)(App));

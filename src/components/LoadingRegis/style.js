@@ -8,6 +8,7 @@ export const LoadingRegisContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black!important;
     .loadingdiv{
         width: 85%;
         max-width: 350px;

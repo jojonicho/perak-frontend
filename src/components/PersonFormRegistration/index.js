@@ -38,7 +38,7 @@ class PersonFormRegistration extends React.Component {
               {foto && <img src={URL.createObjectURL(foto)} alt="" />}
             </div>
             <label htmlFor={`foto-${idForm}`} className="labelfile">
-              Choose File
+              Unggah
               <input
                 type="file"
                 className="hide-input"
@@ -85,7 +85,7 @@ class PersonFormRegistration extends React.Component {
             )}
           </div>
           <label htmlFor={idForm} className="labelfile">
-            Choose File
+            Unggah
             <input
               type="file"
               className="hide-input"

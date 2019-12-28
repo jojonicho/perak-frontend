@@ -71,7 +71,7 @@ export function setTeamImage(e) {
         payload: file
       });
     } else {
-      dispatch(error("Make Sure the file is Image and below 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
     }
   };
 }
@@ -87,7 +87,7 @@ export function setFoto(e, id, data) {
     ) {
       personData[id][5] = e.currentTarget.files[0];
     } else {
-      dispatch(error("Make Sure the file is Image and below 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
     }
     dispatch({
       type: SET_SELF_IMAGE,
@@ -107,7 +107,7 @@ export function setIdCardImage(e, id, data) {
     ) {
       personData[id][4] = e.currentTarget.files[0];
     } else {
-      dispatch(error("Make Sure the file is Image and below 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
     }
     dispatch({
       type: SET_ID_CARD_IMAGE,
@@ -148,7 +148,7 @@ export function setShowPlayer(index, nowIndex, personData) {
         showPlayer: index
       });
     } else {
-      dispatch(error("Please fill all forms first"));
+      dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
   };
 }
@@ -178,7 +178,7 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
       personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");
     } else {
-      dispatch(error("Please fill the last form"));
+      dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
     const showPlayer = numberPlayer.length;
     dispatch({
@@ -286,17 +286,17 @@ export function submit(personData, teamImage, teamName) {
   let check = true;
   if (personData.length < 10) {
     check = false;
-    message = "Minimum Player is 10";
+    message = "Minimum Pemain harus 10";
   }
   personData.forEach(x => {
     if (x[4] == null || x[0] === "") {
       check = false;
-      message = "Please fill up all Forms";
+      message = "Pastikan Seluruh Form Sudah Terisi";
     }
   });
   if (teamImage == null) {
     check = false;
-    message = "Please insert Team Image";
+    message = "Pastikan Anda Sudah Memasukan Logo Tim";
   }
   let teams;
   if (check) {
