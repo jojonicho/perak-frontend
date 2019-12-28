@@ -58,7 +58,7 @@ background-attachment: fixed;
 background-repeat: no-repeat;
 background-position: center;
 background-color: #454FCB;
-background-size: cover;
+background-size: contain;
 text-align: center;
 position: relative;
 font-family: Helvetica;

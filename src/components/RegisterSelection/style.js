@@ -18,7 +18,7 @@ export const RegisterSelectionContainer = styled.div`
   .title {
     color: white;
     text-shadow: 3px 3px #454fcb, -3px 3px #ea6229, -1px -2px #33b3a6;
-    font-size: 4rem;
+    font-size: calc(3rem + 1vw);
   }
   .green {
     background-color: #33b3a6;
