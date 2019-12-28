@@ -10,7 +10,7 @@ class RegisterSelection extends React.Component {
     return (
       <HeaderFooter color="blue">
         <RegisterSelectionContainer>
-          <h1 className="title">REGISTER HERE</h1>
+          <h1 className="title">DAFTAR DISINI</h1>
           <h1>CHOOSE YOUR GAME</h1>
           <div className="game-container">
             <Link to="/register/futsal" className="games green">
