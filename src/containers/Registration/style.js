@@ -47,7 +47,7 @@ export const TambahButton = styled.div`
 `;
 
 export const RegistrationContainer = styled.div`
-font-family: "Calibri";
+font-family: inherit;
 display: flex;
 flex-direction: column;
 background-color: #454FCB;

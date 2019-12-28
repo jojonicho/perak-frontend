@@ -1,19 +1,22 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 
+import { Link } from "react-router-dom";
 import { HeaderFooterContainer } from "./style";
 
 class HeaderFooter extends React.Component {
   render() {
-    const { children } = this.props;
+    const { children, color } = this.props;
     const colors = {
-      green: { backgroundColor: "#22B3A5", color: "white" }
+      green: { backgroundColor: "#22B3A5", color: "white" },
+      blue: { backgroundColor: "#454FCB", color: "white" }
     };
-    const color = "green";
     return (
       <HeaderFooterContainer>
         <div className="header" style={colors[color]}>
-          <h2>PERAK</h2>
+          <Link to="/" className="no-decor">
+            <h2>PERAK</h2>
+          </Link>
         </div>
         <div className="childcontainer">{children}</div>
         <div className="footer" style={colors[color]}>

@@ -8,6 +8,10 @@ export const HeaderFooterContainer = styled.div`
       font-size: 0.8rem;
     }
   }
+  .no-decor {
+    color: inherit;
+    text-decoration: none;
+  }
   .header {
     position: fixed;
     padding: 0 10px;
