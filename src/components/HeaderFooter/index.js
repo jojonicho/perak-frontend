@@ -3,18 +3,27 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import { HeaderFooterContainer } from "./style";
+import logo1 from "../../asset/logo1.png";
+import logo2 from "../../asset/logo2.png";
 
 class HeaderFooter extends React.Component {
   render() {
     const { children, color } = this.props;
     const colors = {
       green: { backgroundColor: "#22B3A5", color: "white" },
-      blue: { backgroundColor: "#454FCB", color: "white" }
+      blue: { backgroundColor: "#454FCB", color: "white" },
+      yellow: { backgroundColor: "#F1CF33", color: "#454FCB" },
+      red: { backgroundColor: "#EA6229", color: "white" }
     };
     return (
       <HeaderFooterContainer>
         <div className="header" style={colors[color]}>
           <Link to="/" className="no-decor">
+            {color === "blue" || "green" ? (
+              <img className="logo" src={logo1} alt="logo"></img>
+            ) : (
+              <img className="logo" src={logo2} alt="logo"></img>
+            )}
             <h2>PERAK</h2>
           </Link>
         </div>
