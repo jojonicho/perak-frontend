@@ -15,12 +15,14 @@ export const HeaderFooterContainer = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
+    padding: 0 10px;
   }
   .header {
     position: fixed;
     height: 60px;
-    padding: 0 10px;
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
   }
   .logo {
     height: 50px;
@@ -33,7 +35,7 @@ export const HeaderFooterContainer = styled.div`
     align-items: center;
   }
   .childcontainer {
-    padding-top: 40px;
+    padding-top: 60px;
   }
   position: relative;
 `;

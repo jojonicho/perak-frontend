@@ -26,6 +26,9 @@ class HeaderFooter extends React.Component {
             )}
             <h2>PERAK</h2>
           </Link>
+          <Link to="/daftar" className="no-decor">
+            <h2>DAFTAR</h2>
+          </Link>
         </div>
         <div className="childcontainer">{children}</div>
         <div className="footer" style={colors[color]}>
