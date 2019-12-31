@@ -5,6 +5,7 @@ import backgroundLeft from "../../asset/firstSectionBackgroundLeft.png";
 import secondBG from "../../asset/secondSectionBG.png";
 import secondBGLeft from "../../asset/secondSectionBGLeft.png";
 import thirdBG from "../../asset/thirdSectionBG.png";
+import fourthBG from "../../asset/fourthSectionBG.png";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
@@ -123,5 +124,22 @@ export const ThirdSection = styled.section`
     text-align: center;
     color: white;
     font-size: 3.5em;
+  }
+`;
+export const FourthSection = styled.section`
+  height: 150vh;
+  width: 100%;
+  background-color: #e5e6de;
+  background-image: url(${fourthBG});
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 180px;
+
+  .liga-title {
+    color: ${yellow};
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    text-align: center;
   }
 `;

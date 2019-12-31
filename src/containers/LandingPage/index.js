@@ -12,7 +12,8 @@ import {
   LandingPageContainer,
   FirstSection,
   SecondSection,
-  ThirdSection
+  ThirdSection,
+  FourthSection
 } from "./style";
 
 class LandingPage extends React.Component {
@@ -50,6 +51,9 @@ class LandingPage extends React.Component {
           <ThirdSection>
             <h1>COUNT DOWN</h1>
           </ThirdSection>
+          <FourthSection>
+            <h1 className="liga-title">LIGA 2020</h1>
+          </FourthSection>
         </HeaderFooter>
       </LandingPageContainer>
     );
