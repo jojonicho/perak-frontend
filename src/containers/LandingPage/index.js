@@ -53,9 +53,9 @@ class LandingPage extends React.Component {
           </ThirdSection>
           <FourthSection>
             <h1 className="liga-title">LIGA 2020</h1>
-            <div className="daftar-button">
-              <h1>DAFTAR SEKARANG</h1>
-            </div>
+            <button type="button" className="daftar-button">
+              DAFTAR SEKARANG
+            </button>
           </FourthSection>
         </HeaderFooter>
       </LandingPageContainer>
