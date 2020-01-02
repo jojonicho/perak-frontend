@@ -13,7 +13,8 @@ import {
   FirstSection,
   SecondSection,
   ThirdSection,
-  FourthSection
+  FourthSection,
+  FifthSection
 } from "./style";
 
 class LandingPage extends React.Component {
@@ -57,6 +58,39 @@ class LandingPage extends React.Component {
               DAFTAR SEKARANG
             </button>
           </FourthSection>
+          <FifthSection>
+            <h1 className="social-media-title">SOCIAL MEDIA</h1>
+            <div className="social-medias">
+              <div className="row-social-medias">
+                <div className="social-media">
+                  <div className="dark-circle"></div>
+                  <p>Instagram</p>
+                </div>
+                <div className="social-media">
+                  <div className="dark-circle"></div>
+                  <p>Twitter</p>
+                </div>
+                <div className="social-media">
+                  <div className="dark-circle"></div>
+                  <p>Linkedin</p>
+                </div>
+              </div>
+              <div className="row-social-medias">
+                <div className="social-media">
+                  <div className="dark-circle"></div>
+                  <p>Line</p>
+                </div>
+                <div className="social-media">
+                  <div className="dark-circle"></div>
+                  <p>Facebook</p>
+                </div>
+                <div className="social-media">
+                  <div className="dark-circle"></div>
+                  <p>Youtube</p>
+                </div>
+              </div>
+            </div>
+          </FifthSection>
         </HeaderFooter>
       </LandingPageContainer>
     );

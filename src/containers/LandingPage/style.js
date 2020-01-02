@@ -166,3 +166,25 @@ export const FourthSection = styled.section`
     padding-right: 10px;
   }
 `;
+
+export const FifthSection = styled.section`
+  * {
+    margin: 10px;
+  }
+  background-color: ${yellow};
+  color: ${dark};
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .social-media-title {
+    margin-top: 50px;
+    font-size: 3em;
+    border: solid 2px ${dark};
+    background-color: ${green};
+    padding: 10px 30px;
+  }
+  .row-social-medias {
+    display: flex;
+  }
+`;
