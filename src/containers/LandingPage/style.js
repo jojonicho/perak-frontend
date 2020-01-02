@@ -156,8 +156,12 @@ export const FourthSection = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 2.8em;
+    cursor: pointer;
+    font-weight: bold;
     color: ${dark};
+    border: none;
+    background-color: transparent;
     padding-top: 18px;
     padding-right: 10px;
   }
