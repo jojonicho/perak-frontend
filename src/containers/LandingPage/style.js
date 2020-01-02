@@ -6,11 +6,13 @@ import secondBG from "../../asset/secondSectionBG.png";
 import secondBGLeft from "../../asset/secondSectionBGLeft.png";
 import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.png";
+import daftarButton from "../../asset/daftarButton.png";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
 const white = "#E5E6DE";
 const blue = "#4452C3";
+const dark = "#0D2040";
 
 export const LandingPageContainer = styled.div`
   * {
@@ -38,7 +40,7 @@ export const FirstSection = styled.section`
     font-weight: bold;
     text-align: center;
     color: ${yellow};
-    text-shadow: 5px 8px #0d2040;
+    text-shadow: 5px 8px ${dark};
     font-size: calc(3rem + 1vw);
     margin: 50px;
   }
@@ -115,7 +117,7 @@ export const SecondSection = styled.section`
 export const ThirdSection = styled.section`
   height: 80vh;
   width: 100%;
-  background-color: #0d2040;
+  background-color: ${dark};
   background-image: url(${thirdBG});
   background-repeat: no-repeat;
   background-position: center right;
@@ -134,6 +136,9 @@ export const FourthSection = styled.section`
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .liga-title {
     color: ${yellow};
@@ -141,5 +146,19 @@ export const FourthSection = styled.section`
     font-weight: bold;
     font-size: 4em;
     text-align: center;
+  }
+  .daftar-button {
+    width: 600px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(${daftarButton});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: ${dark};
+    padding-top: 18px;
+    padding-right: 10px;
   }
 `;
