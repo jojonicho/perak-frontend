@@ -20,6 +20,9 @@ export const LandingPageContainer = styled.div`
     margin: 0;
     box-sizing: border-box;
   }
+  button:focus {
+    outline: 0;
+  }
 `;
 
 export const FirstSection = styled.section`
@@ -56,6 +59,13 @@ export const FirstSection = styled.section`
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
+  }
+  .avatar-button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
   }
   .circle {
     margin: 0 25px 0 25px;

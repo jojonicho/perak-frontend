@@ -19,6 +19,21 @@ import {
 
 class LandingPage extends React.Component {
   render() {
+    const handleClickAvatar = event => {
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("avatar-button").length;
+        i += 1
+      ) {
+        document
+          .getElementsByClassName("avatar-button")
+          [i].classList.remove("yellowed");
+      }
+
+      if (!event.target.classList.contains("yellowed")) {
+        event.target.classList.add("yellowed");
+      }
+    };
     return (
       <LandingPageContainer>
         <HeaderFooter color="blue">
@@ -26,11 +41,29 @@ class LandingPage extends React.Component {
             <h1 className="title">SELAMAT DATANG</h1>
             <img className="avatar" src={avatar} alt="avatar" />
             <div className="tema">
-              <p className="yellowed">FUN</p>
-              <div className="circle yellowedCircle"></div>
-              <p>FRESH</p>
+              <button
+                type="button"
+                onClick={e => handleClickAvatar(e)}
+                className="avatar-button fun yellowed"
+              >
+                FUN
+              </button>
               <div className="circle"></div>
-              <p>COMPREHENSIVE</p>
+              <button
+                type="button"
+                onClick={e => handleClickAvatar(e)}
+                className="avatar-button fresh"
+              >
+                FRESH
+              </button>
+              <div className="circle"></div>
+              <button
+                type="button"
+                onClick={e => handleClickAvatar(e)}
+                className="avatar-button comprehensive"
+              >
+                COMPREHENSIVE
+              </button>
             </div>
           </FirstSection>
           <SecondSection>
