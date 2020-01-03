@@ -142,7 +142,7 @@ class Registration extends React.Component {
               })}
               <TambahButton
                 onClick={
-                  props.numberPlayer.length <= 15
+                  props.numberPlayer.length < 15
                     ? () =>
                         props.addPlayer(
                           props.numberPlayer,

@@ -282,8 +282,8 @@ export function submit(personData, teamImage, teamName) {
     check = false;
     message = "Minimum Pemain harus 10";
   }
-  personData.forEach(x => {
-    if (x[5] == null || x[0] === "") {
+  personData.forEach((x, i) => {
+    if ((i !== 0 && x[5] == null) || x[0] === "") {
       check = false;
       message = "Pastikan Seluruh Form Sudah Terisi";
     }
