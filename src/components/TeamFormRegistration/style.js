@@ -38,7 +38,7 @@ margin-top: 30px;
     cursor: pointer;
 }
 input {    
-    padding: 2.5px;
+    padding: 5px 10px;
     margin: 20px  5px;
     background-color: white !important;
     border: none;

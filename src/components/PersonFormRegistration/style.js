@@ -14,7 +14,7 @@ export const PersonFormRegistrationContainer = styled.div`
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
-    padding: 2.5px;
+    padding: 5px 10px;
     width: 80%;
   }
   .input-long {

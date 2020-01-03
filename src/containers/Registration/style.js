@@ -42,15 +42,15 @@ export const TambahButton = styled.div`
     font-weight: bold;
   }
   width: 75%;
-  max-width: 450px;
-  height: 50px;
+  max-width: 420px;
+  height: 40px;
   font-weight: bold;
   border: none;
   border-radius: 10px;
   // box-shadow:  0 4px 2px 0px rgb(156, 64, 21);
   box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: #f26522;
   display: flex;
   align-items: center;
