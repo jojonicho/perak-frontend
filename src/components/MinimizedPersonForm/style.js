@@ -3,14 +3,16 @@ import styled from "styled-components";
 export const MinimizedPersonFormContainer = styled.div`
   width: 75vw;
   margin: 25px;
-  border: solid white 3px;
+  border: none;
   color: white;
   font-size: 2em;
   height: 50px;
-  background-color: #22b3a5;
+  background-color: #f26522;
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: inset 1px -7px 4px rgba(0, 0, 0, 0.25);
 
   .x-button {
     cursor: pointer;
@@ -19,14 +21,15 @@ export const MinimizedPersonFormContainer = styled.div`
     width: 30px;
     font-weight: bold;
     height: 30px;
-    margin-right: 20px;
+    position: absolute;
+    right: 20px;
     font-size: 0.7em;
     border-radius: 50%;
-    border: solid black 2px;
+    border: none;
   }
 `;
 export const MinimizePersonButton = styled.button`
-  background-color: #22b3a5;
+  background-color: rgb(0, 0, 0, 0);
   cursor: pointer;
   color: white;
   border: none;

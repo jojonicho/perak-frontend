@@ -11,8 +11,10 @@ export const PersonFormRegistrationContainer = styled.div`
   margin: 0px auto;
   input {
     margin: 20px 5px !important;
-    background-color: #ffde17 !important;
-    border-radius: 3px;
+    background-color: white !important;
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 2.5px;
     width: 80%;
   }
   .input-long {
@@ -27,8 +29,8 @@ export const PersonFormRegistrationContainer = styled.div`
     height: 40vw;
     max-height: 300px;
     max-width: 500px;
-    border: 2px white solid;
-    background-color: #ffde17;
+    // border: 2px white solid;
+    background-color: white;
     border-radius: 3px;
     img {
       width: 100%;

@@ -31,24 +31,6 @@ class PersonFormRegistration extends React.Component {
             autoComplete="off"
           />
         </Section>
-        {setFoto ? (
-          <Section>
-            Pas Foto
-            <div className="foto-preview">
-              {foto && <img src={URL.createObjectURL(foto)} alt="" />}
-            </div>
-            <label htmlFor={`foto-${idForm}`} className="labelfile">
-              Unggah
-              <input
-                type="file"
-                className="hide-input"
-                id={`foto-${idForm}`}
-                onChange={setFoto}
-                autoComplete="off"
-              />
-            </label>
-          </Section>
-        ) : null}
         <Section>
           ID Line / Whatsapp
           <input
@@ -76,6 +58,24 @@ class PersonFormRegistration extends React.Component {
             autoComplete="off"
           />
         </Section>
+        {setFoto ? (
+          <Section>
+            Pas Foto
+            <div className="foto-preview">
+              {foto && <img src={URL.createObjectURL(foto)} alt="" />}
+            </div>
+            <label htmlFor={`foto-${idForm}`} className="labelfile">
+              Unggah
+              <input
+                type="file"
+                className="hide-input"
+                id={`foto-${idForm}`}
+                onChange={setFoto}
+                autoComplete="off"
+              />
+            </label>
+          </Section>
+        ) : null}
         {/* <Section>
           Kartu Identitas
           <span className="input-info">KTM / KTP / Paspor</span>

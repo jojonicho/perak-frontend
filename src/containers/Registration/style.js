@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import futsalImg from "../../asset/futsal.png";
 
 export const Forms = styled.div`
   display: flex;
@@ -11,23 +10,31 @@ export const SubmitButton = styled.div`
   width: 40%;
   max-width: 350px;
   height: 40px;
-  border: solid white 3px;
+  border: none;
   font-weight: bold;
   color: white;
+  border-radius: 10px;
   font-size: 1.5em;
   margin-top: 100px;
-  background-color: #f24e07;
+  background-color: #22b3a5;
+  box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   // padding-left: 20px;
   cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
 `;
 export const LeftDiv = styled.div`
   width: 89%;
   display: flex;
   align-items: left;
   justify-content: space-between;
+  > div {
+    width: 100%;
+  }
 `;
 export const TambahButton = styled.div`
   .plus {
@@ -38,41 +45,46 @@ export const TambahButton = styled.div`
   max-width: 450px;
   height: 50px;
   font-weight: bold;
-  border: solid white 3px;
+  border: none;
+  border-radius: 10px;
+  // box-shadow:  0 4px 2px 0px rgb(156, 64, 21);
+  box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
   color: white;
   font-size: 2em;
-  background-color: #22b3a5;
+  background-color: #f26522;
   display: flex;
   align-items: center;
   justify-content: center;
   // padding-left: 20px;
   cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const RegistrationContainer = styled.div`
 font-family: inherit;
 display: flex;
 flex-direction: column;
-background-image: url(${futsalImg});
 background-attachment: fixed;
 background-repeat: no-repeat;
 background-position: center;
-background-color: #454FCB;
-background-size: contain;
+background-color: #E5E6DE;
 text-align: center;
 position: relative;
 font-family: Helvetica;
 padding-bottom: 30px;
 overflow-x: hidden;
-color: white;
-.x-button {
+color: black;
+.x-buttona {
   cursor: pointer;
   color: white;
   background-color: #EA6229;
   width: 35px;
   font-weight: bold;
   height: 35px;
-  margin-right: 20px;
+  position: absolute;
+  right: 20px;
   font-size: 1.6em;
   border-radius: 50%;
   border: solid white 2px;
@@ -91,7 +103,7 @@ color: white;
 input {
     // padding: 0px 10px;
     margin: 20px  5px;
-    background-color: #FFDE17 !important;
+    background-color: white !important;
     border: none;
     border-radius: 3px;
     // border: 2px black solid;
@@ -150,8 +162,12 @@ input {
 } */
 h3 {
     Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Helvetica;
 font-size: 32px;
 font-weight: 800;
+color: #4B59A7;
+margin: 30px 0;
+
 }
 `;
 
@@ -202,9 +218,10 @@ box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 `;
 
 export const Title = styled.h3`
-// Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-family: Helvetica
-font-size: 48px !important; 
-text-shadow: 2px 2px #F24E07;
-font-weight: 800;
+  // Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Helvetica;
+  font-size: 48px !important;
+  // text-shadow: 2px 2px #F24E07;
+  color: #4b59a7;
+  font-weight: 800;
 `;

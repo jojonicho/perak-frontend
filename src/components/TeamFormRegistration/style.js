@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TeamFormRegistrationContainer = styled.div`
 overflow-x:hidden;
 align-items: center;
+margin-top: 30px;
 .section {
     margin: 0px auto;
     text-align: left;
@@ -36,13 +37,13 @@ align-items: center;
     font-weight: 600;
     cursor: pointer;
 }
-input {
-    // padding: 0px 10px;
+input {    
+    padding: 2.5px;
     margin: 20px  5px;
-    background-color: #FFDE17 !important;
+    background-color: white !important;
     border: none;
-    border-radius: 3px;
-    // border: 2px black solid;
+    border-radius: 8px;
+    border: none;
     opacity: 1;
     color: #303030;
     font-size: 20px;

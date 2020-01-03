@@ -106,7 +106,7 @@ class Registration extends React.Component {
                     </Fade>
                     <button
                       type="button"
-                      className="x-button"
+                      className="x-buttona"
                       onClick={() =>
                         props.deletePlayer(
                           props.numberPlayer,
