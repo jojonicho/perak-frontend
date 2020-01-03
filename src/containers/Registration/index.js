@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import SweetAlert from "sweetalert2-react";
+
 // import swal from 'sweetalert2';
 
 import {
@@ -54,7 +55,7 @@ class Registration extends React.Component {
               type={props.done ? "success" : "warning"}
               onConfirm={props.stopAlert}
             />
-            <Title>FUTSAL REGISTRATION</Title>
+            <Title>REGISTRASI TIM FUTSAL</Title>
             <TeamFormRegistration
               teamImage={props.teamImage}
               setImage={props.setTeamImage}
@@ -165,7 +166,7 @@ class Registration extends React.Component {
                   )
                 }
               >
-                SUBMIT
+                DAFTAR
               </SubmitButton>
             </Forms>
             {props.loading ? (

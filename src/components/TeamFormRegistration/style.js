@@ -21,7 +21,7 @@ align-items: center;
 }
 .labelfile{
     margin: 20px 0;
-    align-self: flex-end;
+    align-self: center;
     background-color: #22B3A5;
     border: 2px white solid;
     opacity: 1;
@@ -71,7 +71,7 @@ input {
   }
 
 .long{
-    width: 100%;
+    width: 50%;
 }
 
 h3 {

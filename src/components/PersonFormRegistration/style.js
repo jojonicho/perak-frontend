@@ -22,6 +22,7 @@ export const PersonFormRegistrationContainer = styled.div`
     font-size: 15px;
   }
   .idcard-preview {
+    margin-top 18px;
     width: 70vw;
     height: 40vw;
     max-height: 300px;

@@ -25,7 +25,7 @@ class TeamFormRegistration extends React.Component {
               {teamImage && <img src={URL.createObjectURL(teamImage)} alt="" />}
             </div>
             <label htmlFor={idForm} className="labelfile">
-              Choose File
+              Unggah
               <input
                 type="file"
                 className="hide-input"

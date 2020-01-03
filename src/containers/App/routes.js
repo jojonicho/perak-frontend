@@ -8,8 +8,13 @@ export const routes = [
     path: "/"
   },
   {
+    component: RegisterSelection,
+    exact: true,
+    path: "/daftar"
+  },
+  {
     component: Registration,
     exact: true,
-    path: "/register/futsal"
+    path: "/daftar/futsal"
   }
 ];

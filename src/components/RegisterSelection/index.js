@@ -10,10 +10,10 @@ class RegisterSelection extends React.Component {
     return (
       <HeaderFooter color="blue">
         <RegisterSelectionContainer>
-          <h1 className="title">DAFTAR DISINI</h1>
-          <h1>CHOOSE YOUR GAME</h1>
+          <h1 className="title">DAFTARKAN DIRIMU SEKARANG</h1>
+          <h1>PILIH PERMAINANMU</h1>
           <div className="game-container">
-            <Link to="/register/futsal" className="games green">
+            <Link to="/daftar/futsal" className="games green">
               <h1>FUTSAL</h1>
             </Link>
           </div>

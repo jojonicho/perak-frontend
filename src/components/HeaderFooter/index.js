@@ -20,7 +20,7 @@ class HeaderFooter extends React.Component {
         </div>
         <div className="childcontainer">{children}</div>
         <div className="footer" style={colors[color]}>
-          <p>Copyright 2019 apalah apalah</p>
+          <p>Copyright 2019 Pesta Rakyat Komputer</p>
         </div>
       </HeaderFooterContainer>
     );
