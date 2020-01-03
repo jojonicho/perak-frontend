@@ -1,23 +1,35 @@
 import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import PropTypes from "prop-types";
 // import { connect } from "react-redux";
 
 import HeaderFooter from "../../components/HeaderFooter";
 // import logoGede from "../../asset/logoGede.png";
 import avatar from "../../asset/avatar.png";
-import prayaFerdi from "../../asset/prayaFerdi.png";
-import om from "../../asset/om.png";
+import avatarIjug from "../../asset/avatarIjug.png";
+import prayaFerdi2 from "../../asset/prayaFerdi2.png";
+import om2 from "../../asset/om2.png";
+import dekorYellow from "../../asset/dekorYellow.png";
+import dekorBlue from "../../asset/dekorBlue.png";
+import ball from "../../asset/ball.png";
 
 import {
   LandingPageContainer,
   FirstSection,
   SecondSection,
-  ThirdSection,
   FourthSection,
   FifthSection
 } from "./style";
 
 class LandingPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      stateAvatar: "fun"
+    };
+  }
+
   render() {
     const handleClickAvatar = event => {
       for (
@@ -29,17 +41,31 @@ class LandingPage extends React.Component {
           .getElementsByClassName("avatar-button")
           [i].classList.remove("yellowed");
       }
-
       if (!event.target.classList.contains("yellowed")) {
         event.target.classList.add("yellowed");
+
+        if (event.target.classList.contains("fun")) {
+          this.setState({ stateAvatar: "fun" });
+        } else if (event.target.classList.contains("fresh")) {
+          this.setState({ stateAvatar: "fresh" });
+        } else if (event.target.classList.contains("comprehensive")) {
+          this.setState({ stateAvatar: "comprehensive" });
+        }
       }
     };
+
+    const { stateAvatar } = this.state;
+    let imgAvatar = avatar;
+    if (stateAvatar === "fresh") imgAvatar = avatarIjug;
+    if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
     return (
       <LandingPageContainer>
         <HeaderFooter color="blue">
           <FirstSection>
+            <img className="dekorYellow" src={dekorYellow} alt="matahari" />
+            <img className="dekorBlue" src={dekorBlue} alt="snowflake" />
             <h1 className="title">SELAMAT DATANG</h1>
-            <img className="avatar" src={avatar} alt="avatar" />
+            <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" />
             <div className="tema">
               <button
                 type="button"
@@ -67,6 +93,7 @@ class LandingPage extends React.Component {
             </div>
           </FirstSection>
           <SecondSection>
+            <img className="ball" src={ball} alt="ball" />
             <h1 className="apa-itu">APA ITU PERAK?</h1>
             <p className="full-desc">
               Lorem ipsum dolor sit amet et delectus accommodare his consul
@@ -79,14 +106,44 @@ class LandingPage extends React.Component {
               efficiantur et tollit aliquip debitis mei. No deserunt
               mediocritatem mel. Lorem
             </p>
-            <img className="praya-ferdi" src={prayaFerdi} alt="praya ferdi" />
-            <img className="om" src={om} alt="om" />
+            <img className="praya-ferdi" src={prayaFerdi2} alt="praya ferdi" />
+            <img className="om" src={om2} alt="om" />
           </SecondSection>
-          <ThirdSection>
-            <h1>COUNT DOWN</h1>
-          </ThirdSection>
+
           <FourthSection>
             <h1 className="liga-title">LIGA 2020</h1>
+            <Carousel
+              className="image-carousel"
+              showStatus={false}
+              showThumbs={false}
+              infiniteLoop
+              autoPlay
+            >
+              <div>
+                <img
+                  className="avatar"
+                  id="avatar"
+                  src={imgAvatar}
+                  alt="avatar"
+                />
+              </div>
+              <div>
+                <img
+                  className="avatar"
+                  id="avatar"
+                  src={imgAvatar}
+                  alt="avatar"
+                />
+              </div>
+              <div>
+                <img
+                  className="avatar"
+                  id="avatar"
+                  src={imgAvatar}
+                  alt="avatar"
+                />
+              </div>
+            </Carousel>
             <button type="button" className="daftar-button">
               DAFTAR SEKARANG
             </button>

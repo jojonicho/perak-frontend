@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2832" height="2248" viewBox="0 0 2832 2248">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1134c2;
+      }
+
+      .cls-2 {
+        fill: #22a49f;
+      }
+
+      .cls-3, .cls-7 {
+        fill: #e7632a;
+      }
+
+      .cls-4, .cls-6 {
+        fill: #4351a3;
+      }
+
+      .cls-4, .cls-7 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5 {
+        fill: #f0d035;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="2540.47" y="1043.53" width="117.53" height="108"/>
+  <ellipse class="cls-2" cx="303.5" cy="2086" rx="126.5" ry="129"/>
+  <rect class="cls-3" x="303" y="173" width="2247" height="1929"/>
+  <path class="cls-4" d="M1719,2033.01h253.14V2153.5H1719V2033.01Z"/>
+  <rect class="cls-3" x="1783" y="2017" width="242" height="81"/>
+  <image id="Rectangle_14" data-name="Rectangle 14" x="292" y="1098" width="70" height="187" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAC7CAYAAADYIuhDAAABtUlEQVR4nO3ZsQkCURRFwVUMNLEkK7AD27AM6zA2sAJLMtFMMXYPmCy4MFPA5XPgRX9xuJxfA1+WkowTJggThAnCBGGCMEGYIEwQJggThAnCBGGCMEGYIEwQJggTVn/5qh8cr7dJ92cb5mP7eE627ZSCMEGYIEwQJggThAnCBGGCMEGYIEwQJggThAnCBGGCMEGYIEwQJggThAnCBGHCrH8i75v1ZNuzDXPa7ybdd0pBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmDHDMLwB5iQKLgNSppIAAAAASUVORK5CYII="/>
+  <image id="Rectangle_13" data-name="Rectangle 13" x="256" y="1162" width="70" height="187" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAC7CAYAAADYIuhDAAABxUlEQVR4nO3aMVFDYRBG0T/MK6CJJBTggJYCAchAB3UKFMRAvNAkXTDArd/OcI6Cb+7Mdnt4PX3d1yAf3+d1vN52H/QwqMkowgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJwgRhgjBBmCBMECYIE4QJ28RRP0+Pu28YF+bz5XnACqeUhAnCBGGCMEGYIEwQJggThAnCBGGCMEGYIEwQJggThAnCBGHC4fL2fh+5bGfb8Xr71wGKUwrCBGGCMEGYIEwQJggThAnCBGGCMEGYIEwQJggThAnChG3CF/ZE25RP7GmcUhAmCBOECcIEYYIwQZggTBAmCBOECcIEYYIwQZggTBAmCBOECcL8Za31C5+UEN8q0PnUAAAAAElFTkSuQmCC"/>
+  <rect class="cls-5" x="626" y="52" width="105" height="257"/>
+  <circle class="cls-6" cx="2121" cy="179" r="113"/>
+  <circle class="cls-5" cx="2540.47" cy="1224.47" r="72.47"/>
+  <path class="cls-7" d="M2550.21,1152H2658v144.94H2550.21V1152Z"/>
+</svg>

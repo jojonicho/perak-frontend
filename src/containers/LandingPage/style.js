@@ -3,9 +3,8 @@ import styled from "styled-components";
 import background from "../../asset/firstSectionBackground.png";
 import backgroundLeft from "../../asset/firstSectionBackgroundLeft.png";
 import secondBG from "../../asset/secondSectionBG.png";
-import secondBGLeft from "../../asset/secondSectionBGLeft.png";
 import thirdBG from "../../asset/thirdSectionBG.png";
-import fourthBG from "../../asset/fourthSectionBG.png";
+import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
 
 const yellow = "#F1CF33";
@@ -29,22 +28,75 @@ export const FirstSection = styled.section`
   height: 100vh;
   width: 100%;
   background-color: ${green};
-  background-size: 500px, contain;
+  background-size: 120px, contain;
   background-image: url(${backgroundLeft}), url(${background});
   background-repeat: no-repeat;
   background-position-x: left, right;
-  background-position-y: 0px, 30px;
+  background-position-y: bottom, 30px;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+  .dekorBlue,
+  .dekorYellow {
+    position: absolute;
+    width: 80px;
+  }
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @-moz-keyframes spinLeft {
+    100% {
+      -moz-transform: rotate(-360deg);
+    }
+  }
+  @-webkit-keyframes spinLeft {
+    100% {
+      -webkit-transform: rotate(-360deg);
+    }
+  }
+  @keyframes spinLeft {
+    100% {
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
+  .dekorYellow {
+    top: 40px;
+    left: -20px;
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+  }
+  .dekorBlue {
+    top: 50vh;
+    left: 10vw;
+    -webkit-animation: spinLeft 10s linear infinite;
+    -moz-animation: spinLeft 10s linear infinite;
+    animation: spinLeft 10s linear infinite;
+  }
+
   .title {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     text-align: center;
     color: ${yellow};
     text-shadow: 5px 8px ${dark};
-    font-size: calc(3rem + 1vw);
+    font-size: calc(4rem + 1vw);
     margin: 50px;
   }
   .avatar {
@@ -87,14 +139,23 @@ export const SecondSection = styled.section`
   width: 100%;
   background-color: ${yellow};
   background-repeat: no-repeat;
-  background-image: url(${secondBGLeft}), url(${secondBG});
-  background-position-x: 250px, right;
-  background-position-y: 300px, 60px;
+  background-image: url(${secondBG});
+  background-position-x: right;
+  background-position-y: 60px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 150px;
+
+  .ball {
+    position: absolute;
+    top: calc(100vh + 350px);
+    left: 230px;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+  }
   .apa-itu {
     color: ${blue};
     font-size: bold;
@@ -143,13 +204,18 @@ export const FourthSection = styled.section`
   width: 100%;
   background-color: #e5e6de;
   background-image: url(${fourthBG});
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  .image-carousel {
+    margin-top: 30px;
+    width: 500px;
+    height: 500px;
+  }
   .liga-title {
     color: ${yellow};
     font-family: "Montserrat", sans-serif;
