@@ -6,6 +6,7 @@ import secondBG from "../../asset/secondSectionBG.png";
 import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
+import ball from "../../asset/ball.png";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
@@ -149,12 +150,15 @@ export const SecondSection = styled.section`
   padding-top: 150px;
 
   .ball {
+    z-index: 2;
+    background-image: url(${ball});
+    background-size: cover;
+    width: 70px;
+    height: 70px;
     position: absolute;
     top: calc(100vh + 350px);
     left: 230px;
-    -webkit-animation: spin 4s linear infinite;
-    -moz-animation: spin 4s linear infinite;
-    animation: spin 4s linear infinite;
+    cursor: pointer;
   }
   .apa-itu {
     color: ${blue};
@@ -204,17 +208,17 @@ export const FourthSection = styled.section`
   width: 100%;
   background-color: #e5e6de;
   background-image: url(${fourthBG});
-  background-size: 90%;
+  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 180px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   .image-carousel {
     margin-top: 30px;
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 400px;
   }
   .liga-title {
     color: ${yellow};
@@ -223,7 +227,13 @@ export const FourthSection = styled.section`
     font-size: 4em;
     text-align: center;
   }
+  .desc-liga {
+    color: ${dark};
+    text-align: center;
+    width: 500px;
+  }
   .daftar-button {
+    margin-top: 20px;
     width: 600px;
     height: 120px;
     background-size: contain;

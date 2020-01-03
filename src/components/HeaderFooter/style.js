@@ -20,7 +20,7 @@ export const HeaderFooterContainer = styled.div`
   .header {
     position: fixed;
     height: 60px;
-    z-index: 1;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
   }

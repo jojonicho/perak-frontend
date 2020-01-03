@@ -1,4 +1,6 @@
 import React from "react";
+import posed from "react-pose";
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import PropTypes from "prop-types";
@@ -12,7 +14,10 @@ import prayaFerdi2 from "../../asset/prayaFerdi2.png";
 import om2 from "../../asset/om2.png";
 import dekorYellow from "../../asset/dekorYellow.png";
 import dekorBlue from "../../asset/dekorBlue.png";
-import ball from "../../asset/ball.png";
+import csl1 from "../../asset/csl1.JPG";
+import csl2 from "../../asset/csl2.JPG";
+import csl3 from "../../asset/csl3.JPG";
+import csl4 from "../../asset/csl4.JPG";
 
 import {
   LandingPageContainer,
@@ -22,15 +27,35 @@ import {
   FifthSection
 } from "./style";
 
+const Ball = posed.div({
+  draggable: true,
+  hoverable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.5
+  },
+  rotating: {
+    animation: "spin 4s linear infinite"
+  },
+  notRotating: {
+    animation: "none"
+  }
+});
+
 class LandingPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      stateAvatar: "fun"
+      stateAvatar: "fun",
+      ballIsClicked: false
     };
   }
 
   render() {
+    const { stateAvatar, ballIsClicked } = this.state;
+
     const handleClickAvatar = event => {
       for (
         let i = 0;
@@ -53,8 +78,12 @@ class LandingPage extends React.Component {
         }
       }
     };
+    const handleClickBall = () => {
+      if (!ballIsClicked) {
+        this.setState({ ballIsClicked: true });
+      }
+    };
 
-    const { stateAvatar } = this.state;
     let imgAvatar = avatar;
     if (stateAvatar === "fresh") imgAvatar = avatarIjug;
     if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
@@ -93,7 +122,11 @@ class LandingPage extends React.Component {
             </div>
           </FirstSection>
           <SecondSection>
-            <img className="ball" src={ball} alt="ball" />
+            <Ball
+              onMouseEnter={() => handleClickBall()}
+              className="ball"
+              pose={ballIsClicked ? "notRotating" : "rotating"}
+            ></Ball>
             <h1 className="apa-itu">APA ITU PERAK?</h1>
             <p className="full-desc">
               Lorem ipsum dolor sit amet et delectus accommodare his consul
@@ -120,30 +153,24 @@ class LandingPage extends React.Component {
               autoPlay
             >
               <div>
-                <img
-                  className="avatar"
-                  id="avatar"
-                  src={imgAvatar}
-                  alt="avatar"
-                />
+                <img className="csl" src={csl3} alt="csl3" />
               </div>
               <div>
-                <img
-                  className="avatar"
-                  id="avatar"
-                  src={imgAvatar}
-                  alt="avatar"
-                />
+                <img className="csl" src={csl1} alt="csl1" />
               </div>
               <div>
-                <img
-                  className="avatar"
-                  id="avatar"
-                  src={imgAvatar}
-                  alt="avatar"
-                />
+                <img className="csl" src={csl2} alt="csl2" />
+              </div>
+              <div>
+                <img className="csl" src={csl4} alt="csl4" />
               </div>
             </Carousel>
+            <p className="desc-liga">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+              praesentium ipsa, consectetur eius error, doloribus fuga aliquam,
+              odio dolores tempora aspernatur. Impedit delectus, quae rerum
+              minima nihil perferendis sint dolor.
+            </p>
             <button type="button" className="daftar-button">
               DAFTAR SEKARANG
             </button>
