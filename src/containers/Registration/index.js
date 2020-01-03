@@ -21,9 +21,9 @@ import LoadingRegis from "../../components/LoadingRegis";
 import HeaderFooter from "../../components/HeaderFooter";
 
 import {
+  // setIdCardImage,
   setTeamImage,
   addPlayer,
-  setIdCardImage,
   setPersonData,
   submit,
   setTeamName,
@@ -68,9 +68,9 @@ class Registration extends React.Component {
                 id="0"
                 idCardImage={props.personData[0][4]}
                 foto={props.personData[0][5]}
-                setIdCardImage={e =>
-                  props.setIdCardImage(e, 0, props.personData)
-                }
+                // setIdCardImage={e =>
+                //   props.setIdCardImage(e, 0, props.personData)
+                // }
                 // setFoto={e => props.setFoto(e, 0, props.personData)}
                 namaLengkap={props.personData[0][0]}
                 kontak={props.personData[0][1]}
@@ -89,9 +89,9 @@ class Registration extends React.Component {
                         id={index + 1}
                         idCardImage={props.personData[index + 1][4]}
                         foto={props.personData[index + 1][5]}
-                        setIdCardImage={e =>
-                          props.setIdCardImage(e, index + 1, props.personData)
-                        }
+                        // setIdCardImage={e =>
+                        //   props.setIdCardImage(e, index + 1, props.personData)
+                        // }
                         setFoto={e =>
                           props.setFoto(e, index + 1, props.personData)
                         }
@@ -199,8 +199,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     setTeamImage: e => dispatch(setTeamImage(e)),
-    setIdCardImage: (e, index, personData) =>
-      dispatch(setIdCardImage(e, index, personData)),
+    // setIdCardImage: (e, index, personData) =>
+    //   dispatch(setIdCardImage(e, index, personData)),
     setFoto: (e, index, personData) => dispatch(setFoto(e, index, personData)),
     setPersonData: (e, index, personData) =>
       dispatch(setPersonData(e, index, personData)),
