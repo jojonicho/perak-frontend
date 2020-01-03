@@ -38,6 +38,7 @@ export const FirstSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
   .dekorBlue,
   .dekorYellow {
     position: absolute;
@@ -92,15 +93,18 @@ export const FirstSection = styled.section`
   }
 
   .title {
+    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     text-align: center;
     color: ${yellow};
     text-shadow: 5px 8px ${dark};
     font-size: calc(4rem + 1vw);
-    margin: 50px;
+    margin: 10px 20px;
+    line-height: 50px;
   }
   .avatar {
+    margin-top: 20px;
     width: 450px;
   }
   .tema {
@@ -208,7 +212,7 @@ export const FourthSection = styled.section`
   width: 100%;
   background-color: #e5e6de;
   background-image: url(${fourthBG});
-  background-size: 80%;
+  background-size: 90vw;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 200px;
@@ -235,7 +239,7 @@ export const FourthSection = styled.section`
   .daftar-button {
     margin-top: 20px;
     width: 600px;
-    height: 120px;
+    height: 110px;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(${daftarButton});
@@ -249,7 +253,7 @@ export const FourthSection = styled.section`
     border: none;
     background-color: transparent;
     padding-top: 18px;
-    padding-right: 10px;
+    padding-right: 50px;
   }
 `;
 

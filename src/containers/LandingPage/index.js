@@ -1,5 +1,6 @@
 import React from "react";
 import posed from "react-pose";
+import SplitText from "react-pose-text";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -27,6 +28,19 @@ import {
   FifthSection
 } from "./style";
 
+const DaftarButton = posed.button({
+  hoverable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.2
+  },
+  rusak: {
+    transform: "rotate(45deg)"
+  }
+});
+
 const Ball = posed.div({
   draggable: true,
   hoverable: true,
@@ -44,17 +58,31 @@ const Ball = posed.div({
   }
 });
 
+const charPoses = {
+  exit: { y: 20, opacity: 0 },
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: ({ charInWordIndex }) => ({
+      type: "spring",
+      delay: charInWordIndex * 200,
+      damping: 10 - charInWordIndex * 1
+    })
+  }
+};
+
 class LandingPage extends React.Component {
   constructor() {
     super();
     this.state = {
       stateAvatar: "fun",
-      ballIsClicked: false
+      ballIsClicked: false,
+      daftarButtonIsHovered: false
     };
   }
 
   render() {
-    const { stateAvatar, ballIsClicked } = this.state;
+    const { stateAvatar, ballIsClicked, daftarButtonIsHovered } = this.state;
 
     const handleClickAvatar = event => {
       for (
@@ -84,6 +112,12 @@ class LandingPage extends React.Component {
       }
     };
 
+    const handleHoverDaftarButton = () => {
+      if (!daftarButtonIsHovered) {
+        this.setState({ daftarButtonIsHovered: true });
+      }
+    };
+
     let imgAvatar = avatar;
     if (stateAvatar === "fresh") imgAvatar = avatarIjug;
     if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
@@ -93,7 +127,14 @@ class LandingPage extends React.Component {
           <FirstSection>
             <img className="dekorYellow" src={dekorYellow} alt="matahari" />
             <img className="dekorBlue" src={dekorBlue} alt="snowflake" />
-            <h1 className="title">SELAMAT DATANG</h1>
+            <SplitText
+              className="title"
+              initialPose="exit"
+              pose="enter"
+              charPoses={charPoses}
+            >
+              SELAMAT DATANG
+            </SplitText>
             <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" />
             <div className="tema">
               <button
@@ -171,9 +212,13 @@ class LandingPage extends React.Component {
               odio dolores tempora aspernatur. Impedit delectus, quae rerum
               minima nihil perferendis sint dolor.
             </p>
-            <button type="button" className="daftar-button">
+            <DaftarButton
+              onMouseEnter={() => handleHoverDaftarButton()}
+              className="daftar-button"
+              pose={daftarButtonIsHovered ? "rusak" : null}
+            >
               DAFTAR SEKARANG
-            </button>
+            </DaftarButton>
           </FourthSection>
           <FifthSection>
             <h1 className="social-media-title">SOCIAL MEDIA</h1>
