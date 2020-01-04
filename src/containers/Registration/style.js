@@ -24,10 +24,13 @@ export const SubmitButton = styled.div`
   cursor: pointer;
 `;
 export const LeftDiv = styled.div`
-  width: 89%;
+  width: 100%;
   display: flex;
   align-items: left;
   justify-content: space-between;
+  > div {
+    width: 85%;
+  }
 `;
 export const TambahButton = styled.div`
   .plus {
