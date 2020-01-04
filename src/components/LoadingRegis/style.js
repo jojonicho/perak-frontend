@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const LoadingRegisContainer = styled.div`
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    right: 0;
+    top: 0;
+    overflow: hidden;
     background-color: rgba(63, 63, 63, 0.448);
     display: flex;
     justify-content: center;
@@ -24,7 +27,7 @@ export const LoadingRegisContainer = styled.div`
             height: 30px;
             width: 90%;
             .loadingbar{
-                height: 30px;
+                height: 24px;
                 background: linear-gradient(0.25turn, green ,green, rgb(0, 185, 0), green, green );
                 background-size: 1000px;
                 animation: loading 1s linear infinite;

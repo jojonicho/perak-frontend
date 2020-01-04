@@ -175,11 +175,11 @@ class Registration extends React.Component {
                 DAFTAR
               </SubmitButton>
             </Forms>
-            {props.loading ? (
-              <LoadingRegis now={props.loadNow} base={props.loadBase} />
-            ) : null}
           </RegistrationContainer>
         </Fade>
+        {props.loading ? (
+          <LoadingRegis now={props.loadNow} base={props.loadBase} />
+        ) : null}
       </HeaderFooter>
     );
   }

@@ -50,6 +50,7 @@ export const TambahButton = styled.div`
   justify-content: center;
   // padding-left: 20px;
   cursor: pointer;
+  margin-top: 30px;
 `;
 
 export const RegistrationContainer = styled.div`
@@ -155,6 +156,8 @@ h3 {
     Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-size: 32px;
 font-weight: 800;
+margin: 30px 0;
+margin-top: 50px;
 }
 `;
 
