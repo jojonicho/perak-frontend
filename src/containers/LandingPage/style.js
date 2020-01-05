@@ -208,9 +208,9 @@ export const SecondSection = styled.section`
     }
     .ball {
       left: 120px;
+      top: calc(100vh + 420px);
       width: 60px;
       height: 60px;
-      top: calc(100vh + 380px);
     }
     .full-desc {
       font-size: 1em;
@@ -240,13 +240,72 @@ export const SecondSection = styled.section`
     }
     .ball {
       left: 80px;
-      top: calc(100vh + 430px);
+      top: calc(100vh + 450px);
     }
     .apa-itu {
       font-size: 3.5em;
     }
     .full-desc {
       width: 470px;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    .full-desc {
+      width: 380px;
+    }
+    .praya-ferdi {
+      height: 600px;
+      top: 135vh;
+      left: -80px;
+    }
+    .ball {
+      left: 60px;
+      top: calc(100vh + 470px);
+      width: 50px;
+      height: 50px;
+    }
+  }
+  @media only screen and (max-width: 610px) {
+    .apa-itu {
+      margin-left: 10px;
+    }
+    .full-desc {
+      margin-left: 60px;
+      font-family: 0.5em;
+      width: 360px;
+    }
+  }
+  @media only screen and (max-width: 570px) {
+    .apa-itu {
+      margin-left: 10px;
+    }
+    .full-desc {
+      margin-left: 60px;
+      font-family: 0.3em;
+      width: 320px;
+    }
+  }
+  @media only screen and (max-width: 540px) {
+    padding-top: 40px;
+    .apa-itu {
+      margin-left: 0px;
+      margin-right: 100px;
+      width: 300px;
+    }
+    .full-desc {
+      font-family: 0.25em;
+      width: 300px;
+    }
+    .ball {
+      left: 60px;
+      top: calc(100vh + 560px);
+      width: 50px;
+      height: 50px;
+    }
+    .praya-ferdi {
+      height: 500px;
+      top: calc(100vh + 400px);
+      left: -60px;
     }
   }
 `;
@@ -358,10 +417,28 @@ export const FourthSection = styled.section`
     }
   }
   @media only screen and (max-width: 650px) {
-    height: 120vh;
+    height: 125vh;
+    .image-carousel {
+      margin: 110px 0 130px 0;
+    }
     .desc-liga {
       font-size: 0.9em;
-      margin-bottom: 100px;
+      margin: 10px;
+    }
+  }
+  @media only screen and (max-width: 610px) {
+    .image-carousel {
+      margin: 90px 0 110px 0;
+    }
+  }
+  @media only screen and (max-width: 570px) {
+    height: 115vh;
+    .image-carousel {
+      width: 400px;
+      margin: 80px 0 95px 0;
+    }
+    .desc-liga {
+      width: 80%;
     }
   }
 `;
