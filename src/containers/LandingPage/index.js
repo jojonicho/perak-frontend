@@ -4,6 +4,10 @@ import SplitText from "react-pose-text";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import FadeIn from "react-fade-in";
+import Lottie from "react-lottie";
+// import ReactLoading from "react-loading";
+import "bootstrap/dist/css/bootstrap.css";
 // import PropTypes from "prop-types";
 // import { connect } from "react-redux";
 
@@ -19,8 +23,10 @@ import csl1 from "../../asset/csl1.JPG";
 import csl2 from "../../asset/csl2.JPG";
 import csl3 from "../../asset/csl3.JPG";
 import csl4 from "../../asset/csl4.JPG";
+import * as pinwheelData from "../../asset/pinwheelLoading.json";
 
 import {
+  LoadingScreen,
   LandingPageContainer,
   FirstSection,
   SecondSection,
@@ -28,18 +34,29 @@ import {
   FifthSection
 } from "./style";
 
+import logoGede2 from "../../asset/logoGede2.png";
+
 const DaftarButton = posed.button({
   hoverable: true,
   init: {
     scale: 1
   },
   hover: {
-    scale: 1.2
+    scale: 1.1
   },
   rusak: {
     transform: "rotate(45deg)"
   }
 });
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: pinwheelData.default,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
 
 const Ball = posed.div({
   draggable: true,
@@ -72,17 +89,29 @@ const charPoses = {
 };
 
 class LandingPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      done: undefined,
       stateAvatar: "fun",
       ballIsClicked: false,
       daftarButtonIsHovered: false
     };
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ done: true });
+    }, 2000);
+  }
+
   render() {
-    const { stateAvatar, ballIsClicked, daftarButtonIsHovered } = this.state;
+    const {
+      done,
+      stateAvatar,
+      ballIsClicked,
+      daftarButtonIsHovered
+    } = this.state;
 
     const handleClickAvatar = event => {
       for (
@@ -121,7 +150,16 @@ class LandingPage extends React.Component {
     let imgAvatar = avatar;
     if (stateAvatar === "fresh") imgAvatar = avatarIjug;
     if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
-    return (
+
+    return !done ? (
+      <LoadingScreen>
+        <FadeIn>
+          <img className="logo-loading" src={logoGede2} alt="logo" />
+          <Lottie options={defaultOptions} height={120} width={120} />
+          {/* <ReactLoading className="loading-bar" type="bars" color="#F1CF33" /> */}
+        </FadeIn>
+      </LoadingScreen>
+    ) : (
       <LandingPageContainer>
         <HeaderFooter color="dark">
           <FirstSection>

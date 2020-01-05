@@ -14,6 +14,22 @@ const blue = "#4452C3";
 const dark = "#0D2040";
 // const red = "#E9622A";
 
+export const LoadingScreen = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: ${dark};
+  flex-direction: column;
+  padding-top: 150px;
+  .logo-loading {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .loading-bar svg {
+  }
+`;
+
 export const LandingPageContainer = styled.div`
   * {
     padding: 0;
@@ -271,7 +287,7 @@ export const SecondSection = styled.section`
     }
     .full-desc {
       margin-left: 60px;
-      font-family: 0.5em;
+      font-family: 1em;
       width: 360px;
     }
   }
@@ -281,7 +297,7 @@ export const SecondSection = styled.section`
     }
     .full-desc {
       margin-left: 60px;
-      font-family: 0.3em;
+      font-size: 0.9em;
       width: 320px;
     }
   }
@@ -293,7 +309,6 @@ export const SecondSection = styled.section`
       width: 300px;
     }
     .full-desc {
-      font-family: 0.25em;
       width: 300px;
     }
     .ball {
@@ -304,8 +319,58 @@ export const SecondSection = styled.section`
     }
     .praya-ferdi {
       height: 500px;
-      top: calc(100vh + 400px);
+      top: calc(100vh + 350px);
       left: -60px;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    .ball {
+      top: calc(100vh + 510px);
+    }
+    .full-desc {
+      width: 280px;
+    }
+  }
+  @media only screen and (max-width: 475px) {
+    .apa-itu {
+      font-size: 2.5em;
+      margin-left: 30px;
+    }
+    .full-desc {
+      font-size: 0.85em;
+      width: 280px;
+    }
+    .om {
+      height: 280px;
+      top: calc(540px + 100vh);
+      right: -60px;
+    }
+    .praya-ferdi {
+      height: 500px;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .apa-itu {
+      margin-left: 70px;
+    }
+    .full-desc {
+      margin-left: 60px;
+      width: 220px;
+      font-size: 0.85em;
+    }
+    .om {
+      top: calc(540px + 100vh);
+      right: -60px;
+    }
+    .praya-ferdi {
+      top: calc(100vh + 350px);
+      left: -75px;
+    }
+    .ball {
+      left: 40px;
+      top: calc(100vh + 520px);
+      width: 40px;
+      height: 40px;
     }
   }
 `;
@@ -427,19 +492,66 @@ export const FourthSection = styled.section`
     }
   }
   @media only screen and (max-width: 610px) {
+    height: 115vh;
     .image-carousel {
       margin: 90px 0 110px 0;
     }
   }
   @media only screen and (max-width: 570px) {
-    height: 115vh;
+    height: 110vh;
+    .liga-title {
+      font-size: 4em;
+    }
     .image-carousel {
       width: 400px;
-      margin: 80px 0 95px 0;
+      margin: 100px 0 95px 0;
     }
     .desc-liga {
       width: 80%;
     }
+  }
+  @media only screen and (max-width: 520px) {
+    height: 105vh;
+    .image-carousel {
+      width: 350px;
+      margin: 95px 0 95px 0;
+    }
+    .daftar-button {
+      width: 400px;
+      padding-top: 15px;
+    }
+  }
+  @media only screen and (max-width: 475px) {
+    padding-top: 50px;
+    .liga-title {
+      font-size: 3em;
+    }
+    .daftar-button {
+      width: 300px;
+      font-size: 1.5em;
+      padding-top: 10px;
+      padding-right: 5px;
+    }
+  }
+  @media only screen and (max-width: 440px) {
+    .image-carousel {
+      width: 300px;
+      margin: 90px 0 95px 0;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .image-carousel {
+      width: 280px;
+      margin: 85px 0 95px 0;
+    }
+    .desc-liga {
+      font-size: 0.8em;
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    padding-top: 100px;
+    height: 115vh;
+    background-position-y: 160px;
   }
 `;
 // Kefas Satrio Bangkit Solid Liquid
@@ -456,12 +568,18 @@ export const FifthSection = styled.section`
   align-items: center;
   .social-media-title {
     margin-top: 50px;
+    text-align: center;
     font-size: 3em;
     border: solid 2px ${dark};
     background-color: ${green};
-    padding: 10px 30px;
   }
   .row-social-medias {
     display: flex;
+  }
+  @media only screen and (max-width: 440px) {
+    .social-media-title {
+      width: 80%;
+      font-size: 2em;
+    }
   }
 `;
