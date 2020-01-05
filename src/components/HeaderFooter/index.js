@@ -3,8 +3,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import { HeaderFooterContainer } from "./style";
-import logo1 from "../../asset/logo1.png";
-import logo2 from "../../asset/logo2.png";
+// import logo1 from "../../asset/logo1.png";
+import logoBaruTerang from "../../asset/logoBaruTerang.png";
 
 class HeaderFooter extends React.Component {
   render() {
@@ -20,12 +20,7 @@ class HeaderFooter extends React.Component {
       <HeaderFooterContainer>
         <div className="header" style={colors[color]}>
           <Link to="/" className="no-decor">
-            {color === "blue" || "green" ? (
-              <img className="logo" src={logo1} alt="logo"></img>
-            ) : (
-              <img className="logo" src={logo2} alt="logo"></img>
-            )}
-            <h2>PERAK</h2>
+            <img className="logo" src={logoBaruTerang} alt="logo"></img>
           </Link>
           <Link to="/daftar" className="no-decor">
             <h2>DAFTAR</h2>

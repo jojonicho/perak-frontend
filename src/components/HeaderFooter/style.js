@@ -23,10 +23,11 @@ export const HeaderFooterContainer = styled.div`
     z-index: 100;
     display: flex;
     justify-content: space-between;
+    padding-right: 10px;
   }
+
   .logo {
-    height: 50px;
-    margin-right: 10px;
+    height: 40px;
   }
   .header,
   .footer {
