@@ -11,7 +11,7 @@ import HeaderFooter from "../../components/HeaderFooter";
 // import logoGede from "../../asset/logoGede.png";
 import avatar from "../../asset/avatar.png";
 import avatarIjug from "../../asset/avatarIjug.png";
-import prayaFerdi2 from "../../asset/prayaFerdi2.png";
+import prayaFerdi3 from "../../asset/prayaFerdi3.png";
 import om2 from "../../asset/om2.png";
 import dekorYellow from "../../asset/dekorYellow.png";
 import dekorBlue from "../../asset/dekorBlue.png";
@@ -180,7 +180,7 @@ class LandingPage extends React.Component {
               efficiantur et tollit aliquip debitis mei. No deserunt
               mediocritatem mel. Lorem
             </p>
-            <img className="praya-ferdi" src={prayaFerdi2} alt="praya ferdi" />
+            <img className="praya-ferdi" src={prayaFerdi3} alt="praya ferdi" />
             <img className="om" src={om2} alt="om" />
           </SecondSection>
 

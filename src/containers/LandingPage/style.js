@@ -20,6 +20,7 @@ export const LandingPageContainer = styled.div`
     margin: 0;
     box-sizing: border-box;
   }
+  overflow-x: hidden;
   button:focus {
     outline: 0;
   }
@@ -93,7 +94,6 @@ export const FirstSection = styled.section`
   }
 
   .title {
-    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     text-align: center;
@@ -192,6 +192,56 @@ export const SecondSection = styled.section`
     top: calc(300px + 100vh);
     right: 0px;
   }
+  @media only screen and (max-width: 1190px) {
+    .praya-ferdi {
+      left: -100px;
+    }
+    .ball {
+      left: 140px;
+    }
+    .om {
+      right: -100px;
+    }
+  }
+  @media only screen and (max-width: 960px) {
+    .apa-itu {
+      font-size: 4em;
+    }
+    .ball {
+      left: 120px;
+      width: 60px;
+      height: 60px;
+      top: calc(100vh + 380px);
+    }
+    .full-desc {
+      font-size: 1em;
+      margin-top: 30px;
+      margin-left: 110px;
+    }
+    .praya-ferdi {
+      height: 700px;
+      top: 120vh;
+      left: -60px;
+    }
+    .om {
+      height: 350px;
+      position: absolute;
+      top: calc(450px + 100vh);
+      right: -50px;
+    }
+  }
+  @media only screen and (max-width: 790px) {
+    .om {
+      right: -80px;
+    }
+    .praya-ferdi {
+      left: -80px;
+    }
+    .ball {
+      left: 80px;
+      top: calc(100vh + 380px);
+    }
+  }
 `;
 export const ThirdSection = styled.section`
   height: 80vh;
@@ -219,10 +269,10 @@ export const FourthSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .image-carousel {
-    margin-top: 30px;
+    margin: 30px 0;
     width: 550px;
-    height: 400px;
   }
   .liga-title {
     color: ${yellow};
@@ -241,6 +291,7 @@ export const FourthSection = styled.section`
     width: 600px;
     height: 110px;
     background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url(${daftarButton});
     display: flex;
@@ -253,7 +304,27 @@ export const FourthSection = styled.section`
     border: none;
     background-color: transparent;
     padding-top: 18px;
-    padding-right: 50px;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 1190px) {
+    background-size: 100vw;
+    .daftar-button {
+      width: 550px;
+      height: 90px;
+      font-size: 2em;
+      padding-top: 10px;
+      padding-right: 0px;
+    }
+  }
+  @media only screen and (max-width: 1030px) {
+    background-size: 110vw;
+  }
+  @media only screen and (max-width: 960px) {
+    background-size: 120vw;
+  }
+  @media only screen and (max-width: 860px) {
+    background-size: 150vw;
   }
 `;
 
