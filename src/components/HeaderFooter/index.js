@@ -13,7 +13,8 @@ class HeaderFooter extends React.Component {
       green: { backgroundColor: "#22B3A5", color: "white" },
       blue: { backgroundColor: "#454FCB", color: "white" },
       yellow: { backgroundColor: "#F1CF33", color: "#454FCB" },
-      red: { backgroundColor: "#EA6229", color: "white" }
+      red: { backgroundColor: "#EA6229", color: "white" },
+      dark: { backgroundColor: "#0D2040", color: "white" }
     };
     return (
       <HeaderFooterContainer>

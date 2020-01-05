@@ -123,7 +123,7 @@ class LandingPage extends React.Component {
     if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
     return (
       <LandingPageContainer>
-        <HeaderFooter color="blue">
+        <HeaderFooter color="dark">
           <FirstSection>
             <img className="dekorYellow" src={dekorYellow} alt="matahari" />
             <img className="dekorBlue" src={dekorBlue} alt="snowflake" />

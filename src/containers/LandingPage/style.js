@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import background from "../../asset/firstSectionBackground.png";
 import backgroundLeft from "../../asset/firstSectionBackgroundLeft.png";
 import secondBG from "../../asset/secondSectionBG.png";
@@ -21,7 +20,6 @@ export const LandingPageContainer = styled.div`
     margin: 0;
     box-sizing: border-box;
   }
-  overflow-x: hidden;
   button:focus {
     outline: 0;
   }
@@ -271,7 +269,7 @@ export const FourthSection = styled.section`
   width: 100%;
   background-color: #e5e6de;
   background-image: url(${fourthBG});
-  background-size: 90vw;
+  background-size: 80vw;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 200px;
@@ -315,9 +313,8 @@ export const FourthSection = styled.section`
     padding-top: 18px;
     padding-right: 20px;
   }
-
-  @media only screen and (max-width: 1190px) {
-    background-size: 100vw;
+  @media only screen and (max-width: 1300px) {
+    background-size: 90vw;
     .daftar-button {
       width: 550px;
       height: 90px;
@@ -325,6 +322,9 @@ export const FourthSection = styled.section`
       padding-top: 10px;
       padding-right: 0px;
     }
+  }
+  @media only screen and (max-width: 1190px) {
+    background-size: 100vw;
   }
   @media only screen and (max-width: 1030px) {
     background-size: 110vw;
@@ -335,24 +335,38 @@ export const FourthSection = styled.section`
   @media only screen and (max-width: 860px) {
     padding-top: 40px;
     height: 130vh;
-    background-size: 100vw;
+    background-size: 110vw;
     background-position-y: 110px;
     .image-carousel {
       margin: 90px 0 30px 0;
+      width: 500px;
     }
     .liga-title {
       font-size: 5em;
       color: ${blue};
     }
+  }
+  @media only screen and (max-width: 820px) {
     .desc-liga {
-      margin-bottom: 70px;
+      margin-bottom: 120px;
     }
   }
   @media only screen and (max-width: 690px) {
-    background-size: 170vw;
+    .image-carousel {
+      margin: 90px 0 30px 0;
+      width: 450px;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    height: 120vh;
+    .desc-liga {
+      font-size: 0.9em;
+      margin-bottom: 100px;
+    }
   }
 `;
-
+// Kefas Satrio Bangkit Solid Liquid
+// Halo Web Dev, aku ganteng
 export const FifthSection = styled.section`
   * {
     margin: 10px;
