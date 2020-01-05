@@ -13,6 +13,7 @@ const green = "#33B3A6";
 const white = "#E5E6DE";
 const blue = "#4452C3";
 const dark = "#0D2040";
+// const red = "#E9622A";
 
 export const LandingPageContainer = styled.div`
   * {
@@ -232,14 +233,22 @@ export const SecondSection = styled.section`
   }
   @media only screen and (max-width: 790px) {
     .om {
+      top: calc(500px + 100vh);
       right: -80px;
     }
     .praya-ferdi {
+      top: 125vh;
       left: -80px;
     }
     .ball {
       left: 80px;
-      top: calc(100vh + 380px);
+      top: calc(100vh + 430px);
+    }
+    .apa-itu {
+      font-size: 3.5em;
+    }
+    .full-desc {
+      width: 470px;
     }
   }
 `;
@@ -324,7 +333,23 @@ export const FourthSection = styled.section`
     background-size: 120vw;
   }
   @media only screen and (max-width: 860px) {
-    background-size: 150vw;
+    padding-top: 40px;
+    height: 130vh;
+    background-size: 100vw;
+    background-position-y: 110px;
+    .image-carousel {
+      margin: 90px 0 30px 0;
+    }
+    .liga-title {
+      font-size: 5em;
+      color: ${blue};
+    }
+    .desc-liga {
+      margin-bottom: 70px;
+    }
+  }
+  @media only screen and (max-width: 690px) {
+    background-size: 170vw;
   }
 `;
 

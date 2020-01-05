@@ -185,7 +185,7 @@ class LandingPage extends React.Component {
           </SecondSection>
 
           <FourthSection>
-            <h1 className="liga-title">LIGA 2020</h1>
+            <h1 className="liga-title">LIGA</h1>
             <Carousel
               className="image-carousel"
               showStatus={false}
