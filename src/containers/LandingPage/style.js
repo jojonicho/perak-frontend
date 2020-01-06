@@ -31,6 +31,8 @@ export const LoadingScreen = styled.div`
 `;
 
 export const LandingPageContainer = styled.div`
+  width: 100vw;
+  overflow: hidden;
   * {
     padding: 0;
     margin: 0;
@@ -43,7 +45,7 @@ export const LandingPageContainer = styled.div`
 
 export const FirstSection = styled.section`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: ${green};
   background-size: 120px, contain;
   background-image: url(${backgroundLeft}), url(${background});
@@ -120,7 +122,7 @@ export const FirstSection = styled.section`
   }
   .avatar {
     margin-top: 20px;
-    width: 450px;
+    width: 400px;
   }
   .tema {
     margin-top: 50px;
@@ -215,7 +217,7 @@ export const SecondSection = styled.section`
       left: 140px;
     }
     .om {
-      right: -100px;
+      right: 0px;
     }
   }
   @media only screen and (max-width: 960px) {
@@ -242,13 +244,13 @@ export const SecondSection = styled.section`
       height: 350px;
       position: absolute;
       top: calc(450px + 100vh);
-      right: -50px;
+      right: 0px;
     }
   }
   @media only screen and (max-width: 790px) {
     .om {
       top: calc(500px + 100vh);
-      right: -80px;
+      right: 0px;
     }
     .praya-ferdi {
       top: 125vh;
@@ -341,9 +343,9 @@ export const SecondSection = styled.section`
       width: 280px;
     }
     .om {
-      height: 280px;
+      height: 200px;
       top: calc(540px + 100vh);
-      right: -60px;
+      right: 0px;
     }
     .praya-ferdi {
       height: 500px;
@@ -359,8 +361,24 @@ export const SecondSection = styled.section`
       font-size: 0.85em;
     }
     .om {
+      top: calc(650px + 100vh);
+      right: 0px;
+    }
+    .praya-ferdi {
+      top: calc(100vh + 350px);
+      left: -75px;
+    }
+    .ball {
+      left: 40px;
+      top: calc(100vh + 520px);
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media only screen and (max-width: 325px) {
+    .om {
       top: calc(540px + 100vh);
-      right: -60px;
+      right: 0px;
     }
     .praya-ferdi {
       top: calc(100vh + 350px);

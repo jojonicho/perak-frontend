@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const HeaderFooterContainer = styled.div`
+  overflow: hidden;
+  width: 100%;
   .footer {
     position: absolute;
     height: 40px;
@@ -38,5 +40,4 @@ export const HeaderFooterContainer = styled.div`
   .childcontainer {
     padding-top: 60px;
   }
-  position: relative;
 `;

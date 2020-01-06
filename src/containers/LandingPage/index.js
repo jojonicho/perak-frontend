@@ -102,7 +102,7 @@ class LandingPage extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ done: true });
-    }, 2000);
+    }, 0);
   }
 
   render() {
@@ -202,6 +202,8 @@ class LandingPage extends React.Component {
           </FirstSection>
           <SecondSection>
             <Ball
+              onTouchStart={() => handleClickBall()}
+              onClick={() => handleClickBall()}
               onMouseEnter={() => handleClickBall()}
               className="ball"
               pose={ballIsClicked ? "notRotating" : "rotating"}
