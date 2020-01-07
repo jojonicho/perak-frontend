@@ -110,9 +110,16 @@ class LandingPage extends React.Component {
   }
 
   componentDidMount() {
+    let duration = 2000;
+    if (window.sessionStorage.hasOpened) duration = 2000;
+    else {
+      duration = 15000;
+      window.sessionStorage.hasOpened = true;
+    }
+
     setTimeout(() => {
       this.setState({ done: true });
-    }, 2000);
+    }, duration);
   }
 
   render() {
