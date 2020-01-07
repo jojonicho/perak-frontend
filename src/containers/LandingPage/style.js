@@ -58,7 +58,7 @@ export const FirstSection = styled.section`
   background-image: url(${pohonKecil});
   background-repeat: no-repeat;
   background-position: bottom left;
-  background-size: 1200px;
+  background-size: 1000px;
   background-position-x: -1px;
   background-color: #E5E6DE;
   background-attachment: fixed;
