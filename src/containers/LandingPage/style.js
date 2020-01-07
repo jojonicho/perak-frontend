@@ -446,20 +446,20 @@ export const FourthSection = styled.section`
   background-size: 80vw;
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 230px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .image-carousel {
-    margin: 50px 0;
-    width: 680px;
+    margin: 30px 0;
+    width: 500px;
   }
   .liga-title {
     color: ${yellow};
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
   }
   .desc-liga {
