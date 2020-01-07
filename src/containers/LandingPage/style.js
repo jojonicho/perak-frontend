@@ -6,6 +6,7 @@ import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
 import ball from "../../asset/ball.png";
+import pohon from "../../asset/pohon.gif";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
@@ -46,17 +47,36 @@ export const LandingPageContainer = styled.div`
 export const FirstSection = styled.section`
   height: 100vh;
   width: 100vw;
-  background-color: ${green};
+  /* background-color: ${green};
   background-size: 120px, contain;
   background-image: url(${backgroundLeft}), url(${background});
   background-repeat: no-repeat;
   background-position-x: left, right;
-  background-position-y: bottom, 30px;
-  background-attachment: fixed;
+  background-position-y: bottom, 30px; */
+
+  background-image: url(${pohon});
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  background-position-x: -1px;
+  background-color: #E5E6DE;
+  /* background-attachment: fixed; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+  position: relative;
+  top: 0;
+  left:0;
+  .selamat-datang{
+    width: 700px;
+    position: absolute;
+    top:-200px;
+    right:-200px;
+    -webkit-animation: spin 25s linear infinite;
+    -moz-animation: spin 25s linear infinite;
+    animation: spin 25s linear infinite;
+  }
   .dekorBlue,
   .dekorYellow {
     position: absolute;
@@ -157,7 +177,7 @@ export const FirstSection = styled.section`
 `;
 
 export const SecondSection = styled.section`
-  height: 100vh;
+  height: 800px;
   width: 100%;
   background-color: ${yellow};
   background-repeat: no-repeat;
@@ -206,8 +226,8 @@ export const SecondSection = styled.section`
   .om {
     height: 550px;
     position: absolute;
-    top: calc(300px + 100vh);
-    right: 0px;
+    top: calc(310px + 100vh);
+    right: -20px;
   }
   @media only screen and (max-width: 1190px) {
     .praya-ferdi {
@@ -343,8 +363,8 @@ export const SecondSection = styled.section`
       width: 280px;
     }
     .om {
-      height: 200px;
-      top: calc(540px + 100vh);
+      height: 250px;
+      top: calc(610px + 100vh);
       right: 0px;
     }
     .praya-ferdi {
@@ -360,10 +380,6 @@ export const SecondSection = styled.section`
       width: 220px;
       font-size: 0.85em;
     }
-    .om {
-      top: calc(650px + 100vh);
-      right: 0px;
-    }
     .praya-ferdi {
       top: calc(100vh + 350px);
       left: -75px;
@@ -376,16 +392,19 @@ export const SecondSection = styled.section`
     }
   }
   @media only screen and (max-width: 325px) {
+    .apa-itu {
+      margin-left: 100px;
+    }
     .om {
-      top: calc(540px + 100vh);
+      top: calc(610px + 100vh);
       right: 0px;
     }
     .praya-ferdi {
       top: calc(100vh + 350px);
-      left: -75px;
+      left: -80px;
     }
     .ball {
-      left: 40px;
+      left: 30px;
       top: calc(100vh + 520px);
       width: 40px;
       height: 40px;
@@ -568,8 +587,17 @@ export const FourthSection = styled.section`
   }
   @media only screen and (max-width: 380px) {
     padding-top: 100px;
-    height: 115vh;
+    height: 120vh;
     background-position-y: 160px;
+  }
+  @media only screen and (max-width: 325px) {
+    padding-top: 50px;
+    background-position-y: 120px;
+    height: 120vh;
+    .image-carousel {
+      width: 250px;
+      margin: 70px 0 90px 0;
+    }
   }
 `;
 // Kefas Satrio Bangkit Solid Liquid

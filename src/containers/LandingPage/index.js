@@ -1,6 +1,6 @@
 import React from "react";
 import posed from "react-pose";
-import SplitText from "react-pose-text";
+// import SplitText from "react-pose-text";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -13,16 +13,17 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import HeaderFooter from "../../components/HeaderFooter";
 // import logoGede from "../../asset/logoGede.png";
-import avatar from "../../asset/avatar.png";
-import avatarIjug from "../../asset/avatarIjug.png";
+// import avatar from "../../asset/avatar.png";
+// import avatarIjug from "../../asset/avatarIjug.png";
 import prayaFerdi3 from "../../asset/prayaFerdi3.png";
 import om2 from "../../asset/om2.png";
-import dekorYellow from "../../asset/dekorYellow.png";
-import dekorBlue from "../../asset/dekorBlue.png";
+// import dekorYellow from "../../asset/dekorYellow.png";
+// import dekorBlue from "../../asset/dekorBlue.png";
 import csl1 from "../../asset/csl1.JPG";
 import csl2 from "../../asset/csl2.JPG";
 import csl3 from "../../asset/csl3.JPG";
 import csl4 from "../../asset/csl4.JPG";
+import selamatDatang from "../../asset/selamatDatang.png";
 import * as pinwheelData from "../../asset/pinwheelLoading.json";
 
 import {
@@ -75,25 +76,25 @@ const Ball = posed.div({
   }
 });
 
-const charPoses = {
-  exit: { y: 20, opacity: 0 },
-  enter: {
-    y: 0,
-    opacity: 1,
-    transition: ({ charInWordIndex }) => ({
-      type: "spring",
-      delay: charInWordIndex * 200,
-      damping: 10 - charInWordIndex * 1
-    })
-  }
-};
+// const charPoses = {
+//   exit: { y: 20, opacity: 0 },
+//   enter: {
+//     y: 0,
+//     opacity: 1,
+//     transition: ({ charInWordIndex }) => ({
+//       type: "spring",
+//       delay: charInWordIndex * 200,
+//       damping: 10 - charInWordIndex * 1
+//     })
+//   }
+// };
 
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       done: undefined,
-      stateAvatar: "fun",
+      // stateAvatar: "fun",
       ballIsClicked: false,
       daftarButtonIsHovered: false
     };
@@ -102,39 +103,40 @@ class LandingPage extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ done: true });
-    }, 0);
+    }, 2000);
   }
 
   render() {
     const {
       done,
-      stateAvatar,
+      // stateAvatar,
       ballIsClicked,
       daftarButtonIsHovered
     } = this.state;
 
-    const handleClickAvatar = event => {
-      for (
-        let i = 0;
-        i < document.getElementsByClassName("avatar-button").length;
-        i += 1
-      ) {
-        document
-          .getElementsByClassName("avatar-button")
-          [i].classList.remove("yellowed");
-      }
-      if (!event.target.classList.contains("yellowed")) {
-        event.target.classList.add("yellowed");
+    // const handleClickAvatar = event => {
+    //   for (
+    //     let i = 0;
+    //     i < document.getElementsByClassName("avatar-button").length;
+    //     i += 1
+    //   ) {
+    //     document
+    //       .getElementsByClassName("avatar-button")
+    //       [i].classList.remove("yellowed");
+    //   }
+    //   if (!event.target.classList.contains("yellowed")) {
+    //     event.target.classList.add("yellowed");
 
-        if (event.target.classList.contains("fun")) {
-          this.setState({ stateAvatar: "fun" });
-        } else if (event.target.classList.contains("fresh")) {
-          this.setState({ stateAvatar: "fresh" });
-        } else if (event.target.classList.contains("comprehensive")) {
-          this.setState({ stateAvatar: "comprehensive" });
-        }
-      }
-    };
+    //     if (event.target.classList.contains("fun")) {
+    //       this.setState({ stateAvatar: "fun" });
+    //     } else if (event.target.classList.contains("fresh")) {
+    //       this.setState({ stateAvatar: "fresh" });
+    //     } else if (event.target.classList.contains("comprehensive")) {
+    //       this.setState({ stateAvatar: "comprehensive" });
+    //     }
+    //   }
+    // };
+
     const handleClickBall = () => {
       if (!ballIsClicked) {
         this.setState({ ballIsClicked: true });
@@ -147,9 +149,9 @@ class LandingPage extends React.Component {
       }
     };
 
-    let imgAvatar = avatar;
-    if (stateAvatar === "fresh") imgAvatar = avatarIjug;
-    if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
+    // let imgAvatar = avatar;
+    // if (stateAvatar === "fresh") imgAvatar = avatarIjug;
+    // if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
 
     return !done ? (
       <LoadingScreen>
@@ -163,18 +165,24 @@ class LandingPage extends React.Component {
       <LandingPageContainer>
         <HeaderFooter color="dark">
           <FirstSection>
-            <img className="dekorYellow" src={dekorYellow} alt="matahari" />
-            <img className="dekorBlue" src={dekorBlue} alt="snowflake" />
-            <SplitText
+            <img
+              src={selamatDatang}
+              className="selamat-datang"
+              alt="selamat-datang"
+            />
+            {/* <button type="button" className="tema">FUN</button> */}
+            {/* <img className="dekorYellow" src={dekorYellow} alt="matahari" />
+            <img className="dekorBlue" src={dekorBlue} alt="snowflake" /> */}
+            {/* <SplitText
               className="title"
               initialPose="exit"
               pose="enter"
               charPoses={charPoses}
             >
               SELAMAT DATANG
-            </SplitText>
-            <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" />
-            <div className="tema">
+            </SplitText> */}
+            {/* <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" /> */}
+            {/* <div className="tema">
               <button
                 type="button"
                 onClick={e => handleClickAvatar(e)}
@@ -198,7 +206,7 @@ class LandingPage extends React.Component {
               >
                 COMPREHENSIVE
               </button>
-            </div>
+            </div> */}
           </FirstSection>
           <SecondSection>
             <Ball
