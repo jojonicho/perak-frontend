@@ -9,7 +9,8 @@ export const PersonFormRegistrationContainer = styled.div`
   flex-direction: column;
   text-align: center;
   margin: 0px 0;
-  input {
+
+  input , .foto-preview{
     margin: 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
@@ -49,19 +50,25 @@ export const PersonFormRegistrationContainer = styled.div`
     display: none;
   }
   .labelfile {
-    margin: 20px 0;
-    background-color: #22b3a5;
-    border: 2px white solid;
-    opacity: 1;
-    color: white;
-    font-size: 20px;
-    width: 30%;
-    min-width: 170px;
-    max-width: 270px;
-    padding: 5px 0px;
-    outline: none;
-    text-align: center;
+    width: 100px;
+    max-width: 350px;
+    height: 40px;
+    margin: 0 5px !important;
+    border: none;
     font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.7em;
+    background-color: #22b3a5;
+    box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0 3px;
+    cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
     cursor: pointer;
   }
 `;

@@ -20,24 +20,28 @@ margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
 }
-.labelfile{
-    margin: 20px 0;
-    align-self: center;
-    background-color: #22B3A5;
-    border: 2px white solid;
-    opacity: 1;
-    color: white;
-    font-size: 20px;
-    width: 30%;
-    min-width: 170px;
-    max-width: 270px;
-    padding: 5px 0px;
-    outline: none;
-    text-align:center;
+.labelfile {
+    width: 100px;
+    max-width: 350px;
+    height: 40px;
+    margin: 0 5px !important;
+    border: none;
     font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.7em;
+    background-color: #22b3a5;
+    box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0 3px;
     cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
 }
-input {    
+input ,.logo-preview {    
     padding: 5px 10px;
     margin: 20px  5px;
     background-color: white !important;
@@ -62,9 +66,9 @@ input {
     height:50vw;
     max-height: 200px;
     max-width: 200px;
-    border: 2px white solid;
-    background-color: #FFDE17;
-    border-radius: 3px;
+    // border: 2px white solid;
+    // background-color: #FFDE17;
+    // border-radius: 3px;
     img {
         width: 100%;
         height: 100%;

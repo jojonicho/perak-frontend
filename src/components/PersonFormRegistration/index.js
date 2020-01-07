@@ -61,19 +61,23 @@ class PersonFormRegistration extends React.Component {
         {setFoto ? (
           <Section>
             Pas Foto
-            <div className="foto-preview">
-              {foto && <img src={URL.createObjectURL(foto)} alt="" />}
-            </div>
-            <label htmlFor={`foto-${idForm}`} className="labelfile">
-              Unggah
+            <div className="d-flex flex-wrap align-items-center">
               <input
-                type="file"
-                className="hide-input"
-                id={`foto-${idForm}`}
-                onChange={setFoto}
-                autoComplete="off"
+                className="foto-preview"
+                disabled
+                value={foto && foto.name}
               />
-            </label>
+              <label htmlFor={`foto-${idForm}`} className="labelfile">
+                Unggah
+                <input
+                  type="file"
+                  className="hide-input"
+                  id={`foto-${idForm}`}
+                  onChange={setFoto}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
           </Section>
         ) : null}
         {/* <Section>

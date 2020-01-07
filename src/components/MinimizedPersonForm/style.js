@@ -13,7 +13,7 @@ export const MinimizedPersonFormContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: inset 1px -7px 4px rgba(0, 0, 0, 0.25);
-
+  position: relative;
   .x-button {
     cursor: pointer;
     color: black;

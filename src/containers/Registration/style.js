@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bg from "../../asset/regisbg.png";
 
 export const Forms = styled.div`
   display: flex;
@@ -34,6 +35,7 @@ export const LeftDiv = styled.div`
   justify-content: space-between;
   > div {
     width: 85%;
+    height: inherit !important;
   }
 `;
 export const TambahButton = styled.div`
@@ -58,6 +60,9 @@ export const TambahButton = styled.div`
   // padding-left: 20px;
   cursor: pointer;
   margin-top: 30px;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const RegistrationContainer = styled.div`
@@ -65,9 +70,11 @@ font-family: inherit;
 display: flex;
 flex-direction: column;
 background-attachment: fixed;
-background-repeat: no-repeat;
+background-repeat: repeat-y;
 background-position: center;
 background-color: #E5E6DE;
+background-image: url(${bg});
+background-size: 100vw;
 text-align: center;
 position: relative;
 font-family: Helvetica;
@@ -113,37 +120,8 @@ input {
     min-width: 170px;
     -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-
+    outline: none;
 }
-
-.logo-preview{
-    width:50vw;
-    height:50vw;
-    max-height: 200px;
-    max-width: 200px;
-    border: 2px white solid;
-    background-color: #FFDE17;
-    border-radius: 3px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
-  }
-
-  .foto-preview{
-    margin-top 18px;
-    width:40vw;
-    height:60vw;
-    max-height: 300px;
-    max-width: 200px;
-    border: 2px white solid;
-    background-color: #FFDE17;
-    border-radius: 3px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
-  }
 
 .long{
     width: 100%;
