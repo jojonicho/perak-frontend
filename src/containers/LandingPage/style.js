@@ -6,7 +6,7 @@ import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
 import ball from "../../asset/ball.png";
-import pohonKecilBanget from "../../asset/pohonKecilBanget.gif";
+// import pohonKecilParah from "../../asset/pohonKecilParah.gif";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
@@ -54,11 +54,10 @@ export const FirstSection = styled.section`
   background-position-x: left, right;
   background-position-y: bottom, 30px; */
 
-  /* background-image: url("https://s5.gifyu.com/images/pohonCompressed.gif"); */
-  background-image: url(${pohonKecilBanget});
+  background-image: url("https://s5.gifyu.com/images/pohonCompressed.gif");
   background-repeat: no-repeat;
   background-position: bottom left;
-  background-size: 1000px;
+  /* background-size: 1000px; */
   background-position-x: -1px;
   background-color: #E5E6DE;
   background-attachment: fixed;
