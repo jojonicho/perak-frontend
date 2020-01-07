@@ -6,7 +6,7 @@ import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
 import ball from "../../asset/ball.png";
-import pohon from "../../asset/pohon.gif";
+import pohonCompressed from "../../asset/pohonCompressed.gif";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
@@ -54,7 +54,7 @@ export const FirstSection = styled.section`
   background-position-x: left, right;
   background-position-y: bottom, 30px; */
 
-  background-image: url(${pohon});
+  background-image: url(${pohonCompressed});
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 1200px;
