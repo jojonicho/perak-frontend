@@ -1,4 +1,5 @@
 import React from "react";
+// import ReactDOM from 'react-dom';
 import posed from "react-pose";
 // import SplitText from "react-pose-text";
 
@@ -105,6 +106,7 @@ class LandingPage extends React.Component {
       ballIsClicked: false,
       daftarButtonIsHovered: false
     };
+    this.firstSection = React.createRef();
   }
 
   componentDidMount() {
@@ -171,7 +173,7 @@ class LandingPage extends React.Component {
     ) : (
       <LandingPageContainer>
         <HeaderFooter color="dark">
-          <FirstSection>
+          <FirstSection ref={this.firstSection}>
             <img
               src={selamatDatang}
               className="selamat-datang"
