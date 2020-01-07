@@ -57,10 +57,10 @@ export const FirstSection = styled.section`
   background-image: url(${pohon});
   background-repeat: no-repeat;
   background-position: bottom left;
-  background-size: contain;
+  background-size: 1200px;
   background-position-x: -1px;
   background-color: #E5E6DE;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,10 +68,23 @@ export const FirstSection = styled.section`
   position: relative;
   top: 0;
   left:0;
+  .tema{
+    color: white;
+    font-size: 4em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 55vh;
+    height: 130px;
+    width: 260px;
+    border-radius: 90px;
+    background-color: ${blue};
+  }
+  
   .selamat-datang{
-    width: 700px;
+    width: 650px;
     position: absolute;
-    top:-200px;
+    top:-240px;
     right:-200px;
     -webkit-animation: spin 25s linear infinite;
     -moz-animation: spin 25s linear infinite;
@@ -144,7 +157,7 @@ export const FirstSection = styled.section`
     margin-top: 20px;
     width: 400px;
   }
-  .tema {
+  /* .tema {
     margin-top: 50px;
     color: ${white};
     font-weight: bold;
@@ -153,7 +166,7 @@ export const FirstSection = styled.section`
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
-  }
+  } */
   .avatar-button {
     color: white;
     border: none;
@@ -433,20 +446,20 @@ export const FourthSection = styled.section`
   background-size: 80vw;
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 200px;
+  padding-top: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .image-carousel {
-    margin: 30px 0;
-    width: 550px;
+    margin: 50px 0;
+    width: 680px;
   }
   .liga-title {
     color: ${yellow};
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 5em;
     text-align: center;
   }
   .desc-liga {
@@ -587,6 +600,10 @@ export const FourthSection = styled.section`
   }
   @media only screen and (max-width: 380px) {
     padding-top: 100px;
+    .image-carousel {
+      width: 250px;
+      margin: 70px 0 90px 0;
+    }
     height: 120vh;
     background-position-y: 160px;
   }
@@ -594,10 +611,6 @@ export const FourthSection = styled.section`
     padding-top: 50px;
     background-position-y: 120px;
     height: 120vh;
-    .image-carousel {
-      width: 250px;
-      margin: 70px 0 90px 0;
-    }
   }
 `;
 // Kefas Satrio Bangkit Solid Liquid

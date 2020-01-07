@@ -44,9 +44,16 @@ const DaftarButton = posed.button({
   },
   hover: {
     scale: 1.1
+  }
+});
+
+const ButtonTema = posed.button({
+  hoverable: true,
+  init: {
+    scale: 1
   },
-  rusak: {
-    transform: "rotate(45deg)"
+  hover: {
+    scale: 1.2
   }
 });
 
@@ -103,7 +110,7 @@ class LandingPage extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ done: true });
-    }, 2000);
+    }, 0);
   }
 
   render() {
@@ -170,7 +177,9 @@ class LandingPage extends React.Component {
               className="selamat-datang"
               alt="selamat-datang"
             />
-            {/* <button type="button" className="tema">FUN</button> */}
+            <ButtonTema type="button" className="tema">
+              FUN
+            </ButtonTema>
             {/* <img className="dekorYellow" src={dekorYellow} alt="matahari" />
             <img className="dekorBlue" src={dekorBlue} alt="snowflake" /> */}
             {/* <SplitText
