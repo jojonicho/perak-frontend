@@ -28,12 +28,12 @@ export const SubmitButton = styled.div`
   }
 `;
 export const LeftDiv = styled.div`
-  width: 89%;
+  width: 100%;
   display: flex;
   align-items: left;
   justify-content: space-between;
   > div {
-    width: 100%;
+    width: 85%;
   }
 `;
 export const TambahButton = styled.div`
@@ -57,9 +57,7 @@ export const TambahButton = styled.div`
   justify-content: center;
   // padding-left: 20px;
   cursor: pointer;
-  :active {
-    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
-  }
+  margin-top: 30px;
 `;
 
 export const RegistrationContainer = styled.div`
@@ -165,9 +163,8 @@ h3 {
     font-family: Helvetica;
 font-size: 32px;
 font-weight: 800;
-color: #4B59A7;
 margin: 30px 0;
-
+margin-top: 50px;
 }
 `;
 

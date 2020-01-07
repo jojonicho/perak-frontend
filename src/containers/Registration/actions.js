@@ -64,14 +64,14 @@ export function setTeamImage(e) {
     const file = e.currentTarget.files[0];
     if (
       !file ||
-      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 4000000)
     ) {
       dispatch({
         type: SET_TEAM_IMAGE,
         payload: file
       });
     } else {
-      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 4 MB"));
     }
   };
 }
@@ -83,11 +83,11 @@ export function setFoto(e, id, data) {
     console.log(e.currentTarget.files[0]);
     if (
       !file ||
-      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 4000000)
     ) {
       personData[id][5] = e.currentTarget.files[0];
     } else {
-      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 4 MB"));
     }
     dispatch({
       type: SET_SELF_IMAGE,
@@ -103,11 +103,11 @@ export function setIdCardImage(e, id, data) {
     console.log(e.currentTarget.files[0]);
     if (
       !file ||
-      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 4000000)
     ) {
       personData[id][4] = e.currentTarget.files[0];
     } else {
-      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 4 MB"));
     }
     dispatch({
       type: SET_ID_CARD_IMAGE,
@@ -167,7 +167,8 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     const numberPlayer = Array.from(nowPlayer);
     if (
       nowIndex === 0 ||
-      (personData[nowIndex][5] != null && personData[nowIndex][0] !== "")
+      (personData[nowIndex][5] != null &&
+        personData[nowIndex][0] !== ": 30px 0")
     ) {
       personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");

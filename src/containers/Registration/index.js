@@ -84,7 +84,13 @@ class Registration extends React.Component {
               {props.numberPlayer.map(function x(a, index) {
                 return index + 1 === props.showPlayer ? (
                   <LeftDiv>
-                    <Fade distance="10%" duration={1000} collapse top>
+                    <Fade
+                      distance="10%"
+                      duration={1000}
+                      collapse
+                      top
+                      className="anjay"
+                    >
                       <PersonFormRegistration
                         id={index + 1}
                         idCardImage={props.personData[index + 1][4]}
@@ -169,11 +175,11 @@ class Registration extends React.Component {
                 DAFTAR
               </SubmitButton>
             </Forms>
-            {props.loading ? (
-              <LoadingRegis now={props.loadNow} base={props.loadBase} />
-            ) : null}
           </RegistrationContainer>
         </Fade>
+        {props.loading ? (
+          <LoadingRegis now={props.loadNow} base={props.loadBase} />
+        ) : null}
       </HeaderFooter>
     );
   }

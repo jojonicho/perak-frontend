@@ -8,7 +8,7 @@ export const PersonFormRegistrationContainer = styled.div`
   width: 100%;
   flex-direction: column;
   text-align: center;
-  margin: 0px auto;
+  margin: 0px 0;
   input {
     margin: 20px 5px !important;
     background-color: white !important;
@@ -16,6 +16,7 @@ export const PersonFormRegistrationContainer = styled.div`
     min-width: 200px;
     padding: 5px 10px;
     width: 80%;
+    max-width: 450px;
   }
   .input-long {
     width: 90%;

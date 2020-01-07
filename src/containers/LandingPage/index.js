@@ -1,20 +1,33 @@
 import React from "react";
+import posed from "react-pose";
+// import SplitText from "react-pose-text";
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import FadeIn from "react-fade-in";
+import Lottie from "react-lottie";
+// import ReactLoading from "react-loading";
+import "bootstrap/dist/css/bootstrap.css";
 // import PropTypes from "prop-types";
 // import { connect } from "react-redux";
 
 import HeaderFooter from "../../components/HeaderFooter";
 // import logoGede from "../../asset/logoGede.png";
-import avatar from "../../asset/avatar.png";
-import avatarIjug from "../../asset/avatarIjug.png";
-import prayaFerdi2 from "../../asset/prayaFerdi2.png";
+// import avatar from "../../asset/avatar.png";
+// import avatarIjug from "../../asset/avatarIjug.png";
+import prayaFerdi3 from "../../asset/prayaFerdi3.png";
 import om2 from "../../asset/om2.png";
-import dekorYellow from "../../asset/dekorYellow.png";
-import dekorBlue from "../../asset/dekorBlue.png";
-import ball from "../../asset/ball.png";
+// import dekorYellow from "../../asset/dekorYellow.png";
+// import dekorBlue from "../../asset/dekorBlue.png";
+import csl1 from "../../asset/csl1.JPG";
+import csl2 from "../../asset/csl2.JPG";
+import csl3 from "../../asset/csl3.JPG";
+import csl4 from "../../asset/csl4.JPG";
+import selamatDatang from "../../asset/selamatDatang.png";
+import * as pinwheelData from "../../asset/pinwheelLoading.json";
 
 import {
+  LoadingScreen,
   LandingPageContainer,
   FirstSection,
   SecondSection,
@@ -22,51 +35,163 @@ import {
   FifthSection
 } from "./style";
 
+import logoGede2 from "../../asset/logoGede2.png";
+
+const DaftarButton = posed.button({
+  hoverable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.1
+  }
+});
+
+const ButtonTema = posed.button({
+  hoverable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.2
+  }
+});
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: pinwheelData.default,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
+
+const Ball = posed.div({
+  draggable: true,
+  hoverable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.5
+  },
+  rotating: {
+    animation: "spin 4s linear infinite"
+  },
+  notRotating: {
+    animation: "none"
+  }
+});
+
+// const charPoses = {
+//   exit: { y: 20, opacity: 0 },
+//   enter: {
+//     y: 0,
+//     opacity: 1,
+//     transition: ({ charInWordIndex }) => ({
+//       type: "spring",
+//       delay: charInWordIndex * 200,
+//       damping: 10 - charInWordIndex * 1
+//     })
+//   }
+// };
+
 class LandingPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      stateAvatar: "fun"
+      done: undefined,
+      // stateAvatar: "fun",
+      ballIsClicked: false,
+      daftarButtonIsHovered: false
     };
   }
 
-  render() {
-    const handleClickAvatar = event => {
-      for (
-        let i = 0;
-        i < document.getElementsByClassName("avatar-button").length;
-        i += 1
-      ) {
-        document
-          .getElementsByClassName("avatar-button")
-          [i].classList.remove("yellowed");
-      }
-      if (!event.target.classList.contains("yellowed")) {
-        event.target.classList.add("yellowed");
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ done: true });
+    }, 0);
+  }
 
-        if (event.target.classList.contains("fun")) {
-          this.setState({ stateAvatar: "fun" });
-        } else if (event.target.classList.contains("fresh")) {
-          this.setState({ stateAvatar: "fresh" });
-        } else if (event.target.classList.contains("comprehensive")) {
-          this.setState({ stateAvatar: "comprehensive" });
-        }
+  render() {
+    const {
+      done,
+      // stateAvatar,
+      ballIsClicked,
+      daftarButtonIsHovered
+    } = this.state;
+
+    // const handleClickAvatar = event => {
+    //   for (
+    //     let i = 0;
+    //     i < document.getElementsByClassName("avatar-button").length;
+    //     i += 1
+    //   ) {
+    //     document
+    //       .getElementsByClassName("avatar-button")
+    //       [i].classList.remove("yellowed");
+    //   }
+    //   if (!event.target.classList.contains("yellowed")) {
+    //     event.target.classList.add("yellowed");
+
+    //     if (event.target.classList.contains("fun")) {
+    //       this.setState({ stateAvatar: "fun" });
+    //     } else if (event.target.classList.contains("fresh")) {
+    //       this.setState({ stateAvatar: "fresh" });
+    //     } else if (event.target.classList.contains("comprehensive")) {
+    //       this.setState({ stateAvatar: "comprehensive" });
+    //     }
+    //   }
+    // };
+
+    const handleClickBall = () => {
+      if (!ballIsClicked) {
+        this.setState({ ballIsClicked: true });
       }
     };
 
-    const { stateAvatar } = this.state;
-    let imgAvatar = avatar;
-    if (stateAvatar === "fresh") imgAvatar = avatarIjug;
-    if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
-    return (
+    const handleHoverDaftarButton = () => {
+      if (!daftarButtonIsHovered) {
+        this.setState({ daftarButtonIsHovered: true });
+      }
+    };
+
+    // let imgAvatar = avatar;
+    // if (stateAvatar === "fresh") imgAvatar = avatarIjug;
+    // if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
+
+    return !done ? (
+      <LoadingScreen>
+        <FadeIn>
+          <img className="logo-loading" src={logoGede2} alt="logo" />
+          <Lottie options={defaultOptions} height={120} width={120} />
+          {/* <ReactLoading className="loading-bar" type="bars" color="#F1CF33" /> */}
+        </FadeIn>
+      </LoadingScreen>
+    ) : (
       <LandingPageContainer>
-        <HeaderFooter color="blue">
+        <HeaderFooter color="dark">
           <FirstSection>
-            <img className="dekorYellow" src={dekorYellow} alt="matahari" />
-            <img className="dekorBlue" src={dekorBlue} alt="snowflake" />
-            <h1 className="title">SELAMAT DATANG</h1>
-            <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" />
-            <div className="tema">
+            <img
+              src={selamatDatang}
+              className="selamat-datang"
+              alt="selamat-datang"
+            />
+            <ButtonTema type="button" className="tema">
+              FUN
+            </ButtonTema>
+            {/* <img className="dekorYellow" src={dekorYellow} alt="matahari" />
+            <img className="dekorBlue" src={dekorBlue} alt="snowflake" /> */}
+            {/* <SplitText
+              className="title"
+              initialPose="exit"
+              pose="enter"
+              charPoses={charPoses}
+            >
+              SELAMAT DATANG
+            </SplitText> */}
+            {/* <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" /> */}
+            {/* <div className="tema">
               <button
                 type="button"
                 onClick={e => handleClickAvatar(e)}
@@ -90,10 +215,16 @@ class LandingPage extends React.Component {
               >
                 COMPREHENSIVE
               </button>
-            </div>
+            </div> */}
           </FirstSection>
           <SecondSection>
-            <img className="ball" src={ball} alt="ball" />
+            <Ball
+              onTouchStart={() => handleClickBall()}
+              onClick={() => handleClickBall()}
+              onMouseEnter={() => handleClickBall()}
+              className="ball"
+              pose={ballIsClicked ? "notRotating" : "rotating"}
+            ></Ball>
             <h1 className="apa-itu">APA ITU PERAK?</h1>
             <p className="full-desc">
               Lorem ipsum dolor sit amet et delectus accommodare his consul
@@ -106,12 +237,12 @@ class LandingPage extends React.Component {
               efficiantur et tollit aliquip debitis mei. No deserunt
               mediocritatem mel. Lorem
             </p>
-            <img className="praya-ferdi" src={prayaFerdi2} alt="praya ferdi" />
+            <img className="praya-ferdi" src={prayaFerdi3} alt="praya ferdi" />
             <img className="om" src={om2} alt="om" />
           </SecondSection>
 
           <FourthSection>
-            <h1 className="liga-title">LIGA 2020</h1>
+            <h1 className="liga-title">LIGA</h1>
             <Carousel
               className="image-carousel"
               showStatus={false}
@@ -120,33 +251,31 @@ class LandingPage extends React.Component {
               autoPlay
             >
               <div>
-                <img
-                  className="avatar"
-                  id="avatar"
-                  src={imgAvatar}
-                  alt="avatar"
-                />
+                <img className="csl" src={csl3} alt="csl3" />
               </div>
               <div>
-                <img
-                  className="avatar"
-                  id="avatar"
-                  src={imgAvatar}
-                  alt="avatar"
-                />
+                <img className="csl" src={csl1} alt="csl1" />
               </div>
               <div>
-                <img
-                  className="avatar"
-                  id="avatar"
-                  src={imgAvatar}
-                  alt="avatar"
-                />
+                <img className="csl" src={csl2} alt="csl2" />
+              </div>
+              <div>
+                <img className="csl" src={csl4} alt="csl4" />
               </div>
             </Carousel>
-            <button type="button" className="daftar-button">
+            <p className="desc-liga">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+              praesentium ipsa, consectetur eius error, doloribus fuga aliquam,
+              odio dolores tempora aspernatur. Impedit delectus, quae rerum
+              minima nihil perferendis sint dolor.
+            </p>
+            <DaftarButton
+              onMouseEnter={() => handleHoverDaftarButton()}
+              className="daftar-button"
+              pose={daftarButtonIsHovered ? "rusak" : null}
+            >
               DAFTAR SEKARANG
-            </button>
+            </DaftarButton>
           </FourthSection>
           <FifthSection>
             <h1 className="social-media-title">SOCIAL MEDIA</h1>

@@ -1,19 +1,39 @@
 import styled from "styled-components";
-
 import background from "../../asset/firstSectionBackground.png";
 import backgroundLeft from "../../asset/firstSectionBackgroundLeft.png";
 import secondBG from "../../asset/secondSectionBG.png";
 import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
+import ball from "../../asset/ball.png";
+import pohon from "../../asset/pohon.gif";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
 const white = "#E5E6DE";
 const blue = "#4452C3";
 const dark = "#0D2040";
+// const red = "#E9622A";
+
+export const LoadingScreen = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: ${dark};
+  flex-direction: column;
+  padding-top: 150px;
+  .logo-loading {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .loading-bar svg {
+  }
+`;
 
 export const LandingPageContainer = styled.div`
+  width: 100vw;
+  overflow: hidden;
   * {
     padding: 0;
     margin: 0;
@@ -26,17 +46,50 @@ export const LandingPageContainer = styled.div`
 
 export const FirstSection = styled.section`
   height: 100vh;
-  width: 100%;
-  background-color: ${green};
+  width: 100vw;
+  /* background-color: ${green};
   background-size: 120px, contain;
   background-image: url(${backgroundLeft}), url(${background});
   background-repeat: no-repeat;
   background-position-x: left, right;
-  background-position-y: bottom, 30px;
+  background-position-y: bottom, 30px; */
+
+  background-image: url(${pohon});
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 1200px;
+  background-position-x: -1px;
+  background-color: #E5E6DE;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
+  position: relative;
+  top: 0;
+  left:0;
+  .tema{
+    color: white;
+    font-size: 4em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 55vh;
+    height: 130px;
+    width: 260px;
+    border-radius: 90px;
+    background-color: ${blue};
+  }
+  
+  .selamat-datang{
+    width: 650px;
+    position: absolute;
+    top:-240px;
+    right:-200px;
+    -webkit-animation: spin 25s linear infinite;
+    -moz-animation: spin 25s linear infinite;
+    animation: spin 25s linear infinite;
+  }
   .dekorBlue,
   .dekorYellow {
     position: absolute;
@@ -97,12 +150,14 @@ export const FirstSection = styled.section`
     color: ${yellow};
     text-shadow: 5px 8px ${dark};
     font-size: calc(4rem + 1vw);
-    margin: 50px;
+    margin: 10px 20px;
+    line-height: 50px;
   }
   .avatar {
-    width: 450px;
+    margin-top: 20px;
+    width: 400px;
   }
-  .tema {
+  /* .tema {
     margin-top: 50px;
     color: ${white};
     font-weight: bold;
@@ -111,7 +166,7 @@ export const FirstSection = styled.section`
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
-  }
+  } */
   .avatar-button {
     color: white;
     border: none;
@@ -135,7 +190,7 @@ export const FirstSection = styled.section`
 `;
 
 export const SecondSection = styled.section`
-  height: 100vh;
+  height: 800px;
   width: 100%;
   background-color: ${yellow};
   background-repeat: no-repeat;
@@ -149,12 +204,15 @@ export const SecondSection = styled.section`
   padding-top: 150px;
 
   .ball {
+    z-index: 2;
+    background-image: url(${ball});
+    background-size: cover;
+    width: 70px;
+    height: 70px;
     position: absolute;
     top: calc(100vh + 350px);
     left: 230px;
-    -webkit-animation: spin 4s linear infinite;
-    -moz-animation: spin 4s linear infinite;
-    animation: spin 4s linear infinite;
+    cursor: pointer;
   }
   .apa-itu {
     color: ${blue};
@@ -181,8 +239,189 @@ export const SecondSection = styled.section`
   .om {
     height: 550px;
     position: absolute;
-    top: calc(300px + 100vh);
-    right: 0px;
+    top: calc(310px + 100vh);
+    right: -20px;
+  }
+  @media only screen and (max-width: 1190px) {
+    .praya-ferdi {
+      left: -100px;
+    }
+    .ball {
+      left: 140px;
+    }
+    .om {
+      right: 0px;
+    }
+  }
+  @media only screen and (max-width: 960px) {
+    .apa-itu {
+      font-size: 4em;
+    }
+    .ball {
+      left: 120px;
+      top: calc(100vh + 420px);
+      width: 60px;
+      height: 60px;
+    }
+    .full-desc {
+      font-size: 1em;
+      margin-top: 30px;
+      margin-left: 110px;
+    }
+    .praya-ferdi {
+      height: 700px;
+      top: 120vh;
+      left: -60px;
+    }
+    .om {
+      height: 350px;
+      position: absolute;
+      top: calc(450px + 100vh);
+      right: 0px;
+    }
+  }
+  @media only screen and (max-width: 790px) {
+    .om {
+      top: calc(500px + 100vh);
+      right: 0px;
+    }
+    .praya-ferdi {
+      top: 125vh;
+      left: -80px;
+    }
+    .ball {
+      left: 80px;
+      top: calc(100vh + 450px);
+    }
+    .apa-itu {
+      font-size: 3.5em;
+    }
+    .full-desc {
+      width: 470px;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    .full-desc {
+      width: 380px;
+    }
+    .praya-ferdi {
+      height: 600px;
+      top: 135vh;
+      left: -80px;
+    }
+    .ball {
+      left: 60px;
+      top: calc(100vh + 470px);
+      width: 50px;
+      height: 50px;
+    }
+  }
+  @media only screen and (max-width: 610px) {
+    .apa-itu {
+      margin-left: 10px;
+    }
+    .full-desc {
+      margin-left: 60px;
+      font-family: 1em;
+      width: 360px;
+    }
+  }
+  @media only screen and (max-width: 570px) {
+    .apa-itu {
+      margin-left: 10px;
+    }
+    .full-desc {
+      margin-left: 60px;
+      font-size: 0.9em;
+      width: 320px;
+    }
+  }
+  @media only screen and (max-width: 540px) {
+    padding-top: 40px;
+    .apa-itu {
+      margin-left: 0px;
+      margin-right: 100px;
+      width: 300px;
+    }
+    .full-desc {
+      width: 300px;
+    }
+    .ball {
+      left: 60px;
+      top: calc(100vh + 560px);
+      width: 50px;
+      height: 50px;
+    }
+    .praya-ferdi {
+      height: 500px;
+      top: calc(100vh + 350px);
+      left: -60px;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    .ball {
+      top: calc(100vh + 510px);
+    }
+    .full-desc {
+      width: 280px;
+    }
+  }
+  @media only screen and (max-width: 475px) {
+    .apa-itu {
+      font-size: 2.5em;
+      margin-left: 30px;
+    }
+    .full-desc {
+      font-size: 0.85em;
+      width: 280px;
+    }
+    .om {
+      height: 250px;
+      top: calc(610px + 100vh);
+      right: 0px;
+    }
+    .praya-ferdi {
+      height: 500px;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .apa-itu {
+      margin-left: 70px;
+    }
+    .full-desc {
+      margin-left: 60px;
+      width: 220px;
+      font-size: 0.85em;
+    }
+    .praya-ferdi {
+      top: calc(100vh + 350px);
+      left: -75px;
+    }
+    .ball {
+      left: 40px;
+      top: calc(100vh + 520px);
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media only screen and (max-width: 325px) {
+    .apa-itu {
+      margin-left: 100px;
+    }
+    .om {
+      top: calc(610px + 100vh);
+      right: 0px;
+    }
+    .praya-ferdi {
+      top: calc(100vh + 350px);
+      left: -80px;
+    }
+    .ball {
+      left: 30px;
+      top: calc(100vh + 520px);
+      width: 40px;
+      height: 40px;
+    }
   }
 `;
 export const ThirdSection = styled.section`
@@ -204,17 +443,17 @@ export const FourthSection = styled.section`
   width: 100%;
   background-color: #e5e6de;
   background-image: url(${fourthBG});
-  background-size: 90%;
+  background-size: 80vw;
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 180px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .image-carousel {
-    margin-top: 30px;
+    margin: 30px 0;
     width: 500px;
-    height: 500px;
   }
   .liga-title {
     color: ${yellow};
@@ -223,10 +462,17 @@ export const FourthSection = styled.section`
     font-size: 4em;
     text-align: center;
   }
+  .desc-liga {
+    color: ${dark};
+    text-align: center;
+    width: 500px;
+  }
   .daftar-button {
+    margin-top: 20px;
     width: 600px;
-    height: 120px;
+    height: 110px;
     background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url(${daftarButton});
     display: flex;
@@ -239,10 +485,136 @@ export const FourthSection = styled.section`
     border: none;
     background-color: transparent;
     padding-top: 18px;
-    padding-right: 10px;
+    padding-right: 20px;
+  }
+  @media only screen and (max-width: 1300px) {
+    background-size: 90vw;
+    .daftar-button {
+      width: 550px;
+      height: 90px;
+      font-size: 2em;
+      padding-top: 10px;
+      padding-right: 0px;
+    }
+  }
+  @media only screen and (max-width: 1190px) {
+    background-size: 100vw;
+  }
+  @media only screen and (max-width: 1030px) {
+    background-size: 110vw;
+  }
+  @media only screen and (max-width: 960px) {
+    background-size: 120vw;
+  }
+  @media only screen and (max-width: 860px) {
+    padding-top: 40px;
+    height: 130vh;
+    background-size: 110vw;
+    background-position-y: 110px;
+    .image-carousel {
+      margin: 90px 0 30px 0;
+      width: 500px;
+    }
+    .liga-title {
+      font-size: 5em;
+      color: ${blue};
+    }
+  }
+  @media only screen and (max-width: 820px) {
+    .desc-liga {
+      margin-bottom: 120px;
+    }
+  }
+  @media only screen and (max-width: 690px) {
+    .image-carousel {
+      margin: 90px 0 30px 0;
+      width: 450px;
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    height: 125vh;
+    .image-carousel {
+      margin: 110px 0 130px 0;
+    }
+    .desc-liga {
+      font-size: 0.9em;
+      margin: 10px;
+    }
+  }
+  @media only screen and (max-width: 610px) {
+    height: 115vh;
+    .image-carousel {
+      margin: 90px 0 110px 0;
+    }
+  }
+  @media only screen and (max-width: 570px) {
+    height: 110vh;
+    .liga-title {
+      font-size: 4em;
+    }
+    .image-carousel {
+      width: 400px;
+      margin: 100px 0 95px 0;
+    }
+    .desc-liga {
+      width: 80%;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    height: 105vh;
+    .image-carousel {
+      width: 350px;
+      margin: 95px 0 95px 0;
+    }
+    .daftar-button {
+      width: 400px;
+      padding-top: 15px;
+    }
+  }
+  @media only screen and (max-width: 475px) {
+    padding-top: 50px;
+    .liga-title {
+      font-size: 3em;
+    }
+    .daftar-button {
+      width: 300px;
+      font-size: 1.5em;
+      padding-top: 10px;
+      padding-right: 5px;
+    }
+  }
+  @media only screen and (max-width: 440px) {
+    .image-carousel {
+      width: 300px;
+      margin: 90px 0 95px 0;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .image-carousel {
+      width: 280px;
+      margin: 85px 0 95px 0;
+    }
+    .desc-liga {
+      font-size: 0.8em;
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    padding-top: 100px;
+    .image-carousel {
+      width: 250px;
+      margin: 70px 0 90px 0;
+    }
+    height: 120vh;
+    background-position-y: 160px;
+  }
+  @media only screen and (max-width: 325px) {
+    padding-top: 50px;
+    background-position-y: 120px;
+    height: 120vh;
   }
 `;
-
+// Kefas Satrio Bangkit Solid Liquid
+// Halo Web Dev, aku ganteng
 export const FifthSection = styled.section`
   * {
     margin: 10px;
@@ -255,12 +627,18 @@ export const FifthSection = styled.section`
   align-items: center;
   .social-media-title {
     margin-top: 50px;
+    text-align: center;
     font-size: 3em;
     border: solid 2px ${dark};
     background-color: ${green};
-    padding: 10px 30px;
   }
   .row-social-medias {
     display: flex;
+  }
+  @media only screen and (max-width: 440px) {
+    .social-media-title {
+      width: 80%;
+      font-size: 2em;
+    }
   }
 `;
