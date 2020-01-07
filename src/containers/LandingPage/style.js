@@ -54,8 +54,8 @@ export const FirstSection = styled.section`
   background-position-x: left, right;
   background-position-y: bottom, 30px; */
 
-  /* background-image: url("https://s5.gifyu.com/images/pohonCompressed.gif"); */
-  background-image: url("https://s5.gifyu.com/images/pohonCompressedLagi.gif");
+  background-image: url("https://s5.gifyu.com/images/pohonCompressed.gif");
+  /* background-image: url("https://s5.gifyu.com/images/pohonCompressedLagi.gif"); */
   background-size: 1200px;
   background-repeat: no-repeat;
   background-position: bottom left;
