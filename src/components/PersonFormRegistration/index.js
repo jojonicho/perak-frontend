@@ -7,8 +7,8 @@ import { PersonFormRegistrationContainer, Section } from "./style";
 class PersonFormRegistration extends React.Component {
   render() {
     const {
-      idCardImage,
-      setIdCardImage,
+      // idCardImage,
+      // setIdCardImage,
       namaLengkap,
       kontak,
       email,
@@ -76,7 +76,7 @@ class PersonFormRegistration extends React.Component {
             autoComplete="off"
           />
         </Section>
-        <Section>
+        {/* <Section>
           Kartu Identitas
           <span className="input-info">KTM / KTP / Paspor</span>
           <div className="idcard-preview">
@@ -94,7 +94,7 @@ class PersonFormRegistration extends React.Component {
               autoComplete="off"
             />
           </label>
-        </Section>
+        </Section> */}
       </PersonFormRegistrationContainer>
     );
   }

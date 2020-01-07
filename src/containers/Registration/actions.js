@@ -64,14 +64,14 @@ export function setTeamImage(e) {
     const file = e.currentTarget.files[0];
     if (
       !file ||
-      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 4000000)
     ) {
       dispatch({
         type: SET_TEAM_IMAGE,
         payload: file
       });
     } else {
-      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 4 MB"));
     }
   };
 }
@@ -83,11 +83,11 @@ export function setFoto(e, id, data) {
     console.log(e.currentTarget.files[0]);
     if (
       !file ||
-      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 4000000)
     ) {
       personData[id][5] = e.currentTarget.files[0];
     } else {
-      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 4 MB"));
     }
     dispatch({
       type: SET_SELF_IMAGE,
@@ -103,11 +103,11 @@ export function setIdCardImage(e, id, data) {
     console.log(e.currentTarget.files[0]);
     if (
       !file ||
-      (["image/png", "image/jpeg"].includes(file.type) && file.size < 1000000)
+      (["image/png", "image/jpeg"].includes(file.type) && file.size < 4000000)
     ) {
       personData[id][4] = e.currentTarget.files[0];
     } else {
-      dispatch(error("Pastikan Ukuran Gambar dibawah 1 MB"));
+      dispatch(error("Pastikan Ukuran Gambar dibawah 4 MB"));
     }
     dispatch({
       type: SET_ID_CARD_IMAGE,
@@ -138,11 +138,7 @@ export function setPersonData(e, id, data) {
 
 export function setShowPlayer(index, nowIndex, personData) {
   return dispatch => {
-    if (
-      personData[nowIndex][4] != null &&
-      personData[nowIndex][5] != null &&
-      personData[nowIndex][0] !== ""
-    ) {
+    if (personData[nowIndex][5] != null && personData[nowIndex][0] !== "") {
       dispatch({
         type: SET_SHOW_PLAYER,
         showPlayer: index
@@ -171,9 +167,8 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     const numberPlayer = Array.from(nowPlayer);
     if (
       nowIndex === 0 ||
-      (personData[nowIndex][4] != null &&
-        personData[nowIndex][5] != null &&
-        personData[nowIndex][0] !== "")
+      (personData[nowIndex][5] != null &&
+        personData[nowIndex][0] !== ": 30px 0")
     ) {
       personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");
@@ -200,7 +195,7 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
         kontak_manager: personData[0][1],
         email_manager: personData[0][2],
         telepon_manager: personData[0][3],
-        idCard_manager: `futsal/${teamName}-${idTeam}/manager-idCard.jpg`,
+        // idCard_manager: `futsal/${teamName}-${idTeam}/manager-idCard.jpg`,
         foto_manager: `futsal/${teamName}-${idTeam}/manager-foto.jpg`
       })
       .then(() => {
@@ -216,16 +211,16 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
           type: SUBMIT
         });
       });
-    storage
-      .child(`futsal/${teamName}-${idTeam}/manager-idCard.jpg`)
-      .put(personData[0][4])
-      .then(function() {
-        console.log("manager idcard uploaded");
-        dispatch(updateLoad());
-        dispatch({
-          type: SUBMIT
-        });
-      });
+    // storage
+    //   .child(`futsal/${teamName}-${idTeam}/manager-idCard.jpg`)
+    //   .put(personData[0][4])
+    //   .then(function() {
+    //     console.log("manager idcard uploaded");
+    //     dispatch(updateLoad());
+    //     dispatch({
+    //       type: SUBMIT
+    //     });
+    //   });
     // storage // manager gaperlu pasfoto kyknya
     //   .child(`futsal/${teamName}-${idTeam}/manager-foto.jpg`)
     //   .put(personData[0][5])
@@ -251,22 +246,22 @@ function uploadPlayer(idTeam, playerData, teamName) {
           kontak: x[1],
           email: x[2],
           telepon: x[3],
-          idCard: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`,
+          // idCard: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`,
           foto: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-foto.jpg`
         })
         .then(() => {
           dispatch(updateLoad());
         });
-      storage
-        .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`)
-        .put(x[4])
-        .then(function() {
-          console.log("player idcard uploaded");
-          dispatch(updateLoad());
-          dispatch({
-            type: SUBMIT
-          });
-        });
+      // storage
+      //   .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`)
+      //   .put(x[4])
+      //   .then(function() {
+      //     console.log("player idcard uploaded");
+      //     dispatch(updateLoad());
+      //     dispatch({
+      //       type: SUBMIT
+      //     });
+      //   });
       storage
         .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-foto.jpg`)
         .put(x[5])
@@ -288,8 +283,8 @@ export function submit(personData, teamImage, teamName) {
     check = false;
     message = "Minimum Pemain harus 10";
   }
-  personData.forEach(x => {
-    if (x[4] == null || x[0] === "") {
+  personData.forEach((x, i) => {
+    if ((i !== 0 && x[5] == null) || x[0] === "") {
       check = false;
       message = "Pastikan Seluruh Form Sudah Terisi";
     }
@@ -298,10 +293,14 @@ export function submit(personData, teamImage, teamName) {
     check = false;
     message = "Pastikan Anda Sudah Memasukan Logo Tim";
   }
+  if (teamName == null) {
+    check = false;
+    message = "Pastikan Anda Sudah Memasukan Nama Tim Anda";
+  }
   let teams;
   if (check) {
     return dispatch => {
-      dispatch(loading(3 * personData.length));
+      dispatch(loading(2 * personData.length));
       futsalFirestore.get().then(response => {
         teams = response.docs;
         console.log(teams.length);
