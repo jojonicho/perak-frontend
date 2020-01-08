@@ -13,7 +13,7 @@ const green = "#33B3A6";
 const white = "#E5E6DE";
 const blue = "#4452C3";
 const dark = "#0D2040";
-// const red = "#E9622A";
+const red = "#E9622A";
 
 export const LoadingScreen = styled.div`
   width: 100vw;
@@ -45,7 +45,8 @@ export const LandingPageContainer = styled.div`
 `;
 
 export const FirstSection = styled.section`
-  height: 100vh;
+
+    height: 100vh;
   width: 100vw;
   /* background-color: ${green};
   background-size: 120px, contain;
@@ -61,7 +62,7 @@ export const FirstSection = styled.section`
   background-position: bottom left;
   /* background-size: 1000px; */
   background-position-x: -1px;
-  background-color: #E5E6DE;
+  background-color: ${white};
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
@@ -72,13 +73,13 @@ export const FirstSection = styled.section`
   left:0;
   .tema{
     color: white;
-    font-size: 4em;
+    font-size: 2em;
     border: none;
     cursor: pointer;
     font-weight: bold;
     margin-top: 55vh;
-    height: 130px;
-    width: 260px;
+    height: 80px;
+    width: 140px;
     border-radius: 90px;
     background-color: ${blue};
   }
@@ -130,63 +131,98 @@ export const FirstSection = styled.section`
       transform: rotate(-360deg);
     }
   }
-  .dekorYellow {
-    top: 40px;
-    left: -20px;
-    -webkit-animation: spin 10s linear infinite;
-    -moz-animation: spin 10s linear infinite;
-    animation: spin 10s linear infinite;
+  @media only screen and (max-width: 960px) {
+    background-position-x: -60px;
+    .selamat-datang{
+    width: 500px;
+    top:-240px;
+    right:-200px;
   }
-  .dekorBlue {
-    top: 50vh;
-    left: 10vw;
-    -webkit-animation: spinLeft 10s linear infinite;
-    -moz-animation: spinLeft 10s linear infinite;
-    animation: spinLeft 10s linear infinite;
   }
+  @media only screen and (max-width: 690px) {
+    background-size: 900px;
+    background-position-x: -100px;
+    .selamat-datang{
+    width: 500px;
+    top:-240px;
+    right:-200px;
+  }
+  }
+  @media only screen and (max-width: 570px) {
+    background-position-x: -100px;
+    .tema{
+      margin-top: 65vh;
+    }
+    .selamat-datang{
+    width: 450px;
+    top:-220px;
+    right:-200px;
+  }
+  }
+  @media only screen and (max-width: 480px) {
+    background-position-x: -100px;
+    .tema{
+      margin-top: 65vh;
+    }
+  }
+  @media only screen and (max-width: 370px) {
+    background-size: 750px;
+    background-position-x: -120px;
+    .tema{
+      margin-top: 65vh;
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    background-size: 600px;
+    background-position-x: -130px;
+    .tema{
+      margin-top: 65vh;
+    }
+  }
+  
+`;
 
-  .title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    text-align: center;
-    color: ${yellow};
-    text-shadow: 5px 8px ${dark};
-    font-size: calc(4rem + 1vw);
-    margin: 10px 20px;
-    line-height: 50px;
-  }
+export const FirstSection2 = styled.section`
+  height: 100vh;
+  width: 100vw;
+  background-color: ${white};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .avatar {
-    margin-top: 20px;
-    width: 400px;
+    width: 450px;
   }
-  /* .tema {
-    margin-top: 50px;
-    color: ${white};
-    font-weight: bold;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3em;
-  } */
-  .avatar-button {
+  .tema {
     color: white;
+    font-size: 2em;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    background-color: transparent;
+    margin-top: 30px;
+    height: 80px;
+    width: 150px;
+    border-radius: 90px;
+    background-color: ${red};
   }
-  .circle {
-    margin: 0 25px 0 25px;
-    width: 10px;
-    height: 10px;
-    background-color: ${white};
-    border-radius: 50%;
-  }
-  .yellowed {
-    color: ${yellow};
-  }
-  .yellowedCircle {
+`;
+
+export const FirstSection3 = styled.section`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${blue};
+  .tema {
+    color: black;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+    height: 80px;
+    width: 350px;
+    border-radius: 90px;
     background-color: ${yellow};
   }
 `;
@@ -443,7 +479,7 @@ export const ThirdSection = styled.section`
 export const FourthSection = styled.section`
   height: 150vh;
   width: 100%;
-  background-color: #e5e6de;
+  background-color: ${white};
   background-image: url(${fourthBG});
   background-size: 80vw;
   background-repeat: no-repeat;

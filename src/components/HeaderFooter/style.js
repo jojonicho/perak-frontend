@@ -40,4 +40,9 @@ export const HeaderFooterContainer = styled.div`
   .childcontainer {
     padding-top: 60px;
   }
+  @media only screen and (max-width: 690px) {
+    .no-decor h2 {
+      font-size: 1.2em;
+    }
+  }
 `;
