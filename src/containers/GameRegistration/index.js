@@ -129,22 +129,20 @@ class GameRegistration extends React.Component {
                     </Fade>
                   );
                 })}
-              <TambahButton
-                onClick={
-                  data.numberPlayer < Game.fixMember + Game.optionalMember
-                    ? () =>
-                        props.addPlayer(
-                          props.gameId,
-                          data.personData,
-                          data.showPlayer
-                        )
-                    : null
-                }
-              >
-                <span className="plus">+</span> Tambah ({data.numberPlayer}/
-                {Game.fixMember + Game.optionalMember})
-              </TambahButton>
-
+              {data.numberPlayer < Game.fixMember + Game.optionalMember ? (
+                <TambahButton
+                  onClick={() =>
+                    props.addPlayer(
+                      props.gameId,
+                      data.personData,
+                      data.showPlayer
+                    )
+                  }
+                >
+                  <span className="plus">+</span> Tambah ({data.numberPlayer}/
+                  {Game.fixMember + Game.optionalMember})
+                </TambahButton>
+              ) : null}
               <SubmitButton
                 onClick={() =>
                   props.submit(props.gameId, data.personData, data.namaTim)

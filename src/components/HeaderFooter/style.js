@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const HeaderFooterContainer = styled.div`
   overflow: hidden;
   width: 100%;
+  h2 {
+    margin: auto;
+  }
   .footer {
     position: absolute;
     height: 40px;
@@ -39,5 +42,11 @@ export const HeaderFooterContainer = styled.div`
   }
   .childcontainer {
     padding-top: 60px;
+  }
+  .daftar {
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 1em;
+    color: #e5e6de;
   }
 `;
