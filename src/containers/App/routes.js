@@ -13,9 +13,9 @@ export const routes = [
     exact: true,
     path: "/daftar"
   }
-  //   {
-  //     component: Registration,
-  //     exact: true,
-  //     path: "/daftar/futsal"
-  //   }
+  // {
+  //   component: Registration,
+  //   exact: true,
+  //   path: "/daftar/futsal"
+  // }
 ];
