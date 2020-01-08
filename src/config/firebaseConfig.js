@@ -15,3 +15,4 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 export const futsalFirestore = firebase.firestore().collection("futsal-team");
 export const storage = firebase.storage().ref();
+export const firestore = firebase.firestore();

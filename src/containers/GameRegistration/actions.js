@@ -1,15 +1,18 @@
 import {
+  Games,
   DEFAULT_ACTION,
   SET_PERSON_DATA,
   ALERT,
   // LOADING,
-  // UPDATE_LOADING,
+  UPDATE_LOADING,
   ADD_PLAYER,
   DELETE_PLAYER,
   SET_SHOW_PLAYER,
   SET_TEAM_NAME
+  // SUBMIT
 } from "./constants";
-import { SUBMIT } from "../Registration/constants";
+
+import { firestore } from "../../config/firebaseConfig";
 
 export function defaultAction() {
   return { type: DEFAULT_ACTION };
@@ -38,11 +41,11 @@ function error(message) {
 //   };
 // }
 
-// function updateLoad() {
-//   return {
-//     type: UPDATE_LOADING
-//   };
-// }
+function updateLoad() {
+  return {
+    type: UPDATE_LOADING
+  };
+}
 
 export function setShowPlayer(gameId, index, nowIndex, personData) {
   return dispatch => {
@@ -120,9 +123,85 @@ export function setTeamName(e, gameId) {
   };
 }
 
+function uploadTeam(gameId, idTeam, teamName, personData) {
+  return dispatch => {
+    firestore
+      .collection(gameId)
+      .doc(`${teamName}-${idTeam}`)
+      .set({
+        namaTim: teamName,
+        namaLengkap_kapten: personData[0][0],
+        kontak_kapten: personData[0][1],
+        email_kapten: personData[0][2],
+        telepon_kapten: personData[0][3]
+      })
+      .then(() => {
+        dispatch(updateLoad());
+      });
+  };
+}
+
+function uploadPlayer(gameId, idTeam, playerData, teamName) {
+  return dispatch => {
+    playerData.forEach((x, index) => {
+      firestore
+        .collection(gameId)
+        .doc(`${teamName}-${idTeam}`)
+        .collection("player")
+        .doc(`${x[0]}-${index}`)
+        .set({
+          namaLengkap: x[0],
+          kontak: x[1],
+          email: x[2],
+          telepon: x[3]
+        })
+        .then(() => {
+          dispatch(updateLoad());
+        });
+    });
+  };
+}
+
 export function submit(gameId, personData, teamName) {
-  console.log(`submit${gameId} ${teamName}`);
-  return {
-    type: SUBMIT
+  let message;
+  let check = true;
+  const Game = Games[gameId];
+  if (personData.length < Game.fixMember) {
+    check = false;
+    message = `Minimum Pemain harus ${Game.fixMember}`;
+  }
+  personData.forEach((x, i) => {
+    if (
+      (i === 0 && (x[1] === "" || x[2] === "" || x[3] === "")) ||
+      x[0] === ""
+    ) {
+      check = false;
+      message = "Pastikan Seluruh Nama Pemain Sudah Terisi";
+    }
+  });
+  if (
+    (gameId === "csgo" || gameId === "dota" || gameId === "mlbb") &&
+    teamName == null
+  ) {
+    check = false;
+    message = "Pastikan Anda Sudah Memasukan Nama Tim Anda";
+  }
+  let teams;
+  if (check) {
+    return dispatch => {
+      firestore
+        .collection(gameId)
+        .get()
+        .then(response => {
+          teams = response.docs;
+          const playerData = personData.slice(1);
+          console.log(`submit${gameId} ${teamName}`);
+          dispatch(uploadTeam(gameId, teams.length, teamName, personData));
+          dispatch(uploadPlayer(gameId, teams.length, playerData, teamName));
+        });
+    };
+  }
+  return dispatch => {
+    dispatch(error(message));
   };
 }
