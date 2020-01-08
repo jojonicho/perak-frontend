@@ -40,22 +40,26 @@ import logoGede2 from "../../asset/logoGede2.png";
 
 const DaftarButton = posed.button({
   hoverable: true,
-  init: {
-    scale: 1
-  },
-  hover: {
-    scale: 1.1
-  }
-});
-
-const ButtonTema = posed.button({
-  hoverable: true,
+  pressable: true,
   init: {
     scale: 1
   },
   hover: {
     scale: 1.2
-  }
+  },
+  press: { scale: 0.8 }
+});
+
+const ButtonTema = posed.button({
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.2
+  },
+  press: { scale: 0.8 }
 });
 
 const defaultOptions = {
