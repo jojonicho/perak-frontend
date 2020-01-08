@@ -6,6 +6,7 @@ import samplePageReducer from "../containers/SamplePage/reducer";
 import registrationReducer from "../containers/Registration/reducer";
 
 import landingPageReducer from "../containers/LandingPage/reducer";
+import gameRegistrationReducer from "../containers/GameRegistration/reducer";
 
 export default history =>
   combineReducers({
@@ -13,5 +14,6 @@ export default history =>
     global: globalReducer,
     samplePage: samplePageReducer,
     registration: registrationReducer,
-    landingPage: landingPageReducer
+    landingPage: landingPageReducer,
+    gameRegistration: gameRegistrationReducer
   });

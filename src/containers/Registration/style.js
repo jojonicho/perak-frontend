@@ -69,7 +69,7 @@ export const RegistrationContainer = styled.div`
 font-family: inherit;
 display: flex;
 flex-direction: column;
-background-attachment: fixed;
+background-attachment: unset;
 background-repeat: repeat-y;
 background-position: center;
 background-color: #E5E6DE;

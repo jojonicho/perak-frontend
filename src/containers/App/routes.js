@@ -1,6 +1,8 @@
+import React from "react";
 import Registration from "../Registration";
 import RegisterSelection from "../../components/RegisterSelection";
 import LandingPage from "../LandingPage";
+import GameRegistration from "../GameRegistration";
 
 export const routes = [
   {
@@ -17,5 +19,10 @@ export const routes = [
     component: Registration,
     exact: true,
     path: "/daftar/futsal"
+  },
+  {
+    component: () => <GameRegistration gameId="dota" />,
+    exact: true,
+    path: "/daftar/game"
   }
 ];
