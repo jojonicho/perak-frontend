@@ -1,11 +1,12 @@
 import React from "react";
 // import ReactDOM from 'react-dom';
-import posed from "react-pose";
+import posed, { PoseGroup } from "react-pose";
 // import SplitText from "react-pose-text";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import FadeIn from "react-fade-in";
+// import Fade from 'react-reveal/Fade';
 import Lottie from "react-lottie";
 // import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.css";
@@ -14,8 +15,8 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import HeaderFooter from "../../components/HeaderFooter";
 // import logoGede from "../../asset/logoGede.png";
-import avatar from "../../asset/avatar.png";
-import ijug from "../../asset/ijug.png";
+// import avatar from "../../asset/avatar.png";
+// import ijug from "../../asset/ijug.png";
 import prayaFerdi3 from "../../asset/prayaFerdi3.png";
 import om2 from "../../asset/om2.png";
 // import dekorYellow from "../../asset/dekorYellow.png";
@@ -30,9 +31,6 @@ import * as pinwheelData from "../../asset/pinwheelLoading.json";
 import {
   LoadingScreen,
   LandingPageContainer,
-  FirstSection,
-  FirstSection2,
-  FirstSection3,
   SecondSection,
   FourthSection,
   FifthSection
@@ -42,22 +40,26 @@ import logoGede2 from "../../asset/logoGede2.png";
 
 const DaftarButton = posed.button({
   hoverable: true,
-  init: {
-    scale: 1
-  },
-  hover: {
-    scale: 1.1
-  }
-});
-
-const ButtonTema = posed.button({
-  hoverable: true,
+  pressable: true,
   init: {
     scale: 1
   },
   hover: {
     scale: 1.2
-  }
+  },
+  press: { scale: 0.8 }
+});
+
+const ButtonTema = posed.button({
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.2
+  },
+  press: { scale: 0.8 }
 });
 
 const defaultOptions = {
@@ -98,6 +100,11 @@ const Ball = posed.div({
 //     })
 //   }
 // };
+
+const FirstSection = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -157,13 +164,10 @@ class LandingPage extends React.Component {
       }
     };
 
-    // let imgAvatar = avatar;
-    // if (stateAvatar === "fresh") imgAvatar = avatarIjug;
-    // if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
     const handleFirstSection = () => {
       if (tema === "fun") {
         return (
-          <FirstSection className={handleCurrentTema()} ref={this.firstSection}>
+          <FirstSection key="FUN" className={handleCurrentTema()}>
             <img
               src={selamatDatang}
               className="selamat-datang"
@@ -183,13 +187,12 @@ class LandingPage extends React.Component {
       }
       if (tema === "fresh") {
         return (
-          <FirstSection2>
-            <img
+          <FirstSection key="FRESH" className={handleCurrentTema()}>
+            {/* <img
               src={avatar}
-              style={{ display: "none" }}
               className="avatar"
               alt="avatar"
-            />
+            /> */}
             <ButtonTema
               type="button"
               className="tema"
@@ -199,17 +202,11 @@ class LandingPage extends React.Component {
             >
               FRESH
             </ButtonTema>
-          </FirstSection2>
+          </FirstSection>
         );
       }
       return (
-        <FirstSection3>
-          <img
-            src={ijug}
-            style={{ display: "none" }}
-            className="ijug"
-            alt="ijug"
-          />
+        <FirstSection key="COMPREHENSIVE" className={handleCurrentTema()}>
           <ButtonTema
             type="button"
             className="tema"
@@ -219,7 +216,7 @@ class LandingPage extends React.Component {
           >
             COMPREHENSIVE
           </ButtonTema>
-        </FirstSection3>
+        </FirstSection>
       );
     };
     return !done ? (
@@ -233,7 +230,9 @@ class LandingPage extends React.Component {
     ) : (
       <LandingPageContainer>
         <HeaderFooter color="dark">
-          {handleFirstSection()}
+          <FadeIn>
+            <PoseGroup>{handleFirstSection()}</PoseGroup>
+          </FadeIn>
           <SecondSection>
             <Ball
               onTouchStart={() => handleClickBall()}
