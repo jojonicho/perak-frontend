@@ -6,6 +6,8 @@ import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
 import ball from "../../asset/ball.png";
+import ijugBG from "../../asset/ijugBackground.png";
+import firstSection2 from "../../asset/firstSection2.png";
 // import pohonCompressedLagi from "../../asset/pohonCompressedLagi.gif";
 
 const yellow = "#F1CF33";
@@ -42,10 +44,8 @@ export const LandingPageContainer = styled.div`
   button:focus {
     outline: 0;
   }
-`;
 
-export const FirstSection = styled.section`
-
+  .FUN{
     height: 100vh;
   width: 100vw;
   /* background-color: ${green};
@@ -67,7 +67,6 @@ export const FirstSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
   position: relative;
   top: 0;
   left:0;
@@ -77,7 +76,7 @@ export const FirstSection = styled.section`
     border: none;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 55vh;
+    margin-top: 65vh;
     height: 80px;
     width: 140px;
     border-radius: 90px;
@@ -179,53 +178,82 @@ export const FirstSection = styled.section`
       margin-top: 65vh;
     }
   }
-  
-`;
+  }
 
-export const FirstSection2 = styled.section`
+  .FRESH{
   height: 100vh;
   width: 100vw;
   background-color: ${white};
+  background-image: url(${firstSection2});
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 70px;
+  background-attachment: fixed;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  .avatar {
+  
+  /* .avatar {
+    margin-top: 100px;
     width: 450px;
-  }
+  } */
+
   .tema {
     color: white;
     font-size: 2em;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 65vh;
     height: 80px;
     width: 150px;
     border-radius: 90px;
     background-color: ${red};
   }
-`;
+  }
 
-export const FirstSection3 = styled.section`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${blue};
-  .tema {
-    color: black;
-    font-size: 2em;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 30px;
-    height: 80px;
-    width: 350px;
-    border-radius: 90px;
-    background-color: ${yellow};
+  .COMPREHENSIVE{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: ${blue};
+    background-image: url(${ijugBG});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 50px;
+    background-attachment: fixed;
+
+    .tema {
+      color: black;
+      font-size: 2em;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 65vh;
+      height: 80px;
+      width: 350px;
+      border-radius: 90px;
+      background-color: ${yellow};
+    }
   }
 `;
+
+// export const FirstSection = styled.section`
+
+// `;
+
+// export const FirstSection2 = styled.section`
+
+// `;
+
+// export const FirstSection3 = styled.section`
+
+// `;
 
 export const SecondSection = styled.section`
   height: 800px;
