@@ -692,6 +692,8 @@ export const FifthSection = styled.section`
   flex-direction: column;
   align-items: center;
   .social-media-title {
+    font-weight: bold;
+    padding: 10px 20px;
     margin-top: 50px;
     text-align: center;
     font-size: 3em;
