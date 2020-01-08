@@ -21,14 +21,22 @@ import LoadingRegis from "../../components/LoadingRegis";
 import HeaderFooter from "../../components/HeaderFooter";
 import { Games } from "./constants";
 
-import { setPersonData } from "./actions";
+import {
+  setPersonData,
+  addPlayer,
+  stopAlert,
+  deletePlayer,
+  setShowPlayer,
+  setTeamName,
+  submit
+} from "./actions";
 
 class GameRegistration extends React.Component {
   render() {
     const { props } = this;
     const Game = Games[props.gameId];
     const data = props[props.gameId];
-    console.log(data);
+    console.log(props);
     if (props.done) {
       // eslint-disable-next-line no-alert
       // eslint-disable-next-line no-undef
@@ -46,16 +54,14 @@ class GameRegistration extends React.Component {
               onConfirm={props.stopAlert}
             />
             <Title>REGISTRASI TIM {Game.title}</Title>
-            {Game.teamLogo ? (
+            {Game.captain ? (
               <TeamFormRegistration
-                teamImage={props.teamImage}
-                setImage={props.setTeamImage}
-                setName={e => props.setTeamName(e)}
-                teamName={props.teamName}
+                setName={e => props.setTeamName(e, props.gameId)}
+                teamName={Game.namaTim}
               />
             ) : null}
-            {Game.captain ? <h3>Captain</h3> : null}
-            {/* <h3>Member</h3> */}
+            <h3>Pemain</h3>
+            {Game.captain ? <h5>*orang pertama adalah kapten tim</h5> : null}
             <Forms>
               {data.personData &&
                 data.personData.map(function x(a, index) {
@@ -91,9 +97,8 @@ class GameRegistration extends React.Component {
                           onClick={() =>
                             props.deletePlayer(
                               props.gameId,
-                              data.numberPlayer,
                               data.personData,
-                              data.showPlayer
+                              index
                             )
                           }
                         >
@@ -116,9 +121,8 @@ class GameRegistration extends React.Component {
                         deletePlayer={() =>
                           props.deletePlayer(
                             props.gameId,
-                            index,
-                            data.numberPlayer,
-                            data.personData
+                            data.personData,
+                            index
                           )
                         }
                       />
@@ -130,7 +134,7 @@ class GameRegistration extends React.Component {
                   data.numberPlayer < Game.fixMember + Game.optionalMember
                     ? () =>
                         props.addPlayer(
-                          data.numberPlayer,
+                          props.gameId,
                           data.personData,
                           data.showPlayer
                         )
@@ -143,11 +147,7 @@ class GameRegistration extends React.Component {
 
               <SubmitButton
                 onClick={() =>
-                  props.submit(
-                    props.personData,
-                    props.teamImage,
-                    props.teamName
-                  )
+                  props.submit(props.gameId, data.personData, data.namaTim)
                 }
               >
                 DAFTAR
@@ -174,14 +174,29 @@ function mapStateToProps(state) {
     catur: state.gameRegistration.catur,
     fifa: state.gameRegistration.fifa,
     ssbu: state.gameRegistration.ssbu,
-    mariokart: state.gameRegistration.mariokart
+    mariokart: state.gameRegistration.mariokart,
+    alert: state.gameRegistration.alert,
+    done: state.gameRegistration.done,
+    loading: state.gameRegistration.loading,
+    loadNow: state.gameRegistration.loadNow,
+    loadBase: state.gameRegistration.loadBase
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    stopAlert: () => dispatch(stopAlert()),
     setPersonData: (e, gameId, index, personData) =>
-      dispatch(setPersonData(e, gameId, index, personData))
+      dispatch(setPersonData(e, gameId, index, personData)),
+    addPlayer: (gameId, personData, nowIndex) =>
+      dispatch(addPlayer(gameId, personData, nowIndex)),
+    deletePlayer: (gameId, numberPlayer, personData, index) =>
+      dispatch(deletePlayer(gameId, numberPlayer, personData, index)),
+    setShowPlayer: (gameId, index, nowIndex, personData) =>
+      dispatch(setShowPlayer(gameId, index, nowIndex, personData)),
+    setTeamName: (e, teamId) => dispatch(setTeamName(e, teamId)),
+    submit: (gameId, personData, teamName) =>
+      dispatch(submit(gameId, personData, teamName))
   };
 }
 

@@ -1,5 +1,13 @@
 export const DEFAULT_ACTION = "src/GameRegistration/DEFAULT_ACTION";
 export const SET_PERSON_DATA = "src/GameRegistration/SET_PERSON_DATA";
+export const ADD_PLAYER = "src/GameRegistration/ADD_PLAYER";
+export const LOADING = "src/GameRegistration/LOADING";
+export const UPDATE_LOADING = "src/GameRegistration/UPDATE_LOADING";
+export const ALERT = "src/GameRegistration/ALERT";
+export const DELETE_PLAYER = "src/GameRegistration/DELETE_PLAYER";
+export const SET_SHOW_PLAYER = "src/GameRegistration/SET_SHOW_PLAYER";
+export const SET_TEAM_NAME = "src/GameRegistration/SET_TEAM_NAME";
+export const SUBMIT = "src/GameRegistration/SUBMIT";
 
 export const Games = {
   dota: {
