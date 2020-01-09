@@ -3,7 +3,7 @@ import {
   DEFAULT_ACTION,
   SET_PERSON_DATA,
   ALERT,
-  // LOADING,
+  LOADING,
   UPDATE_LOADING,
   ADD_PLAYER,
   DELETE_PLAYER,
@@ -34,12 +34,12 @@ function error(message) {
   };
 }
 
-// function loading(baseLoad) {
-//   return {
-//     type: LOADING,
-//     loadBase: baseLoad
-//   };
-// }
+function loading(baseLoad) {
+  return {
+    type: LOADING,
+    loadBase: baseLoad
+  };
+}
 
 function updateLoad() {
   return {
@@ -181,23 +181,28 @@ export function submit(gameId, personData, teamName) {
   });
   if (
     (gameId === "csgo" || gameId === "dota" || gameId === "mlbb") &&
-    teamName == null
+    teamName === ""
   ) {
     check = false;
     message = "Pastikan Anda Sudah Memasukan Nama Tim Anda";
   }
+  let namaTim = personData[0][0];
+  if (teamName !== "") {
+    namaTim = teamName;
+  }
   let teams;
   if (check) {
     return dispatch => {
+      dispatch(loading(personData.length));
       firestore
         .collection(gameId)
         .get()
         .then(response => {
           teams = response.docs;
+          console.log(`submit${gameId} ${namaTim}`);
+          dispatch(uploadTeam(gameId, teams.length, namaTim, personData));
           const playerData = personData.slice(1);
-          console.log(`submit${gameId} ${teamName}`);
-          dispatch(uploadTeam(gameId, teams.length, teamName, personData));
-          dispatch(uploadPlayer(gameId, teams.length, playerData, teamName));
+          dispatch(uploadPlayer(gameId, teams.length, playerData, namaTim));
         });
     };
   }

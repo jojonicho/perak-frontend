@@ -38,6 +38,7 @@ export const MinimizePersonButton = styled.button`
   justify-content: flex-start;
   align-items: center;
   width: 90%;
-  height: 90%;
+  // height: 90%;
+  padding-bottom: 5px;
   padding-left: 20px;
 `;
