@@ -1,23 +1,55 @@
 import React from "react";
 
 import { MinimizedPersonFormContainer, MinimizePersonButton } from "./style";
+import edit from "../../asset/edit.svg";
+import hapus from "../../asset/hapus.svg";
 
 class MinimizedPersonForm extends React.Component {
   render() {
-    const { namaLengkap, setShowPlayer, deletePlayer } = this.props;
+    const {
+      namaLengkap,
+      kontak,
+      email,
+      nomorTelepon,
+      setShowPlayer,
+      deletePlayer
+    } = this.props;
 
     return (
       <MinimizedPersonFormContainer>
-        <MinimizePersonButton onClick={() => setShowPlayer()}>
-          + {namaLengkap}
-        </MinimizePersonButton>
-        <button
-          type="button"
-          className="x-button"
-          onClick={() => deletePlayer()}
-        >
-          X
-        </button>
+        <div className="upperMinimized">
+          <div className="leftSideUpper">
+            <p className="nama">{namaLengkap}</p>
+            <MinimizePersonButton onClick={() => setShowPlayer()}>
+              <img className="pencil" src={edit} alt="edit" /> Edit
+            </MinimizePersonButton>
+          </div>
+          <button
+            type="button"
+            className="x-button"
+            onClick={() => deletePlayer()}
+          >
+            <img className="trash" src={hapus} alt="hapus" />
+            Hapus Pemain
+          </button>
+        </div>
+        <div className="garisContainer">
+          <div className="garis"></div>
+        </div>
+        <div className="bottomMinimized">
+          <div className="kontak info">
+            <b>ID LINE</b>
+            <p>{kontak}</p>
+          </div>
+          <div className="telepon info">
+            <b>No Telepon</b>
+            <p>{nomorTelepon}</p>
+          </div>
+          <div className="email info">
+            <b>Email</b>
+            <p>{email}</p>
+          </div>
+        </div>
       </MinimizedPersonFormContainer>
     );
   }
