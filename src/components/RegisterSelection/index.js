@@ -18,13 +18,24 @@ class RegisterSelection extends React.Component {
       "catur",
       "codenames"
     ],
+    slug: [
+      "futsal",
+      "dota",
+      "csgo",
+      "mlbb",
+      "ssbu",
+      "mariokart",
+      "fifa",
+      "catur",
+      "codenames"
+    ],
     id: [...Array(9).keys()],
     color: ["purple", "yellow", "orange", "green"],
     counter: Math.floor(Math.random() * 4)
   };
 
   render() {
-    const { id, games, color } = this.state;
+    const { id, games, color, slug } = this.state;
     let { counter } = this.state;
     return (
       <HeaderFooter color="dark">
@@ -38,7 +49,7 @@ class RegisterSelection extends React.Component {
                 else counter = 0;
                 return (
                   <Link
-                    to={`/daftar/${games[currentId]}`}
+                    to={`/daftar/${slug[currentId]}`}
                     className={`games ${color[counter]} ${
                       games[currentId].split(" ")[0]
                     }`}
