@@ -6,14 +6,16 @@ import thirdBG from "../../asset/thirdSectionBG.png";
 import fourthBG from "../../asset/fourthSectionBG.svg";
 import daftarButton from "../../asset/daftarButton.png";
 import ball from "../../asset/ball.png";
-import pohon from "../../asset/pohon.gif";
+import ijugBG from "../../asset/ijugBackground.png";
+import firstSection2 from "../../asset/firstSection2.png";
+// import pohonCompressedLagi from "../../asset/pohonCompressedLagi.gif";
 
 const yellow = "#F1CF33";
 const green = "#33B3A6";
 const white = "#E5E6DE";
 const blue = "#4452C3";
 const dark = "#0D2040";
-// const red = "#E9622A";
+const red = "#E9622A";
 
 export const LoadingScreen = styled.div`
   width: 100vw;
@@ -42,10 +44,9 @@ export const LandingPageContainer = styled.div`
   button:focus {
     outline: 0;
   }
-`;
 
-export const FirstSection = styled.section`
-  height: 100vh;
+  .FUN{
+    height: 100vh;
   width: 100vw;
   /* background-color: ${green};
   background-size: 120px, contain;
@@ -54,29 +55,31 @@ export const FirstSection = styled.section`
   background-position-x: left, right;
   background-position-y: bottom, 30px; */
 
-  background-image: url(${pohon});
+  background-image: url("https://s5.gifyu.com/images/pohonCompressed.gif");
+  /* background-image: url("https://s5.gifyu.com/images/pohonCompressedLagi.gif"); */
+  background-size: 1200px;
   background-repeat: no-repeat;
   background-position: bottom left;
-  background-size: 1200px;
+  /* background-size: 1000px; */
   background-position-x: -1px;
-  background-color: #E5E6DE;
+  background-color: ${white};
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
   position: relative;
   top: 0;
   left:0;
   .tema{
     color: white;
-    font-size: 4em;
+    font-family: BigJohnPRO;
+    font-size: 2em;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 55vh;
-    height: 130px;
-    width: 260px;
+    margin-top: 65vh;
+    height: 80px;
+    width: 140px;
     border-radius: 90px;
     background-color: ${blue};
   }
@@ -128,66 +131,132 @@ export const FirstSection = styled.section`
       transform: rotate(-360deg);
     }
   }
-  .dekorYellow {
-    top: 40px;
-    left: -20px;
-    -webkit-animation: spin 10s linear infinite;
-    -moz-animation: spin 10s linear infinite;
-    animation: spin 10s linear infinite;
+  @media only screen and (max-width: 960px) {
+    background-position-x: -60px;
+    .selamat-datang{
+    width: 500px;
+    top:-240px;
+    right:-200px;
   }
-  .dekorBlue {
-    top: 50vh;
-    left: 10vw;
-    -webkit-animation: spinLeft 10s linear infinite;
-    -moz-animation: spinLeft 10s linear infinite;
-    animation: spinLeft 10s linear infinite;
+  }
+  @media only screen and (max-width: 690px) {
+    background-size: 900px;
+    background-position-x: -100px;
+    .selamat-datang{
+    width: 500px;
+    top:-240px;
+    right:-200px;
+  }
+  }
+  @media only screen and (max-width: 570px) {
+    background-position-x: -100px;
+    .tema{
+      margin-top: 65vh;
+    }
+    .selamat-datang{
+    width: 450px;
+    top:-220px;
+    right:-200px;
+  }
+  }
+  @media only screen and (max-width: 480px) {
+    background-position-x: -100px;
+    .tema{
+      margin-top: 65vh;
+    }
+  }
+  @media only screen and (max-width: 370px) {
+    background-size: 750px;
+    background-position-x: -120px;
+    .tema{
+      margin-top: 65vh;
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    background-size: 600px;
+    background-position-x: -130px;
+    .tema{
+      margin-top: 65vh;
+    }
+  }
   }
 
-  .title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    text-align: center;
-    color: ${yellow};
-    text-shadow: 5px 8px ${dark};
-    font-size: calc(4rem + 1vw);
-    margin: 10px 20px;
-    line-height: 50px;
-  }
-  .avatar {
-    margin-top: 20px;
-    width: 400px;
-  }
-  /* .tema {
-    margin-top: 50px;
-    color: ${white};
-    font-weight: bold;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3em;
+  .FRESH{
+  height: 100vh;
+  width: 100vw;
+  background-color: ${white};
+  background-image: url(${firstSection2});
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 70px;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* .avatar {
+    margin-top: 100px;
+    width: 450px;
   } */
-  .avatar-button {
+
+  .tema {
     color: white;
+    font-size: 2em;
+    font-family: BigJohnPRO;
     border: none;
     cursor: pointer;
     font-weight: bold;
-    background-color: transparent;
+    margin-top: 65vh;
+    height: 80px;
+    width: 150px;
+    border-radius: 90px;
+    background-color: ${red};
   }
-  .circle {
-    margin: 0 25px 0 25px;
-    width: 10px;
-    height: 10px;
-    background-color: ${white};
-    border-radius: 50%;
   }
-  .yellowed {
-    color: ${yellow};
-  }
-  .yellowedCircle {
-    background-color: ${yellow};
+
+  .COMPREHENSIVE{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: ${blue};
+    background-image: url(${ijugBG});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 50px;
+    background-attachment: fixed;
+
+    .tema {
+      color: black;
+      font-size: 2em;
+      font-family: BigJohnPRO;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 65vh;
+      height: 80px;
+      width: 350px;
+      border-radius: 90px;
+      background-color: ${yellow};
+    }
   }
 `;
+
+// export const FirstSection = styled.section`
+
+// `;
+
+// export const FirstSection2 = styled.section`
+
+// `;
+
+// export const FirstSection3 = styled.section`
+
+// `;
 
 export const SecondSection = styled.section`
   height: 800px;
@@ -215,6 +284,7 @@ export const SecondSection = styled.section`
     cursor: pointer;
   }
   .apa-itu {
+    font-family: BigJohnPRO;
     color: ${blue};
     font-size: bold;
     font-family: "Montserrat", sans-serif;
@@ -441,7 +511,7 @@ export const ThirdSection = styled.section`
 export const FourthSection = styled.section`
   height: 150vh;
   width: 100%;
-  background-color: #e5e6de;
+  background-color: ${white};
   background-image: url(${fourthBG});
   background-size: 80vw;
   background-repeat: no-repeat;
@@ -456,6 +526,7 @@ export const FourthSection = styled.section`
     width: 500px;
   }
   .liga-title {
+    font-family: BigJohnPRO;
     color: ${yellow};
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
@@ -626,6 +697,9 @@ export const FifthSection = styled.section`
   flex-direction: column;
   align-items: center;
   .social-media-title {
+    font-family: BigJohnPRO;
+    font-weight: bold;
+    padding: 10px 20px;
     margin-top: 50px;
     text-align: center;
     font-size: 3em;

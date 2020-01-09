@@ -1,10 +1,12 @@
 import React from "react";
-import posed from "react-pose";
+// import ReactDOM from 'react-dom';
+import posed, { PoseGroup } from "react-pose";
 // import SplitText from "react-pose-text";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import FadeIn from "react-fade-in";
+// import Fade from 'react-reveal/Fade';
 import Lottie from "react-lottie";
 // import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.css";
@@ -14,7 +16,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import HeaderFooter from "../../components/HeaderFooter";
 // import logoGede from "../../asset/logoGede.png";
 // import avatar from "../../asset/avatar.png";
-// import avatarIjug from "../../asset/avatarIjug.png";
+// import ijug from "../../asset/ijug.png";
 import prayaFerdi3 from "../../asset/prayaFerdi3.png";
 import om2 from "../../asset/om2.png";
 // import dekorYellow from "../../asset/dekorYellow.png";
@@ -29,7 +31,6 @@ import * as pinwheelData from "../../asset/pinwheelLoading.json";
 import {
   LoadingScreen,
   LandingPageContainer,
-  FirstSection,
   SecondSection,
   FourthSection,
   FifthSection
@@ -39,22 +40,26 @@ import logoGede2 from "../../asset/logoGede2.png";
 
 const DaftarButton = posed.button({
   hoverable: true,
-  init: {
-    scale: 1
-  },
-  hover: {
-    scale: 1.1
-  }
-});
-
-const ButtonTema = posed.button({
-  hoverable: true,
+  pressable: true,
   init: {
     scale: 1
   },
   hover: {
     scale: 1.2
-  }
+  },
+  press: { scale: 0.8 }
+});
+
+const ButtonTema = posed.button({
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.2
+  },
+  press: { scale: 0.8 }
 });
 
 const defaultOptions = {
@@ -96,15 +101,21 @@ const Ball = posed.div({
 //   }
 // };
 
+const FirstSection = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
+
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       done: undefined,
-      // stateAvatar: "fun",
+      tema: "fun",
       ballIsClicked: false,
       daftarButtonIsHovered: false
     };
+    this.firstSection = React.createRef();
   }
 
   componentDidMount() {
@@ -118,31 +129,28 @@ class LandingPage extends React.Component {
       done,
       // stateAvatar,
       ballIsClicked,
-      daftarButtonIsHovered
+      daftarButtonIsHovered,
+      tema
     } = this.state;
 
-    // const handleClickAvatar = event => {
-    //   for (
-    //     let i = 0;
-    //     i < document.getElementsByClassName("avatar-button").length;
-    //     i += 1
-    //   ) {
-    //     document
-    //       .getElementsByClassName("avatar-button")
-    //       [i].classList.remove("yellowed");
-    //   }
-    //   if (!event.target.classList.contains("yellowed")) {
-    //     event.target.classList.add("yellowed");
-
-    //     if (event.target.classList.contains("fun")) {
-    //       this.setState({ stateAvatar: "fun" });
-    //     } else if (event.target.classList.contains("fresh")) {
-    //       this.setState({ stateAvatar: "fresh" });
-    //     } else if (event.target.classList.contains("comprehensive")) {
-    //       this.setState({ stateAvatar: "comprehensive" });
-    //     }
-    //   }
-    // };
+    const handleClickTema = () => {
+      if (tema === "fun") {
+        this.setState({ tema: "fresh" });
+      } else if (tema === "fresh") {
+        this.setState({ tema: "comprehensive" });
+      } else {
+        this.setState({ tema: "fun" });
+      }
+    };
+    const handleCurrentTema = () => {
+      if (tema === "fun") {
+        return "FUN";
+      }
+      if (tema === "fresh") {
+        return "FRESH";
+      }
+      return "COMPREHENSIVE";
+    };
 
     const handleClickBall = () => {
       if (!ballIsClicked) {
@@ -156,10 +164,61 @@ class LandingPage extends React.Component {
       }
     };
 
-    // let imgAvatar = avatar;
-    // if (stateAvatar === "fresh") imgAvatar = avatarIjug;
-    // if (stateAvatar === "comprehensive") imgAvatar = avatarIjug;
-
+    const handleFirstSection = () => {
+      if (tema === "fun") {
+        return (
+          <FirstSection key="FUN" className={handleCurrentTema()}>
+            <img
+              src={selamatDatang}
+              className="selamat-datang"
+              alt="selamat-datang"
+            />
+            <ButtonTema
+              type="button"
+              className="tema"
+              onClick={() => {
+                handleClickTema();
+              }}
+            >
+              FUN
+            </ButtonTema>
+          </FirstSection>
+        );
+      }
+      if (tema === "fresh") {
+        return (
+          <FirstSection key="FRESH" className={handleCurrentTema()}>
+            {/* <img
+              src={avatar}
+              className="avatar"
+              alt="avatar"
+            /> */}
+            <ButtonTema
+              type="button"
+              className="tema"
+              onClick={() => {
+                handleClickTema();
+              }}
+            >
+              FRESH
+            </ButtonTema>
+          </FirstSection>
+        );
+      }
+      return (
+        <FirstSection key="COMPREHENSIVE" className={handleCurrentTema()}>
+          <ButtonTema
+            type="button"
+            className="tema"
+            onClick={() => {
+              handleClickTema();
+            }}
+          >
+            COMPREHENSIVE
+          </ButtonTema>
+        </FirstSection>
+      );
+    };
     return !done ? (
       <LoadingScreen>
         <FadeIn>
@@ -171,52 +230,9 @@ class LandingPage extends React.Component {
     ) : (
       <LandingPageContainer>
         <HeaderFooter color="dark">
-          <FirstSection>
-            <img
-              src={selamatDatang}
-              className="selamat-datang"
-              alt="selamat-datang"
-            />
-            <ButtonTema type="button" className="tema">
-              FUN
-            </ButtonTema>
-            {/* <img className="dekorYellow" src={dekorYellow} alt="matahari" />
-            <img className="dekorBlue" src={dekorBlue} alt="snowflake" /> */}
-            {/* <SplitText
-              className="title"
-              initialPose="exit"
-              pose="enter"
-              charPoses={charPoses}
-            >
-              SELAMAT DATANG
-            </SplitText> */}
-            {/* <img className="avatar" id="avatar" src={imgAvatar} alt="avatar" /> */}
-            {/* <div className="tema">
-              <button
-                type="button"
-                onClick={e => handleClickAvatar(e)}
-                className="avatar-button fun yellowed"
-              >
-                FUN
-              </button>
-              <div className="circle"></div>
-              <button
-                type="button"
-                onClick={e => handleClickAvatar(e)}
-                className="avatar-button fresh"
-              >
-                FRESH
-              </button>
-              <div className="circle"></div>
-              <button
-                type="button"
-                onClick={e => handleClickAvatar(e)}
-                className="avatar-button comprehensive"
-              >
-                COMPREHENSIVE
-              </button>
-            </div> */}
-          </FirstSection>
+          <FadeIn>
+            <PoseGroup>{handleFirstSection()}</PoseGroup>
+          </FadeIn>
           <SecondSection>
             <Ball
               onTouchStart={() => handleClickBall()}

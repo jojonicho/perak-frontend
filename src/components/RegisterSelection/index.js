@@ -19,30 +19,31 @@ class RegisterSelection extends React.Component {
       "codenames"
     ],
     id: [...Array(9).keys()],
-    color: ["purple", "yellow", "orange", "green"]
+    color: ["purple", "yellow", "orange", "green"],
+    counter: Math.floor(Math.random() * 4)
   };
 
   render() {
-    const { state } = this;
-    let counter = Math.floor(Math.random() * 4);
+    const { id, games, color } = this.state;
+    let { counter } = this.state;
     return (
-      <HeaderFooter color="blue">
+      <HeaderFooter color="dark">
         <RegisterSelectionContainer>
           <h1 className="title">DAFTARKAN DIRIMU SEKARANG</h1>
           <h1 className="choose">PILIH PERMAINANMU</h1>
           <Fade top cascade distance="100px" duration={1250}>
             <div className="game-container">
-              {state.id.map(id => {
+              {id.map(currentId => {
                 if (counter < 3) counter += 1;
                 else counter = 0;
                 return (
                   <Link
-                    to={`/daftar/${state.games[id]}`}
-                    className={`games ${state.color[counter]} ${
-                      state.games[id].split(" ")[0]
+                    to={`/daftar/${games[currentId]}`}
+                    className={`games ${color[counter]} ${
+                      games[currentId].split(" ")[0]
                     }`}
                   >
-                    <h1>{state.games[id].toUpperCase()}</h1>
+                    <h1>{games[currentId].toUpperCase()}</h1>
                   </Link>
                 );
               })}
