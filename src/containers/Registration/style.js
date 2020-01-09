@@ -67,36 +67,36 @@ export const TambahButton = styled.div`
 `;
 
 export const RegistrationContainer = styled.div`
-font-family: inherit;
-display: flex;
-flex-direction: column;
-background-attachment: unset;
-background-repeat: repeat-y;
-background-position: center;
-background-color: #E5E6DE;
-background-image: url(${bg});
-background-size: 100vw;
-text-align: center;
-position: relative;
-font-family: Helvetica;
-padding-bottom: 30px;
-overflow-x: hidden;
-color: black;
-.x-buttona {
-  cursor: pointer;
-  color: white;
-  background-color: #EA6229;
-  width: 35px;
-  font-weight: normal;
-  height: 35px;
-  position: absolute;
-  right: 20px;
-  font-size: 1.6em;
-  border-radius: 50%;
-  border: solid white 2px;
-}
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  background-attachment: unset;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-color: #e5e6de;
+  background-image: url(${bg});
+  background-size: 100vw;
+  text-align: center;
+  position: relative;
+  font-family: Helvetica;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+  color: black;
+  .x-buttona {
+    cursor: pointer;
+    color: white;
+    background-color: #ea6229;
+    width: 35px;
+    font-weight: normal;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    font-size: 1.6em;
+    border-radius: 50%;
+    border: solid white 2px;
+  }
 
-.section {
+  .section {
     margin: 0px auto;
     text-align: left;
     width: 100%;
@@ -105,10 +105,10 @@ color: black;
     display: flex;
     flex-direction: column;
     font-size: 25px;
-}
-input {
+  }
+  input {
     // padding: 0px 10px;
-    margin: 20px  5px;
+    margin: 20px 5px;
     background-color: white !important;
     border: none;
     border-radius: 3px;
@@ -119,16 +119,18 @@ input {
     font-weight: 400;
     width: 40%;
     min-width: 170px;
-    -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-    box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+      1px 1px 0px rgba(255, 255, 255, 1);
+    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+      1px 1px 0px rgba(255, 255, 255, 1);
     outline: none;
-}
+  }
 
-.long{
+  .long {
     width: 100%;
-}
+  }
 
-/* button{
+  /* button{
     border-radius: 5px;
   background-color: #a1cdf1;
   color: #fff;
@@ -137,15 +139,14 @@ input {
   border: 2px black solid;
   cursor: pointer;
 } */
-h3 {
-    Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-family: Helvetica;
-font-size: 32px;
-font-weight: 800;
-color: #454FCB;
-margin: 30px 0;
-margin-top: 50px;
-}
+  h3 {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 32px;
+    color: #454fcb;
+    margin: 30px 0;
+    margin-top: 50px;
+  }
 `;
 
 export const Section = styled.div`

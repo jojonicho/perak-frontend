@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const PersonFormRegistrationContainer = styled.div`
   height: 85%;
   margin-top: 18px;
-  font-family: Helvetica;
+  font-family: Montserrat;
+  font-weight: lighter;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -11,13 +12,16 @@ export const PersonFormRegistrationContainer = styled.div`
   margin: 0px 0;
 
   input , .foto-preview{
-    margin: 20px 5px !important;
+    margin: 10px 5px 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
     padding: 5px 10px;
     width: 100%;
     // max-width: 450px;
+  }
+  .foto-preview{
+    width: calc(100% - 120px);
   }
   .input-info {
     font-size: 15px;
@@ -50,9 +54,10 @@ export const PersonFormRegistrationContainer = styled.div`
     width: 100px;
     max-width: 350px;
     height: 40px;
-    margin: 0 5px !important;
+    margin: 0 5px 10px 5px !important;
     border: none;
-    font-weight: 600;
+    font-family: Montserrat;
+    font-weight: lighter;
     color: white;
     border-radius: 10px;
     font-size: 0.7em;
@@ -67,6 +72,20 @@ export const PersonFormRegistrationContainer = styled.div`
     box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
   }
     cursor: pointer;
+  }
+  .half-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .half{
+      width: 47%;
+    }
+    @media screen and (max-width:550px){
+      display: block;
+      .half{
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -90,6 +109,8 @@ export const Header = styled.h2`
   background-color: #4377fa;
   color: rgb(243, 227, 49);
   border-radius: 5px 5px 0px 0px;
+  font-family: Montserrat;
+  font-weight: bold;
 `;
 
 export const Input = styled.input`

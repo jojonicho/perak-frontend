@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const TeamFormRegistrationContainer = styled.div`
 overflow-x:hidden;
 align-items: center;
+font-family: Montserrat;
+font-weight: lighter;
 margin-top: 30px;
 .section {
     margin: 0px auto;
     text-align: left;
-    width: 100%;
+    width: 80%;
     font-size: 32px;
     font-weight: normal;
     display: flex;
@@ -25,7 +27,8 @@ margin-top: 30px;
     height: 40px;
     margin: 0 5px !important;
     border: none;
-    font-weight: 600;
+    font-family: Montserrat;
+    font-weight: lighter;
     color: white;
     border-radius: 10px;
     font-size: 0.7em;
@@ -41,28 +44,23 @@ margin-top: 30px;
   }
 }
 input ,.logo-preview {    
-    margin: 20px 5px !important;
+    margin: 10px 5px 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
     padding: 5px 10px;
-    width: 80%;
-    max-width: 450px;
+    width: 100%;
 }
 
 .logo-preview{
-    margin: 20px 5px !important;
+    margin: 10px 5px 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
     padding: 5px 10px;
-    width: 80%;
-    max-width: 450px;
+    width: calc(100% - 120px);
   }
 
-.long{
-    width: 50%;
-}
 
 h3 {
     Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
