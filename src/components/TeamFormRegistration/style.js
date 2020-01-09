@@ -7,16 +7,15 @@ margin-top: 30px;
 .section {
     margin: 0px auto;
     text-align: left;
-    width: 80%;
+    width: 100%;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: normal;
     display: flex;
     flex-direction: column;
     font-size: 25px;
 }
 
 .logo-tim{
-    margin: 20px  5px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -42,37 +41,23 @@ margin-top: 30px;
   }
 }
 input ,.logo-preview {    
-    padding: 5px 10px;
-    margin: 20px  5px;
+    margin: 20px 5px !important;
     background-color: white !important;
-    border: none;
     border-radius: 8px;
-    border: none;
-    opacity: 1;
-    color: #303030;
-    font-size: 20px;
-    font-weight: 400;
-    width: 40%;
-    min-width: 170px;
-
-    -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-    box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-
+    min-width: 200px;
+    padding: 5px 10px;
+    width: 80%;
+    max-width: 450px;
 }
 
 .logo-preview{
-    margin-right: 20px;
-    width:50vw;
-    height:50vw;
-    max-height: 200px;
-    max-width: 200px;
-    // border: 2px white solid;
-    // background-color: #FFDE17;
-    // border-radius: 3px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
+    margin: 20px 5px !important;
+    background-color: white !important;
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 5px 10px;
+    width: 80%;
+    max-width: 450px;
   }
 
 .long{
@@ -82,7 +67,7 @@ input ,.logo-preview {
 h3 {
     Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-size: 32px;
-font-weight: 800;
+font-weight: normal;
 }
 .hide-input{
     width: 0.1px;

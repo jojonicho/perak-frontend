@@ -31,10 +31,11 @@ export const SubmitButton = styled.div`
 export const LeftDiv = styled.div`
   width: 100%;
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
   > div {
-    width: 85%;
+    width: 100%;
+    justify-content: center;
     height: inherit !important;
   }
 `;
@@ -86,7 +87,7 @@ color: black;
   color: white;
   background-color: #EA6229;
   width: 35px;
-  font-weight: bold;
+  font-weight: normal;
   height: 35px;
   position: absolute;
   right: 20px;
@@ -98,7 +99,7 @@ color: black;
 .section {
     margin: 0px auto;
     text-align: left;
-    width: 80%;
+    width: 100%;
     font-size: 32px;
     font-weight: 800;
     display: flex;
@@ -141,6 +142,7 @@ h3 {
     font-family: Helvetica;
 font-size: 32px;
 font-weight: 800;
+color: #454FCB;
 margin: 30px 0;
 margin-top: 50px;
 }
@@ -193,10 +195,10 @@ box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 `;
 
 export const Title = styled.h3`
-  // Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* // Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   font-family: Helvetica;
   font-size: 48px !important;
-  // text-shadow: 2px 2px #F24E07;
+  /* text-shadow: 2px 2px #F24E07; */
   color: #4b59a7;
-  font-weight: 800;
+  font-weight: 700 !important;
 `;

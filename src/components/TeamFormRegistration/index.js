@@ -22,11 +22,11 @@ class TeamFormRegistration extends React.Component {
           <div className="section">
             Logo Tim
             <div className="logo-tim d-flex flex-wrap align-items-center">
-              <div className="logo-preview">
-                {teamImage && (
-                  <img src={URL.createObjectURL(teamImage)} alt="" />
-                )}
-              </div>
+              <input
+                className="logo-preview"
+                disabled
+                value={teamImage && teamImage.name}
+              />
               <label htmlFor={idForm} className="labelfile">
                 Unggah
                 <input

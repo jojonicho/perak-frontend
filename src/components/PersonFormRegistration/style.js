@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PersonFormRegistrationContainer = styled.div`
-  height: 100%;
+  height: 85%;
   margin-top: 18px;
   font-family: Helvetica;
   display: flex;
@@ -16,11 +16,8 @@ export const PersonFormRegistrationContainer = styled.div`
     border-radius: 8px;
     min-width: 200px;
     padding: 5px 10px;
-    width: 80%;
-    max-width: 450px;
-  }
-  .input-long {
-    width: 90%;
+    width: 100%;
+    // max-width: 450px;
   }
   .input-info {
     font-size: 15px;
@@ -78,7 +75,7 @@ export const Section = styled.div`
   text-align: left;
   width: 80%;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: normal;
   display: flex;
   flex-direction: column;
   font-size: 25px;

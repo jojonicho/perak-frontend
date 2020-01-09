@@ -47,7 +47,7 @@ class Registration extends React.Component {
     console.log(props.alert);
     return (
       <HeaderFooter color="dark">
-        <Fade left>
+        <Fade>
           <RegistrationContainer>
             <SweetAlert
               show={props.alert || props.done}

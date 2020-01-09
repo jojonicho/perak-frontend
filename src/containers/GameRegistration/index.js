@@ -45,7 +45,7 @@ class GameRegistration extends React.Component {
     }
     return (
       <HeaderFooter color="dark">
-        <Fade left>
+        <Fade>
           <RegistrationContainer>
             <SweetAlert
               show={props.alert || props.done}
