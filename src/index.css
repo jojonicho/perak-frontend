@@ -1,4 +1,22 @@
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); */
+
+@font-face {
+  font-family: BigJohnPRO;
+  src: url("./asset/BigJohnPRO-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BigJohnPRO;
+  font-weight: bold;
+  src: url("./asset/BigJohnPRO-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BigJohnPRO;
+  font-weight: lighter;
+  src: url("./asset/BigJohnPRO-Light.otf") format("opentype");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
