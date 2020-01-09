@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from "react-reveal";
 // import ReactDOM from 'react-dom';
 import posed, { PoseGroup } from "react-pose";
 // import SplitText from "react-pose-text";
@@ -233,99 +234,106 @@ class LandingPage extends React.Component {
           <FadeIn>
             <PoseGroup>{handleFirstSection()}</PoseGroup>
           </FadeIn>
-          <SecondSection>
-            <Ball
-              onTouchStart={() => handleClickBall()}
-              onClick={() => handleClickBall()}
-              onMouseEnter={() => handleClickBall()}
-              className="ball"
-              pose={ballIsClicked ? "notRotating" : "rotating"}
-            ></Ball>
-            <h1 className="apa-itu">APA ITU PERAK?</h1>
-            <p className="full-desc">
-              Lorem ipsum dolor sit amet et delectus accommodare his consul
-              copiosae legendos at vix ad putent delectus delicata usu. Vidit
-              dissentiet eos cu eum an brute copiosae hendrerit. Eos erant
-              dolorum an. Per facer affert ut. Mei iisque mentitum moderatius
-              cu. Sit munere facilis accusam eu dicat falli consulatu at vis. Te
-              facilisis mnesarchum qui posse omnium mediocritatem est cu. Modus
-              argumentum ne qui tation efficiendi in eos. Ei mea falli legere
-              efficiantur et tollit aliquip debitis mei. No deserunt
-              mediocritatem mel. Lorem
-            </p>
-            <img className="praya-ferdi" src={prayaFerdi3} alt="praya ferdi" />
-            <img className="om" src={om2} alt="om" />
-          </SecondSection>
-
-          <FourthSection>
-            <h1 className="liga-title">LIGA</h1>
-            <Carousel
-              className="image-carousel"
-              showStatus={false}
-              showThumbs={false}
-              infiniteLoop
-              autoPlay
-            >
-              <div>
-                <img className="csl" src={csl3} alt="csl3" />
-              </div>
-              <div>
-                <img className="csl" src={csl1} alt="csl1" />
-              </div>
-              <div>
-                <img className="csl" src={csl2} alt="csl2" />
-              </div>
-              <div>
-                <img className="csl" src={csl4} alt="csl4" />
-              </div>
-            </Carousel>
-            <p className="desc-liga">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              praesentium ipsa, consectetur eius error, doloribus fuga aliquam,
-              odio dolores tempora aspernatur. Impedit delectus, quae rerum
-              minima nihil perferendis sint dolor.
-            </p>
-            <DaftarButton
-              onMouseEnter={() => handleHoverDaftarButton()}
-              className="daftar-button"
-              pose={daftarButtonIsHovered ? "rusak" : null}
-            >
-              DAFTAR SEKARANG
-            </DaftarButton>
-          </FourthSection>
-          <FifthSection>
-            <h1 className="social-media-title">SOCIAL MEDIA</h1>
-            <div className="social-medias">
-              <div className="row-social-medias">
-                <div className="social-media">
-                  <div className="dark-circle"></div>
-                  <p>Instagram</p>
+          <Fade top cascade distance="50px" delay={0} duration={700}>
+            <SecondSection>
+              <Ball
+                onTouchStart={() => handleClickBall()}
+                onClick={() => handleClickBall()}
+                onMouseEnter={() => handleClickBall()}
+                className="ball"
+                pose={ballIsClicked ? "notRotating" : "rotating"}
+              ></Ball>
+              <h1 className="apa-itu">APA ITU PERAK?</h1>
+              <p className="full-desc">
+                <Fade top big cascade distance="300px">
+                  Lorem ipsum dolor sit amet et delectus accommodare his consul
+                  copiosae legendos at vix ad putent delectus delicata usu.
+                  Vidit dissentiet eos cu eum an brute copiosae hendrerit. Eos
+                  erant dolorum an. Per facer affert ut. Mei iisque mentitum
+                  moderatius cu. Sit munere facilis accusam eu dicat falli
+                  consulatu at vis. Te facilisis mnesarchum qui posse omnium
+                  mediocritatem est cu. Modus argumentum ne qui tation
+                  efficiendi in eos. Ei mea falli legere efficiantur et tollit
+                  aliquip debitis mei. No deserunt mediocritatem mel. Lorem
+                </Fade>
+              </p>
+              <img
+                className="praya-ferdi"
+                src={prayaFerdi3}
+                alt="praya ferdi"
+              />
+              <img className="om" src={om2} alt="om" />
+            </SecondSection>
+            <FourthSection>
+              <h1 className="liga-title">LIGA</h1>
+              <Carousel
+                className="image-carousel"
+                showStatus={false}
+                showThumbs={false}
+                infiniteLoop
+                autoPlay
+              >
+                <div>
+                  <img className="csl" src={csl3} alt="csl3" />
                 </div>
-                <div className="social-media">
-                  <div className="dark-circle"></div>
-                  <p>Twitter</p>
+                <div>
+                  <img className="csl" src={csl1} alt="csl1" />
                 </div>
-                <div className="social-media">
-                  <div className="dark-circle"></div>
-                  <p>Linkedin</p>
+                <div>
+                  <img className="csl" src={csl2} alt="csl2" />
+                </div>
+                <div>
+                  <img className="csl" src={csl4} alt="csl4" />
+                </div>
+              </Carousel>
+              <p className="desc-liga">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                praesentium ipsa, consectetur eius error, doloribus fuga
+                aliquam, odio dolores tempora aspernatur. Impedit delectus, quae
+                rerum minima nihil perferendis sint dolor.
+              </p>
+              <DaftarButton
+                onMouseEnter={() => handleHoverDaftarButton()}
+                className="daftar-button"
+                pose={daftarButtonIsHovered ? "rusak" : null}
+              >
+                DAFTAR SEKARANG
+              </DaftarButton>
+            </FourthSection>
+            <FifthSection>
+              <h1 className="social-media-title">SOCIAL MEDIA</h1>
+              <div className="social-medias">
+                <div className="row-social-medias">
+                  <div className="social-media">
+                    <div className="dark-circle"></div>
+                    <p>Instagram</p>
+                  </div>
+                  <div className="social-media">
+                    <div className="dark-circle"></div>
+                    <p>Twitter</p>
+                  </div>
+                  <div className="social-media">
+                    <div className="dark-circle"></div>
+                    <p>Linkedin</p>
+                  </div>
+                </div>
+                <div className="row-social-medias">
+                  <div className="social-media">
+                    <div className="dark-circle"></div>
+                    <p>Line</p>
+                  </div>
+                  <div className="social-media">
+                    <div className="dark-circle"></div>
+                    <p>Facebook</p>
+                  </div>
+                  <div className="social-media">
+                    <div className="dark-circle"></div>
+                    <p>Youtube</p>
+                  </div>
                 </div>
               </div>
-              <div className="row-social-medias">
-                <div className="social-media">
-                  <div className="dark-circle"></div>
-                  <p>Line</p>
-                </div>
-                <div className="social-media">
-                  <div className="dark-circle"></div>
-                  <p>Facebook</p>
-                </div>
-                <div className="social-media">
-                  <div className="dark-circle"></div>
-                  <p>Youtube</p>
-                </div>
-              </div>
-            </div>
-          </FifthSection>
+            </FifthSection>
+          </Fade>
         </HeaderFooter>
       </LandingPageContainer>
     );
