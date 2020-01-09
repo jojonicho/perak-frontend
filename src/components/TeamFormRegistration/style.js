@@ -25,7 +25,7 @@ margin-top: 30px;
     width: 100px;
     max-width: 350px;
     height: 40px;
-    margin: 0 5px !important;
+    margin: 0 5px 10px 5px !important;
     border: none;
     font-family: Montserrat;
     font-weight: lighter;
