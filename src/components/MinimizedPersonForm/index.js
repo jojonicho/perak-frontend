@@ -15,11 +15,17 @@ class MinimizedPersonForm extends React.Component {
       deletePlayer
     } = this.props;
 
+    const dotDot = "...";
+
     return (
       <MinimizedPersonFormContainer>
         <div className="upperMinimized">
           <div className="leftSideUpper">
-            <p className="nama">{namaLengkap}</p>
+            <p className="nama">
+              {namaLengkap.length > 15
+                ? namaLengkap.substring(0, 16) + dotDot
+                : namaLengkap}
+            </p>
             <MinimizePersonButton onClick={() => setShowPlayer()}>
               <img className="pencil" src={edit} alt="edit" /> Edit
             </MinimizePersonButton>

@@ -3,20 +3,68 @@ import styled from "styled-components";
 export const RegisterSelectionContainer = styled.div`
   min-height: calc(100vh - 80px);
   color: #0d2040;
-  font-family: inherit;
+  font-family: Montserrat;;
   background-color: #e5e5e5;
   text-align: center;
   display: flex;
   flex-direction: column;
   font-weight: bolder;
-
+  .decor{
+    position: absolute;
+    z-index: 2;
+  }
+  .purple-yellow-ball{
+    top: calc(100% / 5 + 1px);
+    left: calc(100% / 5);
+    transform: translate(-75%, 35%);
+    cursor: pointer;
+    }
+  .black-white-rect{
+    top: calc(100% / 3 + 10px );
+    right: calc(100% / 3 + 10px);
+    cursor: pointer;
+    }
+  .orange-ellipse{
+    top: calc(100% / 4 );
+    right: 1.5%;
+    cursor: pointer;
+    }
+  .orange-ellipse-2{
+    cursor: pointer;
+    top: 96%;
+    left: calc(100% / 5);
+    transform: translate(-75%);
+    }
+  .purple-ball{
+    top: calc(50vh);
+    left: calc(2%);
+    transform: translate(-25%);
+    cursor: pointer;
+    }
+  .orange-green-ball-rect{
+    top: calc(72vh);
+    transform: translate(-50%);
+    cursor: pointer;
+    }
+  .purple-rect{
+    top: calc(45% + 13px );
+    right: 60px;
+    transform: translate(-25%);
+    cursor: pointer;
+    }
+  .orange-green-ball{
+    right: 0px;
+    top: calc(75vh);
+    transform: translate(-25%, 100%);
+    cursor: pointer;
+    }
   .title {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 20px 0px;
     color: white;
     text-shadow: 3px 3px #454fcb, -2px 3px #ea6229, 2.5px -2px #33b3a6;
-    font-size: calc(3rem + 1vw);
+    font-size: calc(2.5rem + 1vw);
     font-weight: bold;
-    transform: scale(1, 0.9);
+    // transform: scale(1, 0.9);
   }
   .game-container {
     justify-content: center;
@@ -24,7 +72,6 @@ export const RegisterSelectionContainer = styled.div`
     display: flex;
     text-decoration: none !important;
     padding: 10px;
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -45,15 +92,21 @@ export const RegisterSelectionContainer = styled.div`
     background-color: #ea6229;
   }
   .games {
-    padding: 4vh 20px;
-    margin: 5px;
-    width: 40%;
+    padding: 0px 4px 0px 4px;
+    margin: 7px;
+    width: 30vw;
+    height: 12vw;
     color: #0d2040 !important;
     text-decoration: none !important;
     transition: 0.25s;
     border-radius: 4px;
     box-shadow: 0 0 2px rgba(34, 25, 25, 0.4);
     word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-width: 135px;
+    min-height: 90px;
   }
   .games:hover {
     h1 {
@@ -116,12 +169,54 @@ export const RegisterSelectionContainer = styled.div`
     background-position: center;
   }
   .choose {
-    font-size: calc(1.5rem + 1vw);
+    font-size: calc(1.5rem + 0.7vw);
     font-weight: bold;
   }
   .game-container h1 {
     margin: auto;
-    font-size: 1.2em;
+    font-size: calc(1.5vw + 15px);
     font-weight: bold;
+  }
+  @media only screen and (max-width: 800px) {
+    .purple-yellow-ball {
+      width: 30px;
+      left: calc(100% / 4 + 16px);
+      top: calc(35vh + 12px);
+    }
+    .purple-ball {
+      left: 15px;
+      width: 30px;
+      top: calc(59vh);
+    }
+    .orange-ellipse{
+      width: 40px;
+      top: calc(40vh + 12px);
+    }
+    .orange-ellipse-2{
+      width: 40px;
+      left: 10px;
+      top: calc(90vh);
+    }
+    .orange-green-ball-rect{
+      width: 40px;
+      top: 74.5vh;
+      left: 83px;
+    }
+    .orange-green-ball{
+      width: 40px;
+      right: 0px;
+      top: 99vh;
+      transform: translate(7.5%);
+    }
+    .purple-rect {
+      width: 30px;
+      top: 75vh;
+      right: 11px;
+    }
+    .black-white-rect{
+      width:10px
+      top: 114vh;
+      right: 83px;
+    }
   }
 `;

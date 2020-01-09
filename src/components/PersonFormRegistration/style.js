@@ -11,7 +11,8 @@ export const PersonFormRegistrationContainer = styled.div`
   text-align: center;
   margin: 0px 0;
 
-  input , .foto-preview{
+  input,
+  .foto-preview {
     margin: 10px 5px 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
@@ -20,14 +21,14 @@ export const PersonFormRegistrationContainer = styled.div`
     width: 100%;
     // max-width: 450px;
   }
-  .foto-preview{
+  .foto-preview {
     width: calc(100% - 120px);
   }
   .input-info {
     font-size: 15px;
   }
   .idcard-preview {
-    margin-top 18px;
+    margin-top: 18px;
     width: 70vw;
     height: 40vw;
     max-height: 300px;
@@ -68,21 +69,21 @@ export const PersonFormRegistrationContainer = styled.div`
     justify-content: center;
     // padding: 0 3px;
     cursor: pointer;
-  :active {
-    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
-  }
+    :active {
+      box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+    }
     cursor: pointer;
   }
-  .half-cont{
+  .half-cont {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    .half{
+    .half {
       width: 47%;
     }
-    @media screen and (max-width:550px){
+    @media screen and (max-width: 550px) {
       display: block;
-      .half{
+      .half {
         width: 100%;
       }
     }
@@ -102,7 +103,7 @@ export const Section = styled.div`
 
 export const Header = styled.h2`
   padding: 10px 0px;
-  margin 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   font-size: 40px;
   font-weight: 800;
   width: 100%;
@@ -118,10 +119,10 @@ export const Input = styled.input`
   width: ${props => {
     if (props.type === "long") return "100%";
     return "60%";
-  }}
+  }};
   // padding: 0px 10px;
   margin: 5px 0px;
-  background-color:#FFDE17 !important;
+  background-color: #ffde17 !important;
   // border: none;
   border: 2px black solid;
   opacity: 1;
@@ -129,7 +130,10 @@ export const Input = styled.input`
   font-size: 20px;
   font-weight: 400;
 
-  -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-  -moz-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-  box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
 `;

@@ -109,7 +109,6 @@ class GameRegistration extends React.Component {
                   ) : (
                     <Fade when cascade>
                       <MinimizedPersonForm
-                        namaLengkap={data.personData[index][0]}
                         setShowPlayer={() =>
                           props.setShowPlayer(
                             props.gameId,
@@ -118,6 +117,10 @@ class GameRegistration extends React.Component {
                             data.personData
                           )
                         }
+                        namaLengkap={data.personData[index][0]}
+                        kontak={data.personData[index][1]}
+                        email={data.personData[index][2]}
+                        nomorTelepon={data.personData[index][3]}
                         deletePlayer={() =>
                           props.deletePlayer(
                             props.gameId,

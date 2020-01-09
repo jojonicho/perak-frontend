@@ -56,8 +56,8 @@ class Registration extends React.Component {
               onConfirm={props.stopAlert}
             />
             <Title>REGISTRASI TIM FUTSAL</Title>
-            <MinimizedPersonForm
-              namaLengkap="Bambang Yakobs"
+            {/* <MinimizedPersonForm
+              namaLengkap="Bambang Yakobus"
               kontak="bambangYakobus"
               email="bambang@gmail.com"
               nomorTelepon="012d031023"
@@ -67,7 +67,7 @@ class Registration extends React.Component {
               deletePlayer={() =>
                 props.deletePlayer(props.numberPlayer, props.personData, 0 + 1)
               }
-            />
+            /> */}
             <TeamFormRegistration
               teamImage={props.teamImage}
               setImage={props.setTeamImage}
@@ -140,9 +140,9 @@ class Registration extends React.Component {
                   <Fade when cascade>
                     <MinimizedPersonForm
                       namaLengkap={props.personData[index + 1][0]}
-                      kontak={props.personData[0][1]}
-                      email={props.personData[0][2]}
-                      nomorTelepon={props.personData[0][3]}
+                      kontak={props.personData[index + 1][1]}
+                      email={props.personData[index + 1][2]}
+                      nomorTelepon={props.personData[index + 1][3]}
                       setShowPlayer={() =>
                         props.setShowPlayer(
                           index + 1,

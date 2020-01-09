@@ -19,7 +19,6 @@ export const MinimizedPersonFormContainer = styled.div`
   position: relative;
   .nama {
     text-align: left;
-    width: 250px;
   }
   .garisContainer {
     margin: 20px 0;
@@ -45,6 +44,7 @@ export const MinimizedPersonFormContainer = styled.div`
   }
   .info {
     text-align: left;
+    max-width: 33%;
     overflow-x: hidden;
     padding: 0 5px;
   }
@@ -54,7 +54,7 @@ export const MinimizedPersonFormContainer = styled.div`
   }
   .bottomMinimized {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 16px;
   }
   .leftSideUpper {
