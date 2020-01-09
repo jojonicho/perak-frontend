@@ -19,6 +19,7 @@ export const MinimizedPersonFormContainer = styled.div`
   position: relative;
   .nama {
     text-align: left;
+    margin: auto;
   }
   .garisContainer {
     margin: 20px 0;
@@ -43,10 +44,16 @@ export const MinimizedPersonFormContainer = styled.div`
     border: none;
   }
   .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
+    height: 100%;
     max-width: 33%;
     overflow-x: hidden;
-    padding: 0 5px;
+  }
+  .info p {
+    margin-bottom: 0;
   }
   .upperMinimized {
     display: flex;
@@ -55,6 +62,7 @@ export const MinimizedPersonFormContainer = styled.div`
   .bottomMinimized {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     font-size: 16px;
   }
   .leftSideUpper {
@@ -64,6 +72,66 @@ export const MinimizedPersonFormContainer = styled.div`
   }
   .trash {
     margin-right: 10px;
+  }
+  @media only screen and (max-width: 790px) {
+    padding: 15px 30px;
+    .nama {
+      font-size: 20px;
+    }
+    .garisContainer {
+      margin: 15px 0;
+    }
+    .bottomMinimized {
+      font-size: 12px;
+    }
+    .trash {
+      width: 12px;
+    }
+    .x-button {
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    width: 90vw;
+    padding: 15px 30px;
+    .nama {
+      font-size: 16px;
+    }
+    .bottomMinimized {
+      font-size: 12px;
+    }
+    .x-button {
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 15px 30px;
+    .nama {
+      font-size: 14px;
+    }
+    .bottomMinimized {
+      font-size: 10px;
+    }
+    .x-button {
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    padding: 15px 20px;
+  }
+  @media only screen and (max-width: 400px) {
+    .nama {
+      font-size: 12px;
+    }
+    .bottomMinimized {
+      font-size: 10px;
+    }
+    .trash {
+      margin-right: 4px;
+    }
+    .x-button {
+      font-size: 10px;
+    }
   }
 `;
 export const MinimizePersonButton = styled.button`
@@ -79,6 +147,21 @@ export const MinimizePersonButton = styled.button`
   margin-left: 25px;
   padding: 8px 15px;
   .pencil {
-    margin-right: 5px;
+    margin-right: 10px;
+  }
+  @media only screen and (max-width: 790px) {
+    padding: 5px 15px;
+    font-size: 13px;
+    .pencil {
+      width: 12px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  @media only screen and (max-width: 400px) {
+    padding: 4px 10px;
+    font-size: 10px;
   }
 `;
