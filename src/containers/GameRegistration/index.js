@@ -44,7 +44,7 @@ class GameRegistration extends React.Component {
       window.location.reload();
     }
     return (
-      <HeaderFooter color="green">
+      <HeaderFooter color="dark">
         <Fade left>
           <RegistrationContainer>
             <SweetAlert

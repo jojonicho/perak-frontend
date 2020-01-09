@@ -46,7 +46,7 @@ class Registration extends React.Component {
     console.log(props.showPlayer);
     console.log(props.alert);
     return (
-      <HeaderFooter color="green">
+      <HeaderFooter color="dark">
         <Fade left>
           <RegistrationContainer>
             <SweetAlert
