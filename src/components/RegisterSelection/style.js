@@ -241,4 +241,7 @@ export const RegisterSelectionContainer = styled.div`
   //     right: 83px;
   //   }
   // }
+  .mauapa {
+    cursor: pointer;
+  }
 `;

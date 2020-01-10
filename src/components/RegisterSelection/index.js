@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
@@ -7,53 +9,68 @@ import HeaderFooter from "../HeaderFooter";
 import SVGIcon from "./SVGIcon";
 
 class RegisterSelection extends React.Component {
-  state = {
-    games: [
-      "futsal",
-      "dota 2",
-      "csgo",
-      "mobile legend",
-      "super smash",
-      "mario kart",
-      "fifa 20",
-      "catur",
-      "code names"
-    ],
-    slug: [
-      "futsal",
-      "dota",
-      "csgo",
-      "mlbb",
-      "ssbu",
-      "mariokart",
-      "fifa",
-      "catur",
-      "codenames"
-    ],
-    decor: [
-      "purple-yellow-ball",
-      "black-white-rect",
-      "purple-rect",
-      "orange-ellipse",
-      "orange-green-ball-rect",
-      "orange-ellipse-2",
-      "purple-ball",
-      "purple-yellow-ball-2",
-      "orange-green-ball"
-    ],
-    id: [...Array(9).keys()],
-    color: ["purple", "yellow", "orange", "green"],
-    counter: Math.floor(Math.random() * 4)
-  };
+  constructor() {
+    super();
+    this.state = {
+      games: [
+        "futsal",
+        "dota 2",
+        "csgo",
+        "mobile legend",
+        "super smash",
+        "mario kart",
+        "fifa 20",
+        "catur",
+        "code names"
+      ],
+      slug: [
+        "futsal",
+        "dota",
+        "csgo",
+        "mlbb",
+        "ssbu",
+        "mariokart",
+        "fifa",
+        "catur",
+        "codenames"
+      ],
+      decor: [
+        "purple-yellow-ball",
+        "black-white-rect",
+        "purple-rect",
+        "orange-ellipse-2",
+        "orange-green-ball-rect",
+        "orange-green-ball",
+        "purple-ball",
+        "purple-yellow-ball-2",
+        "orange-ellipse"
+      ],
+      id: [...Array(9).keys()],
+      color: ["purple", "yellow", "orange", "green"],
+      counter: Math.floor(Math.random() * 4),
+      magic: false
+    };
+    this.letMagicHappens = this.letMagicHappens.bind(this);
+  }
+
+  letMagicHappens() {
+    this.setState({ magic: true });
+  }
 
   render() {
-    const { id, games, color, slug, decor } = this.state;
+    const { id, games, color, slug, decor, magic } = this.state;
     let { counter } = this.state;
+    const { letMagicHappens } = this;
     return (
       <HeaderFooter color="dark">
-        <RegisterSelectionContainer>
+        <RegisterSelectionContainer className={magic ? "magic" : ""}>
           <h1 className="title">DAFTARKAN DIRIMU SEKARANG</h1>
-          <h1 className="choose">PILIH PERMAINANMU</h1>
+          <h1 className="choose">
+            <span className="mauapa" onClick={letMagicHappens}>
+              PILIH
+            </span>{" "}
+            PERMAINANMU
+          </h1>
           <Fade top distance="100px" duration={1250}>
             {/* <SVGIcon name="purple-yellow-ball" width={90} height={90} />
             <SVGIcon name="black-white-rect" width={25} height={100} />
