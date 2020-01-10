@@ -61,7 +61,7 @@ class GameRegistration extends React.Component {
               />
             ) : null}
             <div className="garisnya" />
-            <h3>Pemain ({data.numberPlayer} Orang)</h3>
+            <h3 className="pemain">Pemain ({data.numberPlayer} Orang)</h3>
             {Game.captain ? (
               <p className="mb-0">*orang pertama adalah kapten tim</p>
             ) : null}
@@ -140,12 +140,15 @@ class GameRegistration extends React.Component {
                         kontak={data.personData[index][1]}
                         email={data.personData[index][2]}
                         nomorTelepon={data.personData[index][3]}
-                        deletePlayer={() =>
-                          props.deletePlayer(
-                            props.gameId,
-                            data.personData,
-                            index
-                          )
+                        deletePlayer={
+                          index === 0
+                            ? null
+                            : () =>
+                                props.deletePlayer(
+                                  props.gameId,
+                                  data.personData,
+                                  index
+                                )
                         }
                       />
                     </Fade>

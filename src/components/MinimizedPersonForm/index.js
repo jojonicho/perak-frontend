@@ -30,14 +30,16 @@ class MinimizedPersonForm extends React.Component {
               <img className="pencil" src={edit} alt="edit" /> Edit
             </MinimizePersonButton>
           </div>
-          <button
-            type="button"
-            className="x-button"
-            onClick={() => deletePlayer()}
-          >
-            <img className="trash" src={hapus} alt="hapus" />
-            Hapus Pemain
-          </button>
+          {deletePlayer ? (
+            <button
+              type="button"
+              className="x-button"
+              onClick={() => deletePlayer()}
+            >
+              <img className="trash" src={hapus} alt="hapus" />
+              Hapus Pemain
+            </button>
+          ) : null}
         </div>
         <div className="garisContainer">
           <div className="garis"></div>

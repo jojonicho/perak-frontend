@@ -87,7 +87,7 @@ class PersonFormRegistration extends React.Component {
         {savePlayer ? (
           <Section>
             <button type="button" className="saveb" onClick={savePlayer}>
-              Save
+              Simpan
             </button>
           </Section>
         ) : null}

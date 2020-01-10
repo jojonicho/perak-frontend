@@ -73,6 +73,7 @@ export const RegistrationContainer = styled.div`
   font-family: inherit;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-attachment: unset;
   background-repeat: repeat-y;
   background-position: center;
@@ -98,6 +99,7 @@ export const RegistrationContainer = styled.div`
     align-items: center;
     border: none;
     margin-right: 10%;
+    outline: none;
   }
   .garisnya {
     width: 80%;
@@ -108,6 +110,13 @@ export const RegistrationContainer = styled.div`
     margin-top: 30px;
     margin-bottom: 10px;
   }
+
+  .pemain,
+  .manager {
+    text-align: left;
+    width: 75%;
+  }
+
   .section {
     margin: 0px auto;
     text-align: left;
@@ -167,7 +176,7 @@ export const RegistrationContainer = styled.div`
 export const Section = styled.div`
   margin: 0px auto;
   text-align: left;
-  width: 80%;
+  width: 70%;
   font-size: 32px;
   font-weight: 800;
   display: flex;

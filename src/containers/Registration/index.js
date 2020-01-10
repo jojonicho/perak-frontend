@@ -65,7 +65,7 @@ class Registration extends React.Component {
             />
             <div className="garisnya" />
 
-            <h3>Manager</h3>
+            <h3 className="manager">Manager</h3>
             <LeftDiv>
               <PersonFormRegistration
                 id="0"
@@ -83,7 +83,9 @@ class Registration extends React.Component {
               />
             </LeftDiv>
             <div className="garisnya" />
-            <h3>Pemain ({props.numberPlayer.length} Orang)</h3>
+            <h3 className="pemain">
+              Pemain ({props.numberPlayer.length} Orang)
+            </h3>
             <Forms>
               {/* <MinimizedPersonForm
               namaLengkap="Bambang Yakobus"

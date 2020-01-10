@@ -13,7 +13,7 @@ export const PersonFormRegistrationContainer = styled.div`
 
   input,
   .foto-preview {
-    margin: 10px 5px 20px 5px !important;
+    margin: 10px 5px 20px 0px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
@@ -107,7 +107,7 @@ export const PersonFormRegistrationContainer = styled.div`
 export const Section = styled.div`
   margin: 0px auto;
   text-align: left;
-  width: 80%;
+  width: 75%;
   font-weight: normal;
   display: flex;
   flex-direction: column;

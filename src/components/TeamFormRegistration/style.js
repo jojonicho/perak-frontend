@@ -1,27 +1,28 @@
 import styled from "styled-components";
 
 export const TeamFormRegistrationContainer = styled.div`
-overflow-x:hidden;
-align-items: center;
-font-family: Montserrat;
-font-weight: lighter;
-margin-top: 30px;
-.section {
+  overflow-x: hidden;
+  align-items: center;
+  font-family: Montserrat;
+  font-weight: lighter;
+  margin-top: 30px;
+  width: 75%;
+
+  .section {
     margin: 0px auto;
     text-align: left;
-    width: 80%;
     font-size: 32px;
     font-weight: normal;
     display: flex;
     flex-direction: column;
     font-size: 1rem;
-}
+  }
 
-.logo-tim{
+  .logo-tim {
     display: flex;
     flex-wrap: wrap;
-}
-.labelfile {
+  }
+  .labelfile {
     width: 100px;
     max-width: 350px;
     height: 34px;
@@ -34,26 +35,27 @@ margin-top: 30px;
     justify-content: center;
     cursor: pointer;
     background-color: transparent;
-    color: #22B3A5;
-    border: solid #22B3A5 2px;
+    color: #22b3a5;
+    border: solid #22b3a5 2px;
     border-radius: 7px;
     outline: none;
     :active {
-      background-color: #22B3A5;
-      color: #F0F0F0;
+      background-color: #22b3a5;
+      color: #f0f0f0;
     }
   }
-input ,.logo-preview {    
-    margin: 10px 5px 20px 5px !important;
+  input,
+  .logo-preview {
+    margin: 10px 5px 20px 0px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
     padding: 5px 10px;
     width: 100%;
-}
+  }
 
-.logo-preview{
-    margin: 10px 5px 20px 5px !important;
+  .logo-preview {
+    margin: 10px 5px 20px 0px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
@@ -62,25 +64,23 @@ input ,.logo-preview {
     color: #00000060;
   }
 
-  .logo-preview:focus{
-      border: 2px solid black;
+  .logo-preview:focus {
+    border: 2px solid black;
   }
 
-
-h3 {
-    Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 32px;
-font-weight: normal;
-}
-.hide-input{
+  h3 {
+    /* Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-size: 32px;
+    font-weight: normal;
+  }
+  .hide-input {
     width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
     z-index: -1;
     margin: 0;
     display: none;
-}
-
+  }
 `;
