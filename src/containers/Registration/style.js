@@ -115,6 +115,9 @@ export const RegistrationContainer = styled.div`
   .manager {
     text-align: left;
     width: 75%;
+    @media only screen and (max-width: 500px) {
+      font-size: 30px;
+    }
   }
 
   .section {
@@ -201,24 +204,27 @@ export const Button = styled.button`
   }};
 `;
 export const Input = styled.input`
-height: 32px;
-width: ${props => {
-  if (props.type === "long") return "100%";
-  return "60%";
-}}
-// padding: 0px 10px;
-margin: 0px auto;
-background-color: white;
-// border: none;
-border: 2px black solid;
-opacity: 1;
-color: #303030;
-font-size: 20px;
-font-weight: 400;
+  height: 32px;
+  width: ${props => {
+    if (props.type === "long") return "100%";
+    return "60%";
+  }};
+  // padding: 0px 10px;
+  margin: 0px auto;
+  background-color: white;
+  // border: none;
+  border: 2px black solid;
+  opacity: 1;
+  color: #303030;
+  font-size: 20px;
+  font-weight: 400;
 
--webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
--moz-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
 `;
 
 export const Title = styled.h3`
@@ -228,4 +234,9 @@ export const Title = styled.h3`
   /* text-shadow: 2px 2px #F24E07; */
   color: #4b59a7;
   font-weight: 700 !important;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 40px !important;
+    max-width: 90%;
+  }
 `;
