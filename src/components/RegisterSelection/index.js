@@ -54,7 +54,7 @@ class RegisterSelection extends React.Component {
         <RegisterSelectionContainer>
           <h1 className="title">DAFTARKAN DIRIMU SEKARANG</h1>
           <h1 className="choose">PILIH PERMAINANMU</h1>
-          <Fade top cascade distance="100px" duration={1250}>
+          <Fade top distance="100px" duration={1250}>
             {/* <SVGIcon name="purple-yellow-ball" width={90} height={90} />
             <SVGIcon name="black-white-rect" width={25} height={100} />
             <SVGIcon name="orange-ellipse" width={79} height={79} />
