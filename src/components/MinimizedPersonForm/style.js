@@ -135,6 +135,14 @@ export const MinimizedPersonFormContainer = styled.div`
       font-size: 10px;
     }
   }
+  @media only screen and (max-width: 330px) {
+    .nama {
+      font-size: 10px;
+    }
+    .x-button {
+      font-size: 9px;
+    }
+  }
 `;
 export const MinimizePersonButton = styled.button`
   background-color: transparent;
@@ -170,5 +178,9 @@ export const MinimizePersonButton = styled.button`
   @media only screen and (max-width: 400px) {
     padding: 4px 10px;
     font-size: 10px;
+  }
+  @media only screen and (max-width: 330px) {
+    padding: 4px 8px;
+    font-size: 9px;
   }
 `;
