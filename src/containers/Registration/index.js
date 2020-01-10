@@ -83,22 +83,18 @@ class Registration extends React.Component {
             </LeftDiv>
             <h3>Pemain</h3>
             <Forms>
-              <MinimizedPersonForm
-                namaLengkap="Bambang Yakobus"
-                kontak="bambangYakobus"
-                email="bambang@gmail.com"
-                nomorTelepon="012d031023"
-                setShowPlayer={() =>
-                  props.setShowPlayer(0 + 1, props.showPlayer, props.personData)
-                }
-                deletePlayer={() =>
-                  props.deletePlayer(
-                    props.numberPlayer,
-                    props.personData,
-                    0 + 1
-                  )
-                }
-              />
+              {/* <MinimizedPersonForm
+              namaLengkap="Bambang Yakobus"
+              kontak="bambangYakobus"
+              email="bambang@gmail.com"
+              nomorTelepon="012d031023"
+              setShowPlayer={() =>
+                props.setShowPlayer(0 + 1, props.showPlayer, props.personData)
+              }
+              deletePlayer={() =>
+                props.deletePlayer(props.numberPlayer, props.personData, 0 + 1)
+              }
+            /> */}
               {props.numberPlayer.map(function x(a, index) {
                 return index + 1 === props.showPlayer ? (
                   <LeftDiv>
