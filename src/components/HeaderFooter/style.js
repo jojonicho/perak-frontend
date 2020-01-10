@@ -21,7 +21,6 @@ export const HeaderFooterContainer = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 0 10px;
   }
   .header {
     position: fixed;
@@ -29,7 +28,7 @@ export const HeaderFooterContainer = styled.div`
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    padding-right: 10px;
+    padding: 0px 20px;
   }
 
   .logo {

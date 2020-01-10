@@ -1,81 +1,82 @@
 import styled from "styled-components";
 
 export const RegisterSelectionContainer = styled.div`
+  padding: 25px 0;
   min-height: calc(100vh - 80px);
   color: #0d2040;
-  font-family: Montserrat;;
+  font-family: Montserrat;
   background-color: #e5e5e5;
   text-align: center;
   display: flex;
   flex-direction: column;
   font-weight: bolder;
-  .decor{
+  .decor {
     position: absolute;
     z-index: 2;
   }
-  .purple-yellow-ball{
+  .purple-yellow-ball {
     top: 0;
     left: 40%;
     width: 20%;
     transform: translate(0, -50%);
     cursor: pointer;
-    }
-  .purple-yellow-ball-2{
+  }
+  .purple-yellow-ball-2 {
     bottom: 0;
     left: 65%;
     width: 15%;
     transform: translate(0, 50%);
     cursor: pointer;
-    }
-  .black-white-rect{
+  }
+  .black-white-rect {
     height: 70%;
     top: 0;
     right: 0;
     transform: translate(50%, 15%);
     cursor: pointer;
-    }
-  .orange-ellipse{
+  }
+  .orange-ellipse {
     width: 20%;
     top: 0;
     right: 0;
     transform: translate(40%, -30%);
     cursor: pointer;
-    }
-  .purple-ball{
+  }
+  .purple-ball {
     width: 20%;
     top: 0;
     left: 0;
     transform: translate(-25%, -25%);
     cursor: pointer;
-    }
-  .orange-ellipse-2{
+  }
+  .orange-ellipse-2 {
     width: 20%;
     left: 40%;
-    bottom:0;
+    bottom: 0;
     transform: translate(0, 40%);
     cursor: pointer;
-    }
-  .orange-green-ball-rect{
-    width:20%;
+  }
+  .orange-green-ball-rect {
+    width: 20%;
     left: 40%;
-    bottom:0;
+    bottom: 0;
     transform: translate(0, 40%);
     cursor: pointer;
-    }
-  .purple-rect{
+  }
+  .purple-rect {
     width: 40%;
     top: 0;
     right: 10%;
     transform: translate(0, -40%);
     cursor: pointer;
-    }
-  .orange-green-ball{
-    width: 15%
+  }
+  .orange-green-ball {
+    width: 15%;
     right: 0;
     top: 0;
     transform: translate(50%, 50%);
     cursor: pointer;
-    }
+  }
   .title {
     margin: 20px 0px 20px 0px;
     color: white;
@@ -85,6 +86,7 @@ export const RegisterSelectionContainer = styled.div`
     // transform: scale(1, 0.9);
   }
   .game-container {
+    margin-bottom: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -188,6 +190,7 @@ export const RegisterSelectionContainer = styled.div`
     background-position: center;
   }
   .choose {
+    margin-bottom: 50px;
     font-size: calc(1.5rem + 0.7vw);
     font-weight: bold;
   }

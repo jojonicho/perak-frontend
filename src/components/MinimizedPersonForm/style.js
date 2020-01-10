@@ -21,6 +21,8 @@ export const MinimizedPersonFormContainer = styled.div`
   .nama {
     text-align: left;
     margin: auto;
+    color: #444444;
+    padding: 0;
   }
   .garisContainer {
     margin: 20px 0;
@@ -55,7 +57,10 @@ export const MinimizedPersonFormContainer = styled.div`
     overflow-x: hidden;
   }
   .info p {
+    padding: 0;
     margin-bottom: 0;
+    color: #444444;
+    text-align: left;
   }
   .upperMinimized {
     display: flex;
