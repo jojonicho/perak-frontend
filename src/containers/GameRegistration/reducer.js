@@ -8,7 +8,9 @@ import {
   ALERT,
   DELETE_PLAYER,
   SET_SHOW_PLAYER,
-  SET_TEAM_NAME
+  SET_TEAM_NAME,
+  SAVE_PLAYER,
+  SHOW_FORM
 } from "./constants";
 
 const initialState = {
@@ -22,6 +24,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   csgo: {
@@ -29,6 +32,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   mlbb: {
@@ -36,6 +40,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   codenames: {
@@ -43,6 +48,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   catur: {
@@ -50,6 +56,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   fifa: {
@@ -57,6 +64,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   ssbu: {
@@ -64,6 +72,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   },
   mariokart: {
@@ -71,6 +80,7 @@ const initialState = {
     logoTim: null,
     numberPlayer: 1,
     showPlayer: 0,
+    showForm: true,
     personData: [["", "", "", ""]]
   }
 };
@@ -120,6 +130,16 @@ function gameRegistrationReducer(state = initialState, action) {
         }
       };
     }
+    case SHOW_FORM: {
+      const { idGame } = action;
+      return {
+        ...state,
+        [idGame]: {
+          ...state[idGame],
+          showForm: action.payload
+        }
+      };
+    }
     case SET_TEAM_NAME: {
       const { idGame } = action;
       return {
@@ -130,6 +150,8 @@ function gameRegistrationReducer(state = initialState, action) {
         }
       };
     }
+    case SAVE_PLAYER:
+      return { ...state };
     case LOADING:
       return {
         ...state,

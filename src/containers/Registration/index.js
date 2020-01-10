@@ -3,8 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import SweetAlert from "sweetalert2-react";
-
-// import swal from 'sweetalert2';
+import hapus from "../../asset/hapus.svg";
 
 import {
   RegistrationContainer,
@@ -30,7 +29,8 @@ import {
   setShowPlayer,
   deletePlayer,
   setFoto,
-  stopAlert
+  stopAlert,
+  savePlayer
 } from "./actions";
 
 class Registration extends React.Component {
@@ -63,6 +63,7 @@ class Registration extends React.Component {
               setName={e => props.setTeamName(e)}
               teamName={props.teamName}
             />
+            <div className="garisnya" />
 
             <h3>Manager</h3>
             <LeftDiv>
@@ -81,7 +82,8 @@ class Registration extends React.Component {
                 setPersonData={e => props.setPersonData(e, 0, props.personData)}
               />
             </LeftDiv>
-            <h3>Pemain</h3>
+            <div className="garisnya" />
+            <h3>Pemain ({props.numberPlayer.length} Orang)</h3>
             <Forms>
               <MinimizedPersonForm
                 namaLengkap="Bambang Yakobus"
@@ -100,8 +102,23 @@ class Registration extends React.Component {
                 }
               />
               {props.numberPlayer.map(function x(a, index) {
-                return index + 1 === props.showPlayer ? (
+                return props.showForm && index + 1 === props.showPlayer ? (
                   <LeftDiv>
+                    <button
+                      type="button"
+                      className="x-buttona"
+                      onClick={() =>
+                        props.deletePlayer(
+                          props.numberPlayer,
+                          props.personData,
+                          props.showPlayer
+                        )
+                      }
+                    >
+                      <img className="trash" src={hapus} alt="hapus" />
+                      Hapus Pemain
+                    </button>
+
                     <Fade
                       distance="10%"
                       duration={1000}
@@ -126,21 +143,11 @@ class Registration extends React.Component {
                         setPersonData={e =>
                           props.setPersonData(e, index + 1, props.personData)
                         }
+                        savePlayer={() =>
+                          props.savePlayer(props.personData, index + 1)
+                        }
                       />
                     </Fade>
-                    <button
-                      type="button"
-                      className="x-buttona"
-                      onClick={() =>
-                        props.deletePlayer(
-                          props.numberPlayer,
-                          props.personData,
-                          props.showPlayer
-                        )
-                      }
-                    >
-                      X
-                    </button>
                   </LeftDiv>
                 ) : (
                   <Fade when cascade>
@@ -167,22 +174,23 @@ class Registration extends React.Component {
                   </Fade>
                 );
               })}
-              <TambahButton
-                onClick={
-                  props.numberPlayer.length < 15
-                    ? () =>
-                        props.addPlayer(
-                          props.numberPlayer,
-                          props.personData,
-                          props.showPlayer
-                        )
-                    : null
-                }
-              >
-                <span className="plus">+</span> Tambah (
-                {props.numberPlayer.length}
-                /15)
-              </TambahButton>
+              <div className="garisnya" />
+              {props.numberPlayer && props.numberPlayer.length < 15 ? (
+                <TambahButton
+                  onClick={
+                    props.numberPlayer.length < 15
+                      ? () =>
+                          props.addPlayer(
+                            props.numberPlayer,
+                            props.personData,
+                            props.showPlayer
+                          )
+                      : null
+                  }
+                >
+                  <span className="plus">+</span> Tambah
+                </TambahButton>
+              ) : null}
 
               <SubmitButton
                 onClick={() =>
@@ -219,7 +227,8 @@ function mapStateToProps(state) {
     loadNow: state.registration.loadNow,
     loadBase: state.registration.loadBase,
     done: state.registration.done,
-    alert: state.registration.alert
+    alert: state.registration.alert,
+    showForm: state.registration.showForm
   };
 }
 
@@ -240,7 +249,9 @@ function mapDispatchToProps(dispatch) {
       dispatch(setShowPlayer(index, nowIndex, personData)),
     deletePlayer: (numberPlayer, personData, index) =>
       dispatch(deletePlayer(numberPlayer, personData, index)),
-    stopAlert: () => dispatch(stopAlert())
+    stopAlert: () => dispatch(stopAlert()),
+    savePlayer: (personData, nowIndex) =>
+      dispatch(savePlayer(personData, nowIndex))
   };
 }
 

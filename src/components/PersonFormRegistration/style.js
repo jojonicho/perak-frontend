@@ -54,25 +54,39 @@ export const PersonFormRegistrationContainer = styled.div`
   .labelfile {
     width: 100px;
     max-width: 350px;
-    height: 40px;
+    height: 34px;
     margin: 0 5px 10px 5px !important;
-    border: none;
     font-family: Montserrat;
     font-weight: lighter;
-    color: white;
-    border-radius: 10px;
-    font-size: 0.7em;
-    background-color: #22b3a5;
-    box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
-    // padding: 0 3px;
     cursor: pointer;
+    background-color: transparent;
+    color: #22B3A5;
+    border: solid #22B3A5 2px;
+    border-radius: 7px;
+    outline: none;
     :active {
-      box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+      background-color: #22B3A5;
+      color: #F0F0F0;
     }
+  }
+  .saveb{
     cursor: pointer;
+    background-color: transparent;
+    color: #454FCB;
+    border: solid #454FCB 2px;
+    border-radius: 7px;
+    margin: 10px 5px 20px 5px;
+    outline: none;
+    height: 40px;
+    :active {
+      background-color: #454FCB;
+      color: #F0F0F0;
+    }
+  }
   }
   .half-cont {
     display: flex;
@@ -94,11 +108,10 @@ export const Section = styled.div`
   margin: 0px auto;
   text-align: left;
   width: 80%;
-  font-size: 32px;
   font-weight: normal;
   display: flex;
   flex-direction: column;
-  font-size: 25px;
+  font-size: 1rem;
 `;
 
 export const Header = styled.h2`

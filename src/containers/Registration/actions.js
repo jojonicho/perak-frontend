@@ -12,7 +12,9 @@ import {
   LOADING,
   UPDATE_LOADING,
   SET_SELF_IMAGE,
-  ALERT
+  ALERT,
+  SHOW_FORM,
+  SAVE_PLAYER
 } from "./constants";
 
 import { futsalFirestore, storage } from "../../config/firebaseConfig";
@@ -136,6 +138,13 @@ export function setPersonData(e, id, data) {
   };
 }
 
+function showForm(state) {
+  return {
+    type: SHOW_FORM,
+    payload: state
+  };
+}
+
 export function setShowPlayer(index, nowIndex, personData) {
   return dispatch => {
     if (personData[nowIndex][5] != null && personData[nowIndex][0] !== "") {
@@ -143,22 +152,43 @@ export function setShowPlayer(index, nowIndex, personData) {
         type: SET_SHOW_PLAYER,
         showPlayer: index
       });
+      dispatch(showForm(true));
     } else {
       dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
   };
 }
+
+export function savePlayer(personData, nowIndex) {
+  return dispatch => {
+    if (
+      nowIndex === 0 ||
+      (personData[nowIndex][5] != null && personData[nowIndex][0] !== "")
+    ) {
+      dispatch(showForm(false));
+    } else {
+      dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
+    }
+    dispatch({
+      type: SAVE_PLAYER
+    });
+  };
+}
+
 export function deletePlayer(nowPlayer, personData, index) {
-  const newNumberPlayer = Array.from(nowPlayer);
-  newNumberPlayer.splice(index - 1, 1); // delete from array
-  const newPersonData = Array.from(personData);
-  newPersonData.splice(index, 1); // delete from array
-  const newShowPlayer = newPersonData.length - 1;
-  return {
-    type: DELETE_PLAYER,
-    personData: newPersonData,
-    numberPlayer: newNumberPlayer,
-    showPlayer: newShowPlayer
+  return dispatch => {
+    const newNumberPlayer = Array.from(nowPlayer);
+    newNumberPlayer.splice(index - 1, 1); // delete from array
+    const newPersonData = Array.from(personData);
+    newPersonData.splice(index, 1); // delete from array
+    const newShowPlayer = newPersonData.length - 1;
+    dispatch(showForm(false));
+    dispatch({
+      type: DELETE_PLAYER,
+      personData: newPersonData,
+      numberPlayer: newNumberPlayer,
+      showPlayer: newShowPlayer
+    });
   };
 }
 
@@ -171,6 +201,7 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     ) {
       personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");
+      dispatch(showForm(true));
     } else {
       dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }

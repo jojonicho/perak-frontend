@@ -3,8 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import SweetAlert from "sweetalert2-react";
-
-// import swal from 'sweetalert2';
+import hapus from "../../asset/hapus.svg";
 
 import {
   RegistrationContainer,
@@ -28,7 +27,8 @@ import {
   deletePlayer,
   setShowPlayer,
   setTeamName,
-  submit
+  submit,
+  savePlayer
 } from "./actions";
 
 class GameRegistration extends React.Component {
@@ -60,13 +60,40 @@ class GameRegistration extends React.Component {
                 teamName={Game.namaTim}
               />
             ) : null}
-            <h3>Pemain</h3>
-            {Game.captain ? <h5>*orang pertama adalah kapten tim</h5> : null}
+            <div className="garisnya" />
+            <h3>Pemain ({data.numberPlayer} Orang)</h3>
+            {Game.captain ? (
+              <p className="mb-0">*orang pertama adalah kapten tim</p>
+            ) : null}
+            {Game.fixMember > 1 ? (
+              <p>
+                *tim terdiri dari {Game.fixMember} orang{" "}
+                {Game.optionalMember > 0
+                  ? `dengan tambahan anggota standin 2 orang`
+                  : null}
+              </p>
+            ) : null}
             <Forms>
               {data.personData &&
                 data.personData.map(function x(a, index) {
-                  return index === data.showPlayer ? (
+                  return data.showForm && index === data.showPlayer ? (
                     <LeftDiv>
+                      {index === 0 ? null : (
+                        <button
+                          type="button"
+                          className="x-buttona"
+                          onClick={() =>
+                            props.deletePlayer(
+                              props.gameId,
+                              data.personData,
+                              index
+                            )
+                          }
+                        >
+                          <img className="trash" src={hapus} alt="hapus" />
+                          Hapus Pemain
+                        </button>
+                      )}
                       <Fade
                         distance="10%"
                         duration={1000}
@@ -88,23 +115,15 @@ class GameRegistration extends React.Component {
                               data.personData
                             )
                           }
-                        />
-                      </Fade>
-                      {index === 0 ? null : (
-                        <button
-                          type="button"
-                          className="x-buttona"
-                          onClick={() =>
-                            props.deletePlayer(
+                          savePlayer={() =>
+                            props.savePlayer(
                               props.gameId,
                               data.personData,
                               index
                             )
                           }
-                        >
-                          X
-                        </button>
-                      )}
+                        />
+                      </Fade>
                     </LeftDiv>
                   ) : (
                     <Fade when cascade>
@@ -132,6 +151,7 @@ class GameRegistration extends React.Component {
                     </Fade>
                   );
                 })}
+              <div className="garisnya" />
               {data.numberPlayer < Game.fixMember + Game.optionalMember ? (
                 <TambahButton
                   onClick={() =>
@@ -142,8 +162,7 @@ class GameRegistration extends React.Component {
                     )
                   }
                 >
-                  <span className="plus">+</span> Tambah ({data.numberPlayer}/
-                  {Game.fixMember + Game.optionalMember})
+                  <span className="plus">+</span> Tambah
                 </TambahButton>
               ) : null}
               <SubmitButton
@@ -197,7 +216,9 @@ function mapDispatchToProps(dispatch) {
       dispatch(setShowPlayer(gameId, index, nowIndex, personData)),
     setTeamName: (e, teamId) => dispatch(setTeamName(e, teamId)),
     submit: (gameId, personData, teamName) =>
-      dispatch(submit(gameId, personData, teamName))
+      dispatch(submit(gameId, personData, teamName)),
+    savePlayer: (gameId, personData, nowIndex) =>
+      dispatch(savePlayer(gameId, personData, nowIndex))
   };
 }
 

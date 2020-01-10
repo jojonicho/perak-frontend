@@ -16,7 +16,8 @@ class PersonFormRegistration extends React.Component {
       setPersonData,
       id,
       foto,
-      setFoto
+      setFoto,
+      savePlayer
     } = this.props;
     const idForm = `file-in-player${id}`;
     return (
@@ -83,25 +84,13 @@ class PersonFormRegistration extends React.Component {
             </div>
           </Section>
         ) : null}
-        {/* <Section>
-          Kartu Identitas
-          <span className="input-info">KTM / KTP / Paspor</span>
-          <div className="idcard-preview">
-            {idCardImage && (
-              <img src={URL.createObjectURL(idCardImage)} alt="" />
-            )}
-          </div>
-          <label htmlFor={idForm} className="labelfile">
-            Unggah
-            <input
-              type="file"
-              className="hide-input"
-              id={idForm}
-              onChange={setIdCardImage}
-              autoComplete="off"
-            />
-          </label>
-        </Section> */}
+        {savePlayer ? (
+          <Section>
+            <button type="button" className="saveb" onClick={savePlayer}>
+              Save
+            </button>
+          </Section>
+        ) : null}
       </PersonFormRegistrationContainer>
     );
   }

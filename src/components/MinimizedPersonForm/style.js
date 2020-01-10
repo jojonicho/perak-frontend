@@ -13,6 +13,7 @@ export const MinimizedPersonFormContainer = styled.div`
   background-color: white;
   border-radius: 5px;
   justify-content: space-between;
+  font-family: Montserrat;
   align-items: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
@@ -42,6 +43,7 @@ export const MinimizedPersonFormContainer = styled.div`
     display: flex;
     align-items: center;
     border: none;
+    outline: none;
   }
   .info {
     display: flex;
@@ -146,6 +148,11 @@ export const MinimizePersonButton = styled.button`
   align-items: center;
   margin-left: 25px;
   padding: 8px 15px;
+  outline: none;
+  :active {
+    background-color: #454fcb;
+    color: #f0f0f0;
+  }
   .pencil {
     margin-right: 10px;
   }

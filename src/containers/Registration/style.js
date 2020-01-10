@@ -11,9 +11,11 @@ export const SubmitButton = styled.div`
   width: 40%;
   max-width: 350px;
   height: 40px;
+  font-family: Montserrat;
   border: none;
   font-weight: bold;
   color: white;
+  font-family: Montserrat;
   border-radius: 10px;
   font-size: 1.5em;
   margin-top: 100px;
@@ -31,7 +33,8 @@ export const SubmitButton = styled.div`
 export const LeftDiv = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
   > div {
     width: 100%;
@@ -44,26 +47,26 @@ export const TambahButton = styled.div`
     margin-right: 10px;
     font-weight: bold;
   }
+  cursor: pointer;
+  background-color: transparent;
+  font-family: Montserrat;
+  color: #f26522;
+  border: solid #f26522 2px;
+  border-radius: 7px;
+  outline: none;
+  :active {
+    background-color: #f26522;
+    color: #f0f0f0;
+  }
   width: 75%;
-  max-width: 420px;
+  max-width: 600px;
   height: 40px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  // box-shadow:  0 4px 2px 0px rgb(156, 64, 21);
-  box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
-  color: white;
-  font-size: 1.5em;
-  background-color: #f26522;
+  font-size: 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  // padding-left: 20px;
   cursor: pointer;
   margin-top: 30px;
-  :active {
-    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
-  }
 `;
 
 export const RegistrationContainer = styled.div`
@@ -73,7 +76,7 @@ export const RegistrationContainer = styled.div`
   background-attachment: unset;
   background-repeat: repeat-y;
   background-position: center;
-  background-color: #e5e6de;
+  background-color: #f0f0f0;
   background-image: url(${bg});
   background-size: 100vw;
   text-align: center;
@@ -82,29 +85,37 @@ export const RegistrationContainer = styled.div`
   padding-bottom: 30px;
   overflow-x: hidden;
   color: black;
+  button {
+    font-family: Montserrat;
+  }
   .x-buttona {
     cursor: pointer;
-    color: white;
-    background-color: #ea6229;
-    width: 35px;
+    color: #e96730;
+    background-color: transparent;
     font-weight: normal;
-    height: 35px;
-    position: absolute;
-    right: 20px;
-    font-size: 1.6em;
-    border-radius: 50%;
-    border: solid white 2px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-right: 10%;
   }
-
+  .garisnya {
+    width: 80%;
+    height: 1px;
+    opacity: 0.3;
+    background-color: #0d2040;
+    align-self: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
   .section {
     margin: 0px auto;
     text-align: left;
     width: 100%;
-    font-size: 32px;
     font-weight: 800;
     display: flex;
     flex-direction: column;
-    font-size: 25px;
+    font-size: 1rem;
   }
   input {
     // padding: 0px 10px;
@@ -115,7 +126,7 @@ export const RegistrationContainer = styled.div`
     // border: 2px black solid;
     opacity: 1;
     color: #303030;
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 400;
     width: 40%;
     min-width: 170px;
@@ -139,6 +150,10 @@ export const RegistrationContainer = styled.div`
   border: 2px black solid;
   cursor: pointer;
 } */
+  p {
+    font-family: Montserrat;
+    font-size: 0.8rem;
+  }
   h3 {
     font-family: Montserrat;
     font-weight: bold;

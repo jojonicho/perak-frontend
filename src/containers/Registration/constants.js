@@ -12,3 +12,5 @@ export const UPDATE_LOADING = "src/Registration/UPDATE_LOADING";
 export const ERROR = "src/Registration/ERROR";
 export const SET_SELF_IMAGE = "src/Registration/SET_SELF_IMAGE";
 export const ALERT = "src/Registration/ALERT";
+export const SAVE_PLAYER = "src/Registration/SAVE_PLAYER";
+export const SHOW_FORM = "src/Registration/SHOW_FORM";
