@@ -49,4 +49,10 @@ export const HeaderFooterContainer = styled.div`
     font-size: 1em;
     color: #e5e6de;
   }
+
+  @media only screen and (max-width: 350px) {
+    .logo {
+      height: 35px;
+    }
+  }
 `;

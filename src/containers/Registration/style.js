@@ -101,6 +101,9 @@ export const RegistrationContainer = styled.div`
     margin-right: 10%;
     outline: none;
   }
+  .trash {
+    margin-right: 7px;
+  }
   .garisnya {
     width: 80%;
     height: 1px;
@@ -117,6 +120,9 @@ export const RegistrationContainer = styled.div`
     width: 75%;
     @media only screen and (max-width: 500px) {
       font-size: 30px;
+    }
+    @media only screen and (max-width: 350px) {
+      font-size: 25px;
     }
   }
 
