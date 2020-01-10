@@ -42,9 +42,6 @@ class Registration extends React.Component {
       // alert("Your Team Registered");
       window.location.reload();
     }
-    console.log(props.personData);
-    console.log(props.showPlayer);
-    console.log(props.alert);
     return (
       <HeaderFooter color="dark">
         <Fade>
