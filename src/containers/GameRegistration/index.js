@@ -36,7 +36,6 @@ class GameRegistration extends React.Component {
     const { props } = this;
     const Game = Games[props.gameId];
     const data = props[props.gameId];
-    console.log(props);
     if (props.done) {
       // eslint-disable-next-line no-alert
       // eslint-disable-next-line no-undef

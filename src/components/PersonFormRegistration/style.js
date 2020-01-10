@@ -64,30 +64,30 @@ export const PersonFormRegistrationContainer = styled.div`
     justify-content: center;
     cursor: pointer;
     background-color: transparent;
-    color: #22B3A5;
-    border: solid #22B3A5 2px;
+    color: #22b3a5;
+    border: solid #22b3a5 2px;
     border-radius: 7px;
     outline: none;
     :active {
-      background-color: #22B3A5;
-      color: #F0F0F0;
+      background-color: #22b3a5;
+      color: #f0f0f0;
     }
   }
-  .saveb{
+  .saveb {
     cursor: pointer;
     background-color: transparent;
-    color: #454FCB;
-    border: solid #454FCB 2px;
+    color: #454fcb;
+    border: solid #454fcb 2px;
     border-radius: 7px;
     margin: 10px 5px 20px 5px;
     outline: none;
     height: 40px;
     :active {
-      background-color: #454FCB;
-      color: #F0F0F0;
+      background-color: #454fcb;
+      color: #f0f0f0;
     }
   }
-  }
+
   .half-cont {
     display: flex;
     flex-direction: row;
