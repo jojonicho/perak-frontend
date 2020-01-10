@@ -159,7 +159,7 @@ export function setTeamName(e, gameId) {
   };
 }
 
-function uploadTeam(gameId, idTeam, teamName, personData) {
+function uploadTeam(gameId, idTeam, teamName, personData, attempts = 0) {
   return dispatch => {
     firestore
       .collection(gameId)
@@ -173,18 +173,36 @@ function uploadTeam(gameId, idTeam, teamName, personData) {
       })
       .then(() => {
         dispatch(updateLoad());
+      })
+      .catch(e => {
+        console.error(e);
+        if (attempts < 5) {
+          dispatch(
+            uploadTeam(gameId, idTeam, teamName, personData, attempts + 1)
+          );
+        } else {
+          dispatch(loading(0));
+          dispatch(error("Request Error, Gagal mengirim data"));
+        }
       });
   };
 }
 
-function uploadPlayer(gameId, idTeam, playerData, teamName) {
+function uploadPlayer(
+  gameId,
+  idTeam,
+  playerData,
+  teamName,
+  attempts = 0,
+  fixIndex = -1
+) {
   return dispatch => {
     playerData.forEach((x, index) => {
       firestore
         .collection(gameId)
         .doc(`${teamName}-${idTeam}`)
         .collection("player")
-        .doc(`${x[0]}-${index}`)
+        .doc(`${x[0]}-${fixIndex >= 0 ? fixIndex : index}`)
         .set({
           namaLengkap: x[0],
           kontak: x[1],
@@ -193,6 +211,25 @@ function uploadPlayer(gameId, idTeam, playerData, teamName) {
         })
         .then(() => {
           dispatch(updateLoad());
+        })
+        .catch(e => {
+          console.error(e);
+          const retryPlayerData = playerData.splice(index, 1);
+          if (attempts < 5) {
+            dispatch(
+              uploadPlayer(
+                gameId,
+                idTeam,
+                retryPlayerData,
+                teamName,
+                attempts + 1,
+                fixIndex >= 0 ? fixIndex : index
+              )
+            );
+          } else {
+            dispatch(loading(0));
+            dispatch(error("Request Error, Gagal mengirim data"));
+          }
         });
     });
   };
@@ -239,6 +276,11 @@ export function submit(gameId, personData, teamName) {
           dispatch(uploadTeam(gameId, teams.length, namaTim, personData));
           const playerData = personData.slice(1);
           dispatch(uploadPlayer(gameId, teams.length, playerData, namaTim));
+        })
+        .catch(e => {
+          console.error(e);
+          dispatch(loading(0));
+          dispatch(error("Request Error, Gagal mengirim data"));
         });
     };
   }

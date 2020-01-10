@@ -155,7 +155,7 @@ function gameRegistrationReducer(state = initialState, action) {
     case LOADING:
       return {
         ...state,
-        loading: !state.loading,
+        loading: action.loadBase !== 0,
         loadNow: 0,
         loadBase: action.loadBase,
         done: false
@@ -164,7 +164,8 @@ function gameRegistrationReducer(state = initialState, action) {
       return {
         ...state,
         loadNow: state.loadNow + 1,
-        loading: !(state.loadNow + 1 === state.loadBase),
+        loading:
+          !(state.loadNow + 1 === state.loadBase) && state.loadBase !== 0,
         loadBase: state.loadNow + 1 === state.loadBase ? 0 : state.loadBase,
         done: state.loadNow + 1 === state.loadBase
       };
