@@ -63,7 +63,7 @@ class GameRegistration extends React.Component {
             <div className="garisnya" />
             <h3 className="pemain">Pemain ({data.numberPlayer} Orang)</h3>
             {Game.fixMember > 1 ? (
-              <p className="mb-0">
+              <p className="kominfo mb-0">
                 *tim terdiri dari {Game.fixMember} orang{" "}
                 {Game.optionalMember > 0
                   ? `dengan opsi tambahan anggota standin 2 orang`
@@ -71,14 +71,16 @@ class GameRegistration extends React.Component {
               </p>
             ) : null}
             {Game.captain ? (
-              <p className="mb-0">
+              <p className="kominfo mb-0">
                 *pemain tidak boleh berada di 2 tim berbeda
               </p>
             ) : null}
             {Game.captain ? (
-              <p className="mb-0">*pemain pertama adalah kapten tim</p>
+              <p className="kominfo mb-0">*pemain pertama adalah kapten tim</p>
             ) : null}
-            {Game.captain ? <p>*data kapten wajib diisi lengkap</p> : null}
+            {Game.captain ? (
+              <p className="kominfo">*data kapten wajib diisi lengkap</p>
+            ) : null}
             <Forms>
               {data.personData &&
                 data.personData.map(function x(a, index) {
