@@ -162,6 +162,7 @@ export const RegistrationContainer = styled.div`
   p {
     font-family: Montserrat;
     font-size: 0.8rem;
+    padding: 0 15px;
   }
   h3 {
     font-family: Montserrat;
