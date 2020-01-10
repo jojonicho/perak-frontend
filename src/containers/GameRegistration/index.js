@@ -60,7 +60,7 @@ class GameRegistration extends React.Component {
                 teamName={Game.namaTim}
               />
             ) : null}
-            <h3>Pemain</h3>
+            <h3 className="pemain">Pemain</h3>
             {Game.captain ? <h5>*orang pertama adalah kapten tim</h5> : null}
             <Forms>
               {data.personData &&

@@ -1,27 +1,28 @@
 import styled from "styled-components";
 
 export const TeamFormRegistrationContainer = styled.div`
-overflow-x:hidden;
-align-items: center;
-font-family: Montserrat;
-font-weight: lighter;
-margin-top: 30px;
-.section {
+  overflow-x: hidden;
+  align-items: center;
+  font-family: Montserrat;
+  font-weight: lighter;
+  margin-top: 30px;
+  width: 70%;
+
+  .section {
     margin: 0px auto;
     text-align: left;
-    width: 80%;
     font-size: 32px;
     font-weight: normal;
     display: flex;
     flex-direction: column;
     font-size: 25px;
-}
+  }
 
-.logo-tim{
+  .logo-tim {
     display: flex;
     flex-wrap: wrap;
-}
-.labelfile {
+  }
+  .labelfile {
     width: 100px;
     max-width: 350px;
     height: 40px;
@@ -39,20 +40,21 @@ margin-top: 30px;
     justify-content: center;
     // padding: 0 3px;
     cursor: pointer;
-  :active {
-    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+    :active {
+      box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+    }
   }
-}
-input ,.logo-preview {    
+  input,
+  .logo-preview {
     margin: 10px 5px 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
     min-width: 200px;
     padding: 5px 10px;
     width: 100%;
-}
+  }
 
-.logo-preview{
+  .logo-preview {
     margin: 10px 5px 20px 5px !important;
     background-color: white !important;
     border-radius: 8px;
@@ -61,21 +63,19 @@ input ,.logo-preview {
     width: calc(100% - 120px);
   }
 
-
-h3 {
-    Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 32px;
-font-weight: normal;
-}
-.hide-input{
+  h3 {
+    /* Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-size: 32px;
+    font-weight: normal;
+  }
+  .hide-input {
     width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
     z-index: -1;
     margin: 0;
     display: none;
-}
-
+  }
 `;

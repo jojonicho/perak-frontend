@@ -70,6 +70,7 @@ export const RegistrationContainer = styled.div`
   font-family: inherit;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-attachment: unset;
   background-repeat: repeat-y;
   background-position: center;
@@ -94,6 +95,13 @@ export const RegistrationContainer = styled.div`
     font-size: 1.6em;
     border-radius: 50%;
     border: solid white 2px;
+  }
+
+  .pemain,
+  .manager {
+    font-size: 48px;
+    text-align: left;
+    width: 70%;
   }
 
   .section {
@@ -152,7 +160,7 @@ export const RegistrationContainer = styled.div`
 export const Section = styled.div`
   margin: 0px auto;
   text-align: left;
-  width: 80%;
+  width: 70%;
   font-size: 32px;
   font-weight: 800;
   display: flex;

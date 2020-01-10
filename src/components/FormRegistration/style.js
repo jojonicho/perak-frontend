@@ -12,7 +12,7 @@ export const FormContainer = styled.div`
 export const Section = styled.div`
   margin: 0px auto;
   text-align: left;
-  width: 80%;
+  width: 70%;
   font-size: 32px;
   font-weight: 800;
   display: flex;
