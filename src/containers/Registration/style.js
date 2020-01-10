@@ -163,6 +163,7 @@ export const RegistrationContainer = styled.div`
     font-family: Montserrat;
     font-size: 0.8rem;
     padding: 0 15px;
+    color: #ff4510;
   }
   h3 {
     font-family: Montserrat;

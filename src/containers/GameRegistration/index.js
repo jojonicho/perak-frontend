@@ -75,7 +75,10 @@ class GameRegistration extends React.Component {
                 *pemain tidak boleh berada di 2 tim berbeda
               </p>
             ) : null}
-            {Game.captain ? <p>*pemain pertama adalah kapten tim</p> : null}
+            {Game.captain ? (
+              <p className="mb-0">*pemain pertama adalah kapten tim</p>
+            ) : null}
+            {Game.captain ? <p>*data kapten wajib diisi lengkap</p> : null}
             <Forms>
               {data.personData &&
                 data.personData.map(function x(a, index) {
