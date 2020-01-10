@@ -159,7 +159,7 @@ export const RegistrationContainer = styled.div`
   border: 2px black solid;
   cursor: pointer;
 } */
-  p {
+  .kominfo {
     font-family: Montserrat;
     font-size: 0.8rem;
     padding: 0 15px;
