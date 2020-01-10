@@ -4,6 +4,8 @@ const getViewBox = name => {
   switch (name) {
     case "purple-yellow-ball":
       return "0 0 95 95";
+    case "purple-yellow-ball-2":
+      return "0 0 95 95";
     case "black-white-rect":
       return "0 0 34 132";
     case "orange-ellipse":
@@ -26,6 +28,19 @@ const getViewBox = name => {
 const getPath = name => {
   switch (name) {
     case "purple-yellow-ball":
+      return (
+        <Fragment>
+          <path
+            d="M47.421 94.8523C73.611 94.8523 94.8421 73.6189 94.8421 47.4261C94.8421 21.2334 73.611 0 47.421 0C21.2311 0 0 21.2334 0 47.4261C0 73.6189 21.2311 94.8523 47.421 94.8523Z"
+            fill="#5055A5"
+          />
+          <path
+            d="M47.421 94.8529C73.613 94.8529 94.8421 73.6215 94.8421 47.4268H0C0 73.6215 21.2291 94.8529 47.421 94.8529Z"
+            fill="#F0D035"
+          />
+        </Fragment>
+      );
+    case "purple-yellow-ball-2":
       return (
         <Fragment>
           <path
@@ -101,14 +116,14 @@ const getPath = name => {
 
 const SVGIcon = ({
   name = "",
-  viewBox = "",
-  width = "100%",
-  height = "100%"
+  viewBox = ""
+  // width = "100%",
+  // height = "100%"
 }) => (
   <svg
     fill="none"
-    width={width}
-    height={height}
+    // width={width}
+    // height={height}
     className={`decor ${name}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox={viewBox || getViewBox(name)}

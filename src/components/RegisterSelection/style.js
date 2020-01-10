@@ -14,48 +14,66 @@ export const RegisterSelectionContainer = styled.div`
     z-index: 2;
   }
   .purple-yellow-ball{
-    top: calc(100% / 5 + 1px);
-    left: calc(100% / 5);
-    transform: translate(-75%, 35%);
+    top: 0;
+    left: 40%;
+    width: 20%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    }
+  .purple-yellow-ball-2{
+    bottom: 0;
+    left: 65%;
+    width: 15%;
+    transform: translate(0, 50%);
     cursor: pointer;
     }
   .black-white-rect{
-    top: calc(100% / 3 + 10px );
-    right: calc(100% / 3 + 10px);
+    height: 70%;
+    top: 0;
+    right: 0;
+    transform: translate(50%, 15%);
     cursor: pointer;
     }
   .orange-ellipse{
-    top: calc(100% / 4 );
-    right: 1.5%;
+    width: 20%;
+    top: 0;
+    right: 0;
+    transform: translate(40%, -30%);
+    cursor: pointer;
+    }
+  .purple-ball{
+    width: 20%;
+    top: 0;
+    left: 0;
+    transform: translate(-25%, -25%);
     cursor: pointer;
     }
   .orange-ellipse-2{
-    cursor: pointer;
-    top: 96%;
-    left: calc(100% / 5);
-    transform: translate(-75%);
-    }
-  .purple-ball{
-    top: calc(50vh);
-    left: calc(2%);
-    transform: translate(-25%);
+    width: 20%;
+    left: 40%;
+    bottom:0;
+    transform: translate(0, 40%);
     cursor: pointer;
     }
   .orange-green-ball-rect{
-    top: calc(72vh);
-    transform: translate(-50%);
+    width:20%;
+    left: 40%;
+    bottom:0;
+    transform: translate(0, 40%);
     cursor: pointer;
     }
   .purple-rect{
-    top: calc(45% + 13px );
-    right: 60px;
-    transform: translate(-25%);
+    width: 40%;
+    top: 0;
+    right: 10%;
+    transform: translate(0, -40%);
     cursor: pointer;
     }
   .orange-green-ball{
-    right: 0px;
-    top: calc(75vh);
-    transform: translate(-25%, 100%);
+    width: 15%
+    right: 0;
+    top: 0;
+    transform: translate(50%, 50%);
     cursor: pointer;
     }
   .title {
@@ -106,6 +124,7 @@ export const RegisterSelectionContainer = styled.div`
     justify-content: center;
     align-content: center;
     min-width: 135px;
+    position: relative;
     min-height: 90px;
   }
   .games:hover {
@@ -156,7 +175,7 @@ export const RegisterSelectionContainer = styled.div`
     background-size: contain;
     background-position: center;
   }
-  .codenames:hover {
+  .code:hover {
     background-image: url("https://czechgames.com/for-press/codenames/codenames-13.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -177,46 +196,46 @@ export const RegisterSelectionContainer = styled.div`
     font-size: calc(1.5vw + 15px);
     font-weight: bold;
   }
-  @media only screen and (max-width: 800px) {
-    .purple-yellow-ball {
-      width: 30px;
-      left: calc(100% / 4 + 16px);
-      top: calc(35vh + 12px);
-    }
-    .purple-ball {
-      left: 15px;
-      width: 30px;
-      top: calc(59vh);
-    }
-    .orange-ellipse{
-      width: 40px;
-      top: calc(40vh + 12px);
-    }
-    .orange-ellipse-2{
-      width: 40px;
-      left: 10px;
-      top: calc(90vh);
-    }
-    .orange-green-ball-rect{
-      width: 40px;
-      top: 74.5vh;
-      left: 83px;
-    }
-    .orange-green-ball{
-      width: 40px;
-      right: 0px;
-      top: 99vh;
-      transform: translate(7.5%);
-    }
-    .purple-rect {
-      width: 30px;
-      top: 75vh;
-      right: 11px;
-    }
-    .black-white-rect{
-      width:10px
-      top: 114vh;
-      right: 83px;
-    }
-  }
+  // @media only screen and (max-width: 800px) {
+  //   .purple-yellow-ball {
+  //     width: 30px;
+  //     left: calc(100% / 4 + 16px);
+  //     top: calc(35vh + 12px);
+  //   }
+  //   .purple-ball {
+  //     left: 15px;
+  //     width: 30px;
+  //     top: calc(59vh);
+  //   }
+  //   .orange-ellipse{
+  //     width: 40px;
+  //     top: calc(40vh + 12px);
+  //   }
+  //   .orange-ellipse-2{
+  //     width: 40px;
+  //     left: 10px;
+  //     top: calc(90vh);
+  //   }
+  //   .orange-green-ball-rect{
+  //     width: 40px;
+  //     top: 74.5vh;
+  //     left: 83px;
+  //   }
+  //   .orange-green-ball{
+  //     width: 40px;
+  //     right: 0px;
+  //     top: 99vh;
+  //     transform: translate(7.5%);
+  //   }
+  //   .purple-rect {
+  //     width: 30px;
+  //     top: 75vh;
+  //     right: 11px;
+  //   }
+  //   .black-white-rect{
+  //     width:10px
+  //     top: 114vh;
+  //     right: 83px;
+  //   }
+  // }
 `;
