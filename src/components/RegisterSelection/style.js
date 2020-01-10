@@ -1,16 +1,6 @@
 import styled from "styled-components";
-import caturCompressed from "../../asset/caturCompressed.png";
-import fifaCompressed from "../../asset/fifaCompressed.png";
-import dotaCompressed from "../../asset/dotaCompressed.png";
-import smashBrosCompressed from "../../asset/smashBrosCompressed.png";
-import csgoCompressed from "../../asset/csgoCompressed.png";
-import mobileLegendsCompressed from "../../asset/mobileLegendsCompressed.png";
-import marioKart from "../../asset/marioKart.png";
-import codenamesCompressed from "../../asset/codenamesCompressed.png";
-import futsalCompressed from "../../asset/futsalCompressed.jpg";
 
 export const RegisterSelectionContainer = styled.div`
-  padding: 25px 0;
   min-height: calc(100vh - 80px);
   color: #0d2040;
   font-family: Montserrat;
@@ -95,7 +85,6 @@ export const RegisterSelectionContainer = styled.div`
     // transform: scale(1, 0.9);
   }
   .game-container {
-    margin-bottom: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -145,61 +134,60 @@ export const RegisterSelectionContainer = styled.div`
   }
   .dota:hover {
     // transform: scale(1.15);
-    background-image: url(${dotaCompressed});
+    background-image: url("https://www.esl-one.com/archive/www.esl-one.com/fileadmin/templates/emsone_v1/images/esl-one-frankfurt14/dota2_logo.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .csgo:hover {
-    background-image: url(${csgoCompressed});
+    background-image: url("https://www.freepnglogos.com/uploads/counter-strike-png-logo/counter-strike-symbol-png-logo-11.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .mobile:hover {
-    background-image: url(${mobileLegendsCompressed});
+    background-image: url("https://i.pinimg.com/originals/ab/a1/fd/aba1fd8d914fd3455b0c24437645ff95.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .mario:hover {
-    background-image: url(${marioKart});
+    background-image: url("https://i.pinimg.com/originals/6e/bf/0a/6ebf0a43cc4dff1ce9146ed69211c793.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .super:hover {
-    background-image: url(${smashBrosCompressed});
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Super_Smash_Bros._Ultimate_logo.svg/1024px-Super_Smash_Bros._Ultimate_logo.svg.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .catur:hover {
-    background-image: url(${caturCompressed});
+    background-image: url("https://cdn.dribbble.com/users/3777206/screenshots/8495252/chess_logo.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
   }
   .fifa:hover {
-    background-image: url(${fifaCompressed});
+    background-image: url("https://i.imgur.com/40DMysW.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .code:hover {
-    background-image: url(${codenamesCompressed});
+    background-image: url("https://czechgames.com/for-press/codenames/codenames-13.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .futsal:hover {
-    background-image: url(${futsalCompressed});
+    background-image: url("https://i.ytimg.com/vi/qKI85n7eWYQ/maxresdefault.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
   }
   .choose {
-    margin-bottom: 50px;
     font-size: calc(1.5rem + 0.7vw);
     font-weight: bold;
   }
@@ -250,7 +238,4 @@ export const RegisterSelectionContainer = styled.div`
   //     right: 83px;
   //   }
   // }
-  .mauapa {
-    cursor: pointer;
-  }
 `;
