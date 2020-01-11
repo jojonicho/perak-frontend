@@ -8,8 +8,9 @@ export const Forms = styled.div`
   align-items: center;
 `;
 export const SubmitButton = styled.div`
-  width: 40%;
-  max-width: 350px;
+  width: 180px;
+  /* width: 40%; */
+  /* max-width: 350px; */
   height: 40px;
   font-family: Montserrat;
   border: none;
@@ -20,7 +21,7 @@ export const SubmitButton = styled.div`
   font-size: 1.5em;
   margin-top: 100px;
   background-color: #22b3a5;
-  box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +52,7 @@ export const TambahButton = styled.div`
   background-color: transparent;
   font-family: Montserrat;
   color: #f26522;
-  border: solid #f26522 2px;
+  border: solid #f26522 2.5px;
   border-radius: 7px;
   outline: none;
   :active {
@@ -59,9 +60,10 @@ export const TambahButton = styled.div`
     color: #f0f0f0;
   }
   width: 75%;
-  max-width: 600px;
-  height: 40px;
+  /* max-width: 600px; */
+  height: 50px;
   font-size: 1.2em;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;

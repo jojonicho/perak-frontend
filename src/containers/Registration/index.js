@@ -186,7 +186,7 @@ class Registration extends React.Component {
                       : null
                   }
                 >
-                  <span className="plus">+</span> Tambah
+                  <span className="plus">+</span> Pemain
                 </TambahButton>
               ) : null}
 
