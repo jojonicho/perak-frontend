@@ -251,6 +251,9 @@ export const RegisterSelectionContainer = styled.div`
   //     right: 83px;
   //   }
   // }
+  .mauapa {
+    cursor: pointer;
+  }
 `;
 
 export const LoadingScreen = styled.div`
