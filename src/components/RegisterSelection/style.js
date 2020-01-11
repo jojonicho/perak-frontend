@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const dark = "#0D2040";
+
 export const RegisterSelectionContainer = styled.div`
   min-height: calc(100vh - 80px);
   color: #0d2040;
@@ -238,4 +240,20 @@ export const RegisterSelectionContainer = styled.div`
   //     right: 83px;
   //   }
   // }
+`;
+
+export const LoadingScreen = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: ${dark};
+  flex-direction: column;
+  padding-top: 150px;
+  .logo-loading {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .loading-bar svg {
+  }
 `;

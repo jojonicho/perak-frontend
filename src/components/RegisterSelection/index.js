@@ -1,17 +1,31 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
+import Lottie from "react-lottie";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
-import { RegisterSelectionContainer } from "./style";
+import FadeIn from "react-fade-in";
+import { RegisterSelectionContainer, LoadingScreen } from "./style";
 import HeaderFooter from "../HeaderFooter";
 import SVGIcon from "./SVGIcon";
+import logoGede2 from "../../asset/logoGede2.png";
+import * as pinwheelData from "../../asset/pinwheelLoading.json";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: pinwheelData.default,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
 
 class RegisterSelection extends React.Component {
   constructor() {
     super();
     this.state = {
+      done: undefined,
       games: [
         "futsal",
         "dota 2",
@@ -53,15 +67,29 @@ class RegisterSelection extends React.Component {
     this.letMagicHappens = this.letMagicHappens.bind(this);
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ done: true });
+    }, 2000);
+  }
+
   letMagicHappens() {
     this.setState({ magic: true });
   }
 
   render() {
-    const { id, games, color, slug, decor, magic } = this.state;
+    const { done, id, games, color, slug, decor, magic } = this.state;
     let { counter } = this.state;
     const { letMagicHappens } = this;
-    return (
+    return !done ? (
+      <LoadingScreen>
+        <FadeIn>
+          <img className="logo-loading" src={logoGede2} alt="logo" />
+          <Lottie options={defaultOptions} height={120} width={120} />
+          {/* <ReactLoading className="loading-bar" type="bars" color="#F1CF33" /> */}
+        </FadeIn>
+      </LoadingScreen>
+    ) : (
       <HeaderFooter color="dark">
         <RegisterSelectionContainer className={magic ? "magic" : ""}>
           <h1 className="title">DAFTARKAN DIRIMU SEKARANG</h1>
