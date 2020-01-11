@@ -22,6 +22,7 @@ export const PersonFormRegistrationContainer = styled.div`
     // max-width: 450px;
   }
   .foto-preview {
+    background-color: #fafafa !important;
     width: calc(100% - 120px);
   }
   .input-info {
@@ -77,11 +78,13 @@ export const PersonFormRegistrationContainer = styled.div`
     cursor: pointer;
     background-color: transparent;
     color: #454fcb;
-    border: solid #454fcb 2px;
+    border: solid #454fcb 2.5px;
     border-radius: 7px;
+    font-size: 1.2em;
     margin: 10px 5px 20px 5px;
     outline: none;
-    height: 40px;
+    height: 50px;
+    font-weight: bold;
     :active {
       background-color: #454fcb;
       color: #f0f0f0;

@@ -172,7 +172,7 @@ class GameRegistration extends React.Component {
                     )
                   }
                 >
-                  <span className="plus">+</span> Tambah
+                  <span className="plus">+</span> Pemain
                 </TambahButton>
               ) : null}
               <SubmitButton

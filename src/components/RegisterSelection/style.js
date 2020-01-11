@@ -1,7 +1,17 @@
 import styled from "styled-components";
+import dotaCompressed from "../../asset/dotaCompressed.png";
+import csgoCompressed from "../../asset/csgoCompressed.png";
+import marioKartCompressed from "../../asset/marioKartCompressed.png";
+import mobileLegendsCompressed from "../../asset/mobileLegendsCompressed.png";
+import smashBrosCompressed from "../../asset/smashBrosCompressed.png";
+import fifaCompressed from "../../asset/fifaCompressed.png";
+import caturCompressed from "../../asset/caturCompressed.png";
+import codenamesCompressed from "../../asset/codenamesCompressed.png";
+import futsalCompressed from "../../asset/futsalCompressed.jpg";
+
+const dark = "#0D2040";
 
 export const RegisterSelectionContainer = styled.div`
-  padding: 25px 0;
   min-height: calc(100vh - 80px);
   color: #0d2040;
   font-family: Montserrat;
@@ -10,6 +20,7 @@ export const RegisterSelectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: bolder;
+  padding: 25px 0px;
   .decor {
     position: absolute;
     z-index: 2;
@@ -86,7 +97,6 @@ export const RegisterSelectionContainer = styled.div`
     // transform: scale(1, 0.9);
   }
   .game-container {
-    margin-bottom: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -94,6 +104,7 @@ export const RegisterSelectionContainer = styled.div`
     padding: 10px;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 40px 0px;
   }
 
   .purple {
@@ -136,61 +147,60 @@ export const RegisterSelectionContainer = styled.div`
   }
   .dota:hover {
     // transform: scale(1.15);
-    background-image: url("https://www.esl-one.com/archive/www.esl-one.com/fileadmin/templates/emsone_v1/images/esl-one-frankfurt14/dota2_logo.png");
+    background-image: url(${dotaCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .csgo:hover {
-    background-image: url("https://www.freepnglogos.com/uploads/counter-strike-png-logo/counter-strike-symbol-png-logo-11.png");
+    background-image: url(${csgoCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .mobile:hover {
-    background-image: url("https://i.pinimg.com/originals/ab/a1/fd/aba1fd8d914fd3455b0c24437645ff95.png");
+    background-image: url(${mobileLegendsCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .mario:hover {
-    background-image: url("https://i.pinimg.com/originals/6e/bf/0a/6ebf0a43cc4dff1ce9146ed69211c793.png");
+    background-image: url(${marioKartCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .super:hover {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Super_Smash_Bros._Ultimate_logo.svg/1024px-Super_Smash_Bros._Ultimate_logo.svg.png");
+    background-image: url(${smashBrosCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .catur:hover {
-    background-image: url("https://cdn.dribbble.com/users/3777206/screenshots/8495252/chess_logo.png");
+    background-image: url(${caturCompressed});
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
   }
   .fifa:hover {
-    background-image: url("https://i.imgur.com/40DMysW.png");
+    background-image: url(${fifaCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .code:hover {
-    background-image: url("https://czechgames.com/for-press/codenames/codenames-13.png");
+    background-image: url(${codenamesCompressed});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   .futsal:hover {
-    background-image: url("https://i.ytimg.com/vi/qKI85n7eWYQ/maxresdefault.jpg");
+    background-image: url(${futsalCompressed});
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
   }
   .choose {
-    margin-bottom: 50px;
     font-size: calc(1.5rem + 0.7vw);
     font-weight: bold;
   }
@@ -241,4 +251,26 @@ export const RegisterSelectionContainer = styled.div`
   //     right: 83px;
   //   }
   // }
+  .mauapa {
+    cursor: pointer;
+  }
+  .hide {
+    display: none;
+  }
+`;
+
+export const LoadingScreen = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: ${dark};
+  flex-direction: column;
+  padding-top: 150px;
+  .logo-loading {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .loading-bar svg {
+  }
 `;

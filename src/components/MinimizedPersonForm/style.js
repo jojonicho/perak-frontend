@@ -142,7 +142,9 @@ export const MinimizedPersonFormContainer = styled.div`
   }
   @media only screen and (max-width: 330px) {
     .nama {
+      max-width: 80px;
       font-size: 10px;
+      overflow-x: hidden;
     }
     .x-button {
       font-size: 9px;
@@ -186,6 +188,7 @@ export const MinimizePersonButton = styled.button`
   }
   @media only screen and (max-width: 330px) {
     padding: 4px 8px;
+    margin-left: 10px;
     font-size: 9px;
   }
 `;

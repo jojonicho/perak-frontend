@@ -53,7 +53,6 @@ class Registration extends React.Component {
               onConfirm={props.stopAlert}
             />
             <Title>REGISTRASI TIM FUTSAL</Title>
-
             <TeamFormRegistration
               teamImage={props.teamImage}
               setImage={props.setTeamImage}
@@ -63,6 +62,7 @@ class Registration extends React.Component {
             <div className="garisnya" />
 
             <h3 className="manager">Manager</h3>
+            <p className="kominfo">*data manager wajib diisi lengkap </p>
             <LeftDiv>
               <PersonFormRegistration
                 id="0"
@@ -83,6 +83,9 @@ class Registration extends React.Component {
             <h3 className="pemain">
               Pemain ({props.numberPlayer.length} Orang)
             </h3>
+            <p className="kominfo">
+              *minimum pemain 10 orang dan maksimal 15 orang
+            </p>
             <Forms>
               {/* <MinimizedPersonForm
               namaLengkap="Bambang Yakobus"
@@ -183,7 +186,7 @@ class Registration extends React.Component {
                       : null
                   }
                 >
-                  <span className="plus">+</span> Tambah
+                  <span className="plus">+</span> Pemain
                 </TambahButton>
               ) : null}
 
