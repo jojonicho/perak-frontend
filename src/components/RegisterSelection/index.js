@@ -11,6 +11,15 @@ import HeaderFooter from "../HeaderFooter";
 import SVGIcon from "./SVGIcon";
 import logoGede2 from "../../asset/logoGede2.png";
 import * as pinwheelData from "../../asset/pinwheelLoading.json";
+import dotaCompressed from "../../asset/dotaCompressed.png";
+import csgoCompressed from "../../asset/csgoCompressed.png";
+import marioKartCompressed from "../../asset/marioKartCompressed.png";
+import mobileLegendsCompressed from "../../asset/mobileLegendsCompressed.png";
+import smashBrosCompressed from "../../asset/smashBrosCompressed.png";
+import fifaCompressed from "../../asset/fifaCompressed.png";
+import caturCompressed from "../../asset/caturCompressed.png";
+import codenamesCompressed from "../../asset/codenamesCompressed.png";
+import futsalCompressed from "../../asset/futsalCompressed.jpg";
 
 const defaultOptions = {
   loop: true,
@@ -108,6 +117,15 @@ class RegisterSelection extends React.Component {
             <SVGIcon name="orange-green-ball-rect" width={93} height={61} />
             <SVGIcon name="purple-rect" width={95} height={95} />
             <SVGIcon name="orange-green-ball" width={79} height={79} /> */}
+            <img src={dotaCompressed} alt="" className="hide" />
+            <img src={csgoCompressed} alt="" className="hide" />
+            <img src={marioKartCompressed} alt="" className="hide" />
+            <img src={fifaCompressed} alt="" className="hide" />
+            <img src={mobileLegendsCompressed} alt="" className="hide" />
+            <img src={smashBrosCompressed} alt="" className="hide" />
+            <img src={caturCompressed} alt="" className="hide" />
+            <img src={codenamesCompressed} alt="" className="hide" />
+            <img src={futsalCompressed} alt="" className="hide" />
             <div className="game-container">
               {id.map(currentId => {
                 if (counter < 3) counter += 1;

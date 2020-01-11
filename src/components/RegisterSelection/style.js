@@ -254,6 +254,9 @@ export const RegisterSelectionContainer = styled.div`
   .mauapa {
     cursor: pointer;
   }
+  .hide {
+    display: none;
+  }
 `;
 
 export const LoadingScreen = styled.div`
