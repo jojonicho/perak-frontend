@@ -80,6 +80,7 @@ export const PersonFormRegistrationContainer = styled.div`
     color: #454fcb;
     border: solid #454fcb 2.5px;
     border-radius: 7px;
+    font-size: 1.2em;
     margin: 10px 5px 20px 5px;
     outline: none;
     height: 50px;
