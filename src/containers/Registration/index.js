@@ -34,9 +34,21 @@ import {
 } from "./actions";
 
 class Registration extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      reload: false
+    };
+    this.setReload = this.setReload.bind(this);
+  }
+
+  setReload() {
+    this.setState({ reload: true });
+  }
+
   render() {
-    const { props } = this;
-    if (props.done) {
+    const { props, state, setReload } = this;
+    if (state.reload) {
       // eslint-disable-next-line no-alert
       // eslint-disable-next-line no-undef
       // alert("Your Team Registered");
@@ -50,7 +62,7 @@ class Registration extends React.Component {
               show={props.alert || props.done}
               title={props.done ? "You're registered" : props.alert}
               type={props.done ? "success" : "warning"}
-              onConfirm={props.stopAlert}
+              onConfirm={props.done ? setReload : props.stopAlert}
             />
             <Title>REGISTRASI TIM FUTSAL</Title>
             <TeamFormRegistration
@@ -62,7 +74,7 @@ class Registration extends React.Component {
             <div className="garisnya" />
 
             <h3 className="manager">Manager</h3>
-            <p className="kominfo">*data manager wajib diisi lengkap </p>
+            <p className="kominfo mb-3">*data manager wajib diisi lengkap </p>
             <LeftDiv>
               <PersonFormRegistration
                 id="0"
@@ -83,7 +95,7 @@ class Registration extends React.Component {
             <h3 className="pemain">
               Pemain ({props.numberPlayer.length} Orang)
             </h3>
-            <p className="kominfo">
+            <p className="kominfo mb-3">
               *minimum pemain 10 orang dan maksimal 15 orang
             </p>
             <Forms>

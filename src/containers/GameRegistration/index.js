@@ -32,11 +32,23 @@ import {
 } from "./actions";
 
 class GameRegistration extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      reload: false
+    };
+    this.setReload = this.setReload.bind(this);
+  }
+
+  setReload() {
+    this.setState({ reload: true });
+  }
+
   render() {
-    const { props } = this;
+    const { props, state, setReload } = this;
     const Game = Games[props.gameId];
     const data = props[props.gameId];
-    if (props.done) {
+    if (state.reload) {
       // eslint-disable-next-line no-alert
       // eslint-disable-next-line no-undef
       // alert("Your Team Registered");
@@ -50,7 +62,7 @@ class GameRegistration extends React.Component {
               show={props.alert || props.done}
               title={props.done ? "You're registered" : props.alert}
               type={props.done ? "success" : "warning"}
-              onConfirm={props.stopAlert}
+              onConfirm={props.done ? setReload : props.stopAlert}
             />
             <Title>REGISTRASI TIM {Game.title}</Title>
             {Game.captain ? (
@@ -78,7 +90,7 @@ class GameRegistration extends React.Component {
               <p className="kominfo mb-0">*pemain pertama adalah kapten tim</p>
             ) : null}
             {Game.captain ? (
-              <p className="kominfo">*data kapten wajib diisi lengkap</p>
+              <p className="kominfo mb-3">*data kapten wajib diisi lengkap</p>
             ) : null}
             <Forms>
               {data.personData &&

@@ -185,6 +185,12 @@ export const RegistrationContainer = styled.div`
     margin: 30px 0;
     margin-top: 50px;
   }
+  .mb-0 {
+    margin-bottom: 0;
+  }
+  .mb-3 {
+    margin-bottom: 30px;
+  }
 `;
 
 export const Section = styled.div`
