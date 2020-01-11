@@ -62,6 +62,7 @@ export const TeamFormRegistrationContainer = styled.div`
     padding: 5px 10px;
     width: calc(100% - 120px);
     color: #00000060;
+    background-color: #fafafa !important;
   }
 
   .logo-preview:focus {
