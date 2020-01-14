@@ -52,6 +52,11 @@ export const PersonFormRegistrationContainer = styled.div`
     margin: 0;
     display: none;
   }
+  .unggah-foto-person {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
   .labelfile {
     width: 100px;
     max-width: 350px;

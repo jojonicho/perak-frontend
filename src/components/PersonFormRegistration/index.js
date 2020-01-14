@@ -65,7 +65,7 @@ class PersonFormRegistration extends React.Component {
         {setFoto ? (
           <Section>
             Pas Foto
-            <div className="d-flex flex-wrap align-items-center">
+            <div className="unggah-foto-person">
               <input
                 className="foto-preview"
                 disabled
