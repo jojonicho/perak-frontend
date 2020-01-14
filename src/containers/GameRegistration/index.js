@@ -31,6 +31,19 @@ import {
   savePlayer
 } from "./actions";
 
+const hargaPendaftaran = namaGame => {
+  if (namaGame === "Dota 2") return "Rp. 75.000,- / tim";
+  if (namaGame === "Counter Strike: Global Offensive")
+    return "Rp. 75.000,- / tim";
+  if (namaGame === "Mobile Legends: Bang Bang") return "Rp. 50.000,- / tim";
+  if (namaGame === "Super Smash Bros. Ultimate") return "Rp. 10.000,- / orang";
+  if (namaGame === "Mario Kart 8 Deluxe") return "Rp. 10.000,- / orang";
+  if (namaGame === "FIFA20") return "Rp. 10.000,- / orang";
+  if (namaGame === "Catur") return "Rp. 10.000,- / orang";
+  if (namaGame === "Codenames") return "Rp. 10.000,- / orang";
+  return "Rp. 10.000,- / orang";
+};
+
 class GameRegistration extends React.Component {
   constructor() {
     super();
@@ -65,6 +78,7 @@ class GameRegistration extends React.Component {
               onConfirm={props.done ? setReload : props.stopAlert}
             />
             <Title>REGISTRASI TIM {Game.title}</Title>
+            <h4>Biaya masuk: {hargaPendaftaran(Game.title)}</h4>
             {Game.captain ? (
               <TeamFormRegistration
                 setName={e => props.setTeamName(e, props.gameId)}
@@ -90,7 +104,7 @@ class GameRegistration extends React.Component {
               <p className="kominfo mb-0">*pemain pertama adalah kapten tim</p>
             ) : null}
             {Game.captain ? (
-              <p className="kominfo mb-3">*data kapten wajib diisi lengkap</p>
+              <p className="kominfo mb-0">*data kapten wajib diisi lengkap</p>
             ) : null}
             <Forms>
               {data.personData &&

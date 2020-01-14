@@ -20,24 +20,27 @@ const Button = styled.button`
   }};
 `;
 const Input = styled.input`
-height: 32px;
-width: ${props => {
-  if (props.type === "long") return "100%";
-  return "60%";
-}}
-// padding: 0px 10px;
-margin: 0px  auto;
-background-color: white;
-// border: none;
-border: 2px black solid;
-opacity: 1;
-color: #303030;
-font-size: 22px;
-font-weight: 400;
+  height: 32px;
+  width: ${props => {
+    if (props.type === "long") return "100%";
+    return "60%";
+  }};
+  // padding: 0px 10px;
+  margin: 0px auto;
+  background-color: white;
+  // border: none;
+  border: 2px black solid;
+  opacity: 1;
+  color: #303030;
+  font-size: 22px;
+  font-weight: 400;
 
--webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
--moz-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
+  -webkit-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+    1px 1px 0px rgba(255, 255, 255, 1);
 `;
 
 const Title = styled.h3`

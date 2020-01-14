@@ -91,6 +91,9 @@ export const RegistrationContainer = styled.div`
   button {
     font-family: Montserrat;
   }
+  h4 {
+    color: #303030;
+  }
   .x-buttona {
     cursor: pointer;
     color: #e96730;

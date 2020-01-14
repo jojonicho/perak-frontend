@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const PersonFormRegistrationContainer = styled.div`
   height: 85%;
-  margin-top: 18px;
   font-family: Montserrat;
   font-weight: lighter;
   display: flex;
@@ -10,6 +9,7 @@ export const PersonFormRegistrationContainer = styled.div`
   flex-direction: column;
   text-align: center;
   margin: 0px 0;
+  margin-top: 30px;
 
   input,
   .foto-preview {
