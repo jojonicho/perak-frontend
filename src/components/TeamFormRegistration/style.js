@@ -20,13 +20,14 @@ export const TeamFormRegistrationContainer = styled.div`
 
   .logo-tim {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
   }
   .labelfile {
     width: 100px;
     max-width: 350px;
     height: 34px;
-    margin: 0 5px 10px 5px !important;
+    margin: 0 5px 7px 5px !important;
     font-family: Montserrat;
     font-weight: lighter;
     font-size: 1em;
