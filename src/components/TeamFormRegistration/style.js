@@ -3,81 +3,69 @@ import styled from "styled-components";
 export const TeamFormRegistrationContainer = styled.div`
 overflow-x:hidden;
 align-items: center;
+font-family: Montserrat;
+font-weight: lighter;
+margin-top: 30px;
 .section {
     margin: 0px auto;
     text-align: left;
     width: 80%;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: normal;
     display: flex;
     flex-direction: column;
     font-size: 25px;
 }
 
 .logo-tim{
-    margin: 20px  5px;
     display: flex;
     flex-wrap: wrap;
 }
-.labelfile{
-    margin: 20px 0;
-    align-self: center;
-    background-color: #22B3A5;
-    border: 2px white solid;
-    opacity: 1;
-    color: white;
-    font-size: 20px;
-    width: 30%;
-    min-width: 170px;
-    max-width: 270px;
-    padding: 5px 0px;
-    outline: none;
-    text-align:center;
-    font-weight: 600;
-    cursor: pointer;
-}
-input {
-    // padding: 0px 10px;
-    margin: 20px  5px;
-    background-color: #FFDE17 !important;
+.labelfile {
+    width: 100px;
+    max-width: 350px;
+    height: 40px;
+    margin: 0 5px 10px 5px !important;
     border: none;
-    border-radius: 3px;
-    // border: 2px black solid;
-    opacity: 1;
-    color: #303030;
-    font-size: 20px;
-    font-weight: 400;
-    width: 40%;
-    min-width: 170px;
-
-    -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-    box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-
+    font-family: Montserrat;
+    font-weight: lighter;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.7em;
+    background-color: #22b3a5;
+    box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0 3px;
+    cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
+}
+input ,.logo-preview {    
+    margin: 10px 5px 20px 5px !important;
+    background-color: white !important;
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 5px 10px;
+    width: 100%;
 }
 
 .logo-preview{
-    margin-right: 20px;
-    width:50vw;
-    height:50vw;
-    max-height: 200px;
-    max-width: 200px;
-    border: 2px white solid;
-    background-color: #FFDE17;
-    border-radius: 3px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
+    margin: 10px 5px 20px 5px !important;
+    background-color: white !important;
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 5px 10px;
+    width: calc(100% - 120px);
   }
 
-.long{
-    width: 50%;
-}
 
 h3 {
     Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-size: 32px;
-font-weight: 800;
+font-weight: normal;
 }
 .hide-input{
     width: 0.1px;

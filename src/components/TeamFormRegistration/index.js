@@ -18,24 +18,28 @@ class TeamFormRegistration extends React.Component {
             autoComplete="off"
           />
         </div>
-        <div className="section">
-          Logo Tim
-          <div className="logo-tim">
-            <div className="logo-preview">
-              {teamImage && <img src={URL.createObjectURL(teamImage)} alt="" />}
-            </div>
-            <label htmlFor={idForm} className="labelfile">
-              Unggah
+        {setImage ? (
+          <div className="section">
+            Logo Tim
+            <div className="logo-tim d-flex flex-wrap align-items-center">
               <input
-                type="file"
-                className="hide-input"
-                id={idForm}
-                onChange={setImage}
-                autoComplete="off"
+                className="logo-preview"
+                disabled
+                value={teamImage && teamImage.name}
               />
-            </label>
+              <label htmlFor={idForm} className="labelfile">
+                Unggah
+                <input
+                  type="file"
+                  className="hide-input"
+                  id={idForm}
+                  onChange={setImage}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
           </div>
-        </div>
+        ) : null}
       </TeamFormRegistrationContainer>
     );
   }

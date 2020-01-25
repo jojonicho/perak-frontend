@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import futsalImg from "../../asset/futsal.png";
+import bg from "../../asset/regisbg.png";
 
 export const Forms = styled.div`
   display: flex;
@@ -11,25 +11,32 @@ export const SubmitButton = styled.div`
   width: 40%;
   max-width: 350px;
   height: 40px;
-  border: solid white 3px;
+  border: none;
   font-weight: bold;
   color: white;
+  border-radius: 10px;
   font-size: 1.5em;
   margin-top: 100px;
-  background-color: #f24e07;
+  background-color: #22b3a5;
+  box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   // padding-left: 20px;
   cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
 `;
 export const LeftDiv = styled.div`
   width: 100%;
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
   > div {
-    width: 85%;
+    width: 100%;
+    justify-content: center;
+    height: inherit !important;
   }
 `;
 export const TambahButton = styled.div`
@@ -38,64 +45,71 @@ export const TambahButton = styled.div`
     font-weight: bold;
   }
   width: 75%;
-  max-width: 450px;
-  height: 50px;
+  max-width: 420px;
+  height: 40px;
   font-weight: bold;
-  border: solid white 3px;
+  border: none;
+  border-radius: 10px;
+  // box-shadow:  0 4px 2px 0px rgb(156, 64, 21);
+  box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
   color: white;
-  font-size: 2em;
-  background-color: #22b3a5;
+  font-size: 1.5em;
+  background-color: #f26522;
   display: flex;
   align-items: center;
   justify-content: center;
   // padding-left: 20px;
   cursor: pointer;
   margin-top: 30px;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const RegistrationContainer = styled.div`
-font-family: inherit;
-display: flex;
-flex-direction: column;
-background-image: url(${futsalImg});
-background-attachment: fixed;
-background-repeat: no-repeat;
-background-position: center;
-background-color: #454FCB;
-background-size: contain;
-text-align: center;
-position: relative;
-font-family: Helvetica;
-padding-bottom: 30px;
-overflow-x: hidden;
-color: white;
-.x-button {
-  cursor: pointer;
-  color: white;
-  background-color: #EA6229;
-  width: 35px;
-  font-weight: bold;
-  height: 35px;
-  margin-right: 20px;
-  font-size: 1.6em;
-  border-radius: 50%;
-  border: solid white 2px;
-}
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  background-attachment: unset;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-color: #e5e6de;
+  background-image: url(${bg});
+  background-size: 100vw;
+  text-align: center;
+  position: relative;
+  font-family: Helvetica;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+  color: black;
+  .x-buttona {
+    cursor: pointer;
+    color: white;
+    background-color: #ea6229;
+    width: 35px;
+    font-weight: normal;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    font-size: 1.6em;
+    border-radius: 50%;
+    border: solid white 2px;
+  }
 
-.section {
+  .section {
     margin: 0px auto;
     text-align: left;
-    width: 80%;
+    width: 100%;
     font-size: 32px;
     font-weight: 800;
     display: flex;
     flex-direction: column;
     font-size: 25px;
-}
-input {
+  }
+  input {
     // padding: 0px 10px;
-    margin: 20px  5px;
-    background-color: #FFDE17 !important;
+    margin: 20px 5px;
+    background-color: white !important;
     border: none;
     border-radius: 3px;
     // border: 2px black solid;
@@ -105,45 +119,18 @@ input {
     font-weight: 400;
     width: 40%;
     min-width: 170px;
-    -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-    box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
-
-}
-
-.logo-preview{
-    width:50vw;
-    height:50vw;
-    max-height: 200px;
-    max-width: 200px;
-    border: 2px white solid;
-    background-color: #FFDE17;
-    border-radius: 3px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
+    -webkit-box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+      1px 1px 0px rgba(255, 255, 255, 1);
+    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05),
+      1px 1px 0px rgba(255, 255, 255, 1);
+    outline: none;
   }
 
-  .foto-preview{
-    margin-top 18px;
-    width:40vw;
-    height:60vw;
-    max-height: 300px;
-    max-width: 200px;
-    border: 2px white solid;
-    background-color: #FFDE17;
-    border-radius: 3px;
-    img {
-        width: 100%;
-        height: 100%;
-    }
-  }
-
-.long{
+  .long {
     width: 100%;
-}
+  }
 
-/* button{
+  /* button{
     border-radius: 5px;
   background-color: #a1cdf1;
   color: #fff;
@@ -152,13 +139,14 @@ input {
   border: 2px black solid;
   cursor: pointer;
 } */
-h3 {
-    Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 32px;
-font-weight: 800;
-margin: 30px 0;
-margin-top: 50px;
-}
+  h3 {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 32px;
+    color: #454fcb;
+    margin: 30px 0;
+    margin-top: 50px;
+  }
 `;
 
 export const Section = styled.div`
@@ -208,9 +196,10 @@ box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
 `;
 
 export const Title = styled.h3`
-// Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-family: Helvetica
-font-size: 48px !important; 
-text-shadow: 2px 2px #F24E07;
-font-weight: 800;
+  /* // Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  font-family: Helvetica;
+  font-size: 48px !important;
+  /* text-shadow: 2px 2px #F24E07; */
+  color: #4b59a7;
+  font-weight: 700 !important;
 `;

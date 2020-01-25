@@ -1,4 +1,45 @@
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); */
+
+@font-face {
+  font-family: BigJohnPRO;
+  src: url("./asset/font/BigJohnPRO-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BigJohnPRO;
+  font-weight: bold;
+  src: url("./asset/font/BigJohnPRO-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: BigJohnPRO;
+  font-weight: lighter;
+  src: url("./asset/font/BigJohnPRO-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Monstserrat;
+  src: url("./asset/font/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: Monstserrat;
+  font-weight: bold;
+  src: url("./asset/font/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Monstserrat;
+  font-weight: bolder;
+  src: url("./asset/font/Montserrat-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: Monstserrat;
+  font-weight: lighter;
+  src: url("./asset/font/Montserrat-ExtraBold.ttf");
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

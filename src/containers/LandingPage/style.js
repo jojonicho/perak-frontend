@@ -72,6 +72,7 @@ export const LandingPageContainer = styled.div`
   left:0;
   .tema{
     color: white;
+    font-family: BigJohnPRO;
     font-size: 2em;
     border: none;
     cursor: pointer;
@@ -203,6 +204,7 @@ export const LandingPageContainer = styled.div`
   .tema {
     color: white;
     font-size: 2em;
+    font-family: BigJohnPRO;
     border: none;
     cursor: pointer;
     font-weight: bold;
@@ -231,6 +233,7 @@ export const LandingPageContainer = styled.div`
     .tema {
       color: black;
       font-size: 2em;
+      font-family: BigJohnPRO;
       border: none;
       cursor: pointer;
       font-weight: bold;
@@ -281,6 +284,7 @@ export const SecondSection = styled.section`
     cursor: pointer;
   }
   .apa-itu {
+    font-family: BigJohnPRO;
     color: ${blue};
     font-size: bold;
     font-family: "Montserrat", sans-serif;
@@ -522,6 +526,7 @@ export const FourthSection = styled.section`
     width: 500px;
   }
   .liga-title {
+    font-family: BigJohnPRO;
     color: ${yellow};
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
@@ -692,6 +697,7 @@ export const FifthSection = styled.section`
   flex-direction: column;
   align-items: center;
   .social-media-title {
+    font-family: BigJohnPRO;
     font-weight: bold;
     padding: 10px 20px;
     margin-top: 50px;

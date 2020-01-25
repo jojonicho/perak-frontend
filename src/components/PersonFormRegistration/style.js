@@ -1,23 +1,27 @@
 import styled from "styled-components";
 
 export const PersonFormRegistrationContainer = styled.div`
-  height: 100%;
+  height: 85%;
   margin-top: 18px;
-  font-family: Helvetica;
+  font-family: Montserrat;
+  font-weight: lighter;
   display: flex;
   width: 100%;
   flex-direction: column;
   text-align: center;
   margin: 0px 0;
-  input {
-    margin: 20px 5px !important;
-    background-color: #ffde17 !important;
-    border-radius: 3px;
-    width: 80%;
-    max-width: 450px;
+
+  input , .foto-preview{
+    margin: 10px 5px 20px 5px !important;
+    background-color: white !important;
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 5px 10px;
+    width: 100%;
+    // max-width: 450px;
   }
-  .input-long {
-    width: 90%;
+  .foto-preview{
+    width: calc(100% - 120px);
   }
   .input-info {
     font-size: 15px;
@@ -28,8 +32,8 @@ export const PersonFormRegistrationContainer = styled.div`
     height: 40vw;
     max-height: 300px;
     max-width: 500px;
-    border: 2px white solid;
-    background-color: #ffde17;
+    // border: 2px white solid;
+    background-color: white;
     border-radius: 3px;
     img {
       width: 100%;
@@ -47,20 +51,41 @@ export const PersonFormRegistrationContainer = styled.div`
     display: none;
   }
   .labelfile {
-    margin: 20px 0;
-    background-color: #22b3a5;
-    border: 2px white solid;
-    opacity: 1;
+    width: 100px;
+    max-width: 350px;
+    height: 40px;
+    margin: 0 5px 10px 5px !important;
+    border: none;
+    font-family: Montserrat;
+    font-weight: lighter;
     color: white;
-    font-size: 20px;
-    width: 30%;
-    min-width: 170px;
-    max-width: 270px;
-    padding: 5px 0px;
-    outline: none;
-    text-align: center;
-    font-weight: 600;
+    border-radius: 10px;
+    font-size: 0.7em;
+    background-color: #22b3a5;
+    box-shadow: inset 0px -5px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0 3px;
     cursor: pointer;
+  :active {
+    box-shadow: inset 0px -8px 14px rgba(0, 0, 0, 0.25);
+  }
+    cursor: pointer;
+  }
+  .half-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .half{
+      width: 47%;
+    }
+    @media screen and (max-width:550px){
+      display: block;
+      .half{
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -69,7 +94,7 @@ export const Section = styled.div`
   text-align: left;
   width: 80%;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: normal;
   display: flex;
   flex-direction: column;
   font-size: 25px;
@@ -84,6 +109,8 @@ export const Header = styled.h2`
   background-color: #4377fa;
   color: rgb(243, 227, 49);
   border-radius: 5px 5px 0px 0px;
+  font-family: Montserrat;
+  font-weight: bold;
 `;
 
 export const Input = styled.input`

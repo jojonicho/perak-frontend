@@ -21,14 +21,9 @@ class HeaderFooter extends React.Component {
         <div className="header" style={colors[color]}>
           <Link to="/" className="no-decor">
             <img className="logo" src={logoBaruTerang} alt="logo"></img>
-            {/* {color === "blue" || color === "green" || color === "dark" ? (
-              <img className="logo" src={logoBaruTerang} alt="logo"></img>
-            ) : (
-              <img className="logo" src={logoBaruTerang2} alt="logo"></img>
-            )} */}
           </Link>
-          <Link to="/daftar" className="no-decor">
-            <h2>DAFTAR</h2>
+          <Link to="/daftar">
+            <h2 className="daftar">DAFTAR</h2>
           </Link>
         </div>
         <div className="childcontainer">{children}</div>

@@ -31,32 +31,25 @@ class PersonFormRegistration extends React.Component {
             autoComplete="off"
           />
         </Section>
-        {setFoto ? (
-          <Section>
-            Pas Foto
-            <div className="foto-preview">
-              {foto && <img src={URL.createObjectURL(foto)} alt="" />}
-            </div>
-            <label htmlFor={`foto-${idForm}`} className="labelfile">
-              Unggah
-              <input
-                type="file"
-                className="hide-input"
-                id={`foto-${idForm}`}
-                onChange={setFoto}
-                autoComplete="off"
-              />
-            </label>
-          </Section>
-        ) : null}
-        <Section>
-          ID Line / Whatsapp
-          <input
-            value={kontak}
-            id="kontak"
-            onChange={setPersonData}
-            autoComplete="off"
-          />
+        <Section className="d-flex flex-wrap half-cont">
+          <div className="half">
+            ID Line
+            <input
+              value={kontak}
+              id="kontak"
+              onChange={setPersonData}
+              autoComplete="off"
+            />
+          </div>
+          <div className="half">
+            Nomor Telepon
+            <input
+              value={nomorTelepon}
+              id="telepon"
+              onChange={setPersonData}
+              autoComplete="off"
+            />
+          </div>
         </Section>
         <Section>
           Email
@@ -67,15 +60,29 @@ class PersonFormRegistration extends React.Component {
             autoComplete="off"
           />
         </Section>
-        <Section>
-          Nomor Telepon
-          <input
-            value={nomorTelepon}
-            id="telepon"
-            onChange={setPersonData}
-            autoComplete="off"
-          />
-        </Section>
+        <Section></Section>
+        {setFoto ? (
+          <Section>
+            Pas Foto
+            <div className="d-flex flex-wrap align-items-center">
+              <input
+                className="foto-preview"
+                disabled
+                value={foto && foto.name}
+              />
+              <label htmlFor={`foto-${idForm}`} className="labelfile">
+                Unggah
+                <input
+                  type="file"
+                  className="hide-input"
+                  id={`foto-${idForm}`}
+                  onChange={setFoto}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
+          </Section>
+        ) : null}
         {/* <Section>
           Kartu Identitas
           <span className="input-info">KTM / KTP / Paspor</span>

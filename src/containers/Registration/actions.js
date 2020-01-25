@@ -167,8 +167,7 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     const numberPlayer = Array.from(nowPlayer);
     if (
       nowIndex === 0 ||
-      (personData[nowIndex][5] != null &&
-        personData[nowIndex][0] !== ": 30px 0")
+      (personData[nowIndex][5] != null && personData[nowIndex][0] !== "")
     ) {
       personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");
