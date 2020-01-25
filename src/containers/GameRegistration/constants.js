@@ -8,6 +8,8 @@ export const DELETE_PLAYER = "src/GameRegistration/DELETE_PLAYER";
 export const SET_SHOW_PLAYER = "src/GameRegistration/SET_SHOW_PLAYER";
 export const SET_TEAM_NAME = "src/GameRegistration/SET_TEAM_NAME";
 export const SUBMIT = "src/GameRegistration/SUBMIT";
+export const SAVE_PLAYER = "src/GameRegistration/SAVE_PLAYER";
+export const SHOW_FORM = "src/GameRegistration/SHOW_FORM";
 
 export const Games = {
   dota: {

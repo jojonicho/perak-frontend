@@ -3,8 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import SweetAlert from "sweetalert2-react";
-
-// import swal from 'sweetalert2';
+import hapus from "../../asset/hapus.svg";
 
 import {
   RegistrationContainer,
@@ -30,21 +29,31 @@ import {
   setShowPlayer,
   deletePlayer,
   setFoto,
-  stopAlert
+  stopAlert,
+  savePlayer
 } from "./actions";
 
 class Registration extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      reload: false
+    };
+    this.setReload = this.setReload.bind(this);
+  }
+
+  setReload() {
+    this.setState({ reload: true });
+  }
+
   render() {
-    const { props } = this;
-    if (props.done) {
+    const { props, state, setReload } = this;
+    if (state.reload) {
       // eslint-disable-next-line no-alert
       // eslint-disable-next-line no-undef
       // alert("Your Team Registered");
       window.location.reload();
     }
-    console.log(props.personData);
-    console.log(props.showPlayer);
-    console.log(props.alert);
     return (
       <HeaderFooter color="dark">
         <Fade>
@@ -53,28 +62,19 @@ class Registration extends React.Component {
               show={props.alert || props.done}
               title={props.done ? "You're registered" : props.alert}
               type={props.done ? "success" : "warning"}
-              onConfirm={props.stopAlert}
+              onConfirm={props.done ? setReload : props.stopAlert}
             />
             <Title>REGISTRASI TIM FUTSAL</Title>
-            {/* <MinimizedPersonForm
-              namaLengkap="Bambang Yakobs"
-              kontak="bambangYakobus"
-              email="bambang@gmail.com"
-              nomorTelepon="012d031023"
-              setShowPlayer={() =>
-                props.setShowPlayer(0 + 1, props.showPlayer, props.personData)
-              }
-              deletePlayer={() =>
-                props.deletePlayer(props.numberPlayer, props.personData, 0 + 1)
-              }
-            /> */}
             <TeamFormRegistration
               teamImage={props.teamImage}
               setImage={props.setTeamImage}
               setName={e => props.setTeamName(e)}
               teamName={props.teamName}
             />
-            <h3>Manager</h3>
+            <div className="garisnya" />
+
+            <h3 className="manager">Manager</h3>
+            <p className="kominfo mb-3">*data manager wajib diisi lengkap </p>
             <LeftDiv>
               <PersonFormRegistration
                 id="0"
@@ -91,11 +91,44 @@ class Registration extends React.Component {
                 setPersonData={e => props.setPersonData(e, 0, props.personData)}
               />
             </LeftDiv>
-            <h3>Pemain</h3>
+            <div className="garisnya" />
+            <h3 className="pemain">
+              Pemain ({props.numberPlayer.length} Orang)
+            </h3>
+            <p className="kominfo mb-3">
+              *minimum pemain 10 orang dan maksimal 15 orang
+            </p>
             <Forms>
+              {/* <MinimizedPersonForm
+              namaLengkap="Bambang Yakobus"
+              kontak="bambangYakobus"
+              email="bambang@gmail.com"
+              nomorTelepon="012d031023"
+              setShowPlayer={() =>
+                props.setShowPlayer(0 + 1, props.showPlayer, props.personData)
+              }
+              deletePlayer={() =>
+                props.deletePlayer(props.numberPlayer, props.personData, 0 + 1)
+              }
+            /> */}
               {props.numberPlayer.map(function x(a, index) {
-                return index + 1 === props.showPlayer ? (
+                return props.showForm && index + 1 === props.showPlayer ? (
                   <LeftDiv>
+                    <button
+                      type="button"
+                      className="x-buttona"
+                      onClick={() =>
+                        props.deletePlayer(
+                          props.numberPlayer,
+                          props.personData,
+                          props.showPlayer
+                        )
+                      }
+                    >
+                      <img className="trash" src={hapus} alt="hapus" />
+                      Hapus Pemain
+                    </button>
+
                     <Fade
                       distance="10%"
                       duration={1000}
@@ -120,29 +153,19 @@ class Registration extends React.Component {
                         setPersonData={e =>
                           props.setPersonData(e, index + 1, props.personData)
                         }
+                        savePlayer={() =>
+                          props.savePlayer(props.personData, index + 1)
+                        }
                       />
                     </Fade>
-                    <button
-                      type="button"
-                      className="x-buttona"
-                      onClick={() =>
-                        props.deletePlayer(
-                          props.numberPlayer,
-                          props.personData,
-                          props.showPlayer
-                        )
-                      }
-                    >
-                      X
-                    </button>
                   </LeftDiv>
                 ) : (
                   <Fade when cascade>
                     <MinimizedPersonForm
                       namaLengkap={props.personData[index + 1][0]}
-                      kontak={props.personData[0][1]}
-                      email={props.personData[0][2]}
-                      nomorTelepon={props.personData[0][3]}
+                      kontak={props.personData[index + 1][1]}
+                      email={props.personData[index + 1][2]}
+                      nomorTelepon={props.personData[index + 1][3]}
                       setShowPlayer={() =>
                         props.setShowPlayer(
                           index + 1,
@@ -161,22 +184,23 @@ class Registration extends React.Component {
                   </Fade>
                 );
               })}
-              <TambahButton
-                onClick={
-                  props.numberPlayer.length < 15
-                    ? () =>
-                        props.addPlayer(
-                          props.numberPlayer,
-                          props.personData,
-                          props.showPlayer
-                        )
-                    : null
-                }
-              >
-                <span className="plus">+</span> Tambah (
-                {props.numberPlayer.length}
-                /15)
-              </TambahButton>
+              <div className="garisnya" />
+              {props.numberPlayer && props.numberPlayer.length < 15 ? (
+                <TambahButton
+                  onClick={
+                    props.numberPlayer.length < 15
+                      ? () =>
+                          props.addPlayer(
+                            props.numberPlayer,
+                            props.personData,
+                            props.showPlayer
+                          )
+                      : null
+                  }
+                >
+                  <span className="plus">+</span> Pemain
+                </TambahButton>
+              ) : null}
 
               <SubmitButton
                 onClick={() =>
@@ -213,7 +237,8 @@ function mapStateToProps(state) {
     loadNow: state.registration.loadNow,
     loadBase: state.registration.loadBase,
     done: state.registration.done,
-    alert: state.registration.alert
+    alert: state.registration.alert,
+    showForm: state.registration.showForm
   };
 }
 
@@ -234,7 +259,9 @@ function mapDispatchToProps(dispatch) {
       dispatch(setShowPlayer(index, nowIndex, personData)),
     deletePlayer: (numberPlayer, personData, index) =>
       dispatch(deletePlayer(numberPlayer, personData, index)),
-    stopAlert: () => dispatch(stopAlert())
+    stopAlert: () => dispatch(stopAlert()),
+    savePlayer: (personData, nowIndex) =>
+      dispatch(savePlayer(personData, nowIndex))
   };
 }
 

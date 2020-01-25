@@ -71,3 +71,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.magic,
+.magic div,
+.magic a,
+.magic svg,
+.magic path,
+.magic .decor,
+.magic *,
+.magic h1 .mauapa {
+  cursor: url("./asset/mouse.png"), auto;
+}

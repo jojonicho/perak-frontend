@@ -11,7 +11,9 @@ import {
   LOADING,
   UPDATE_LOADING,
   SET_SELF_IMAGE,
-  ALERT
+  ALERT,
+  SHOW_FORM,
+  SAVE_PLAYER
 } from "./constants";
 
 const initialState = {
@@ -20,6 +22,7 @@ const initialState = {
   personData: [["", "", "", "", null, null]],
   numberPlayer: [],
   showPlayer: 0,
+  showForm: false,
   loading: false,
   loadNow: 0,
   loadBase: 0,
@@ -43,6 +46,10 @@ function registrationReducer(state = initialState, action) {
       return { ...state, personData: action.payload };
     case SET_SHOW_PLAYER:
       return { ...state, showPlayer: action.showPlayer };
+    case SAVE_PLAYER:
+      return { ...state };
+    case SHOW_FORM:
+      return { ...state, showForm: action.payload };
     case DELETE_PLAYER:
       return {
         ...state,
@@ -61,7 +68,7 @@ function registrationReducer(state = initialState, action) {
     case LOADING:
       return {
         ...state,
-        loading: !state.loading,
+        loading: action.loadBase !== 0,
         loadNow: 0,
         loadBase: action.loadBase,
         done: false
@@ -70,7 +77,8 @@ function registrationReducer(state = initialState, action) {
       return {
         ...state,
         loadNow: state.loadNow + 1,
-        loading: !(state.loadNow + 1 === state.loadBase),
+        loading:
+          !(state.loadNow + 1 === state.loadBase) && state.loadBase !== 0,
         loadBase: state.loadNow + 1 === state.loadBase ? 0 : state.loadBase,
         done: state.loadNow + 1 === state.loadBase
       };

@@ -11,7 +11,7 @@ export const HeaderFooterContainer = styled.div`
     height: 40px;
 
     p {
-      margin: 0;
+      margin: auto;
       margin-left: 10px;
       font-size: 0.8rem;
     }
@@ -21,7 +21,6 @@ export const HeaderFooterContainer = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 0 10px;
   }
   .header {
     position: fixed;
@@ -29,7 +28,7 @@ export const HeaderFooterContainer = styled.div`
     z-index: 100;
     display: flex;
     justify-content: space-between;
-    padding-right: 10px;
+    padding: 0px 20px;
   }
 
   .logo {
@@ -49,5 +48,11 @@ export const HeaderFooterContainer = styled.div`
     font-weight: normal;
     font-size: 1em;
     color: #e5e6de;
+  }
+
+  @media only screen and (max-width: 350px) {
+    .logo {
+      height: 35px;
+    }
   }
 `;

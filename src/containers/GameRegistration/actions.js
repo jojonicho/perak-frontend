@@ -8,7 +8,9 @@ import {
   ADD_PLAYER,
   DELETE_PLAYER,
   SET_SHOW_PLAYER,
-  SET_TEAM_NAME
+  SET_TEAM_NAME,
+  SHOW_FORM,
+  SAVE_PLAYER
   // SUBMIT
 } from "./constants";
 
@@ -47,6 +49,14 @@ function updateLoad() {
   };
 }
 
+function showForm(gameId, state) {
+  return {
+    type: SHOW_FORM,
+    payload: state,
+    idGame: gameId
+  };
+}
+
 export function setShowPlayer(gameId, index, nowIndex, personData) {
   return dispatch => {
     if (personData[nowIndex][0] !== "") {
@@ -55,6 +65,7 @@ export function setShowPlayer(gameId, index, nowIndex, personData) {
         showPlayer: index,
         idGame: gameId
       });
+      dispatch(showForm(gameId, true));
     } else {
       dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
@@ -82,6 +93,27 @@ export function setPersonData(e, gameId, personId, data) {
   };
 }
 
+export function savePlayer(gameId, personData, nowIndex) {
+  const newPersonData = Array.from(personData);
+  return dispatch => {
+    if (
+      newPersonData[0][0] !== "" &&
+      newPersonData[0][1] !== "" &&
+      newPersonData[0][2] !== "" &&
+      newPersonData[0][3] !== "" &&
+      newPersonData[nowIndex][0] !== ""
+    ) {
+      dispatch(showForm(gameId, false));
+    } else {
+      dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
+    }
+    dispatch({
+      type: SAVE_PLAYER,
+      idGame: gameId
+    });
+  };
+}
+
 export function addPlayer(gameId, personData, nowIndex) {
   return dispatch => {
     const newPersonData = Array.from(personData);
@@ -94,6 +126,7 @@ export function addPlayer(gameId, personData, nowIndex) {
       newPersonData[nowIndex][0] !== ""
     ) {
       newPersonData.push(["", "", "", ""]);
+      dispatch(showForm(gameId, true));
     } else {
       dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
@@ -106,12 +139,15 @@ export function addPlayer(gameId, personData, nowIndex) {
 }
 
 export function deletePlayer(gameId, personData, index) {
-  const newPersonData = Array.from(personData);
-  newPersonData.splice(index, 1); // delete from array
-  return {
-    type: DELETE_PLAYER,
-    payload: newPersonData,
-    idGame: gameId
+  return dispatch => {
+    const newPersonData = Array.from(personData);
+    newPersonData.splice(index, 1); // delete from array
+    dispatch(showForm(gameId, true));
+    dispatch({
+      type: DELETE_PLAYER,
+      payload: newPersonData,
+      idGame: gameId
+    });
   };
 }
 
@@ -123,7 +159,7 @@ export function setTeamName(e, gameId) {
   };
 }
 
-function uploadTeam(gameId, idTeam, teamName, personData) {
+function uploadTeam(gameId, idTeam, teamName, personData, attempts = 0) {
   return dispatch => {
     firestore
       .collection(gameId)
@@ -137,18 +173,36 @@ function uploadTeam(gameId, idTeam, teamName, personData) {
       })
       .then(() => {
         dispatch(updateLoad());
+      })
+      .catch(e => {
+        console.error(e);
+        if (attempts < 5) {
+          dispatch(
+            uploadTeam(gameId, idTeam, teamName, personData, attempts + 1)
+          );
+        } else {
+          dispatch(loading(0));
+          dispatch(error("Request Error, Gagal mengirim data"));
+        }
       });
   };
 }
 
-function uploadPlayer(gameId, idTeam, playerData, teamName) {
+function uploadPlayer(
+  gameId,
+  idTeam,
+  playerData,
+  teamName,
+  attempts = 0,
+  fixIndex = -1
+) {
   return dispatch => {
     playerData.forEach((x, index) => {
       firestore
         .collection(gameId)
         .doc(`${teamName}-${idTeam}`)
         .collection("player")
-        .doc(`${x[0]}-${index}`)
+        .doc(`${x[0]}-${fixIndex >= 0 ? fixIndex : index}`)
         .set({
           namaLengkap: x[0],
           kontak: x[1],
@@ -157,6 +211,25 @@ function uploadPlayer(gameId, idTeam, playerData, teamName) {
         })
         .then(() => {
           dispatch(updateLoad());
+        })
+        .catch(e => {
+          console.error(e);
+          const retryPlayerData = playerData.splice(index, 1);
+          if (attempts < 5) {
+            dispatch(
+              uploadPlayer(
+                gameId,
+                idTeam,
+                retryPlayerData,
+                teamName,
+                attempts + 1,
+                fixIndex >= 0 ? fixIndex : index
+              )
+            );
+          } else {
+            dispatch(loading(0));
+            dispatch(error("Request Error, Gagal mengirim data"));
+          }
         });
     });
   };
@@ -203,6 +276,11 @@ export function submit(gameId, personData, teamName) {
           dispatch(uploadTeam(gameId, teams.length, namaTim, personData));
           const playerData = personData.slice(1);
           dispatch(uploadPlayer(gameId, teams.length, playerData, namaTim));
+        })
+        .catch(e => {
+          console.error(e);
+          dispatch(loading(0));
+          dispatch(error("Request Error, Gagal mengirim data"));
         });
     };
   }

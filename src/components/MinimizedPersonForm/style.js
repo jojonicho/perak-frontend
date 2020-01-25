@@ -13,13 +13,16 @@ export const MinimizedPersonFormContainer = styled.div`
   background-color: white;
   border-radius: 5px;
   justify-content: space-between;
+  font-family: Montserrat;
   align-items: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
   position: relative;
   .nama {
     text-align: left;
-    width: 250px;
+    margin: auto;
+    color: #444444;
+    padding: 0;
   }
   .garisContainer {
     margin: 20px 0;
@@ -42,11 +45,22 @@ export const MinimizedPersonFormContainer = styled.div`
     display: flex;
     align-items: center;
     border: none;
+    outline: none;
   }
   .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
+    height: 100%;
+    max-width: 33%;
     overflow-x: hidden;
-    padding: 0 5px;
+  }
+  .info p {
+    padding: 0;
+    margin-bottom: 0;
+    color: #444444;
+    text-align: left;
   }
   .upperMinimized {
     display: flex;
@@ -54,7 +68,8 @@ export const MinimizedPersonFormContainer = styled.div`
   }
   .bottomMinimized {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     font-size: 16px;
   }
   .leftSideUpper {
@@ -64,6 +79,76 @@ export const MinimizedPersonFormContainer = styled.div`
   }
   .trash {
     margin-right: 10px;
+  }
+  @media only screen and (max-width: 790px) {
+    padding: 15px 30px;
+    .nama {
+      font-size: 20px;
+    }
+    .garisContainer {
+      margin: 15px 0;
+    }
+    .bottomMinimized {
+      font-size: 12px;
+    }
+    .trash {
+      width: 12px;
+    }
+    .x-button {
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    width: 90vw;
+    padding: 15px 30px;
+    .nama {
+      font-size: 16px;
+    }
+    .bottomMinimized {
+      font-size: 12px;
+    }
+    .x-button {
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 15px 30px;
+    .nama {
+      font-size: 14px;
+    }
+    .bottomMinimized {
+      font-size: 10px;
+    }
+    .x-button {
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    padding: 15px 20px;
+  }
+  @media only screen and (max-width: 400px) {
+    .nama {
+      font-size: 12px;
+    }
+    .bottomMinimized {
+      font-size: 10px;
+    }
+    .trash {
+      margin-right: 4px;
+    }
+    .x-button {
+      font-size: 10px;
+    }
+  }
+  @media only screen and (max-width: 330px) {
+    .nama {
+      max-width: 80px;
+      font-size: 10px;
+      overflow-x: hidden;
+    }
+    .x-button {
+      font-size: 9px;
+    }
   }
 `;
 export const MinimizePersonButton = styled.button`
@@ -78,7 +163,32 @@ export const MinimizePersonButton = styled.button`
   align-items: center;
   margin-left: 25px;
   padding: 8px 15px;
+  outline: none;
+  :active {
+    background-color: #454fcb;
+    color: #f0f0f0;
+  }
   .pencil {
-    margin-right: 5px;
+    margin-right: 10px;
+  }
+  @media only screen and (max-width: 790px) {
+    padding: 5px 15px;
+    font-size: 13px;
+    .pencil {
+      width: 12px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  @media only screen and (max-width: 400px) {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+  @media only screen and (max-width: 330px) {
+    padding: 4px 8px;
+    margin-left: 10px;
+    font-size: 9px;
   }
 `;

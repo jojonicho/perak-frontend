@@ -1,12 +1,12 @@
 import React from "react";
 import Registration from "../Registration";
 import RegisterSelection from "../../components/RegisterSelection";
-import LandingPage from "../LandingPage";
+// import LandingPage from "../LandingPage";
 import GameRegistration from "../GameRegistration";
 
 export const routes = [
   {
-    component: LandingPage,
+    component: RegisterSelection,
     exact: true,
     path: "/"
   },

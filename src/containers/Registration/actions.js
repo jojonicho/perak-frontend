@@ -12,7 +12,9 @@ import {
   LOADING,
   UPDATE_LOADING,
   SET_SELF_IMAGE,
-  ALERT
+  ALERT,
+  SHOW_FORM,
+  SAVE_PLAYER
 } from "./constants";
 
 import { futsalFirestore, storage } from "../../config/firebaseConfig";
@@ -136,6 +138,13 @@ export function setPersonData(e, id, data) {
   };
 }
 
+function showForm(state) {
+  return {
+    type: SHOW_FORM,
+    payload: state
+  };
+}
+
 export function setShowPlayer(index, nowIndex, personData) {
   return dispatch => {
     if (personData[nowIndex][5] != null && personData[nowIndex][0] !== "") {
@@ -143,22 +152,43 @@ export function setShowPlayer(index, nowIndex, personData) {
         type: SET_SHOW_PLAYER,
         showPlayer: index
       });
+      dispatch(showForm(true));
     } else {
       dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
   };
 }
+
+export function savePlayer(personData, nowIndex) {
+  return dispatch => {
+    if (
+      nowIndex === 0 ||
+      (personData[nowIndex][5] != null && personData[nowIndex][0] !== "")
+    ) {
+      dispatch(showForm(false));
+    } else {
+      dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
+    }
+    dispatch({
+      type: SAVE_PLAYER
+    });
+  };
+}
+
 export function deletePlayer(nowPlayer, personData, index) {
-  const newNumberPlayer = Array.from(nowPlayer);
-  newNumberPlayer.splice(index - 1, 1); // delete from array
-  const newPersonData = Array.from(personData);
-  newPersonData.splice(index, 1); // delete from array
-  const newShowPlayer = newPersonData.length - 1;
-  return {
-    type: DELETE_PLAYER,
-    personData: newPersonData,
-    numberPlayer: newNumberPlayer,
-    showPlayer: newShowPlayer
+  return dispatch => {
+    const newNumberPlayer = Array.from(nowPlayer);
+    newNumberPlayer.splice(index - 1, 1); // delete from array
+    const newPersonData = Array.from(personData);
+    newPersonData.splice(index, 1); // delete from array
+    const newShowPlayer = newPersonData.length - 1;
+    dispatch(showForm(false));
+    dispatch({
+      type: DELETE_PLAYER,
+      personData: newPersonData,
+      numberPlayer: newNumberPlayer,
+      showPlayer: newShowPlayer
+    });
   };
 }
 
@@ -171,6 +201,7 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
     ) {
       personData.push(["", "", "", "", null, null]);
       numberPlayer.push("aa");
+      dispatch(showForm(true));
     } else {
       dispatch(error("Pastikan Seluruh Form Sudah Terisi"));
     }
@@ -183,7 +214,31 @@ export function addPlayer(nowPlayer, personData, nowIndex) {
   };
 }
 
-function uploadTeam(idTeam, teamName, personData, teamImage) {
+function uploadTeamImage(idTeam, teamName, teamImage, attempts = 0) {
+  return dispatch => {
+    storage
+      .child(`futsal/${teamName}-${idTeam}/${teamName}-logo.jpg`)
+      .put(teamImage)
+      .then(function() {
+        console.log("team image uploaded");
+        dispatch(updateLoad());
+        dispatch({
+          type: SUBMIT
+        });
+      })
+      .catch(e => {
+        console.error(e);
+        if (attempts < 5) {
+          dispatch(uploadTeamImage(idTeam, teamName, teamImage, attempts + 1));
+        } else {
+          dispatch(loading(0));
+          dispatch(error("Request Error, Gagal mengirim data"));
+        }
+      });
+  };
+}
+
+function uploadTeam(idTeam, teamName, personData, attempts = 0) {
   return dispatch => {
     futsalFirestore
       .doc(`${teamName}-${idTeam}`)
@@ -194,82 +249,79 @@ function uploadTeam(idTeam, teamName, personData, teamImage) {
         kontak_manager: personData[0][1],
         email_manager: personData[0][2],
         telepon_manager: personData[0][3],
-        // idCard_manager: `futsal/${teamName}-${idTeam}/manager-idCard.jpg`,
         foto_manager: `futsal/${teamName}-${idTeam}/manager-foto.jpg`
       })
       .then(() => {
         dispatch(updateLoad());
+      })
+      .catch(e => {
+        console.error(e);
+        if (attempts < 5) {
+          dispatch(uploadTeam(idTeam, teamName, personData, attempts + 1));
+        } else {
+          dispatch(loading(0));
+          dispatch(error("Request Error, Gagal mengirim data"));
+        }
       });
-    storage
-      .child(`futsal/${teamName}-${idTeam}/${teamName}-logo.jpg`)
-      .put(teamImage)
-      .then(function() {
-        console.log("team image uploaded");
-        dispatch(updateLoad());
-        dispatch({
-          type: SUBMIT
-        });
-      });
-    // storage
-    //   .child(`futsal/${teamName}-${idTeam}/manager-idCard.jpg`)
-    //   .put(personData[0][4])
-    //   .then(function() {
-    //     console.log("manager idcard uploaded");
-    //     dispatch(updateLoad());
-    //     dispatch({
-    //       type: SUBMIT
-    //     });
-    //   });
-    // storage // manager gaperlu pasfoto kyknya
-    //   .child(`futsal/${teamName}-${idTeam}/manager-foto.jpg`)
-    //   .put(personData[0][5])
-    //   .then(function() {
-    //     console.log("manager image uploaded");
-    //     dispatch(updateLoad());
-    //     dispatch({
-    //       type: SUBMIT
-    //     });
-    //   });
   };
 }
 
-function uploadPlayer(idTeam, playerData, teamName) {
+function uploadPlayer(
+  idTeam,
+  playerData,
+  teamName,
+  attempts = 0,
+  fixIndex = -1
+) {
   return dispatch => {
     playerData.forEach((x, index) => {
       futsalFirestore
         .doc(`${teamName}-${idTeam}`)
         .collection("player")
-        .doc(`${x[0]}-${index}`)
+        .doc(`${x[0]}-${fixIndex >= 0 ? fixIndex : index}`)
         .set({
           namaLengkap: x[0],
           kontak: x[1],
           email: x[2],
           telepon: x[3],
-          // idCard: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`,
-          foto: `futsal/${teamName}-${idTeam}/${x[0]}-${index}-foto.jpg`
+          foto: `futsal/${teamName}-${idTeam}/${x[0]}-${
+            fixIndex >= 0 ? fixIndex : index
+          }-foto.jpg`
         })
         .then(() => {
-          dispatch(updateLoad());
-        });
-      // storage
-      //   .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-idCard.jpg`)
-      //   .put(x[4])
-      //   .then(function() {
-      //     console.log("player idcard uploaded");
-      //     dispatch(updateLoad());
-      //     dispatch({
-      //       type: SUBMIT
-      //     });
-      //   });
-      storage
-        .child(`futsal/${teamName}-${idTeam}/${x[0]}-${index}-foto.jpg`)
-        .put(x[5])
-        .then(function() {
-          console.log("player image uploaded");
-          dispatch(updateLoad());
-          dispatch({
-            type: SUBMIT
-          });
+          storage
+            .child(
+              `futsal/${teamName}-${idTeam}/${x[0]}-${
+                fixIndex >= 0 ? fixIndex : index
+              }-foto.jpg`
+            )
+            .put(x[5])
+            .then(function() {
+              console.log("player image uploaded");
+              dispatch(updateLoad());
+              dispatch(updateLoad());
+              dispatch({
+                type: SUBMIT
+              });
+            });
+        })
+        .catch(e => {
+          console.error(e);
+          if (attempts < 5) {
+            const retryPlayerData = playerData.splice(index, 1);
+            dispatch(
+              uploadPlayer(
+                idTeam,
+                retryPlayerData,
+                teamName,
+                attempts + 1,
+                fixIndex >= 0 ? fixIndex : index
+              )
+            );
+          } else {
+            dispatch(loading(0));
+            dispatch(error("Request Error, Gagal mengirim data"));
+          }
         });
     });
   };
@@ -303,7 +355,8 @@ export function submit(personData, teamImage, teamName) {
       futsalFirestore.get().then(response => {
         teams = response.docs;
         console.log(teams.length);
-        dispatch(uploadTeam(teams.length, teamName, personData, teamImage));
+        dispatch(uploadTeam(teams.length, teamName, personData));
+        dispatch(uploadTeamImage(teams.length, teamName, teamImage));
 
         const playerData = personData.slice(1);
         dispatch(uploadPlayer(teams.length, playerData, teamName));
