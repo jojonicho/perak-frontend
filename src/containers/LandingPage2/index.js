@@ -6,7 +6,7 @@ import HeaderFooter from "../../components/HeaderFooter";
 import daun1 from "../../asset/daun1.svg";
 import daun2 from "../../asset/daun2.svg";
 
-import { LandingPage2Container, LandingSection } from "./style";
+import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -96,28 +96,38 @@ class LandingPage2 extends React.Component {
             <div className="layer parallax" data-speed={60} id="layer1"></div>
             <div className="layer parallax" data-speed={-20} id="layer2">
               <div className="title">
-                <h1>
-                  PESTA <span>RAKYAT</span>
-                </h1>
-                <h1>KOMPUTER</h1>
+                <div className="pesta-rakyat">
+                  <h1 className="pesta">PESTA</h1>{" "}
+                  <h1 className="rakyat">RAKYAT</h1>
+                </div>
+                <h1 className="komputer">KOMPUTER</h1>
               </div>
             </div>
             <div className="layer parallax" data-speed={-40} id="layer3"></div>
             <div className="layer parallax" data-speed={-80} id="layer4"></div>
             <div className="layer parallax" data-speed={-120} id="layer5"></div>
             <div className="layer parallax" data-speed={-80} id="layer6"></div>
+            <div className="mobile-landing">
+              <div className="title">
+                <div className="pesta-rakyat">
+                  <h1 className="pesta">PESTA</h1>{" "}
+                  <h1 className="rakyat">RAKYAT</h1>
+                </div>
+                <h1 className="komputer">KOMPUTER</h1>
+              </div>
+            </div>
           </LandingSection>
-          <section
-            style={{
-              height: "100vh",
-              backgroundColor: "white",
-              marginTop: "-1px",
-              position: "relative",
-              zIndex: 7
-            }}
-          >
-            <h1>TEST</h1>
-          </section>
+          <ApaItuSection>
+            <h1 className="section-title">APA ITU PERAK?</h1>
+            <p className="desc">
+              Pesta Rakyat Komputer adalah acara internal terbesar di Fasilkom
+              UI yang bertujuan untuk menjaga rasa kekeluargaan antar elemen dan
+              menjadi tempat untuk “keluar sejenak” dari kegiatan akademis.
+              Kegiatan-kegiatan yang dilakukan pada acara ini nantinya akan ada
+              unsur musik, permainan, dan kegiatan menyenangkan lainnya yang
+              tentunya mengikutsertakan seluruh elemen Fasilkom UI.
+            </p>
+          </ApaItuSection>
         </HeaderFooter>
       </LandingPage2Container>
     );

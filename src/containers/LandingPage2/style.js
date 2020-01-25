@@ -6,6 +6,12 @@ import landingLayer3 from "../../asset/landing-layer3.svg";
 import landingLayer3Right from "../../asset/landing-layer3-right.svg";
 import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
+import apaItuBGLeft from "../../asset/apaItuBGLeft.svg";
+import apaItuBGBottom from "../../asset/apaItuBGBottom.svg";
+import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
+import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
+
+const blue = "#4452C5";
 
 export const LandingPage2Container = styled.div`
   width: 100%;
@@ -17,7 +23,21 @@ export const LandingPage2Container = styled.div`
     padding: 0;
     box-sizing: border-box;
   }
-
+  .section-title {
+    color: ${blue};
+    font-family: BigJohnPRO;
+    font-size: 3.5em;
+  }
+  .desc {
+    margin-top: 35px;
+    line-height: 35px;
+    max-width: 50%;
+    min-width: 200px;
+    text-align: justify;
+  }
+  p, h1{
+    z-index: 101;
+  }
   .leaf {
     position: absolute;
     display: block;
@@ -115,9 +135,26 @@ export const LandingSection = styled.div`
   overflow-y: hidden;
   background-color: #e5e6de;
   position: relative;
-
+  .mobile-landing {
+    display: none;
+  }
   .title {
     position: absolute;
+  }
+  .pesta-rakyat {
+    display: flex;
+  }
+  .pesta {
+    margin-top: 30px;
+    transform: rotate(-10deg);
+  }
+  .rakyat {
+    transform: rotate(5deg);
+  }
+  .komputer {
+    margin-top: -20px;
+    margin-left: 100px;
+    transform: rotate(-5deg);
   }
   .layer {
     width: 100%;
@@ -127,20 +164,18 @@ export const LandingSection = styled.div`
     background-color: transparent;
     position: absolute;
   }
-  .parallax {
-  }
   #layer1 {
     background-image: url(${landingLayer1});
     background-size: cover;
     height: 200vh;
-    background-position-y: 250px;
-    top: 250px;
+    background-position-y: 220px;
+    top: 220px;
     z-index: 5;
   }
   #layer2 {
     background-image: url(${landingLayer2});
     background-position-x: right;
-    background-position-y: 250px;
+    background-position-y: 220px;
     z-index: 4;
     background-size: 1200px;
 
@@ -148,8 +183,8 @@ export const LandingSection = styled.div`
     justify-content: center;
     align-items: center;
     .title {
-      margin-left: 100px;
-      margin-top: 100px;
+      margin-left: 80px;
+      margin-top: 80px;
       font-family: BigJohnPRO;
       font-size: 2em;
       color: white;
@@ -158,13 +193,13 @@ export const LandingSection = styled.div`
   #layer3 {
     background-image: url(${landingLayer3}), url(${landingLayer3Right});
     z-index: 3;
-    background-position-y: 300px, 200px;
+    background-position-y: 270px, 170px;
     background-position-x: left, right;
     background-size: 1200px, 750px;
   }
   #layer4 {
     background-image: url(${landingLayer4});
-    background-position-y: 270px;
+    background-position-y: 240px;
     background-size: 1200px;
     background-position-x: left;
     z-index: 2;
@@ -173,7 +208,7 @@ export const LandingSection = styled.div`
     background-image: url(${landingLayer5});
     background-size: 750px;
     background-position-x: 250px;
-    background-position-y: 150px;
+    background-position-y: 120px;
     z-index: 1;
   }
   #layer6 {
@@ -186,6 +221,74 @@ export const LandingSection = styled.div`
     .layer,
     #layer2 {
       display: none;
+    }
+    .mobile-landing {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(${landingBackgroundMobile}),
+        url(${landingBackgroundMobileTop});
+      background-position: bottom, top;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      .title {
+        margin-top: 70px;
+        font-family: BigJohnPRO;
+        font-size: 1.5em;
+        color: white;
+      }
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .mobile-landing {
+      .title {
+        font-size: 0.9em;
+      }
+    }
+  }
+`;
+
+export const ApaItuSection = styled.div`
+  height: 710px;
+  background-color: white;
+  margin-top: 0px;
+  position: "relative";
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(${apaItuBGBottom}), url(${apaItuBGLeft});
+  background-repeat: no-repeat;
+  background-position-y: bottom, 0px;
+  background-position-x: left;
+  background-size: 100%, contain;
+
+  @media only screen and (max-width: 800px) {
+    margin-top: 70px;
+    align-items: flex-end;
+    padding-right: 70px;
+    background-position-y: bottom, 180px;
+    background-position-x: left, -50px;
+    background-size: 100%, 300px;
+    .section-title {
+      width: 300px;
+      font-size: 3em;
+      text-align: right;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    background-position-y: bottom, 250px;
+    background-position-x: left, -50px;
+    background-size: 100%, 250px;
+    padding-right: 40px;
+    .section-title {
+      font-size: 2.5em;
+    }
+    .desc {
+      font-size: 0.8em;
+      line-height: 30px;
     }
   }
 `;
