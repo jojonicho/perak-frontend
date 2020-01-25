@@ -25,7 +25,7 @@ export const HeaderFooterContainer = styled.div`
   .header {
     position: fixed;
     height: 60px;
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     padding: 0px 20px;
