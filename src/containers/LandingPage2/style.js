@@ -7,6 +7,7 @@ import landingLayer3Right from "../../asset/landing-layer3-right.svg";
 import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
 import apaItuBGLeft from "../../asset/apaItuBGLeft.svg";
+import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import apaItuBGBottom from "../../asset/apaItuBGBottom.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
@@ -35,7 +36,8 @@ export const LandingPage2Container = styled.div`
     min-width: 200px;
     text-align: justify;
   }
-  p, h1{
+  p,
+  h1 {
     z-index: 101;
   }
   .leaf {
@@ -266,23 +268,20 @@ export const ApaItuSection = styled.div`
   background-size: 100%, contain;
 
   @media only screen and (max-width: 800px) {
-    margin-top: 70px;
-    align-items: flex-end;
-    padding-right: 70px;
     background-position-y: bottom, 180px;
     background-position-x: left, -50px;
     background-size: 100%, 300px;
     .section-title {
       width: 300px;
       font-size: 3em;
-      text-align: right;
+      text-align: center;
     }
   }
   @media only screen and (max-width: 550px) {
-    background-position-y: bottom, 250px;
-    background-position-x: left, -50px;
+    background-image: url(${apaItuBGBottom}), url(${apaItuBGLeftMobile});
+    background-position-y: bottom, 380px;
+    background-position-x: left, -30px;
     background-size: 100%, 250px;
-    padding-right: 40px;
     .section-title {
       font-size: 2.5em;
     }
