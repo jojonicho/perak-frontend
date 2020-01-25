@@ -60,9 +60,10 @@ class LandingPage2 extends React.Component {
   }
 
   render() {
+    const { thePosition } = this.state;
     return (
       <LandingPage2Container>
-        <HeaderFooter color="notShown">
+        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"}>
           <div className="leaf">
             <img src={daun2} alt="daun2" />
           </div>
