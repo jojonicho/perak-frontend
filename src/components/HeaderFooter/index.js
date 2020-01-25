@@ -8,13 +8,19 @@ import logoBaruTerang from "../../asset/logoBaruTerang.png";
 
 class HeaderFooter extends React.Component {
   render() {
-    const { children, color } = this.props;
+    const { children, color, isShown } = this.props;
     const colors = {
       green: { backgroundColor: "#22B3A5", color: "white" },
       blue: { backgroundColor: "#454FCB", color: "white" },
       yellow: { backgroundColor: "#F1CF33", color: "#454FCB" },
       red: { backgroundColor: "#EA6229", color: "white" },
-      dark: { backgroundColor: "#0D2040", color: "white" }
+      dark: { backgroundColor: "#0D2040", color: "white", transition: "0.5s" },
+      notShown: {
+        backgroundColor: "#0D2040",
+        color: "white",
+        transform: "translateY(-100px)",
+        transition: "0.5s"
+      }
     };
     return (
       <HeaderFooterContainer>
@@ -26,7 +32,12 @@ class HeaderFooter extends React.Component {
             <h2 className="daftar">DAFTAR</h2>
           </Link>
         </div>
-        <div className="childcontainer">{children}</div>
+        <div
+          className="childcontainer"
+          style={isShown ? null : { paddingTop: "0px" }}
+        >
+          {children}
+        </div>
         <div className="footer" style={colors[color]}>
           <p>Copyright 2019 Pesta Rakyat Komputer</p>
         </div>
