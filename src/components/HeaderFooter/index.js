@@ -32,10 +32,7 @@ class HeaderFooter extends React.Component {
             <h2 className="daftar">DAFTAR</h2>
           </Link>
         </div>
-        <div
-          className="childcontainer"
-          style={isShown ? null : { paddingTop: "0px" }}
-        >
+        <div className={isShown ? "childcontainer" : "no-padding-top"}>
           {children}
         </div>
         <div className="footer" style={colors[color]}>
