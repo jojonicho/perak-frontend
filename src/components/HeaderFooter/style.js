@@ -48,7 +48,7 @@ export const HeaderFooterContainer = styled.div`
   }
   .daftar {
     font-family: Montserrat;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 1em;
     color: #e5e6de;
   }

@@ -28,7 +28,7 @@ class HeaderFooter extends React.Component {
           <Link to="/" className="no-decor">
             <img className="logo" src={logoBaruTerang} alt="logo"></img>
           </Link>
-          <Link to="/daftar">
+          <Link to="/daftar" className="no-decor">
             <h2 className="daftar">DAFTAR</h2>
           </Link>
         </div>
