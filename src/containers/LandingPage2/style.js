@@ -36,6 +36,29 @@ export const LandingPage2Container = styled.div`
     min-width: 200px;
     text-align: justify;
   }
+  .daftar-awal {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #e5e6de;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    color: white;
+    text-decoration: none;
+  }
+  .daftar-awal-container {
+    padding: 20px 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .daftar-awal-link {
+    text-decoration: none;
+  }
   p,
   h1 {
     z-index: 101;
