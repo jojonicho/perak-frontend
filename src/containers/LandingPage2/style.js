@@ -8,7 +8,6 @@ import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
 import apaItuBGLeft from "../../asset/apaItuBGLeft.svg";
 import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
-import apaItuBGBottom from "../../asset/apaItuBGBottom.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
 
@@ -284,11 +283,11 @@ export const ApaItuSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(${apaItuBGBottom}), url(${apaItuBGLeft});
+  background-image: url(${apaItuBGLeft});
   background-repeat: no-repeat;
-  background-position-y: bottom, 0px;
+  background-position-y: top, 0px;
   background-position-x: left;
-  background-size: 100%, contain;
+  background-size: 22%, contain;
 
   @media only screen and (max-width: 800px) {
     background-position-y: bottom, 180px;
@@ -301,10 +300,10 @@ export const ApaItuSection = styled.div`
     }
   }
   @media only screen and (max-width: 550px) {
-    background-image: url(${apaItuBGBottom}), url(${apaItuBGLeftMobile});
+    background-image: url(${apaItuBGLeftMobile});
     background-position-y: bottom, 380px;
     background-position-x: left, -30px;
-    background-size: 100%, 250px;
+    background-size: 22%, 250px;
     .section-title {
       font-size: 2.5em;
     }
