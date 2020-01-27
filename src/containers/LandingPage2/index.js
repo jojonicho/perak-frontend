@@ -9,6 +9,7 @@ import daun2 from "../../asset/daun2.svg";
 
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 import PerakTahunIni from "../../components/PerakTahunIni";
+import MedSos from "../../components/MedSos";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -66,7 +67,7 @@ class LandingPage2 extends React.Component {
     const { thePosition } = this.state;
     return (
       <LandingPage2Container>
-        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"}>
+        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"} notShown>
           <div className="leaf">
             <img src={daun2} alt="daun2" />
           </div>
@@ -137,6 +138,7 @@ class LandingPage2 extends React.Component {
             </p>
           </ApaItuSection>
           <PerakTahunIni />
+          <MedSos />
         </HeaderFooter>
       </LandingPage2Container>
     );
