@@ -36,17 +36,21 @@ export const MedSosContainer = styled.div`
     justify-content: center;
     flex-flow: row wrap;
     width: 50%;
-    a {
-      color: black;
-      text-decoration: none;
+    .a-container {
       width: 200px;
       margin: 10px 0px;
       padding-left: 50px;
       display: flex;
       align-items: center;
-      img {
-        width: 30px;
-        margin-right: 10px;
+      a {
+        display: flex;
+        align-items: center;
+        color: black;
+        text-decoration: none;
+        img {
+          width: 30px;
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -62,9 +66,7 @@ export const MedSosContainer = styled.div`
       justify-content: center;
       flex-flow: row wrap;
       width: 100%;
-      a {
-        color: black;
-        text-decoration: none;
+      .a-container {
         width: 150px;
         margin: 10px 0px;
         padding-left: 20px;
