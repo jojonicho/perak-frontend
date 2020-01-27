@@ -55,7 +55,7 @@ class Registration extends React.Component {
       window.location.reload();
     }
     return (
-      <HeaderFooter color="dark" isShown>
+      <HeaderFooter color="dark">
         <Fade>
           <RegistrationContainer>
             <SweetAlert

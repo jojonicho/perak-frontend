@@ -8,7 +8,7 @@ import logoBaruTerang from "../../asset/logoBaruTerang.png";
 
 class HeaderFooter extends React.Component {
   render() {
-    const { children, color, isShown } = this.props;
+    const { children, color, notShown } = this.props;
     const colors = {
       green: { backgroundColor: "#22B3A5", color: "white" },
       blue: { backgroundColor: "#454FCB", color: "white" },
@@ -32,10 +32,10 @@ class HeaderFooter extends React.Component {
             <h2 className="daftar">DAFTAR</h2>
           </Link>
         </div>
-        <div className={isShown ? "childcontainer" : "no-padding-top"}>
+        <div className={notShown ? "no-padding-top" : "childcontainer"}>
           {children}
         </div>
-        <div className="footer" style={colors[color]}>
+        <div className="footer" style={colors.dark}>
           <p>Copyright 2019 Pesta Rakyat Komputer</p>
         </div>
       </HeaderFooterContainer>

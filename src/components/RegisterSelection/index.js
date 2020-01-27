@@ -99,7 +99,7 @@ class RegisterSelection extends React.Component {
         </FadeIn>
       </LoadingScreen>
     ) : (
-      <HeaderFooter color="dark" isShown>
+      <HeaderFooter color="dark">
         <RegisterSelectionContainer className={magic ? "magic" : ""}>
           <h1 className="title">DAFTARKAN DIRIMU SEKARANG</h1>
           <h1 className="choose">

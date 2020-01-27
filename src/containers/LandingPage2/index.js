@@ -8,6 +8,7 @@ import daun1 from "../../asset/daun1.svg";
 import daun2 from "../../asset/daun2.svg";
 
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
+import MedSos from "../../components/MedSos";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -64,7 +65,7 @@ class LandingPage2 extends React.Component {
     const { thePosition } = this.state;
     return (
       <LandingPage2Container>
-        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"}>
+        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"} notShown>
           <div className="leaf">
             <img src={daun2} alt="daun2" />
           </div>
@@ -134,6 +135,7 @@ class LandingPage2 extends React.Component {
               tentunya mengikutsertakan seluruh elemen Fasilkom UI.
             </p>
           </ApaItuSection>
+          <MedSos></MedSos>
         </HeaderFooter>
       </LandingPage2Container>
     );
