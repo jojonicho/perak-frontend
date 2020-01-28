@@ -2,6 +2,7 @@ import React from "react";
 // import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import HeaderFooter from "../../components/HeaderFooter";
+import PerakTahunIni from "../../components/PerakTahunIni";
 
 import daun1 from "../../asset/daun1.svg";
 import daun2 from "../../asset/daun2.svg";
@@ -128,6 +129,7 @@ class LandingPage2 extends React.Component {
               tentunya mengikutsertakan seluruh elemen Fasilkom UI.
             </p>
           </ApaItuSection>
+          <PerakTahunIni />
         </HeaderFooter>
       </LandingPage2Container>
     );
