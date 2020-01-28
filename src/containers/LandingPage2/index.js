@@ -9,6 +9,9 @@ import daun2 from "../../asset/daun2.svg";
 
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 import MedSos from "../../components/MedSos";
+import Section1 from "../../components/Section1";
+import Section2 from "../../components/Section2";
+import Section3 from "../../components/Section3";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -136,6 +139,9 @@ class LandingPage2 extends React.Component {
             </p>
           </ApaItuSection>
           <MedSos></MedSos>
+          <Section1 />
+          <Section2 />
+          <Section3 />
         </HeaderFooter>
       </LandingPage2Container>
     );
