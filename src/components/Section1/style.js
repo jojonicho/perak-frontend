@@ -61,13 +61,18 @@ export const Section1Container = styled.div`
     }
     .title {
       font-size: 1.7em;
-      margin-top: 100px;
+      margin-top: 150px;
     }
     .desc {
       margin-top: 20px;
       max-width: 60%;
       font-size: 0.8em;
       line-height: 1.6;
+    }
+  }
+  @media only screen and (max-width: 330px) {
+    .title {
+      margin-top: 100px;
     }
   }
 `;

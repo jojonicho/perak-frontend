@@ -74,7 +74,7 @@ export const Section3Container = styled.div`
       text-align: center;
       position: static;
       font-size: 1.6em;
-      margin-top: 150px;
+      margin-top: 200px;
     }
     .title span {
       display: inline-block;
@@ -84,6 +84,11 @@ export const Section3Container = styled.div`
       max-width: 60%;
       font-size: 0.8em;
       line-height: 1.6;
+    }
+  }
+  @media only screen and (max-width: 330px) {
+    .title {
+      margin-top: 150px;
     }
   }
 `;
