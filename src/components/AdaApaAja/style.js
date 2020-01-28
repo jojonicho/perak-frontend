@@ -11,6 +11,7 @@ export const AdaApaAjaContainer = styled.div`
     color: #4452c5;
   }
   height: 100vh;
+  width: 100vw;
   background-color: #e6e5de;
   background-image: url(${adaApaAjaLeft}), url(${adaApaAjaRight}),
     url(${adaApaAjaCenter});
