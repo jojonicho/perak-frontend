@@ -3,14 +3,15 @@ import React from "react";
 
 import { PerakTahunIniContainer } from "./style";
 import bolabulet from "../../asset/perakTahunIni/balltop.svg";
-import rightdecor from "../../asset/perakTahunIni/rightdecoration.svg";
-import mainsectionbg from "../../asset/perakTahunIni/main-bg.svg";
+import mainsectionbg from "../../asset/perakTahunIni/main-bg-2.svg";
 import fotokiri from "../../asset/perakTahunIni/foto-kiri.png";
 import decorfotokiri from "../../asset/perakTahunIni/foto-kiri-decor.svg";
 import fotokanan from "../../asset/perakTahunIni/foto-kanan.png";
 import decorfotokanan from "../../asset/perakTahunIni/foto-kanan-decor.svg";
 import siapatext from "../../asset/perakTahunIni/siapaini.svg";
-import mainsectionbgphone from "../../asset/perakTahunIni/main-bg-phone.svg";
+import mainsectionbgphone from "../../asset/perakTahunIni/main-bg-2-mobile.svg";
+import bottomsec from "../../asset/perakTahunIni/bottom-section.png";
+import kenalin from "../../asset/perakTahunIni/kenalin.svg";
 
 class PerakTahunIni extends React.Component {
   constructor() {
@@ -122,9 +123,6 @@ class PerakTahunIni extends React.Component {
         <div className="layer parallax" data-speed={5}>
           <img src={bolabulet} className="bola-bulet" alt="bola" />
         </div>
-        <div className="layer parallax" data-speed={4}>
-          <img src={rightdecor} className="right-decor" alt="right-decor" />
-        </div>
         <div className="main-section">
           <img src={mainsectionbg} className="main-bg" alt="main-bg" />
           <img
@@ -133,28 +131,16 @@ class PerakTahunIni extends React.Component {
             alt="main-bg-phone"
           />
           <img src={siapatext} className="siapa-ini" alt="siapa-ini" />
-          <img
-            src={fotokiri}
-            className="foto-kiri layer parallax"
-            data-speed={10}
-            alt="foto-kiri"
-          />
+          <img src={fotokiri} className="foto-kiri" alt="foto-kiri" />
           <img
             src={decorfotokiri}
-            className="decor-foto-kiri layer parallax"
-            data-speed={20}
+            className="decor-foto-kiri"
             alt="foto-kiri"
           />
-          <img
-            src={fotokanan}
-            className="foto-kanan layer parallax"
-            data-speed={12}
-            alt="foto-kiri"
-          />
+          <img src={fotokanan} className="foto-kanan " alt="foto-kiri" />
           <img
             src={decorfotokanan}
-            className="decor-foto-kanan layer parallax"
-            data-speed={2}
+            className="decor-foto-kanan"
             alt="foto-kiri"
           />
           <div className="main-content">
@@ -330,6 +316,8 @@ class PerakTahunIni extends React.Component {
             </div>
           </div>
         </div>
+        <img src={bottomsec} alt="bottom-section" className="bottom-section" />
+        <img src={kenalin} alt="kenalin-ini-aang" className="kenalin-aang" />
       </PerakTahunIniContainer>
     );
   }
