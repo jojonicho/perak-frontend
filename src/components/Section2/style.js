@@ -24,7 +24,7 @@ export const Section2Container = styled.div`
 
   .desc {
     color: #f0f0f0;
-    margin-top: 70px;
+    margin-top: 150px;
     max-width: 60%;
     font-size: 1.3em;
     line-height: 1.8;
@@ -37,6 +37,7 @@ export const Section2Container = styled.div`
       background-position-x: center;
     }
     .desc {
+      margin-top: 70px;
       position: absolute;
       top: 50px;
       max-width: 60%;
