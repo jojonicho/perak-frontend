@@ -5,6 +5,8 @@ import medsosTransition from "../../asset/medsosTransition.svg";
 export const MedSosContainer = styled.div`
   width: 100%;
   margin-top: -145px;
+  position: relative;
+  z-index: 8;
   /* padding: 50px 0px; */
   .medsos-title {
     font-family: Montserrat;

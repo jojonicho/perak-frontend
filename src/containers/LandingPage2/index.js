@@ -2,6 +2,9 @@ import React from "react";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import HeaderFooter from "../../components/HeaderFooter";
 
 import daun1 from "../../asset/daun1.svg";
@@ -136,7 +139,18 @@ class LandingPage2 extends React.Component {
               tentunya mengikutsertakan seluruh elemen Fasilkom UI.
             </p>
           </ApaItuSection>
-          <AdaApaAja></AdaApaAja>
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            infiniteLoop
+            autoPlay
+            interval={5000}
+          >
+            <AdaApaAja></AdaApaAja>
+            <AdaApaAja></AdaApaAja>
+            <AdaApaAja></AdaApaAja>
+          </Carousel>
           <MedSos></MedSos>
         </HeaderFooter>
       </LandingPage2Container>
