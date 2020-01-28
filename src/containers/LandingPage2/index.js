@@ -6,6 +6,9 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import HeaderFooter from "../../components/HeaderFooter";
+import PerakTahunIni from "../../components/PerakTahunIni";
+import Section4 from "../../components/Section4";
+import Section5 from "../../components/Section5";
 
 import daun1 from "../../asset/daun1.svg";
 import daun2 from "../../asset/daun2.svg";
@@ -142,6 +145,7 @@ class LandingPage2 extends React.Component {
               tentunya mengikutsertakan seluruh elemen Fasilkom UI.
             </p>
           </ApaItuSection>
+          <PerakTahunIni />
           <Carousel
             showStatus={false}
             showThumbs={false}
@@ -156,6 +160,8 @@ class LandingPage2 extends React.Component {
             <Section1 />
             <Section2 />
             <Section3 />
+            <Section4 />
+            <Section5 />
           </Carousel>
           <MedSos></MedSos>
         </HeaderFooter>
