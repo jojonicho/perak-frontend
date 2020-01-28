@@ -143,9 +143,10 @@ class LandingPage2 extends React.Component {
             showStatus={false}
             showThumbs={false}
             showIndicators={false}
+            stopOnHover={false}
             infiniteLoop
             autoPlay
-            interval={5000}
+            interval={3000}
           >
             <AdaApaAja></AdaApaAja>
             <AdaApaAja></AdaApaAja>
