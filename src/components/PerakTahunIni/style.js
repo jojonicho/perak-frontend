@@ -102,6 +102,7 @@ height:2050px;
 .bottom-section{
     position:absolute;
     z-index:10;
+    width:100vw;
 }
 .kenalin-aang{
     position:absolute;
