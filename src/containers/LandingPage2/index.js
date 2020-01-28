@@ -13,6 +13,9 @@ import daun2 from "../../asset/daun2.svg";
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 import MedSos from "../../components/MedSos";
 import AdaApaAja from "../../components/AdaApaAja";
+import Section1 from "../../components/Section1";
+import Section2 from "../../components/Section2";
+import Section3 from "../../components/Section3";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -149,8 +152,9 @@ class LandingPage2 extends React.Component {
             interval={3000}
           >
             <AdaApaAja></AdaApaAja>
-            <AdaApaAja></AdaApaAja>
-            <AdaApaAja></AdaApaAja>
+            <Section1 />
+            <Section2 />
+            <Section3 />
           </Carousel>
           <MedSos></MedSos>
         </HeaderFooter>

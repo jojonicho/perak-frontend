@@ -294,7 +294,9 @@ export const ApaItuSection = styled.div`
   background-position-y: bottom, 0px;
   background-position-x: left;
   background-size: 100%, contain;
-
+  .desc {
+    font-family: Montserrat;
+  }
   @media only screen and (max-width: 800px) {
     background-position-y: bottom, 180px;
     background-position-x: left, -50px;
@@ -315,7 +317,7 @@ export const ApaItuSection = styled.div`
     }
     .desc {
       font-size: 0.8em;
-      line-height: 30px;
+      line-height: 1.8;
     }
   }
 `;
