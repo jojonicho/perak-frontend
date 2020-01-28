@@ -273,6 +273,11 @@ export const LandingSection = styled.div`
       }
     }
   }
+  @media only screen and (min-height: 1360px) {
+    #layer1 {
+      top: 700px;
+    }
+  }
 `;
 
 export const ApaItuSection = styled.div`
