@@ -191,10 +191,10 @@ export const LandingSection = styled.div`
   }
   #layer1 {
     background-image: url(${landingLayer1});
-    background-size: cover;
+    background-size: 100%;
     height: 200vh;
     background-position-y: 220px;
-    top: 220px;
+    top: 300px;
     z-index: 5;
   }
   #layer2 {
