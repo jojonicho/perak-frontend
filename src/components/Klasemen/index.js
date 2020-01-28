@@ -2,6 +2,7 @@ import React from "react";
 import { PacmanLoader } from "react-spinners";
 import { KlasemenContainer } from "./style";
 import { useFetch } from "./useFetch";
+import SVG from "../RegisterSelection/SVGIcon";
 
 // class Klasemen extends React.Component {
 //   render() {
@@ -20,13 +21,20 @@ const Klasemen = props => {
   const { data, loading } = useFetch(klasemenUrl);
   // const { group_teams } = data;
   // const { data: dataB, loading: loadingB } = useFetch(klasemenBUrl);
-
+  const decorA = [
+    "orange-green-ball-rect",
+    "purple-yellow-ball",
+    "orange-ellipse-2"
+  ];
+  const decorB = ["purple-ball", "purple-rect", "orange-ellipse"];
   return (
     <KlasemenContainer>
       {loading ? (
         <PacmanLoader />
       ) : (
         <div className="group">
+          {id === 1 && decorA.map(dec => <SVG name={dec} className={dec} />)}
+          {id === 2 && decorB.map(dec => <SVG name={dec} />)}
           <h1 className="grouptitle">GROUP {data.name}</h1>
           <div className="tableDiv">
             <table>

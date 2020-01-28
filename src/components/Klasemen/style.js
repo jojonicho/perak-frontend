@@ -1,15 +1,43 @@
 import styled from "styled-components";
 
 export const KlasemenContainer = styled.div`
-  padding: 0px 5px;
+  padding: 0px 9vw;
   .group {
     border-radius: 3px;
     margin: 25px 0px;
-    padding: 10px;
+    padding: 30px;
     background-color: #33b3a6;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+  }
+  .decor {
+    position: absolute;
+    width: 8vw;
+    z-index: 2;
+  }
+  .orange-ellipse-2 {
+    left: -4vw;
+    top: 40%;
+  }
+  .purple-yellow-ball {
+    right: 5vw;
+    bottom: -4vw;
+  }
+  .purple-ball {
+    right: -3vw;
+    bottom: -3vw;
+  }
+  .orange-green-ball-rect {
+    top: -3vw;
+  }
+  .purple-rect {
+    left: -3vw;
+    bottom: -2vw;
+  }
+  .orange-ellipse {
+    top: -4vw;
   }
   .namaTeam {
     background-color: #ff90b5;
@@ -67,6 +95,7 @@ export const KlasemenContainer = styled.div`
   }
 
   @media screen and (max-width: 667px) {
+    padding: 0px 0.8vw;
     table {
       border-spacing: 0 5px;
       div {
@@ -78,6 +107,9 @@ export const KlasemenContainer = styled.div`
       td {
         padding: 4px 1px;
       }
+    }
+    .group {
+      padding: 8px;
     }
     table {
       font-size: 0.5rem;
