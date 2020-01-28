@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import section2 from "../../asset/section-2-background.svg";
+import section2 from "../../asset/section-2-background-2.svg";
 
 export const Section2Container = styled.div`
   * {
@@ -15,6 +15,7 @@ export const Section2Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #0d2040;
     background-image: url(${section2});
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,8 +47,8 @@ export const Section2Container = styled.div`
 
   @media only screen and (max-width: 420px) {
     .section-2 {
-      background-size: 380%;
-      background-position-y: -120px;
+      background-size: 170%;
+      background-position-y: bottom;
       background-position-x: center;
     }
     .desc {

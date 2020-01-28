@@ -65,6 +65,7 @@ export const Section3Container = styled.div`
 
   @media only screen and (max-width: 420px) {
     .section-3 {
+      background-size: 1300px;
       background-position-y: 0;
       background-position-x: 50%;
     }
@@ -81,7 +82,7 @@ export const Section3Container = styled.div`
     .desc {
       position: static;
       max-width: 60%;
-      font-size: 1em;
+      font-size: 0.8em;
       line-height: 1.6;
     }
   }

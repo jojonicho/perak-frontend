@@ -138,10 +138,10 @@ class LandingPage2 extends React.Component {
               tentunya mengikutsertakan seluruh elemen Fasilkom UI.
             </p>
           </ApaItuSection>
-          <MedSos></MedSos>
           <Section1 />
           <Section2 />
           <Section3 />
+          <MedSos></MedSos>
         </HeaderFooter>
       </LandingPage2Container>
     );
