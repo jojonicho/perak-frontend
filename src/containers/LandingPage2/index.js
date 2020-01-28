@@ -2,6 +2,9 @@ import React from "react";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import HeaderFooter from "../../components/HeaderFooter";
 
 import daun1 from "../../asset/daun1.svg";
@@ -10,6 +13,10 @@ import daun2 from "../../asset/daun2.svg";
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 import PerakTahunIni from "../../components/PerakTahunIni";
 import MedSos from "../../components/MedSos";
+import AdaApaAja from "../../components/AdaApaAja";
+import Section1 from "../../components/Section1";
+import Section2 from "../../components/Section2";
+import Section3 from "../../components/Section3";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -138,7 +145,21 @@ class LandingPage2 extends React.Component {
             </p>
           </ApaItuSection>
           <PerakTahunIni />
-          <MedSos />
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            stopOnHover={false}
+            infiniteLoop
+            autoPlay
+            interval={3000}
+          >
+            <AdaApaAja></AdaApaAja>
+            <Section1 />
+            <Section2 />
+            <Section3 />
+          </Carousel>
+          <MedSos></MedSos>
         </HeaderFooter>
       </LandingPage2Container>
     );

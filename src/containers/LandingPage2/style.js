@@ -190,10 +190,10 @@ export const LandingSection = styled.div`
   }
   #layer1 {
     background-image: url(${landingLayer1});
-    background-size: cover;
+    background-size: 100%;
     height: 200vh;
     background-position-y: 220px;
-    top: 220px;
+    top: 300px;
     z-index: 5;
   }
   #layer2 {
@@ -272,6 +272,11 @@ export const LandingSection = styled.div`
       }
     }
   }
+  @media only screen and (min-height: 1360px) {
+    #layer1 {
+      top: 700px;
+    }
+  }
 `;
 
 export const ApaItuSection = styled.div`
@@ -287,8 +292,10 @@ export const ApaItuSection = styled.div`
   background-repeat: no-repeat;
   background-position-y: top, 0px;
   background-position-x: left;
-  background-size: 22%, contain;
-
+  background-size: 100%, contain;
+  .desc {
+    font-family: Montserrat;
+  }
   @media only screen and (max-width: 800px) {
     background-position-y: bottom, 180px;
     background-position-x: left, -50px;
@@ -309,7 +316,7 @@ export const ApaItuSection = styled.div`
     }
     .desc {
       font-size: 0.8em;
-      line-height: 30px;
+      line-height: 1.8;
     }
   }
 `;

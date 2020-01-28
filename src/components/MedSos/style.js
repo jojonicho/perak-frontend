@@ -4,7 +4,9 @@ import medsosTransition from "../../asset/medsosTransition.svg";
 
 export const MedSosContainer = styled.div`
   width: 100%;
-  margin-top: -120px;
+  margin-top: -145px;
+  position: relative;
+  z-index: 8;
   /* padding: 50px 0px; */
   .medsos-title {
     font-family: Montserrat;
@@ -14,13 +16,14 @@ export const MedSosContainer = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 120px;
+    height: 145px;
     width: 100%;
   }
   .medsos-main-container {
     background-image: url(${medsosBG});
     padding: 50px 0px 100px 0px;
     margin-top: -1px;
+    min-height: 400px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: bottom;
