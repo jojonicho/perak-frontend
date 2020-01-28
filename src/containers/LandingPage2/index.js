@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import HeaderFooter from "../../components/HeaderFooter";
 import PerakTahunIni from "../../components/PerakTahunIni";
+import Section4 from "../../components/Section4";
 
 import daun1 from "../../asset/daun1.svg";
 import daun2 from "../../asset/daun2.svg";
@@ -130,6 +131,7 @@ class LandingPage2 extends React.Component {
             </p>
           </ApaItuSection>
           <PerakTahunIni />
+          <Section4 />
         </HeaderFooter>
       </LandingPage2Container>
     );
