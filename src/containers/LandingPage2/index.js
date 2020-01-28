@@ -9,6 +9,7 @@ import daun2 from "../../asset/daun2.svg";
 
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 import MedSos from "../../components/MedSos";
+import AdaApaAja from "../../components/AdaApaAja";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -135,6 +136,7 @@ class LandingPage2 extends React.Component {
               tentunya mengikutsertakan seluruh elemen Fasilkom UI.
             </p>
           </ApaItuSection>
+          <AdaApaAja></AdaApaAja>
           <MedSos></MedSos>
         </HeaderFooter>
       </LandingPage2Container>
