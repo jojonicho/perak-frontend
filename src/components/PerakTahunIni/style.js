@@ -1,7 +1,11 @@
 import styled from "styled-components";
+import backgroundAbu from "../../asset/perakTahunIni/background-abu.svg";
 
 export const PerakTahunIniContainer = styled.div`
-  background-color: #e6e5de;
+  background-image: url(${backgroundAbu});
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
   margin-top: -285px !important;
   height: 2050px;
   .bola-bulet {
