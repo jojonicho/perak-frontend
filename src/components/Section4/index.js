@@ -8,15 +8,11 @@ class Section4 extends React.Component {
     return (
       <Section4Container>
         <div className="section-4">
-          <h1 className="title">LIGA PERAK</h1>
+          <h1 className="title">BIOSKOP ALA PERAK</h1>
           <p className="desc">
-            Liga PERAK adalah kompetisi olahraga futsal dan berbagai macam
-            permainan yang diselenggarakan untuk semua elemen Fasilkom UI. Liga
-            PERAK ini mengedepankan asas kekeluargaan, namun tidak meninggalkan
-            asas saling menghormati dan sportivitas. Permainan yang nantinya
-            akan dimainkan di Liga PERAK ini adalah DOTA 2, CSGO, Mobile Legend,
-            Super Smash Bros Ultimate, Mario Cart 8 Deluxe, FIFA 20, Catur, dan
-            Codenames.
+            Bioskop Ala Perak adalah acara yang dilaksanakan pada malam hari
+            yang bisa menjadi wadah untuk elemen Fasilkom saling bercengkrama
+            sambil menonton film.
           </p>
         </div>
       </Section4Container>

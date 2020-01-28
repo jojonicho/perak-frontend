@@ -46,18 +46,18 @@ height:2050px;
 .decor-foto-kiri{
     position:absolute;
     left:0;
-    margin-top:1000px;
+    margin-top:850px;
 }
 .foto-kanan{
     position:absolute;
     right:0;
-    margin-top:600px;
+    margin-top:550px;
 
 }
 .decor-foto-kanan{
     position:absolute;
     right:0;
-    margin-top:600px;
+    margin-top:620px;
 }
 .circle-text-section{
     display:flex;
@@ -93,8 +93,8 @@ height:2050px;
 }
 .siapa-ini{
     position:absolute;
-    margin-top:470px;
-    margin-left:200px;
+    margin-top:550px;
+    margin-left:180px;
 }
 .main-bg-phone{
     display:none;
@@ -109,6 +109,16 @@ height:2050px;
     z-index:12;
     margin-top:370px;
     margin-left:300px;
+}
+.bottom-left-decor{
+    position:absolute;
+    left:200px;
+    margin-top:1020px;
+}
+.bottom-right-decor{
+    position:absolute;
+    right:200px;
+    margin-top:1020px;
 }
 
 @media only screen and (max-width:550px){
@@ -185,6 +195,16 @@ height:2050px;
         margin-top:90px;
         margin-left:40px;
         width:30%
+    }
+    .bottom-left-decor{
+        left:50px;
+        width:30%
+        margin-top:730px;
+    }
+    .bottom-right-decor{
+        right:50px;
+        width:30%
+        margin-top:730px;
     }
     height:1200px;
 }

@@ -12,6 +12,8 @@ import siapatext from "../../asset/perakTahunIni/siapaini.svg";
 import mainsectionbgphone from "../../asset/perakTahunIni/main-bg-2-mobile.svg";
 import bottomsec from "../../asset/perakTahunIni/bottom-section.png";
 import kenalin from "../../asset/perakTahunIni/kenalin.svg";
+import bottomleftdecor from "../../asset/perakTahunIni/bottom-left.png";
+import bottomrightdecor from "../../asset/perakTahunIni/bottom-right.png";
 
 class PerakTahunIni extends React.Component {
   constructor() {
@@ -315,6 +317,16 @@ class PerakTahunIni extends React.Component {
               </div>
             </div>
           </div>
+          <img
+            src={bottomleftdecor}
+            className="bottom-left-decor"
+            alt="bottom-left-decor"
+          />
+          <img
+            src={bottomrightdecor}
+            className="bottom-right-decor"
+            alt="bottom-right-decor"
+          />
         </div>
         <img src={bottomsec} alt="bottom-section" className="bottom-section" />
         <img src={kenalin} alt="kenalin-ini-aang" className="kenalin-aang" />
