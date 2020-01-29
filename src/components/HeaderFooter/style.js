@@ -43,9 +43,12 @@ export const HeaderFooterContainer = styled.div`
   .childcontainer {
     padding-top: 60px;
   }
+  .no-padding-top {
+    padding-top: 0px;
+  }
   .daftar {
     font-family: Montserrat;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 1em;
     color: #e5e6de;
   }

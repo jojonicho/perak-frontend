@@ -25,6 +25,9 @@ export const Section4Container = styled.div`
     margin-left: auto;
     margin-right: auto;
     display: block;
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: justify;
   }
   @media only screen and (max-width: 500px) {
     .section-4 {
@@ -40,6 +43,8 @@ export const Section4Container = styled.div`
     }
     .desc {
       max-width: 80vw !important;
+      font-size: 0.8em;
+      line-height: 20.48px !important;
     }
   }
 `;

@@ -6,7 +6,8 @@ import landingLayer3 from "../../asset/landing-layer3.svg";
 import landingLayer3Right from "../../asset/landing-layer3-right.svg";
 import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
-import apaItuBGLeft from "../../asset/apaItuBGLeft2.svg";
+import apaItuBGLeft from "../../asset/apaItuBGLeft.svg";
+import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
 
@@ -33,6 +34,29 @@ export const LandingPage2Container = styled.div`
     max-width: 50%;
     min-width: 200px;
     text-align: justify;
+  }
+  .daftar-awal {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #e5e6de;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    color: white;
+    text-decoration: none;
+  }
+  .daftar-awal-container {
+    padding: 20px 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .daftar-awal-link {
+    text-decoration: none;
   }
   p,
   h1 {
@@ -166,10 +190,10 @@ export const LandingSection = styled.div`
   }
   #layer1 {
     background-image: url(${landingLayer1});
-    background-size: cover;
+    background-size: 100%;
     height: 200vh;
     background-position-y: 220px;
-    top: 220px;
+    top: 300px;
     z-index: 5;
   }
   #layer2 {
@@ -248,6 +272,11 @@ export const LandingSection = styled.div`
       }
     }
   }
+  @media only screen and (min-height: 1360px) {
+    #layer1 {
+      top: 700px;
+    }
+  }
 `;
 
 export const ApaItuSection = styled.div`
@@ -261,10 +290,12 @@ export const ApaItuSection = styled.div`
   align-items: center;
   background-image: url(${apaItuBGLeft});
   background-repeat: no-repeat;
-  background-position-y: top, 75px;
+  background-position-y: top, 0px;
   background-position-x: left;
-  background-size: 12%, contain;
-
+  background-size: 20%, contain;
+  .desc {
+    font-family: Montserrat;
+  }
   @media only screen and (max-width: 800px) {
     background-position-y: bottom, 180px;
     background-position-x: left, -50px;
@@ -276,8 +307,8 @@ export const ApaItuSection = styled.div`
     }
   }
   @media only screen and (max-width: 550px) {
-    background-image: url(${apaItuBGLeft});
-    background-position-y: top, 75px;
+    background-image: url(${apaItuBGLeftMobile});
+    background-position-y: bottom, 380px;
     background-position-x: left, -30px;
     background-size: 22%, 250px;
     .section-title {
@@ -285,7 +316,8 @@ export const ApaItuSection = styled.div`
     }
     .desc {
       font-size: 0.8em;
-      line-height: 30px;
+      line-height: 1.8;
+      max-width: 75vw;
     }
   }
 `;

@@ -11,9 +11,11 @@ import decorfotokanan from "../../asset/perakTahunIni/foto-kanan-decor.svg";
 import siapatext from "../../asset/perakTahunIni/siapaini.svg";
 import mainsectionbgphone from "../../asset/perakTahunIni/main-bg-2-mobile.svg";
 import bottomsec from "../../asset/perakTahunIni/bottom-section.png";
+import bottomsecmobile from "../../asset/perakTahunIni/bottom-section-mobile.png";
 import kenalin from "../../asset/perakTahunIni/kenalin.svg";
 import bottomleftdecor from "../../asset/perakTahunIni/bottom-left.png";
 import bottomrightdecor from "../../asset/perakTahunIni/bottom-right.png";
+import ceritanyamaskot from "../../asset/perakTahunIni/ceritanya-maskot.svg";
 
 class PerakTahunIni extends React.Component {
   constructor() {
@@ -122,7 +124,7 @@ class PerakTahunIni extends React.Component {
   render() {
     return (
       <PerakTahunIniContainer>
-        <div className="layer parallax" data-speed={5}>
+        <div className="layer parallax bola-bulet-section" data-speed={5}>
           <img src={bolabulet} className="bola-bulet" alt="bola" />
         </div>
         <div className="main-section">
@@ -248,70 +250,74 @@ class PerakTahunIni extends React.Component {
                   <div className="circle-text text-random">A</div>
                 </div>
               </div>
-              <div className="circle-row">
-                <div className="circle-item parent-fixed" color="#03AA6F">
-                  <div className="circle-text text-fixed" char="C">
-                    A
+              <div className="circle-row circle-break-row">
+                <div className="circle-first-row">
+                  <div className="circle-item parent-fixed" color="#03AA6F">
+                    <div className="circle-text text-fixed" char="C">
+                      A
+                    </div>
+                  </div>
+                  <div className="circle-item parent-fixed" color="#FF90B5">
+                    <div className="circle-text text-fixed" char="O">
+                      A
+                    </div>
+                  </div>
+                  <div className="circle-item parent-fixed" color="#86DAF1">
+                    <div className="circle-text text-fixed" char="M">
+                      A
+                    </div>
+                  </div>
+                  <div className="circle-item parent-fixed" color="#FF90B5">
+                    <div className="circle-text text-fixed" char="P">
+                      A
+                    </div>
+                  </div>
+                  <div className="circle-item parent-fixed" color="#FD9226">
+                    <div className="circle-text text-fixed" char="R">
+                      A
+                    </div>
+                  </div>
+                  <div className="circle-item parent-fixed" color="#03AA6F">
+                    <div className="circle-text text-fixed" char="E">
+                      A
+                    </div>
                   </div>
                 </div>
-                <div className="circle-item parent-fixed" color="#FF90B5">
-                  <div className="circle-text text-fixed" char="O">
-                    A
+                <div className="circle-last-row">
+                  <div className="circle-item parent-fixed" color="#FF90B5">
+                    <div className="circle-text text-fixed" char="H">
+                      A
+                    </div>
                   </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#86DAF1">
-                  <div className="circle-text text-fixed" char="M">
-                    A
+                  <div className="circle-item parent-fixed" color="#86DAF1">
+                    <div className="circle-text text-fixed" char="E">
+                      A
+                    </div>
                   </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#FF90B5">
-                  <div className="circle-text text-fixed" char="P">
-                    A
+                  <div className="circle-item parent-fixed" color="#03AA6F">
+                    <div className="circle-text text-fixed" char="N">
+                      A
+                    </div>
                   </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#FD9226">
-                  <div className="circle-text text-fixed" char="R">
-                    A
+                  <div className="circle-item parent-fixed" color="#FD9226">
+                    <div className="circle-text text-fixed" char="S">
+                      A
+                    </div>
                   </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#03AA6F">
-                  <div className="circle-text text-fixed" char="E">
-                    A
+                  <div className="circle-item parent-fixed" color="#03AA6F">
+                    <div className="circle-text text-fixed" char="I">
+                      A
+                    </div>
                   </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#FF90B5">
-                  <div className="circle-text text-fixed" char="H">
-                    A
+                  <div className="circle-item parent-fixed" color="#86DAF1">
+                    <div className="circle-text text-fixed" char="V">
+                      A
+                    </div>
                   </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#86DAF1">
-                  <div className="circle-text text-fixed" char="E">
-                    A
-                  </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#03AA6F">
-                  <div className="circle-text text-fixed" char="N">
-                    A
-                  </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#FD9226">
-                  <div className="circle-text text-fixed" char="S">
-                    A
-                  </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#03AA6F">
-                  <div className="circle-text text-fixed" char="I">
-                    A
-                  </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#86DAF1">
-                  <div className="circle-text text-fixed" char="V">
-                    A
-                  </div>
-                </div>
-                <div className="circle-item parent-fixed" color="#FF90B5">
-                  <div className="circle-text text-fixed" char="E">
-                    A
+                  <div className="circle-item parent-fixed" color="#FF90B5">
+                    <div className="circle-text text-fixed" char="E">
+                      A
+                    </div>
                   </div>
                 </div>
               </div>
@@ -329,7 +335,17 @@ class PerakTahunIni extends React.Component {
           />
         </div>
         <img src={bottomsec} alt="bottom-section" className="bottom-section" />
+        <img
+          src={bottomsecmobile}
+          alt="bottom-section"
+          className="bottom-section-mobile"
+        />
         <img src={kenalin} alt="kenalin-ini-aang" className="kenalin-aang" />
+        <img
+          src={ceritanyamaskot}
+          alt="ceritanya-maskot"
+          className="ceritanya-maskot"
+        />
       </PerakTahunIniContainer>
     );
   }

@@ -104,11 +104,20 @@ height:2050px;
     z-index:10;
     width:100vw;
 }
+.bottom-section-mobile{
+    display:none;
+}
 .kenalin-aang{
     position:absolute;
     z-index:12;
     margin-top:370px;
     margin-left:300px;
+}
+.ceritanya-maskot{
+    position:absolute;
+    z-index:12;
+    margin-top:750px;
+    margin-left:42vw;
 }
 .bottom-left-decor{
     position:absolute;
@@ -120,21 +129,35 @@ height:2050px;
     right:200px;
     margin-top:1020px;
 }
+.circle-break{
+    display:none;
+}
+.circle-first-row{
+    display:flex;
+    flex-direction:row;
+}
+.circle-last-row{
+    display:flex;
+    flex-direction:row;
+}
 
 @media only screen and (max-width:550px){
     margin-top:-190px!important;
     .main-section{
-        margin-top:-100px;
+        margin-top:-300px;
         height:950px;
     }
     .main-content{
-        margin-top:250px;
+        margin-top:280px;
     }
     .bola-bulet{
-        display:none
+        width:20%;
+    }
+    .bola-bulet-section{
+        margin-top:-200px;
     }
     .sec-title{
-        margin-top:20px;
+        margin-top:-30px;
     }
     .circle-item{
         width:35px;
@@ -145,6 +168,8 @@ height:2050px;
         flex-wrap:wrap;
         width:100%;
         justify-content:center;
+        margin-top:15px;
+        margin-bottom:15px;
     }
     .circle-item{
         display:none
@@ -167,12 +192,12 @@ height:2050px;
     }
     .foto-kanan{
         width:35%;
-        margin-top:380px;
+        margin-top:330px;
         margin-right:0px;
     }
     .decor-foto-kanan{
         width:20%;
-        margin-top:420px;
+        margin-top:390px;
     }
     .main-bg{
         display:none
@@ -187,25 +212,45 @@ height:2050px;
         position:absolute;
         z-index:10;
         width:100vw;
-        margin-top:
     }
     .kenalin-aang{
         position:absolute;
         z-index:12;
-        margin-top:90px;
+        margin-top:105px;
         margin-left:40px;
         width:30%
     }
+    .ceritanya-maskot{
+        position:absolute;
+        z-index:12;
+        margin-top:215px;
+        margin-left:38vw;
+        width:29%;
+    }
     .bottom-left-decor{
         left:50px;
-        width:30%
-        margin-top:730px;
+        width:40%
+        margin-top:700px;
     }
     .bottom-right-decor{
         right:50px;
         width:30%
-        margin-top:730px;
+        margin-top:715px;
     }
-    height:1200px;
+    .circle-break-row{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    .bottom-section-mobile{
+        position:absolute;
+        z-index:10;
+        width:100vw;
+        display:block;
+    }
+    .bottom-section{
+        display:none;
+    }
+    height:900px;
 }
 `;

@@ -1,6 +1,10 @@
 import React from "react";
 // import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import HeaderFooter from "../../components/HeaderFooter";
 import PerakTahunIni from "../../components/PerakTahunIni";
 import Section4 from "../../components/Section4";
@@ -10,6 +14,11 @@ import daun1 from "../../asset/daun1.svg";
 import daun2 from "../../asset/daun2.svg";
 
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
+import MedSos from "../../components/MedSos";
+import AdaApaAja from "../../components/AdaApaAja";
+import Section1 from "../../components/Section1";
+import Section2 from "../../components/Section2";
+import Section3 from "../../components/Section3";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -23,7 +32,8 @@ class LandingPage2 extends React.Component {
       // $("#parallax").css('display','none');
       const parallaxes = document.getElementsByClassName("parallax");
       for (let i = 0; i < parallaxes.length; i += 1) {
-        document.getElementById(`layer${i + 1}`).style.display = "none";
+        parallaxes[i].style.display = "none";
+        // document.getElementById(`layer${i + 1}`).style.display = "none";
       }
     };
 
@@ -32,7 +42,7 @@ class LandingPage2 extends React.Component {
         thePosition: window.pageYOffset
       });
       const { thePosition } = this.state;
-      if (thePosition < 600) {
+      if (thePosition < 600 || true) {
         const layers = document.getElementsByClassName("parallax");
         // console.log(layers[3].getAttribute('data-speed'));
         let { layer, speed, yPos } = 0;
@@ -66,7 +76,7 @@ class LandingPage2 extends React.Component {
     const { thePosition } = this.state;
     return (
       <LandingPage2Container>
-        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"}>
+        <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"} notShown>
           <div className="leaf">
             <img src={daun2} alt="daun2" />
           </div>
@@ -96,6 +106,11 @@ class LandingPage2 extends React.Component {
           </div>
 
           <LandingSection className="landing">
+            <div className="daftar-awal-container">
+              <Link to="/daftar" className="daftar-awal-link">
+                <h2 className="daftar-awal">DAFTAR</h2>
+              </Link>
+            </div>
             <div className="layer parallax" data-speed={60} id="layer1"></div>
             <div className="layer parallax" data-speed={-20} id="layer2">
               <div className="title">
@@ -132,8 +147,23 @@ class LandingPage2 extends React.Component {
             </p>
           </ApaItuSection>
           <PerakTahunIni />
-          <Section4 />
-          <Section5 />
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            stopOnHover
+            infiniteLoop
+            autoPlay
+            interval={5000}
+          >
+            <AdaApaAja></AdaApaAja>
+            <Section1 />
+            <Section2 />
+            <Section3 />
+            <Section4 />
+            <Section5 />
+          </Carousel>
+          <MedSos></MedSos>
         </HeaderFooter>
       </LandingPage2Container>
     );
