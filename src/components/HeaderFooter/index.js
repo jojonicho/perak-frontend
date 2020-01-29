@@ -8,6 +8,9 @@ import logoBaruTerang from "../../asset/logoBaruTerang.png";
 
 class HeaderFooter extends React.Component {
   render() {
+    const handleHamburger = () => {
+      document.getElementById("links-mobile").classList.toggle("notShown");
+    };
     const { children, color, notShown } = this.props;
     const colors = {
       green: { backgroundColor: "#22B3A5", color: "white" },
@@ -28,6 +31,16 @@ class HeaderFooter extends React.Component {
           <Link to="/" className="no-decor">
             <img className="logo" src={logoBaruTerang} alt="logo"></img>
           </Link>
+          <button
+            type="button"
+            className="hamburger"
+            onClick={() => handleHamburger()}
+          >
+            {/* <div className="hamburger-line-1"></div>
+            <div className="hamburger-line-2"></div>
+            <div className="hamburger-line-3"></div> */}
+          </button>
+
           <div className="links">
             <Link to="/klasemen" className="no-decor link">
               <h2 className="daftar">KLASEMEN</h2>
@@ -39,6 +52,17 @@ class HeaderFooter extends React.Component {
               <h2 className="daftar">DAFTAR</h2>
             </Link>
           </div>
+        </div>
+        <div className="links-mobile notShown" id="links-mobile">
+          <Link to="/klasemen" className="no-decor link-mobile">
+            <h2 className="daftar">KLASEMEN</h2>
+          </Link>
+          <Link to="/result/futsal" className="no-decor link-mobile">
+            <h2 className="daftar">SKOR</h2>
+          </Link>
+          <Link to="/daftar" className="no-decor link-mobile">
+            <h2 className="daftar">DAFTAR</h2>
+          </Link>
         </div>
         <div className={notShown ? "no-padding-top" : "childcontainer"}>
           {children}
