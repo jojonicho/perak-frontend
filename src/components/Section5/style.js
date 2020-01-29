@@ -46,6 +46,7 @@ export const Section5Container = styled.div`
       background-position-x: center;
       padding-top: 130px;
       max-height: 100vh;
+      min-height: 100vh;
     }
     .title {
       font-size: 1.8em;

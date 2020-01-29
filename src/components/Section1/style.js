@@ -58,6 +58,7 @@ export const Section1Container = styled.div`
       background-size: 350%;
       background-position-y: top;
       background-position-x: 20%;
+      min-height: 100vh;
     }
     .title {
       font-size: 1.7em;

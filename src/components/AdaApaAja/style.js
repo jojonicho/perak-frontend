@@ -25,6 +25,7 @@ export const AdaApaAjaContainer = styled.div`
       font-size: 3em;
       padding: 0 50px;
     }
+    min-height: 100vh;
   }
   @media only screen and (max-width: 330px) {
     h1 {

@@ -36,6 +36,7 @@ export const Section2Container = styled.div`
     .section-2 {
       background-position-y: top;
       background-position-x: center;
+      min-height: 100vh;
     }
     .desc {
       margin-top: 70px;

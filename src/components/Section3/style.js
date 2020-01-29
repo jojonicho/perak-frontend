@@ -46,6 +46,7 @@ export const Section3Container = styled.div`
     .section-3 {
       background-size: cover;
       background-position-x: 50%;
+      min-height: 100vh;
     }
     .title {
       position: absolute;

@@ -36,6 +36,7 @@ export const Section4Container = styled.div`
       padding-top: 140px;
       width: 100vw;
       background-image: url(${backgroundmobile});
+      min-height: 100vh;
     }
     .title {
       font-size: 2em;
