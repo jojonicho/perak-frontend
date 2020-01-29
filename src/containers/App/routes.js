@@ -3,8 +3,14 @@ import Registration from "../Registration";
 import RegisterSelection from "../../components/RegisterSelection";
 // import LandingPage from "../LandingPage";
 import GameRegistration from "../GameRegistration";
+import FutsalScorePage from "../FutsalScorePage";
 
 export const routes = [
+  {
+    component: FutsalScorePage,
+    exact: true,
+    path: "/result/futsal"
+  },
   {
     component: RegisterSelection,
     exact: true,
