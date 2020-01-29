@@ -70,7 +70,7 @@ export const Section1Container = styled.div`
       line-height: 1.6;
     }
   }
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     .title {
       margin-top: 100px;
     }

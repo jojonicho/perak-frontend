@@ -60,7 +60,7 @@ export const Section2Container = styled.div`
     }
   }
 
-  @media only screen and (max-width: 330px) {
+  @media only screen and (max-width: 360px) {
     .desc {
       margin-top: 30px;
     }

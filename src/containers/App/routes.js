@@ -4,6 +4,7 @@ import RegisterSelection from "../../components/RegisterSelection";
 // import LandingPage from "../LandingPage";
 import LandingPage2 from "../LandingPage2";
 import GameRegistration from "../GameRegistration";
+import GroupProfile from "../../components/GroupProfile";
 
 export const routes = [
   {
@@ -60,5 +61,9 @@ export const routes = [
     component: () => <GameRegistration gameId="catur" />,
     exact: true,
     path: "/daftar/catur"
+  },
+  {
+    component: GroupProfile,
+    path: "/group-profile"
   }
 ];
