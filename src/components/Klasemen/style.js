@@ -100,10 +100,10 @@ export const KlasemenContainer = styled.div`
       color: #f0f0f0;
       border-radius: 50%;
     }
-    tr:hover {
+    /* tr:hover {
       background-color: #ececff;
       cursor: pointer;
-    }
+    } */
   }
 
   @media screen and (max-width: 768px) {
