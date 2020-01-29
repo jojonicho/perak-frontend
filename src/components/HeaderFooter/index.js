@@ -32,6 +32,9 @@ class HeaderFooter extends React.Component {
             <Link to="/klasemen" className="no-decor link">
               <h2 className="daftar">KLASEMEN</h2>
             </Link>
+            <Link to="/result/futsal" className="no-decor link">
+              <h2 className="daftar">SKOR</h2>
+            </Link>
             <Link to="/daftar" className="no-decor link">
               <h2 className="daftar">DAFTAR</h2>
             </Link>
