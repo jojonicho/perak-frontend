@@ -6,7 +6,7 @@ import landingLayer3 from "../../asset/landing-layer3.svg";
 import landingLayer3Right from "../../asset/landing-layer3-right.svg";
 import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
-import apaItuBGLeft from "../../asset/apaItuBGLeft.svg";
+import apaItuBGLeft from "../../asset/apaItuBGLeft2.svg";
 import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
@@ -292,7 +292,7 @@ export const ApaItuSection = styled.div`
   background-repeat: no-repeat;
   background-position-y: top, 0px;
   background-position-x: left;
-  background-size: 20%, contain;
+  background-size: 15%, contain;
   .desc {
     font-family: Montserrat;
   }
