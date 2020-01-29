@@ -10,7 +10,7 @@ export const Section2Container = styled.div`
 
   .section-2 {
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
     font-family: Montserrat;
     display: flex;
     flex-direction: column;
@@ -19,12 +19,12 @@ export const Section2Container = styled.div`
     background-image: url(${section2});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -220px;
+    background-position-y: 0px;
   }
 
   .desc {
     color: #f0f0f0;
-    margin-top: 150px;
+    margin-top: 270px;
     max-width: 60%;
     font-size: 1.3em;
     line-height: 1.8;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PerakTahunIniContainer = styled.div`
 margin-top:-285px!important;
-height:2050px;
+height:1750px;
 .bola-bulet{
     display:block;
     margin-left:auto;
@@ -252,5 +252,11 @@ height:2050px;
         display:none;
     }
     height:900px;
+}
+@media only screen and (min-width:400px) and (max-width:550px){
+    height:1000px;
+    .kenalin-aang{
+        margin-top:120px;
+    }
 }
 `;

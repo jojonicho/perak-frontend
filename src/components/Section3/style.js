@@ -10,7 +10,7 @@ export const Section3Container = styled.div`
 
   .section-3 {
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
     font-family: Montserrat;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ export const Section3Container = styled.div`
   }
 
   .title {
-    margin-top: 70px;
+    margin-top: 270px;
     font-size: 40px;
     font-weight: bold;
   }
