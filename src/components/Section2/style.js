@@ -39,9 +39,7 @@ export const Section2Container = styled.div`
       min-height: 100vh;
     }
     .desc {
-      margin-top: 70px;
-      position: absolute;
-      top: 50px;
+      margin-top: 150px;
       max-width: 60%;
       font-size: 1em;
       line-height: 1.6;
@@ -55,7 +53,7 @@ export const Section2Container = styled.div`
       background-position-x: center;
     }
     .desc {
-      margin-top: 120px;
+      margin-top: 150px;
       max-width: 70%;
       font-size: 0.8em;
       line-height: 1.8;
@@ -63,14 +61,15 @@ export const Section2Container = styled.div`
   }
   @media only screen and (max-width: 325px) {
     .desc {
-      margin-top: 70px;
+      margin-top: 100px;
       line-height: 1.6;
+      font-size: 0.7em;
     }
   }
 
-  @media only screen and (max-width: 330px) {
+  /* @media only screen and (max-width: 330px) {
     .desc {
       margin-top: 30px;
     }
-  }
+  } */
 `;

@@ -28,6 +28,20 @@ export const LandingPage2Container = styled.div`
     font-family: BigJohnPRO;
     font-size: 3.5em;
   }
+  .arrow-left,
+  .arrow-right {
+    width: 40px;
+  }
+  .arrow-left {
+    position: absolute;
+    margin-right: -70px;
+    z-index: 100;
+  }
+  .arrow-right {
+    position: absolute;
+    margin-left: -40px;
+    z-index: 100;
+  }
   .desc {
     margin-top: 35px;
     line-height: 35px;
@@ -273,6 +287,13 @@ export const LandingSection = styled.div`
       .title {
         font-size: 0.9em;
       }
+    }
+    .arrow-left,
+    .arrow-right {
+      width: 40px;
+    }
+    .arrow-right {
+      margin-left: -70px;
     }
   }
   @media only screen and (min-height: 1360px) {

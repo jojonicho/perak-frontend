@@ -2,7 +2,10 @@ import React from "react";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import HeaderFooter from "../../components/HeaderFooter";
@@ -19,6 +22,8 @@ import AdaApaAja from "../../components/AdaApaAja";
 import Section1 from "../../components/Section1";
 import Section2 from "../../components/Section2";
 import Section3 from "../../components/Section3";
+import arrowLeft from "../../asset/arrowLeft.svg";
+import arrowRight from "../../asset/arrowRight.svg";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -148,13 +153,26 @@ class LandingPage2 extends React.Component {
           </ApaItuSection>
           <PerakTahunIni />
           <Carousel
-            showStatus={false}
-            showThumbs={false}
-            showIndicators={false}
-            stopOnHover
-            infiniteLoop
-            autoPlay
-            interval={5000}
+            infinite
+            arrowLeft={
+              <img
+                alt="arrow"
+                src={arrowLeft}
+                className="arrow-left"
+                name="arrow-left"
+              />
+            }
+            arrowRight={
+              <img
+                alt="arrow"
+                src={arrowRight}
+                className="arrow-right"
+                name="arrow-right"
+              />
+            }
+            addArrowClickHandler
+            stopAutoPlayOnHover
+            autoPlay={5000}
           >
             <AdaApaAja></AdaApaAja>
             <Section1 />
