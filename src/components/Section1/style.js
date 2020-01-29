@@ -10,7 +10,7 @@ export const Section1Container = styled.div`
 
   .section-1 {
     position: relative;
-    min-height: 100vh;
+    min-height: 130vh;
     font-family: Montserrat;
     display: flex;
     flex-direction: column;
@@ -18,12 +18,12 @@ export const Section1Container = styled.div`
     background-image: url(${section1});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -200px;
+    background-position-y: 0px;
     color: #0d2040;
   }
 
   .title {
-    margin-top: 70px;
+    margin-top: 30vh;
     font-size: 3em;
     font-weight: bold;
   }
@@ -58,10 +58,11 @@ export const Section1Container = styled.div`
       background-size: 350%;
       background-position-y: top;
       background-position-x: 20%;
+      min-height: 100vh;
     }
     .title {
       font-size: 1.7em;
-      margin-top: 150px;
+      margin-top: 120px;
     }
     .desc {
       margin-top: 20px;

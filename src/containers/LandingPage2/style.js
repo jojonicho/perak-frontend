@@ -7,6 +7,7 @@ import landingLayer3Right from "../../asset/landing-layer3-right.svg";
 import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
 import apaItuBGLeft from "../../asset/apaItuBGLeft2.svg";
+import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
 
@@ -292,14 +293,12 @@ export const ApaItuSection = styled.div`
   align-items: center;
   background-image: url(${apaItuBGLeft});
   background-repeat: no-repeat;
-  background-position-y: top, 75px;
+  background-position-y: top, 0px;
   background-position-x: left;
-  /* background-size: 100%, contain; */
+  background-size: 15%, contain;
   .desc {
     font-family: Montserrat;
   }
-  background-size: 12%, contain;
-
   @media only screen and (max-width: 800px) {
     background-position-y: bottom, 180px;
     background-position-x: left, -50px;
@@ -311,8 +310,8 @@ export const ApaItuSection = styled.div`
     }
   }
   @media only screen and (max-width: 550px) {
-    background-image: url(${apaItuBGLeft});
-    background-position-y: top, 75px;
+    background-image: url(${apaItuBGLeftMobile});
+    background-position-y: bottom, 380px;
     background-position-x: left, -30px;
     background-size: 22%, 250px;
     .section-title {
@@ -321,6 +320,7 @@ export const ApaItuSection = styled.div`
     .desc {
       font-size: 0.8em;
       line-height: 1.8;
+      max-width: 75vw;
     }
   }
 `;

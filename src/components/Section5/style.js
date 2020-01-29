@@ -5,11 +5,11 @@ import backgorundmobile from "../../asset/Section5BG-mobile.svg";
 export const Section5Container = styled.div`
   .section-5 {
     background-image: url(${background});
-    min-height: 100vh;
+    min-height: 130vh;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 220px;
+    padding-top: 30vh;
     font-family: Montserrat;
     color: #0d2040;
   }
@@ -35,20 +35,29 @@ export const Section5Container = styled.div`
     margin-right: auto;
     display: block;
     max-width: 60% !important;
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: justify;
   }
 
   @media only screen and (max-width: 500px) {
     .section-5 {
       background-image: url(${backgorundmobile});
       background-position-x: center;
-      padding-top: 120px;
+      padding-top: 130px;
       max-height: 100vh;
+      min-height: 100vh;
     }
     .title {
-      font-size: 2em;
+      font-size: 1.8em;
     }
     .title-middle {
-      font-size: 1em;
+      font-size: 0.8em;
+    }
+    .desc {
+      font-size: 0.8em;
+      line-height: 20.48px !important;
+      max-width: 50% !important;
     }
   }
 `;

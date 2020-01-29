@@ -10,21 +10,20 @@ export const Section3Container = styled.div`
 
   .section-3 {
     position: relative;
-    min-height: 100vh;
+    min-height: 130vh;
     font-family: Montserrat;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url(${section3});
     background-repeat: no-repeat;
-    background-size: 115%;
+    background-size: 135%;
     background-position-x: 20%;
-    background-position-y: 70%;
     color: #0d2040;
   }
 
   .title {
-    margin-top: 70px;
+    margin-top: 35vh;
     font-size: 40px;
     font-weight: bold;
   }
@@ -47,6 +46,7 @@ export const Section3Container = styled.div`
     .section-3 {
       background-size: cover;
       background-position-x: 50%;
+      min-height: 100vh;
     }
     .title {
       position: absolute;

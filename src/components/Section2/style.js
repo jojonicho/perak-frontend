@@ -10,7 +10,7 @@ export const Section2Container = styled.div`
 
   .section-2 {
     position: relative;
-    min-height: 100vh;
+    min-height: 130vh;
     font-family: Montserrat;
     display: flex;
     flex-direction: column;
@@ -19,12 +19,13 @@ export const Section2Container = styled.div`
     background-image: url(${section2});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -220px;
+    background-position-y: 0px;
+    background-position-x: center;
   }
 
   .desc {
     color: #f0f0f0;
-    margin-top: 150px;
+    margin-top: 39vh;
     max-width: 60%;
     font-size: 1.3em;
     line-height: 1.8;
@@ -35,6 +36,7 @@ export const Section2Container = styled.div`
     .section-2 {
       background-position-y: top;
       background-position-x: center;
+      min-height: 100vh;
     }
     .desc {
       margin-top: 70px;
@@ -53,9 +55,15 @@ export const Section2Container = styled.div`
       background-position-x: center;
     }
     .desc {
-      margin-top: 150px;
+      margin-top: 120px;
       max-width: 70%;
       font-size: 0.8em;
+      line-height: 1.8;
+    }
+  }
+  @media only screen and (max-width: 325px) {
+    .desc {
+      margin-top: 70px;
       line-height: 1.6;
     }
   }

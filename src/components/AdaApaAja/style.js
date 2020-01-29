@@ -10,7 +10,7 @@ export const AdaApaAjaContainer = styled.div`
     font-size: 3.5em;
     color: #4452c5;
   }
-  height: 100vh;
+  min-height: 130vh;
   width: 100vw;
   background-color: #e6e5de;
   background-image: url(${adaApaAjaLeft}), url(${adaApaAjaRight}),
@@ -25,13 +25,14 @@ export const AdaApaAjaContainer = styled.div`
       font-size: 3em;
       padding: 0 50px;
     }
+    min-height: 100vh;
   }
   @media only screen and (max-width: 330px) {
     h1 {
       font-size: 2.5em;
     }
   }
-  @media only screen and (min-height: 1360px) {
-    padding-top: 30vh;
+  @media only screen and (min-width: 1360px) {
+    padding-top: 25vh;
   }
 `;

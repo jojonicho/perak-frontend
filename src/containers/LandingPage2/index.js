@@ -32,7 +32,8 @@ class LandingPage2 extends React.Component {
       // $("#parallax").css('display','none');
       const parallaxes = document.getElementsByClassName("parallax");
       for (let i = 0; i < parallaxes.length; i += 1) {
-        document.getElementById(`layer${i + 1}`).style.display = "none";
+        parallaxes[i].style.display = "none";
+        // document.getElementById(`layer${i + 1}`).style.display = "none";
       }
     };
 
@@ -41,7 +42,7 @@ class LandingPage2 extends React.Component {
         thePosition: window.pageYOffset
       });
       const { thePosition } = this.state;
-      if (thePosition < 600) {
+      if (thePosition < 600 || true) {
         const layers = document.getElementsByClassName("parallax");
         // console.log(layers[3].getAttribute('data-speed'));
         let { layer, speed, yPos } = 0;
@@ -153,8 +154,7 @@ class LandingPage2 extends React.Component {
             stopOnHover
             infiniteLoop
             autoPlay
-            emulateTouch
-            interval={10000}
+            interval={5000}
           >
             <AdaApaAja></AdaApaAja>
             <Section1 />
