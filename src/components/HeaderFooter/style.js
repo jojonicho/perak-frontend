@@ -6,6 +6,12 @@ export const HeaderFooterContainer = styled.div`
   h2 {
     margin: auto;
   }
+  .links {
+    display: flex;
+    .link {
+      margin: 0 10px;
+    }
+  }
   .footer {
     position: absolute;
     height: 40px;
@@ -56,6 +62,13 @@ export const HeaderFooterContainer = styled.div`
   @media only screen and (max-width: 350px) {
     .logo {
       height: 35px;
+    }
+    .links {
+      .link {
+        h2 {
+          font-size: 0.7em;
+        }
+      }
     }
   }
 `;

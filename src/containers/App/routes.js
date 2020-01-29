@@ -4,6 +4,7 @@ import RegisterSelection from "../../components/RegisterSelection";
 // import LandingPage from "../LandingPage";
 import LandingPage2 from "../LandingPage2";
 import GameRegistration from "../GameRegistration";
+import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
 
 export const routes = [
@@ -11,6 +12,11 @@ export const routes = [
     component: LandingPage2,
     exact: true,
     path: "/"
+  },
+  {
+    component: FutsalScorePage,
+    exact: true,
+    path: "/result/futsal"
   },
   {
     component: RegisterSelection,

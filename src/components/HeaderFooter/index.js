@@ -28,9 +28,14 @@ class HeaderFooter extends React.Component {
           <Link to="/" className="no-decor">
             <img className="logo" src={logoBaruTerang} alt="logo"></img>
           </Link>
-          <Link to="/daftar" className="no-decor">
-            <h2 className="daftar">DAFTAR</h2>
-          </Link>
+          <div className="links">
+            <Link to="/klasemen" className="no-decor link">
+              <h2 className="daftar">KLASEMEN</h2>
+            </Link>
+            <Link to="/daftar" className="no-decor link">
+              <h2 className="daftar">DAFTAR</h2>
+            </Link>
+          </div>
         </div>
         <div className={notShown ? "no-padding-top" : "childcontainer"}>
           {children}
