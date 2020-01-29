@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import scoreBG from "../../asset/score-bg.png";
 
+const dark = "#0D2040";
+
 export const FutsalScorePageContainer = styled.div`
   .flex-container {
     display: flex;
@@ -51,5 +53,23 @@ export const FutsalScorePageContainer = styled.div`
     #score-title {
       width: 95vw;
     }
+    h2 {
+      margin: 0px 10px;
+    }
+  }
+`;
+export const LoadingScreen = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: ${dark};
+  flex-direction: column;
+  padding-top: 150px;
+  .logo-loading {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .loading-bar svg {
   }
 `;

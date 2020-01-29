@@ -3,17 +3,20 @@ import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
-import { FutsalScorePageContainer } from "./style";
-// import { useFetch } from "./useFetch";
+import Lottie from "react-lottie";
+import FadeIn from "react-fade-in";
+import { FutsalScorePageContainer, LoadingScreen } from "./style";
 import ScoreCard from "../../components/ScoreCard";
 import HeaderFooter from "../../components/HeaderFooter";
-// import LoadingScreen from "../../components/LoadingScreen";
+import logoGede2 from "../../asset/logoGede2.png";
+import * as pinwheelData from "../../asset/pinwheelLoading.json";
 
 class FutsalScorePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      done: undefined
     };
   }
 
@@ -29,7 +32,8 @@ class FutsalScorePage extends React.Component {
       .then(res => {
         const { data } = res;
         this.setState({
-          data
+          data,
+          done: true
         });
       })
       .catch(error => {
@@ -70,32 +74,37 @@ class FutsalScorePage extends React.Component {
   };
 
   render() {
-    const { data } = this.state;
-    return (
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: pinwheelData.default,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+      }
+    };
+    const { data, done } = this.state;
+    return !done ? (
+      <LoadingScreen>
+        <FadeIn>
+          <img className="logo-loading" src={logoGede2} alt="logo" />
+          <Lottie options={defaultOptions} height={120} width={120} />
+          {/* <ReactLoading className="loading-bar" type="bars" color="#F1CF33" /> */}
+        </FadeIn>
+      </LoadingScreen>
+    ) : (
       <HeaderFooter color="dark">
         <Fade>
           <FutsalScorePageContainer>
-            {/* <ScoreCard
-              stage="FINAL"
-              teamAName="Tim A FC"
-              teamBName="Tim B FC"
-              teamALogo="https://gitlab.com/uploads/-/system/user/avatar/3068699/avatar.png"
-              teamBLogo="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"
-              teamAGoal="3"
-              teamBGoal="1"
-              matchDate="25/01/2020"
-            /> */}
-
-            {/* <div>
-              {data && this.renderHistory(data)}
-            </div> */}
-
             <div className="flex-container column" id="score-page">
               <span className="title" id="score-title">
                 HASIL PERTANDINGAN
               </span>
               <div className="flex-container column" id="body-cont">
-                {data && this.renderHistory(data)}
+                {data.length > 0 ? (
+                  this.renderHistory(data)
+                ) : (
+                  <h2>Belum ada pertandingan yang berlangsung.</h2>
+                )}
               </div>
             </div>
           </FutsalScorePageContainer>
