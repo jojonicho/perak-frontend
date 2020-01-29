@@ -18,7 +18,15 @@ export const ScoreCardContainer = styled.div`
     width: 946px;
     height: 321px;
     border-radius: 8px;
+  }
+  .blue {
     background-color: #444fcb;
+  }
+  .pink {
+    background-color: #ff73a2;
+  }
+  .green {
+    background-color: #22b3a5;
   }
   .body-txt {
     font-family: Montserrat;
@@ -29,6 +37,7 @@ export const ScoreCardContainer = styled.div`
   }
   .img-cont {
     align-items: center;
+    text-align: center;
   }
   .img-box {
     width: 112px;
@@ -37,10 +46,15 @@ export const ScoreCardContainer = styled.div`
     background: white;
   }
   .teamA {
-    margin-right: 30px;
+    margin: 35px 20px;
+    width: 40%;
   }
   .teamB {
-    margin-left: 30px;
+    margin: 35px 20px;
+    width: 40%;
+  }
+  .content {
+    width: 100%;
   }
   .score-txt {
     color: #f0f0f0;
