@@ -64,7 +64,7 @@ export const LandingPage2Container = styled.div`
   .leaf {
     position: absolute;
     display: block;
-    z-index: 100;
+    z-index: 2;
   }
   .leaf:nth-child(1) {
     left: 20%;
@@ -141,8 +141,11 @@ export const LandingPage2Container = styled.div`
     80% {
       transform: translateX(-20px) rotate(180deg);
     }
-    90% {
+    85% {
       opacity: 1;
+    }
+    90% {
+      opacity: 0.5;
     }
     100% {
       top: 80%;
