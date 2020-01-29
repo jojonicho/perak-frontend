@@ -55,9 +55,15 @@ export const Section2Container = styled.div`
       background-position-x: center;
     }
     .desc {
-      margin-top: 100px;
+      margin-top: 120px;
       max-width: 70%;
       font-size: 0.8em;
+      line-height: 1.8;
+    }
+  }
+  @media only screen and (max-width: 325px) {
+    .desc {
+      margin-top: 70px;
       line-height: 1.6;
     }
   }
