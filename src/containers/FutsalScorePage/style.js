@@ -39,4 +39,17 @@ export const FutsalScorePageContainer = styled.div`
   #footer-sc {
     margin-left: 15px;
   }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 33px;
+      text-align: center;
+    }
+    #score-page {
+      width: 100vw;
+    }
+    #score-title {
+      width: 95vw;
+    }
+  }
 `;

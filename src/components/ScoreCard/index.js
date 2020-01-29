@@ -1,29 +1,9 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-
+import crown from "../../asset/crown.png";
 import { ScoreCardContainer } from "./style";
 
 class ScoreCard extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     color: ["purple", "pink", "green"]
-  //   };
-  // }
-  // generateColor= index=>{
-  //   var intIndex = parseInt(index);
-  //   console.log(intIndex+1)
-  //   switch(intIndex){
-  //     case(intIndex%3==="0"):
-  //       return "blue";
-  //     case(intIndex%3==="1"):
-  //       return "pink";
-  //     case(intIndex%3==="2"):
-  //       return "green";
-  //     default:
-  //       return "blue";
-  //   }
-  // }
   render() {
     const {
       index,
@@ -32,8 +12,8 @@ class ScoreCard extends React.Component {
       teamBName,
       teamALogo,
       teamBLogo,
-      // is_a_win,
-      // is_b_win,
+      isAwin,
+      isBwin,
       teamAGoal,
       teamBGoal,
       matchDate
@@ -44,8 +24,9 @@ class ScoreCard extends React.Component {
         <div className={`flex-container column score-card ${index}`}>
           <span className="body-txt">{stage}</span>
           <div className="flex-container row content">
-            <div className="column teamA img-cont">
-              <div className="flex-container">
+            <div className={`column teamA img-cont ${isAwin && "crown-cont"}`}>
+              <div className="flex-container column">
+                {isAwin && <img src={crown} alt="" className="crown" />}
                 <img src={teamALogo} alt="" className="img-box" />
               </div>
               <span className="body-txt">{teamAName}</span>
@@ -53,8 +34,9 @@ class ScoreCard extends React.Component {
             <span className="score-txt">{teamAGoal}</span>
             <span className="score-txt">-</span>
             <span className="score-txt">{teamBGoal}</span>
-            <div className="column teamB img-cont">
-              <div className="flex-container">
+            <div className={`column teamB img-cont ${isBwin && "crown-cont"}`}>
+              <div className="flex-container column">
+                {isBwin && <img src={crown} alt="" className="crown" />}
                 <img src={teamBLogo} alt="" className="img-box" />
               </div>
               <span className="body-txt">{teamBName}</span>

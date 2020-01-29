@@ -53,6 +53,9 @@ export const ScoreCardContainer = styled.div`
     margin: 35px 20px;
     width: 40%;
   }
+  .crown {
+    margin-bottom: -12px;
+  }
   .content {
     width: 100%;
   }
@@ -68,5 +71,47 @@ export const ScoreCardContainer = styled.div`
     font-family: Montserrat;
     font-weight: 300;
     font-size: 16px;
+  }
+  .crown-cont {
+    margin-top: -10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .score-card {
+      margin: 10px 0px;
+      padding: 10px 15px;
+      width: 85vw;
+      height: 160px;
+      border-radius: 8px;
+    }
+    .teamA {
+      margin: 10px 6px;
+      width: 30%;
+    }
+    .teamB {
+      margin: 10px 6px;
+      width: 30%;
+    }
+    .body-txt {
+      font-size: 14px;
+    }
+    .img-box {
+      width: 53px;
+      height: 52px;
+    }
+    .crown {
+      width: 30px;
+      height: 30px;
+    }
+    .crown-cont {
+      margin-top: -5px;
+    }
+    .match-date {
+      font-size: 10px;
+    }
+    .score-txt {
+      font-size: 28px;
+      margin: 0px 5px;
+    }
   }
 `;
