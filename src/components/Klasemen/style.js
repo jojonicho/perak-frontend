@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const KlasemenContainer = styled.div`
-  padding: 0px 9vw;
+  padding: 0 12vw;
   .group {
     border-radius: 3px;
-    margin: 25px 0px;
-    padding: 30px;
+    margin: 2vw 0px;
+    padding: 2.5vw;
     background-color: #33b3a6;
     display: flex;
     flex-direction: column;
@@ -40,30 +40,27 @@ export const KlasemenContainer = styled.div`
     top: -4vw;
   }
   .namaTeam {
+    padding: 1vw;
     background-color: #ff90b5;
     border-radius: 15px;
   }
   table {
-    font-size: 1.8rem;
+    font-size: 1.5vw;
     font-weight: 550;
-    border-spacing: 0 5px;
-
-    div {
-      padding: 10px;
-    }
+    border-spacing: 0 1vw;
 
     td:first-child {
-      border-top-left-radius: 5px;
+      border-top-left-radius: 0.6vw;
     }
     td:last-child {
-      border-top-right-radius: 5px;
+      border-top-right-radius: 0.6vw;
       border-left: 3px solid #33b3a6;
     }
     td:first-child {
-      border-bottom-left-radius: 5px;
+      border-bottom-left-radius: 0.6vw;
     }
     td:last-child {
-      border-bottom-right-radius: 5px;
+      border-bottom-right-radius: 0.6vw;
     }
 
     tr {
@@ -71,19 +68,33 @@ export const KlasemenContainer = styled.div`
     }
 
     th {
+      // padding: 0.1vw;
+      padding: 0.15vw 0.6vw;
+      height: 4.5vw;
+      // min-width: 55px;
       background: #33b3a6;
-      padding: 10px;
     }
 
     td {
-      padding: 10px;
+      padding: 0.6vw;
     }
     .stats {
+      width: 3.5vw;
+      font-size: 1vw;
+      height: 3.5vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: #e7632a;
       color: #f0f0f0;
       border-radius: 50%;
     }
     .point {
+      width: 6vw;
+      height: 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: #444fcb;
       color: #f0f0f0;
       border-radius: 50%;
@@ -94,25 +105,24 @@ export const KlasemenContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: 667px) {
-    padding: 0px 0.8vw;
+  @media screen and (max-width: 768px) {
+    padding: 0px 3vw;
     table {
-      border-spacing: 0 5px;
+      font-size: 2.5vw;
       div {
-        padding: 5px;
+        padding: 1.5vw;
       }
       th {
-        padding: 4px 1px;
+        padding: 0.4vw;
       }
       td {
-        padding: 4px 1px;
+        padding: 1vw;
       }
-    }
-    .group {
-      padding: 8px;
-    }
-    table {
-      font-size: 0.5rem;
+      .stats {
+        width: 4vw;
+        height: 4vw;
+        font-size: 1.8vw;
+      }
     }
   }
 `;
