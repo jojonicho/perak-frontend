@@ -31,6 +31,7 @@ export const LandingPage2Container = styled.div`
   .arrow-left,
   .arrow-right {
     width: 40px;
+    cursor: pointer;
   }
   .arrow-left {
     position: absolute;

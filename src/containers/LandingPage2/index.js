@@ -171,8 +171,6 @@ class LandingPage2 extends React.Component {
               />
             }
             addArrowClickHandler
-            stopAutoPlayOnHover
-            autoPlay={5000}
           >
             <AdaApaAja></AdaApaAja>
             <Section1 />
