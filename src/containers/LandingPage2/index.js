@@ -59,12 +59,12 @@ class LandingPage2 extends React.Component {
   }
 
   componentDidMount() {
-    const platform = navigator.platform.toLowerCase();
-    if (platform.indexOf("ipad") !== -1 || platform.indexOf("iphone") !== -1) {
-      this.noParallax();
-    } else {
-      window.addEventListener("scroll", this.parallax);
-    }
+    // const platform = navigator.platform.toLowerCase();
+    // if (platform.indexOf("ipad") !== -1 || platform.indexOf("iphone") !== -1) {
+    //   this.noParallax();
+    // } else {
+    // }
+    window.addEventListener("scroll", this.parallax);
   }
 
   componentWillUnmount() {
