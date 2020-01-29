@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const KlasemenContainer = styled.div`
+  // min-height: 10vh;
   padding: 0 12vw;
   .group {
     border-radius: 3px;

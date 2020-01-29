@@ -15,12 +15,9 @@ import SVG from "../RegisterSelection/SVGIcon";
 // }
 const Klasemen = props => {
   const { id } = props;
-  const klasemenUrl = `http://perak-backend.herokuapp.com/api/group/${id}/teams`;
-  // const klasemenBUrl = "http://perak-backend.herokuapp.com/api/group/2/teams"
+  const klasemenUrl = `https://perak.cs.ui.ac.id/backend/api/group/${id}/teams`;
 
   const { data, loading } = useFetch(klasemenUrl);
-  // const { group_teams } = data;
-  // const { data: dataB, loading: loadingB } = useFetch(klasemenBUrl);
   const decorA = [
     "orange-green-ball-rect",
     "purple-yellow-ball",
@@ -74,17 +71,6 @@ const Klasemen = props => {
                 <tbody>
                   {data.group_teams &&
                     data.group_teams.map(team => {
-                      // const {
-                      //   name,
-                      //   win,
-                      //   lose,
-                      //   draw,
-                      //   goal_masuk,
-                      //   goal_kebobolan,
-                      //   points,
-                      //   selisih_goal,
-                      //   banyak_match
-                      // } = team;
                       return (
                         <tr>
                           {/* <td>{team.id}</td> */}
