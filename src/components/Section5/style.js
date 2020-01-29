@@ -5,11 +5,11 @@ import backgorundmobile from "../../asset/Section5BG-mobile.svg";
 export const Section5Container = styled.div`
   .section-5 {
     background-image: url(${background});
-    min-height: 120vh;
+    min-height: 130vh;
     width: 100vw;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 180px;
+    padding-top: 30vh;
     font-family: Montserrat;
     color: #0d2040;
   }

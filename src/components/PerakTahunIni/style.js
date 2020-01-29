@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PerakTahunIniContainer = styled.div`
 margin-top:-285px!important;
-height:1750px;
+height:1700px;
 .bola-bulet{
     display:block;
     margin-left:auto;
