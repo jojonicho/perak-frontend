@@ -188,10 +188,12 @@ export const LandingPage2Container = styled.div`
     .daftar-awal {
       font-size: 1em;
       margin: 0 10px;
+      display: none;
     }
-  .daftar-awal-container {
+  /* .daftar-awal-container {
     padding-right: 10px;
-  }
+    display: none;
+  } */
     /* .hamburger{
       display: flex;
       flex-direction: column;
