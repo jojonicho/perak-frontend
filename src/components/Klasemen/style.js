@@ -6,12 +6,16 @@ export const KlasemenContainer = styled.div`
   .group {
     border-radius: 3px;
     margin: 2vw 0px;
+    margin-bottom: 30px;
     padding: 2.5vw;
     background-color: #33b3a6;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+  }
+  .grouptitle {
+    font-size: 2.5em;
   }
   .decor {
     position: absolute;
@@ -109,6 +113,9 @@ export const KlasemenContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 0px 3vw;
+    .grouptitle {
+      font-size: 2em;
+    }
     table {
       font-size: 2.5vw;
       div {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const KlasemenPageContainer = styled.div`
   min-height: 100vh;
   padding: 10px;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
   font-family: montserrat;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,7 @@ export const KlasemenPageContainer = styled.div`
     margin-bottom: 70px;
   }
   @media only screen and (max-width: 840px) {
+    padding-bottom: 50px;
     .title {
       font-size: 33px;
       margin-bottom: 50px;
