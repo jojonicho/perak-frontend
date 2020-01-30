@@ -103,7 +103,9 @@ class FutsalScorePage extends React.Component {
                 {data.length > 0 ? (
                   this.renderHistory(data)
                 ) : (
-                  <h2>Belum ada pertandingan yang berlangsung.</h2>
+                  <h2 className="blm-ada">
+                    Belum ada pertandingan yang berlangsung.
+                  </h2>
                 )}
               </div>
             </div>

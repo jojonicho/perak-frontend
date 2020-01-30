@@ -13,8 +13,10 @@ import mainsectionbgphone from "../../asset/perakTahunIni/main-bg-2-mobile.svg";
 // import bottomsec from "../../asset/perakTahunIni/bottom-section.png";
 // import bottomsecmobile from "../../asset/perakTahunIni/bottom-section-mobile.png";
 // import kenalin from "../../asset/perakTahunIni/kenalin.svg";
-import kenalin2 from "../../asset/perakTahunIni/kenalin2.png";
-import kenalin2Mobile from "../../asset/perakTahunIni/kenalin2-mobile.png";
+import kenalin3 from "../../asset/perakTahunIni/kenalin3.png";
+import kenalin3Mobile from "../../asset/perakTahunIni/kenalin3-mobile.png";
+// import kenalin2 from "../../asset/perakTahunIni/kenalin2.png";
+// import kenalin2Mobile from "../../asset/perakTahunIni/kenalin2-mobile.png";
 import bottomleftdecor from "../../asset/perakTahunIni/bottom-left.png";
 import bottomrightdecor from "../../asset/perakTahunIni/bottom-right.png";
 // import ceritanyamaskot from "../../asset/perakTahunIni/ceritanya-maskot.svg";
@@ -337,9 +339,13 @@ class PerakTahunIni extends React.Component {
             alt="bottom-right-decor"
           />
         </div>
-        <img src={kenalin2} alt="bottom-section" className="bottom-section" />
         <img
-          src={kenalin2Mobile}
+          src={kenalin3Mobile}
+          alt="bottom-section"
+          className="bottom-section"
+        />
+        <img
+          src={kenalin3}
           alt="bottom-section"
           className="bottom-section-mobile"
         />

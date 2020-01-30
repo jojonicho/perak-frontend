@@ -32,6 +32,9 @@ export const FutsalScorePageContainer = styled.div`
     overflow-x: hidden;
     position: relative;
   }
+  .blm-ada {
+    text-align: center;
+  }
   .title {
     font-family: BigJohnPRO;
     color: #444fcb;
@@ -55,6 +58,9 @@ export const FutsalScorePageContainer = styled.div`
     }
     h2 {
       margin: 0px 10px;
+    }
+    .blm-ada {
+      font-size: 1em;
     }
   }
 `;
