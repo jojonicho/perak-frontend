@@ -5,7 +5,7 @@ import { MedSosContainer } from "./style";
 import instagram from "../../asset/instagram.svg";
 import linkedin from "../../asset/linkedin.svg";
 import twitter from "../../asset/twitter.svg";
-import facebook from "../../asset/facebook.svg";
+// import facebook from "../../asset/facebook.svg";
 import line from "../../asset/line.svg";
 import youtube from "../../asset/youtube.svg";
 
@@ -56,12 +56,12 @@ class MedSos extends React.Component {
                 Line
               </a>
             </div>
-            <div className="a-container">
+            {/* <div className="a-container">
               <a href="#facebook" rel="noopener noreferrer" target="_blank">
                 <img src={facebook} alt="fb" />
                 Facebook
               </a>
-            </div>
+            </div> */}
             <div className="a-container">
               <a
                 href="http://www.youtube.com/c/PestaRakyatKomputer"

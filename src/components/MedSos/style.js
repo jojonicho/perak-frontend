@@ -38,7 +38,7 @@ export const MedSosContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    width: 50%;
+    width: 30%;
     .a-container {
       width: 200px;
       margin: 10px 0px;
