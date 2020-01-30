@@ -42,7 +42,7 @@ export const MedSosContainer = styled.div`
     .a-container {
       width: 200px;
       margin: 10px 0px;
-      padding-left: 50px;
+      padding-left: 60px;
       display: flex;
       align-items: center;
       a {
@@ -57,11 +57,40 @@ export const MedSosContainer = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 820px) {
+  @media only screen and (max-width: 1400px) {
+    .medsos-container {
+      width: 500px;
+    }
+  }
+  @media only screen and (max-width: 510px) {
     .medsos-container {
       width: 100%;
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    margin-top: -255px;
+  }
+  @media only screen and (max-width: 480px) {
+    margin-top: -270px;
+  }
+
+  @media only screen and (max-width: 455px) {
+    margin-top: -290px;
+  }
+  @media only screen and (max-width: 450px) {
+    margin-top: -305px;
+  }
+  @media only screen and (max-width: 425px) {
+    margin-top: -320px;
+  }
+  @media only screen and (max-width: 425px) {
+    margin-top: -320px;
+  }
+  @media only screen and (max-width: 420px) {
+    margin-top: -150px;
+  }
+
   @media only screen and (max-width: 420px) {
     .medsos-container {
       margin-top: 40px;

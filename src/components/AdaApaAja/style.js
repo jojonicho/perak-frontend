@@ -19,6 +19,7 @@ export const AdaApaAjaContainer = styled.div`
   background-position-y: bottom;
   background-position-x: left, right, right;
   background-size: 30%, 25%, 90%;
+  padding-top: 200px;
   @media only screen and (max-width: 900px) {
     padding-top: 30vh;
     h1 {
@@ -32,7 +33,7 @@ export const AdaApaAjaContainer = styled.div`
       font-size: 2.5em;
     }
   }
-  @media only screen and (min-width: 1360px) {
-    padding-top: 25vh;
+  @media only screen and (max-width: 1400px) {
+    padding-top: 200px;
   }
 `;

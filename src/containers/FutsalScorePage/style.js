@@ -28,7 +28,7 @@ export const FutsalScorePageContainer = styled.div`
     background-size: 100vw;
     background-attachment: unset;
     background-repeat: repeat-y;
-    min-height: 84vh;
+    min-height: 100vh;
     overflow-x: hidden;
     position: relative;
   }

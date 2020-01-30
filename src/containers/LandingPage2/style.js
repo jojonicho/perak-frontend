@@ -10,7 +10,7 @@ import apaItuBGLeft from "../../asset/apaItuBGLeft2.svg";
 import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
-import hamburger from "../../asset/hamburger.svg";
+// import hamburger from "../../asset/hamburger.svg";
 
 const blue = "#4452C5";
 
@@ -25,16 +25,19 @@ export const LandingPage2Container = styled.div`
     box-sizing: border-box;
   }
   button,
-    input[type="submit"],
-    input[type="reset"] {
-      background: none;
-      color: inherit;
-      border: none;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
-      outline: inherit;
-    }
+  input[type="submit"],
+  input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  .carousel-gw {
+    margin-top: 0px;
+  }
   .section-title {
     color: ${blue};
     font-family: BigJohnPRO;
@@ -190,23 +193,61 @@ export const LandingPage2Container = styled.div`
       margin: 0 10px;
       display: none;
     }
-  /* .daftar-awal-container {
-    padding-right: 10px;
-    display: none;
-  } */
-    /* .hamburger{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: flex-end;
-      width: 45px;
-      height: 40px;
-      background-color: transparent;
-      background-image: url(${hamburger});
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
-    } */
+  }
+  @media only screen and (max-width: 1400px) {
+    .carousel-gw {
+      margin-top: -100px;
+    }
+  }
+  @media only screen and (max-width: 1275px) {
+    .carousel-gw {
+      margin-top: -170px;
+    }
+  }
+  @media only screen and (max-width: 1150px) {
+    .carousel-gw {
+      margin-top: -220px;
+    }
+  }
+  @media only screen and (max-width: 1020px) {
+    .carousel-gw {
+      margin-top: -270px;
+    }
+  }
+  @media only screen and (max-width: 975px) {
+    .carousel-gw {
+      margin-top: -350px;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .carousel-gw {
+      margin-top: -550px;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .carousel-gw {
+      margin-top: -650px;
+    }
+  }
+  @media only screen and (max-width: 560px) {
+    .carousel-gw {
+      margin-top: -700px;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .carousel-gw {
+      margin-top: -100px;
+    }
+  }
+  @media only screen and (max-width: 490px) {
+    .carousel-gw {
+      margin-top: -150px;
+    }
+  }
+  @media only screen and (max-width: 455px) {
+    .carousel-gw {
+      margin-top: -40px;
+    }
   }
 `;
 
