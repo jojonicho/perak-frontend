@@ -11,6 +11,8 @@ class KlasemenPage extends React.Component {
           <h1 className="title">KLASEMEN FASE GROUP</h1>
           <Klasemen id={1} />
           <Klasemen id={2} />
+          <Klasemen id={3} />
+          <Klasemen id={4} />
         </KlasemenPageContainer>
       </HeaderFooter>
     );
