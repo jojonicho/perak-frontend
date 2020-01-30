@@ -112,6 +112,12 @@ class LandingPage2 extends React.Component {
 
           <LandingSection className="landing">
             <div className="daftar-awal-container">
+              <Link to="/klasemen" className="daftar-awal-link">
+                <h2 className="daftar-awal">KLASEMEN</h2>
+              </Link>
+              <Link to="/result/futsal" className="daftar-awal-link">
+                <h2 className="daftar-awal">SKOR</h2>
+              </Link>
               <Link to="/daftar" className="daftar-awal-link">
                 <h2 className="daftar-awal">DAFTAR</h2>
               </Link>

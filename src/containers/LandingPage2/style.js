@@ -60,6 +60,7 @@ export const LandingPage2Container = styled.div`
     text-align: right;
     color: white;
     text-decoration: none;
+    margin: 0 10px;
   }
   .daftar-awal-container {
     padding: 20px 30px;
@@ -68,6 +69,8 @@ export const LandingPage2Container = styled.div`
     right: 0;
     z-index: 10;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .daftar-awal-link {
@@ -167,6 +170,15 @@ export const LandingPage2Container = styled.div`
       top: 80%;
       opacity: 0;
       transform: translateX(-20px) rotate(225deg);
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    .daftar-awal {
+      font-size: 1em;
+      margin: 0 10px;
+    }
+    .daftar-awal-container {
+      justify-content: flex-end;
     }
   }
 `;
