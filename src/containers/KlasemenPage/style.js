@@ -11,9 +11,16 @@ export const KlasemenPageContainer = styled.div`
   background: #e5e5e5;
 
   .title {
-    font-size: 2.5em;
+    font-size: 62px;
+    /* font-size: 2.5em; */
     font-family: BigJohnPRO;
     color: #444fcb;
     margin-bottom: 70px;
+  }
+  @media only screen and (max-width: 840px) {
+    .title {
+      font-size: 33px;
+      margin-bottom: 50px;
+    }
   }
 `;

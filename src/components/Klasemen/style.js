@@ -49,6 +49,7 @@ export const KlasemenContainer = styled.div`
     font-size: 1.5vw;
     font-weight: 550;
     border-spacing: 0 1vw;
+    padding-bottom: 30px;
 
     td:first-child {
       border-top-left-radius: 0.6vw;
