@@ -36,7 +36,7 @@ export const LandingPage2Container = styled.div`
     outline: inherit;
   }
   .carousel-gw {
-    margin-top: 0px;
+    margin-top: 190px;
   }
   .section-title {
     color: ${blue};
@@ -192,6 +192,21 @@ export const LandingPage2Container = styled.div`
       font-size: 1em;
       margin: 0 10px;
       display: none;
+    }
+  }
+  @media only screen and (max-width: 1800px) {
+    .carousel-gw {
+      margin-top: 50px;
+    }
+  }
+  @media only screen and (max-width: 1600px) {
+    .carousel-gw {
+      margin-top: 0px;
+    }
+  }
+  @media only screen and (max-width: 1500px) {
+    .carousel-gw {
+      margin-top: -50px;
     }
   }
   @media only screen and (max-width: 1400px) {

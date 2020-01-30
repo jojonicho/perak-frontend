@@ -19,7 +19,10 @@ export const AdaApaAjaContainer = styled.div`
   background-position-y: bottom;
   background-position-x: left, right, right;
   background-size: 30%, 25%, 90%;
-  padding-top: 200px;
+  padding-top: 250px;
+  @media only screen and (max-width: 1600px) {
+    padding-top: 220px;
+  }
   @media only screen and (max-width: 900px) {
     padding-top: 30vh;
     h1 {
