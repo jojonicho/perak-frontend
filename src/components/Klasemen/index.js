@@ -31,8 +31,8 @@ const Klasemen = props => {
           <Loader />
         ) : (
           <>
-            {id === 1 && decorA.map(dec => <SVG name={dec} className={dec} />)}
-            {id === 2 && decorB.map(dec => <SVG name={dec} />)}
+            {id%2 === 1 && decorA.map(dec => <SVG name={dec} className={dec} />)}
+            {id%2 === 0 && decorB.map(dec => <SVG name={dec} />)}
             <h1 className="grouptitle">GROUP {data.name}</h1>
             <div className="tableDiv">
               <table>
