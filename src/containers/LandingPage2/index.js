@@ -1,6 +1,6 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 // import { Carousel } from "react-responsive-carousel";
 import Carousel from "@brainhubeu/react-carousel";
@@ -114,13 +114,8 @@ class LandingPage2 extends React.Component {
           </div>
 
           <LandingSection className="landing">
-            <div className="daftar-awal-container">
-              {/* <button
-              type="button"
-              className="hamburger"
-              onClick={() => handleHamburger()}
-            >
-            </button> */}
+            {/* <div className="daftar-awal-container">
+              
               <Link to="/klasemen" className="daftar-awal-link">
                 <h2 className="daftar-awal">KLASEMEN</h2>
               </Link>
@@ -130,7 +125,7 @@ class LandingPage2 extends React.Component {
               <Link to="/daftar" className="daftar-awal-link">
                 <h2 className="daftar-awal">DAFTAR</h2>
               </Link>
-            </div>
+            </div> */}
             <div className="layer parallax" data-speed={60} id="layer1"></div>
             <div className="layer parallax" data-speed={-20} id="layer2">
               <div className="title">
