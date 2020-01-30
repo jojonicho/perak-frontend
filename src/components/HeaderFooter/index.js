@@ -35,11 +35,7 @@ class HeaderFooter extends React.Component {
             type="button"
             className="hamburger"
             onClick={() => handleHamburger()}
-          >
-            {/* <div className="hamburger-line-1"></div>
-            <div className="hamburger-line-2"></div>
-            <div className="hamburger-line-3"></div> */}
-          </button>
+          ></button>
 
           <div className="links">
             <Link to="/klasemen" className="no-decor link">

@@ -78,6 +78,9 @@ class LandingPage2 extends React.Component {
   }
 
   render() {
+    // const handleHamburger = () => {
+    //   document.getElementById("links-mobile").classList.toggle("notShown");
+    // }
     const { thePosition } = this.state;
     return (
       <LandingPage2Container>
@@ -112,6 +115,12 @@ class LandingPage2 extends React.Component {
 
           <LandingSection className="landing">
             <div className="daftar-awal-container">
+              {/* <button
+              type="button"
+              className="hamburger"
+              onClick={() => handleHamburger()}
+            >
+            </button> */}
               <Link to="/klasemen" className="daftar-awal-link">
                 <h2 className="daftar-awal">KLASEMEN</h2>
               </Link>

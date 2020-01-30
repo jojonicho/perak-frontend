@@ -10,6 +10,7 @@ import apaItuBGLeft from "../../asset/apaItuBGLeft2.svg";
 import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
+import hamburger from "../../asset/hamburger.svg";
 
 const blue = "#4452C5";
 
@@ -23,6 +24,17 @@ export const LandingPage2Container = styled.div`
     padding: 0;
     box-sizing: border-box;
   }
+  button,
+    input[type="submit"],
+    input[type="reset"] {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+    }
   .section-title {
     color: ${blue};
     font-family: BigJohnPRO;
@@ -53,7 +65,7 @@ export const LandingPage2Container = styled.div`
   .daftar-awal {
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1em;
     color: #e5e6de;
     display: flex;
     justify-content: flex-end;
@@ -177,9 +189,22 @@ export const LandingPage2Container = styled.div`
       font-size: 1em;
       margin: 0 10px;
     }
-    .daftar-awal-container {
-      justify-content: flex-end;
-    }
+  .daftar-awal-container {
+    padding-right: 10px;
+  }
+    /* .hamburger{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      width: 45px;
+      height: 40px;
+      background-color: transparent;
+      background-image: url(${hamburger});
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+    } */
   }
 `;
 
