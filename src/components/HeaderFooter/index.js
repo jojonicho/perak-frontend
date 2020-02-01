@@ -44,9 +44,9 @@ class HeaderFooter extends React.Component {
             <Link to="/result/futsal" className="no-decor link">
               <h2 className="daftar">SKOR</h2>
             </Link>
-            <Link to="/daftar" className="no-decor link">
+            {/* <Link to="/daftar" className="no-decor link">
               <h2 className="daftar">DAFTAR</h2>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="links-mobile notShown" id="links-mobile">
@@ -56,9 +56,9 @@ class HeaderFooter extends React.Component {
           <Link to="/result/futsal" className="no-decor link-mobile">
             <h2 className="daftar">SKOR</h2>
           </Link>
-          <Link to="/daftar" className="no-decor link-mobile">
+          {/* <Link to="/daftar" className="no-decor link-mobile">
             <h2 className="daftar">DAFTAR</h2>
-          </Link>
+          </Link> */}
         </div>
         <div className={notShown ? "no-padding-top" : "childcontainer"}>
           {children}
