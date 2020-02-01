@@ -60,6 +60,11 @@ export const Section2Container = styled.div`
       line-height: 1.8;
     }
   }
+  @media only screen and (max-width: 420px) {
+    .desc {
+      margin-top: 200px;
+    }
+  }
   @media only screen and (max-width: 325px) {
     .desc {
       margin-top: 100px;

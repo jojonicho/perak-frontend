@@ -50,6 +50,11 @@ export const Section4Container = styled.div`
       line-height: 20.48px !important;
     }
   }
+  @media only screen and (max-width: 400px) {
+    .section-4 {
+      padding-top: 160px;
+    }
+  }
   @media only screen and (max-width: 325px) {
     .section-4 {
       padding-top: 100px;

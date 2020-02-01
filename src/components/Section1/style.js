@@ -72,6 +72,22 @@ export const Section1Container = styled.div`
       line-height: 1.6;
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    .title {
+      margin-top: 200px;
+    }
+  }
+  @media only screen and (max-width: 376px) {
+    .title {
+      margin-top: 180px;
+    }
+  }
+  @media only screen and (max-width: 361px) {
+    .title {
+      margin-top: 160px;
+    }
+  }
   @media only screen and (max-width: 330px) {
     .title {
       margin-top: 100px;
