@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import background from "../../asset/Section5BG.png";
-import backgorundmobile from "../../asset/Section5BG-mobile.svg";
+// import backgorundmobile from "../../asset/Section5BG-mobile.svg";
+import backgorundmobile from "../../asset/Section5BG-mobile.png";
 
 export const Section5Container = styled.div`
   .section-5 {

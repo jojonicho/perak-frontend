@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import section3 from "../../asset/section-3-background.svg";
+// import section3 from "../../asset/section-3-background.svg";
+import section3 from "../../asset/section-3-background-2.png";
 
 export const Section3Container = styled.div`
   * {
@@ -17,7 +18,7 @@ export const Section3Container = styled.div`
     align-items: center;
     background-image: url(${section3});
     background-repeat: no-repeat;
-    background-size: 135%;
+    background-size: 100%;
     background-position-x: 20%;
     color: #0d2040;
   }

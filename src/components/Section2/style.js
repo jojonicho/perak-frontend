@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import section2 from "../../asset/section-2-background-2.svg";
+// import section2 from "../../asset/section-2-background-2.svg";
+import section2 from "../../asset/section-2-background-3.png";
 
 export const Section2Container = styled.div`
   * {

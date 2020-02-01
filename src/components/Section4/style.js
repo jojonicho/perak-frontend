@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import background from "../../asset/Section4BG.png";
-import backgroundmobile from "../../asset/Section4BG-mobile.svg";
+// import backgroundmobile from "../../asset/Section4BG-mobile.svg";
+import backgroundmobile from "../../asset/Section4BG-mobile.png";
 
 export const Section4Container = styled.div`
   .section-4 {

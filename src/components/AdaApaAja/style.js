@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import adaApaAjaCenter from "../../asset/AdaApaAja/adaApaAjaCenter.svg";
+// import adaApaAjaCenter from "../../asset/AdaApaAja/adaApaAjaCenter.svg";
+import adaApaAjaCenter from "../../asset/AdaApaAja2.png";
 import adaApaAjaLeft from "../../asset/AdaApaAja/adaApaAjaLeft.svg";
 import adaApaAjaRight from "../../asset/AdaApaAja/adaApaAjaRight.svg";
 
