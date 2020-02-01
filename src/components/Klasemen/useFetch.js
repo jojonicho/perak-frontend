@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 export const useFetch = url => {
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const proxyUrl = "";
 
   const [state, setState] = useState({ data: null, loading: true });
 
