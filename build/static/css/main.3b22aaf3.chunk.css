@@ -1,0 +1,66 @@
+@font-face {
+  font-family: BigJohnPRO;
+  src: url(/static/media/BigJohnPRO-Regular.9b550f15.otf) format("opentype");
+}
+@font-face {
+  font-family: BigJohnPRO;
+  font-weight: 700;
+  src: url(/static/media/BigJohnPRO-Bold.018838cb.otf) format("opentype");
+}
+@font-face {
+  font-family: BigJohnPRO;
+  font-weight: lighter;
+  src: url(/static/media/BigJohnPRO-Light.90e40e07.otf) format("opentype");
+}
+@font-face {
+  font-family: Monstserrat;
+  src: url(/static/media/Montserrat-Medium.c8b6e083.ttf);
+}
+@font-face {
+  font-family: Monstserrat;
+  font-weight: 700;
+  src: url(/static/media/Montserrat-Bold.ade91f47.ttf);
+}
+@font-face {
+  font-family: Monstserrat;
+  font-weight: bolder;
+  src: url(/static/media/Montserrat-ExtraBold.19ba7aa5.ttf);
+}
+@font-face {
+  font-family: Monstserrat;
+  font-weight: lighter;
+  src: url(/static/media/Montserrat-ExtraBold.19ba7aa5.ttf);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+}
+.magic,
+.magic *,
+.magic .decor,
+.magic a,
+.magic div,
+.magic h1 .mauapa,
+.magic path,
+.magic svg {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAlCAMAAABmpnnDAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAyVBMVEUAAADoYinpYyjkYCXoYinnYijnYCjpYirnYCjoYinoYSnlYCbpYSjnYijpYinqYCXoYirfYCDnYSjoYinoYSnnYirmYSnpYirmYSnfYDDoYijoYiroYSroYSnpYinmYCfnYSnpYSrxkmrnYCjoYinqbDfsf1Hvk2zrdkTuiV7vk2vtiV7ypobsf1L0sZTxnXnzsZTpbDb2xK/ypof52MnzsJTwnXnqdkP4zbz518n86+T4zrz1uqH2xK70sJT74tf////uiV/+9fLDFIZlAAAAJHRSTlMAr18w34BAfyDPv1BfYO8wnxCgcM+AsO+QEJ/Pz9+vcKDvn2AYVyUFAAAAAWJLR0RA/tlc2AAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+QBChEBK7ufO6YAAAABb3JOVAHPoneaAAABWElEQVQ4y4WTYV+CMBDGqcAoi6Kw0LIsD9kQAw2yUJL6/h+qMTa4If66Fxvjz7Pdc8c07d84Oj7MTgB0w+h1QwN4nHYxU4fD9AzqOO+3WI+/9gS+UOEloPCsqw7lrII+6Oa+klQjZcN1g20dSODPw0UJ3/gnel8REhr5bAqJOFoW5AbkaRD7tSW1PLCkq/cmayG9lesEMdBt1SalgPJ2bEUJKTYMDu8lqNIPuRwwWLaEzNZrIQ0WEt6xflUlpVH6+ZUx6arpkITCzQZiKs8Ai217j2gaS2GZMvuxXCzNRP1IOVuyYyK21a5exCdNG2JIE+S4fSgkpTSuNh8Jo3UEOcD8u3o2GHzg/QzCNN3mm13hEZmxi3om3OQJQXD4iOGy+BFPY/4rqTRJAfWsZZVmCmu5+S3dPNVMe1ZSYoWYKBfNHTf7FmTQvoeSvjiv+9fYnIym055po1d/hypj3g80OcwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDEtMTBUMTc6MDE6NDMrMDA6MDDmxLWeAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTAxLTEwVDE3OjAxOjQzKzAwOjAwl5kNIgAAAABJRU5ErkJggg==),
+    auto;
+}
+/*# sourceMappingURL=main.3b22aaf3.chunk.css.map */
