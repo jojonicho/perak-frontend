@@ -31,8 +31,9 @@ const Klasemen = props => {
           <Loader />
         ) : (
           <>
-            {id%2 === 1 && decorA.map(dec => <SVG name={dec} className={dec} />)}
-            {id%2 === 0 && decorB.map(dec => <SVG name={dec} />)}
+            {id % 2 === 1 &&
+              decorA.map(dec => <SVG name={dec} className={dec} />)}
+            {id % 2 === 0 && decorB.map(dec => <SVG name={dec} />)}
             <h1 className="grouptitle">GROUP {data.name}</h1>
             <div className="tableDiv">
               <table>
@@ -79,8 +80,8 @@ const Klasemen = props => {
                           <td>{team.win}</td>
                           <td>{team.draw}</td>
                           <td>{team.lose}</td>
-                          <td>{team.goal_kebobolan}</td>
                           <td>{team.goal_masuk}</td>
+                          <td>{team.goal_kebobolan}</td>
                           <td>{team.selisih_goal}</td>
                           <td>{team.points}</td>
                         </tr>
