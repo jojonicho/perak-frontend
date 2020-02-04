@@ -6,6 +6,7 @@ import LandingPage2 from "../LandingPage2";
 import GameRegistration from "../GameRegistration";
 import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
+import BirBintangRegistration from "../BirBintangRegistration";
 
 export const routes = [
   {
@@ -72,5 +73,10 @@ export const routes = [
     component: KlasemenPage,
     exact: true,
     path: "/klasemen"
+  },
+  {
+    component: BirBintangRegistration,
+    exact: true,
+    path: "/daftar/birbintang"
   }
 ];

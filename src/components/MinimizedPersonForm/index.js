@@ -41,23 +41,27 @@ class MinimizedPersonForm extends React.Component {
             </button>
           ) : null}
         </div>
-        <div className="garisContainer">
-          <div className="garis"></div>
-        </div>
-        <div className="bottomMinimized">
-          <div className="kontak info">
-            <b>ID LINE</b>
-            <p>{kontak}</p>
+        {kontak ? (
+          <div className="garisContainer">
+            <div className="garis"></div>
           </div>
-          <div className="telepon info">
-            <b>No Telepon</b>
-            <p>{nomorTelepon}</p>
+        ) : null}
+        {kontak ? (
+          <div className="bottomMinimized">
+            <div className="kontak info">
+              <b>ID LINE</b>
+              <p>{kontak}</p>
+            </div>
+            <div className="telepon info">
+              <b>No Telepon</b>
+              <p>{nomorTelepon}</p>
+            </div>
+            <div className="email info">
+              <b>Email</b>
+              <p>{email}</p>
+            </div>
           </div>
-          <div className="email info">
-            <b>Email</b>
-            <p>{email}</p>
-          </div>
-        </div>
+        ) : null}
       </MinimizedPersonFormContainer>
     );
   }

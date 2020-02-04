@@ -89,9 +89,7 @@ export const HeaderFooterContainer = styled.div`
     .links {
       display: none;
     }
-    button,
-    input[type="submit"],
-    input[type="reset"] {
+    .hamburger {
       background: none;
       color: inherit;
       border: none;
