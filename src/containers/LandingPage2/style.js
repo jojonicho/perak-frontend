@@ -18,6 +18,7 @@ export const LandingPage2Container = styled.div`
   width: 100%;
   position: absolute;
   top: 0;
+  // overflow-x: hidden;
   left: 0;
   * {
     margin: 0;
@@ -98,7 +99,7 @@ export const LandingPage2Container = styled.div`
   .leaf {
     position: absolute;
     display: block;
-    z-index: 2;
+    z-index: 100;
   }
   .leaf:nth-child(1) {
     left: 20%;
