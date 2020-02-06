@@ -1,8 +1,11 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import HeaderFooter from "../../components/HeaderFooter";
@@ -19,6 +22,8 @@ import AdaApaAja from "../../components/AdaApaAja";
 import Section1 from "../../components/Section1";
 import Section2 from "../../components/Section2";
 import Section3 from "../../components/Section3";
+import arrowLeft from "../../asset/arrowLeft.svg";
+import arrowRight from "../../asset/arrowRight.svg";
 
 class LandingPage2 extends React.Component {
   constructor() {
@@ -32,7 +37,8 @@ class LandingPage2 extends React.Component {
       // $("#parallax").css('display','none');
       const parallaxes = document.getElementsByClassName("parallax");
       for (let i = 0; i < parallaxes.length; i += 1) {
-        document.getElementById(`layer${i + 1}`).style.display = "none";
+        parallaxes[i].style.display = "none";
+        // document.getElementById(`layer${i + 1}`).style.display = "none";
       }
     };
 
@@ -41,7 +47,7 @@ class LandingPage2 extends React.Component {
         thePosition: window.pageYOffset
       });
       const { thePosition } = this.state;
-      if (thePosition < 600) {
+      if (thePosition < 600 || true) {
         const layers = document.getElementsByClassName("parallax");
         // console.log(layers[3].getAttribute('data-speed'));
         let { layer, speed, yPos } = 0;
@@ -72,6 +78,9 @@ class LandingPage2 extends React.Component {
   }
 
   render() {
+    // const handleHamburger = () => {
+    //   document.getElementById("links-mobile").classList.toggle("notShown");
+    // }
     const { thePosition } = this.state;
     return (
       <LandingPage2Container>
@@ -105,11 +114,17 @@ class LandingPage2 extends React.Component {
           </div>
 
           <LandingSection className="landing">
-            <div className="daftar-awal-container">
+            {/* <div className="daftar-awal-container">
+              <Link to="/klasemen" className="daftar-awal-link">
+                <h2 className="daftar-awal">KLASEMEN</h2>
+              </Link>
+              <Link to="/result/futsal" className="daftar-awal-link">
+                <h2 className="daftar-awal">SKOR</h2>
+              </Link>
               <Link to="/daftar" className="daftar-awal-link">
                 <h2 className="daftar-awal">DAFTAR</h2>
               </Link>
-            </div>
+            </div> */}
             <div className="layer parallax" data-speed={60} id="layer1"></div>
             <div className="layer parallax" data-speed={-20} id="layer2">
               <div className="title">
@@ -147,14 +162,25 @@ class LandingPage2 extends React.Component {
           </ApaItuSection>
           <PerakTahunIni />
           <Carousel
-            showStatus={false}
-            showThumbs={false}
-            showIndicators={false}
-            stopOnHover
-            infiniteLoop
-            autoPlay
-            emulateTouch
-            interval={10000}
+            className="carousel-gw"
+            infinite
+            arrowLeft={
+              <img
+                alt="arrow"
+                src={arrowLeft}
+                className="arrow-left"
+                name="arrow-left"
+              />
+            }
+            arrowRight={
+              <img
+                alt="arrow"
+                src={arrowRight}
+                className="arrow-right"
+                name="arrow-right"
+              />
+            }
+            addArrowClickHandler
           >
             <AdaApaAja></AdaApaAja>
             <Section1 />

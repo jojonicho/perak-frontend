@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import backgroundAbu from "../../asset/perakTahunIni/background-abu.svg";
+// import backgroundAbu from "../../asset/perakTahunIni/background-abu.svg";
 
 export const PerakTahunIniContainer = styled.div`
-  background-image: url(${backgroundAbu});
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 100%;
   margin-top: -285px !important;
-  height: 2050px;
+  height: 1700px;
   .bola-bulet {
     display: block;
     margin-left: auto;
@@ -29,7 +25,7 @@ export const PerakTahunIniContainer = styled.div`
     width: 100vw;
   }
   .main-section {
-    margin-top: -500px;
+    margin-top: -600px;
     padding-top: 150px;
     height: 1380px;
   }
@@ -45,7 +41,7 @@ export const PerakTahunIniContainer = styled.div`
     display: block;
     width: 100%;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 200px;
   }
   .foto-kiri {
     position: absolute;
@@ -112,11 +108,20 @@ export const PerakTahunIniContainer = styled.div`
     z-index: 10;
     width: 100vw;
   }
+  .bottom-section-mobile {
+    display: none;
+  }
   .kenalin-aang {
     position: absolute;
     z-index: 12;
     margin-top: 370px;
     margin-left: 300px;
+  }
+  .ceritanya-maskot {
+    position: absolute;
+    z-index: 12;
+    margin-top: 750px;
+    margin-left: 42vw;
   }
   .bottom-left-decor {
     position: absolute;
@@ -128,21 +133,37 @@ export const PerakTahunIniContainer = styled.div`
     right: 200px;
     margin-top: 1020px;
   }
+  .circle-break {
+    display: none;
+  }
+  .circle-first-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .circle-last-row {
+    display: flex;
+    flex-direction: row;
+  }
 
   @media only screen and (max-width: 550px) {
     margin-top: -190px !important;
     .main-section {
-      margin-top: -100px;
+      margin-top: -300px;
       height: 950px;
     }
     .main-content {
-      margin-top: 250px;
+      margin-top: 280px;
     }
     .bola-bulet {
-      display: none;
+      width: 20%;
+    }
+    .bola-bulet-section {
+      margin-top: -200px;
     }
     .sec-title {
-      margin-top: 20px;
+      padding: 0 20px;
+      font-size: 0.85em;
+      margin-top: -10px;
     }
     .circle-item {
       width: 35px;
@@ -153,6 +174,8 @@ export const PerakTahunIniContainer = styled.div`
       flex-wrap: wrap;
       width: 100%;
       justify-content: center;
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
     .circle-item {
       display: none;
@@ -175,12 +198,12 @@ export const PerakTahunIniContainer = styled.div`
     }
     .foto-kanan {
       width: 35%;
-      margin-top: 380px;
+      margin-top: 330px;
       margin-right: 0px;
     }
     .decor-foto-kanan {
       width: 20%;
-      margin-top: 420px;
+      margin-top: 390px;
     }
     .main-bg {
       display: none;
@@ -195,25 +218,51 @@ export const PerakTahunIniContainer = styled.div`
       position: absolute;
       z-index: 10;
       width: 100vw;
-      /* margin-top: */
     }
     .kenalin-aang {
       position: absolute;
       z-index: 12;
-      margin-top: 90px;
+      margin-top: 105px;
       margin-left: 40px;
       width: 30%;
     }
+    .ceritanya-maskot {
+      position: absolute;
+      z-index: 12;
+      margin-top: 215px;
+      margin-left: 38vw;
+      width: 29%;
+    }
     .bottom-left-decor {
       left: 50px;
-      width: 30%;
-      margin-top: 730px;
+      width: 40%;
+      margin-top: 700px;
     }
     .bottom-right-decor {
       right: 50px;
       width: 30%;
-      margin-top: 730px;
+      margin-top: 715px;
     }
-    height: 1200px;
+    .circle-break-row {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .bottom-section-mobile {
+      position: absolute;
+      z-index: 10;
+      width: 100vw;
+      display: block;
+    }
+    .bottom-section {
+      display: none;
+    }
+    height: 900px;
+  }
+  @media only screen and (min-width: 400px) and (max-width: 550px) {
+    height: 1000px;
+    .kenalin-aang {
+      margin-top: 120px;
+    }
   }
 `;

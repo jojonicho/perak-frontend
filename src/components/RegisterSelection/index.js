@@ -130,7 +130,8 @@ class RegisterSelection extends React.Component {
               {id.map(currentId => {
                 if (counter < 3) counter += 1;
                 else counter = 0;
-                return (
+
+                return slug[currentId] === "futsal" ? null : (
                   <Button
                     to={`/daftar/${slug[currentId]}`}
                     className={`games ${color[counter]} ${

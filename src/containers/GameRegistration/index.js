@@ -30,6 +30,7 @@ import {
   submit,
   savePlayer
 } from "./actions";
+// import LoadingScreen from "../../components/LoadingScreen";
 
 const hargaPendaftaran = namaGame => {
   if (namaGame === "Dota 2") return "Rp. 75.000,- / tim";

@@ -7,8 +7,10 @@ import landingLayer3Right from "../../asset/landing-layer3-right.svg";
 import landingLayer4 from "../../asset/landing-layer4.svg";
 import landingLayer5 from "../../asset/landing-layer5.svg";
 import apaItuBGLeft from "../../asset/apaItuBGLeft2.svg";
+import apaItuBGLeftMobile from "../../asset/apaItuBGLeftMobile.svg";
 import landingBackgroundMobile from "../../asset/landing-background-mobile.svg";
 import landingBackgroundMobileTop from "../../asset/landing-background-mobile-top.svg";
+// import hamburger from "../../asset/hamburger.svg";
 
 const blue = "#4452C5";
 
@@ -16,16 +18,46 @@ export const LandingPage2Container = styled.div`
   width: 100%;
   position: absolute;
   top: 0;
+  // overflow-x: hidden;
   left: 0;
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  button,
+  input[type="submit"],
+  input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  .carousel-gw {
+    margin-top: 190px;
+  }
   .section-title {
     color: ${blue};
     font-family: BigJohnPRO;
     font-size: 3.5em;
+  }
+  .arrow-left,
+  .arrow-right {
+    width: 40px;
+    cursor: pointer;
+  }
+  .arrow-left {
+    position: absolute;
+    margin-right: -70px;
+    z-index: 100;
+  }
+  .arrow-right {
+    position: absolute;
+    margin-left: -40px;
+    z-index: 100;
   }
   .desc {
     margin-top: 35px;
@@ -37,13 +69,14 @@ export const LandingPage2Container = styled.div`
   .daftar-awal {
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1em;
     color: #e5e6de;
     display: flex;
     justify-content: flex-end;
     text-align: right;
     color: white;
     text-decoration: none;
+    margin: 0 10px;
   }
   .daftar-awal-container {
     padding: 20px 30px;
@@ -52,6 +85,8 @@ export const LandingPage2Container = styled.div`
     right: 0;
     z-index: 10;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .daftar-awal-link {
@@ -64,7 +99,7 @@ export const LandingPage2Container = styled.div`
   .leaf {
     position: absolute;
     display: block;
-    z-index: 2;
+    z-index: 100;
   }
   .leaf:nth-child(1) {
     left: 20%;
@@ -151,6 +186,83 @@ export const LandingPage2Container = styled.div`
       top: 80%;
       opacity: 0;
       transform: translateX(-20px) rotate(225deg);
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    .daftar-awal {
+      font-size: 1em;
+      margin: 0 10px;
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 1800px) {
+    .carousel-gw {
+      margin-top: 50px;
+    }
+  }
+  @media only screen and (max-width: 1600px) {
+    .carousel-gw {
+      margin-top: 0px;
+    }
+  }
+  @media only screen and (max-width: 1500px) {
+    .carousel-gw {
+      margin-top: -50px;
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    .carousel-gw {
+      margin-top: -100px;
+    }
+  }
+  @media only screen and (max-width: 1275px) {
+    .carousel-gw {
+      margin-top: -170px;
+    }
+  }
+  @media only screen and (max-width: 1150px) {
+    .carousel-gw {
+      margin-top: -220px;
+    }
+  }
+  @media only screen and (max-width: 1020px) {
+    .carousel-gw {
+      margin-top: -270px;
+    }
+  }
+  @media only screen and (max-width: 975px) {
+    .carousel-gw {
+      margin-top: -350px;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .carousel-gw {
+      margin-top: -550px;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .carousel-gw {
+      margin-top: -650px;
+    }
+  }
+  @media only screen and (max-width: 560px) {
+    .carousel-gw {
+      margin-top: -700px;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .carousel-gw {
+      margin-top: -100px;
+    }
+  }
+  @media only screen and (max-width: 490px) {
+    .carousel-gw {
+      margin-top: -150px;
+    }
+  }
+  @media only screen and (max-width: 455px) {
+    .carousel-gw {
+      margin-top: -40px;
     }
   }
 `;
@@ -273,6 +385,13 @@ export const LandingSection = styled.div`
         font-size: 0.9em;
       }
     }
+    .arrow-left,
+    .arrow-right {
+      width: 40px;
+    }
+    .arrow-right {
+      margin-left: -70px;
+    }
   }
   @media only screen and (min-height: 1360px) {
     #layer1 {
@@ -292,14 +411,12 @@ export const ApaItuSection = styled.div`
   align-items: center;
   background-image: url(${apaItuBGLeft});
   background-repeat: no-repeat;
-  background-position-y: top, 75px;
+  background-position-y: top, 0px;
   background-position-x: left;
-  /* background-size: 100%, contain; */
+  background-size: 15%, contain;
   .desc {
     font-family: Montserrat;
   }
-  background-size: 12%, contain;
-
   @media only screen and (max-width: 800px) {
     background-position-y: bottom, 180px;
     background-position-x: left, -50px;
@@ -311,8 +428,8 @@ export const ApaItuSection = styled.div`
     }
   }
   @media only screen and (max-width: 550px) {
-    background-image: url(${apaItuBGLeft});
-    background-position-y: top, 75px;
+    background-image: url(${apaItuBGLeftMobile});
+    background-position-y: bottom, 380px;
     background-position-x: left, -30px;
     background-size: 22%, 250px;
     .section-title {
@@ -321,6 +438,7 @@ export const ApaItuSection = styled.div`
     .desc {
       font-size: 0.8em;
       line-height: 1.8;
+      max-width: 75vw;
     }
   }
 `;
