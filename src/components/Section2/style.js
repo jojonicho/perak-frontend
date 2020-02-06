@@ -24,10 +24,10 @@ export const Section2Container = styled.div`
 
   .desc {
     color: #f0f0f0;
-    margin-top: 150px;
+    margin-top: 40px;
     max-width: 60%;
     font-size: 1.3em;
-    line-height: 1.8;
+    line-height: 1.6;
     text-align: justify;
   }
 
