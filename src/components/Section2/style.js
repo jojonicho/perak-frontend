@@ -73,9 +73,10 @@ export const Section2Container = styled.div`
     }
   }
 
+${"" /* Fix problem small screen */}
   @media only screen and (max-width: 360px) {
     .desc {
-      margin-top: 30px;
+      margin-top: 90px;
     }
   } */
 `;
