@@ -5,7 +5,7 @@ import React from "react";
 import { GroupProfileContainer } from "./style";
 
 import logo from "../../asset/GroupProfile/Logo.svg";
-import person from "../../asset/GroupProfile/Person.svg";
+import person from "../../asset/GroupProfile/Person.jpg";
 
 // import HeaderFooter from "../../components/HeaderFooter";
 
@@ -21,38 +21,84 @@ class GroupProfile extends React.Component {
             <h3>MANAGER: Alvia Dibby</h3>
             <div className="card-container">
               <div className="card">
-                <img src={person} alt="Avatar" />
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
                 <div className="desc">
-                  <h4>KHANSA</h4>
-                  <p>NAMA PANJANG</p>
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
                 </div>
               </div>
               <div className="card">
-                <img src={person} alt="Avatar" />
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
                 <div className="desc">
-                  <h4>KHANSA</h4>
-                  <p>NAMA PANJANG</p>
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
                 </div>
               </div>
               <div className="card">
-                <img src={person} alt="Avatar" />
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
                 <div className="desc">
-                  <h4>KHANSA</h4>
-                  <p>NAMA PANJANG</p>
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
                 </div>
               </div>
               <div className="card">
-                <img src={person} alt="Avatar" />
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
                 <div className="desc">
-                  <h4>KHANSA</h4>
-                  <p>NAMA PANJANG</p>
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
                 </div>
               </div>
               <div className="card">
-                <img src={person} alt="Avatar" />
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
                 <div className="desc">
-                  <h4>KHANSA</h4>
-                  <p>NAMA PANJANG</p>
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
+                <div className="desc">
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
+                <div className="desc">
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
+                <div className="desc">
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-img">
+                  <img src={person} alt="Avatar" />
+                </div>
+                <div className="desc">
+                  <h4>GANI</h4>
+                  <p>MUHAMMAD GANI ILHAM IRSYADI</p>
                 </div>
               </div>
             </div>
