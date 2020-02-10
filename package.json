@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.10.39",
+    "@brainhubeu/react-carousel": "^1.10.56",
     "axios": "^0.18.0",
     "bootstrap": "^4.4.1",
     "connected-react-router": "^6.3.2",
