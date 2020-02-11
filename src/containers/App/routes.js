@@ -6,6 +6,7 @@
 import LandingPage2 from "../LandingPage2";
 import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
+import NoMatch from "../NoMatch";
 
 export const routes = [
   {
@@ -22,6 +23,10 @@ export const routes = [
     component: KlasemenPage,
     exact: true,
     path: "/klasemen"
+  },
+  {
+    component: NoMatch,
+    exact: false
   }
   // {
   //   component: RegisterSelection,
