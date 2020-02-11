@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 // import Registration from "../Registration";
 // import RegisterSelection from "../../components/RegisterSelection";
 // import LandingPage from "../LandingPage";
@@ -6,6 +6,7 @@
 import LandingPage2 from "../LandingPage2";
 import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
+import ChallongeScore from "../ChallongeScore";
 
 export const routes = [
   {
@@ -22,6 +23,46 @@ export const routes = [
     component: KlasemenPage,
     exact: true,
     path: "/klasemen"
+  },
+  {
+    component: () => <ChallongeScore gameId="dota" />,
+    exact: true,
+    path: "/result/dota"
+  },
+  {
+    component: () => <ChallongeScore gameId="csgo" />,
+    exact: true,
+    path: "/result/csgo"
+  },
+  {
+    component: () => <ChallongeScore gameId="catur" />,
+    exact: true,
+    path: "/result/catur"
+  },
+  {
+    component: () => <ChallongeScore gameId="ssbu" />,
+    exact: true,
+    path: "/result/ssbu"
+  },
+  {
+    component: () => <ChallongeScore gameId="fifa" />,
+    exact: true,
+    path: "/result/fifa"
+  },
+  {
+    component: () => <ChallongeScore gameId="codenames" />,
+    exact: true,
+    path: "/result/codenames"
+  },
+  {
+    component: () => <ChallongeScore gameId="mlbb" />,
+    exact: true,
+    path: "/result/mlbb"
+  },
+  {
+    component: () => <ChallongeScore gameId="mariokart" />,
+    exact: true,
+    path: "/result/mariokart"
   }
   // {
   //   component: RegisterSelection,
