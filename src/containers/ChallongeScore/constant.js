@@ -6,7 +6,7 @@ export const Games = {
     bracket: (
       <iframe
         title="dota"
-        src="https://challonge.com/DotaPerak/module?theme=1"
+        src="https://challonge.com/DotaPerak/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -20,7 +20,7 @@ export const Games = {
     bracket: (
       <iframe
         title="csgo"
-        src="https://challonge.com/CSGOPERAK2020/module?theme=1"
+        src="https://challonge.com/CSGOPERAK2020/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -34,7 +34,7 @@ export const Games = {
     bracket: (
       <iframe
         title="dota"
-        src="https://challonge.com/y8b1fshp/module?theme=1"
+        src="https://challonge.com/y8b1fshp/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -48,7 +48,7 @@ export const Games = {
     bracket: (
       <iframe
         title="codenames"
-        src="https://challonge.com/o5mwlbw6/module?theme=1"
+        src="https://challonge.com/o5mwlbw6/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -62,7 +62,7 @@ export const Games = {
     bracket: (
       <iframe
         title="catur"
-        src="https://challonge.com/CaturPerak2020/module?theme=1"
+        src="https://challonge.com/CaturPerak2020/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -76,7 +76,7 @@ export const Games = {
     bracket: (
       <iframe
         title="fifa"
-        src="https://challonge.com/c2lpsygy/module?theme=1"
+        src="https://challonge.com/c2lpsygy/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -90,7 +90,7 @@ export const Games = {
     bracket: (
       <iframe
         title="ssbu"
-        src="https://challonge.com/78v3nzbm/module?theme=1"
+        src="https://challonge.com/78v3nzbm/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
@@ -104,7 +104,7 @@ export const Games = {
     bracket: (
       <iframe
         title="meriokart"
-        src="https://challonge.com/mk8perak2020/module?theme=1"
+        src="https://challonge.com/mk8perak2020/module?theme=7710"
         width="100%"
         height="500"
         frameBorder="0"
