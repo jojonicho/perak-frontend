@@ -71,6 +71,7 @@ export const GroupProfileContainer = styled.div`
     width: 15em;
     margin: 0 1.6em 0 0;
     background-color: #ffffff;
+    height: 21.5em;
   }
 
   .card-img {
@@ -83,13 +84,14 @@ export const GroupProfileContainer = styled.div`
     object-fit: cover;
   }
   .desc {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     height: 5.5em;
     width: 100%;
     background-color: #f2cf35;
-    padding: 0 0.2em;
+    padding: 0.7em 0.5em;
     font-size: 1em;
     white-space: normal;
   }
@@ -132,7 +134,7 @@ export const GroupProfileContainer = styled.div`
       background-repeat: no-repeat;
       font-size: 1.3vw;
       margin: 2em auto;
-      width: 95vw;
+      width: 97vw;
       height: 180vw;
       background-size: contain;
       display: flex;
@@ -160,22 +162,26 @@ export const GroupProfileContainer = styled.div`
       line-height: 1.4;
     }
     h3 span {
-      font-size: 1.5em;
+      font-size: 1em;
       display: block;
     }
     .card-container {
       margin-top: 4em;
-      height: 35em;
+      height: 38em;
       width: 50em;
     }
     .card {
-      width: 20em;
+      width: 23em;
     }
     .card-img {
-      height: 20em;
+      height: 24em;
     }
     .desc {
-      font-size: 1.7em;
+      font-size: 1.8em;
+      height: 5em;
+    }
+    .desc h4 {
+      font-size: 1.2em;
     }
   }
 `;

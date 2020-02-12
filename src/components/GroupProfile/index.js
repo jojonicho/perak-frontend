@@ -1,5 +1,6 @@
 import React from "react";
 import Loader from "react-loader-spinner";
+import HeaderFooter from "../HeaderFooter"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { useFetch } from "./useFetch";
 import { GroupProfileContainer } from "./style";
@@ -11,6 +12,7 @@ const GroupProfile = props => {
   const GroupProfileUrl = `https://perak.cs.ui.ac.id/backend/api/team/${id}`;
   const { data, loading } = useFetch(GroupProfileUrl);
   return (
+    <HeaderFooter color="dark">
     <GroupProfileContainer>
       <div className="container">
         {loading ? (
@@ -50,6 +52,7 @@ const GroupProfile = props => {
         )}
       </div>
     </GroupProfileContainer>
+    </HeaderFooter>
   );
 };
 
