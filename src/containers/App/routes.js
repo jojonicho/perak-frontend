@@ -7,6 +7,7 @@ import LandingPage2 from "../LandingPage2";
 import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
 import ChallongeScore from "../ChallongeScore";
+import GroupProfile from "../../components/GroupProfile";
 
 export const routes = [
   {
@@ -63,6 +64,11 @@ export const routes = [
     component: () => <ChallongeScore gameId="mariokart" />,
     exact: true,
     path: "/result/mariokart"
+  },
+  {
+    component: GroupProfile,
+    exact: true,
+    path: "/team/:id"
   }
   // {
   //   component: RegisterSelection,

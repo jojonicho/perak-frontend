@@ -25,8 +25,8 @@ class FutsalScorePage extends React.Component {
   }
 
   getHistoryData() {
-    // const proxyUrl = `https://cors-anywhere.herokuapp.com/`;
-    const proxyUrl = ``;
+    const proxyUrl = `https://cors-anywhere.herokuapp.com/`;
+    // const proxyUrl = ``;
     const historyUrl = `https://perak.cs.ui.ac.id/backend/api/match_history/futsal`;
     axios
       .get(proxyUrl + historyUrl, {})

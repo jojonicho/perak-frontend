@@ -29,7 +29,7 @@ export const Section2Container = styled.div`
     margin-top: 39vh;
     max-width: 60%;
     font-size: 1.3em;
-    line-height: 1.8;
+    line-height: 1.6;
     text-align: justify;
   }
 
@@ -73,9 +73,10 @@ export const Section2Container = styled.div`
     }
   }
 
-  /* @media only screen and (max-width: 330px) {
+${"" /* Fix problem small screen */}
+  @media only screen and (max-width: 360px) {
     .desc {
-      margin-top: 30px;
+      margin-top: 90px;
     }
   } */
 `;
