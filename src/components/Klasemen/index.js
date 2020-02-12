@@ -1,5 +1,6 @@
 import React from "react";
 import { BarLoader as Loader } from "react-spinners";
+import { Link } from "react-router-dom";
 import { KlasemenContainer } from "./style";
 import { useFetch } from "./useFetch";
 import SVG from "../RegisterSelection/SVGIcon";
@@ -75,7 +76,9 @@ const Klasemen = props => {
                       return (
                         <tr>
                           {/* <td>{team.id}</td> */}
-                          <td>{team.name}</td>
+                          <td>
+                            <Link to={`/team/${team.id}`}>{team.name}</Link>
+                          </td>
                           <td>{team.banyak_match}</td>
                           <td>{team.win}</td>
                           <td>{team.draw}</td>

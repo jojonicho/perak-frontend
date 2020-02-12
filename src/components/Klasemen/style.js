@@ -17,6 +17,13 @@ export const KlasemenContainer = styled.div`
   .grouptitle {
     font-size: 2.5em;
   }
+  a,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
   .decor {
     position: absolute;
     width: 8vw;
