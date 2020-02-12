@@ -27,7 +27,7 @@ export const routes = [
   {
     component: GroupProfile,
     exact: true,
-    path: "/groupprofile"
+    path: "/groupprofile/:id"
   }
   // {
   //   component: RegisterSelection,

@@ -15,7 +15,11 @@ export const GroupProfileContainer = styled.div`
   }
   .container {
     min-height: 92vh;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .container-inside {
     margin: 4em auto 0 auto;
@@ -56,7 +60,7 @@ export const GroupProfileContainer = styled.div`
   .card-container {
     margin: 3em auto;
     width: 47em;
-    height: 23em;
+    height: 25em;
     white-space: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -70,7 +74,7 @@ export const GroupProfileContainer = styled.div`
   }
 
   .card-img {
-    height: 14em;
+    height: 16em;
     width: 100%;
   }
   .card-img img {
@@ -82,16 +86,15 @@ export const GroupProfileContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 6em;
+    height: 5.5em;
     width: 100%;
-    padding: 0 1em;
     background-color: #f2cf35;
-    font-size: 0.9em;
+    padding: 0 0.2em;
+    font-size: 1em;
     white-space: normal;
-    line-height: 1.3;
   }
   .desc h4 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin-bottom: 0.2em;
   }
 
@@ -128,9 +131,9 @@ export const GroupProfileContainer = styled.div`
       background: url(${backgroundPhone});
       background-repeat: no-repeat;
       font-size: 1.3vw;
-      margin: 2em 0;
-      width: 100vw;
-      height: 190vw;
+      margin: 2em auto;
+      width: 95vw;
+      height: 180vw;
       background-size: contain;
       display: flex;
       flex-direction: column;
