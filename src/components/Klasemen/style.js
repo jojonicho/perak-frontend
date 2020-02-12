@@ -111,7 +111,7 @@ export const KlasemenContainer = styled.div`
       align-items: center;
       justify-content: center;
       background-color: ${props =>
-        props.color === "#444fcb" ? "#33b3a6" : "#444fcb"};
+        props.color === "#444fcb" ? "#F2CF35" : "#444fcb"};
       color: #f0f0f0;
       border-radius: 50%;
     }

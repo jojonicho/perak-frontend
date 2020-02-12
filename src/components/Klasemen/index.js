@@ -16,7 +16,7 @@ const Klasemen = props => {
   ];
   const decorB = ["purple-ball", "purple-rect", "orange-ellipse"];
   return (
-    <KlasemenContainer color={id > 4 ? "#444fcb" : "#33b3a6"}>
+    <KlasemenContainer color={id > 4 ? "#F2CF35" : "#33b3a6"}>
       <div className="group">
         {loading ? (
           <Loader />
