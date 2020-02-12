@@ -51,8 +51,66 @@ export const HeaderFooterContainer = styled.div`
     font-weight: bold;
     font-size: 1em;
     color: #e5e6de;
+    transform: translateY(+100%);
   }
+.menu-bar{
+  display:flex;
+  flex-direction:row;
+}
+.dropdown{
+  padding-left:25px;
+  padding-right:25px;
+  position:relative;
+  display:inline-block;
+  height:60px
+}
+.dropdown-menu{
+  display:none;
+  flex-direction:row;
+  width:max-content;
+  background-color:rgba(7,21,46,0.94);
+  margin:-right:50px;
+  margin-left:50px;
+  padding:20px;
+}
+.dropdown-menu-klasemen{
+  margin-left:0px
+}
+.dropdown:hover .dropdown-menu-klasemen{
+  right:0%!important;
+}
+.dropdown-col-klasemen{
+  width:130px!important;
+}
+.dropdown:hover .dropdown-menu{
+  display:flex;
+  position:absolute;
+  right:-50%;
+  top:100%;
+}
+.dropdown:hover{
+  background-color:rgba(7,21,46,1);
+}
+.dropdown-col{
+  display:flex;
+  flex-direction:column;
+  width:45%;
+}
+.dropdown-col-left{
+  border-right-width:2px;
+  border-right-style:solid;
+  border-right-color:gray;
+}
 
+.button-menu{
+  margin:15px;
+  color:#E5E6DE;
+  text-align:center;
+}
+.dropdown-item{
+  margin-left:auto;
+  margin-right:auto;
+}
   @media only screen and (max-width: 350px) {
     .logo {
       height: 35px;

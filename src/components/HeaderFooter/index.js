@@ -25,18 +25,87 @@ class HeaderFooter extends React.Component {
     return (
       <HeaderFooterContainer>
         <div className="header" style={colors[color]}>
-          <Link to="/" className="no-decor">
-            <img className="logo" src={logoBaruTerang} alt="logo"></img>
-          </Link>
-          <Link to="/daftar" className="no-decor">
-            <h2 className="daftar">DAFTAR</h2>
-          </Link>
+          <div>
+            <Link to="/" className="no-decor">
+              <img className="logo" src={logoBaruTerang} alt="logo"></img>
+            </Link>
+          </div>
+
+          <div className="menu-bar">
+            <div className="dropdown">
+              <h2 className="daftar">KLASEMEN</h2>
+              <div className="dropdown-menu dropdown-menu-klasemen">
+                <div className="dropdown-col dropdown-col-klasemen">
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>FUTSAL</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>DOTA</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>CSGO</h3>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="dropdown">
+              <h2 className="daftar">SKOR</h2>
+              <div className="dropdown-menu">
+                <div className="dropdown-col dropdown-col-left">
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>FUTSAL</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>CATUR</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>FIFA 2020</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>SUPER SMASH BROS</h3>
+                    </div>
+                  </Link>
+                </div>
+                <div className="dropdown-col dropdown-col-right">
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>MARIO KART</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>CODENAMES</h3>
+                    </div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-item">
+                      <h3>MOBILE LEGENDS</h3>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div className={notShown ? "no-padding-top" : "childcontainer"}>
           {children}
         </div>
         <div className="footer" style={colors.dark}>
-          <p>Copyright 2019 Pesta Rakyat Komputer</p>
+          <p>Copyright 2020 Pesta Rakyat Komputer</p>
         </div>
       </HeaderFooterContainer>
     );
