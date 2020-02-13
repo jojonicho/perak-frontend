@@ -19,6 +19,7 @@ export const ChallongeScoreContainer = styled.div`
     padding-top: 40px;
     margin-bottom: 70px;
     text-align: center;
+    text-transform: uppercase;
   }
   .bracket {
     margin-bottom: 60px;
