@@ -8,17 +8,27 @@ import {
 
 class PersonilForm extends React.Component {
   render() {
-    const { namaPersonil, angkatan, savePlayer } = this.props;
+    const { namaPersonil, angkatan, savePlayer, setPersonData } = this.props;
     return (
       <PersonFormRegistrationContainer>
         <Section className="d-flex flex-wrap half-cont">
           <div className="half">
             Nama Personil
-            <input value={namaPersonil} />
+            <input
+              autoComplete="off"
+              id="nama"
+              onChange={setPersonData}
+              value={namaPersonil}
+            />
           </div>
           <div className="half">
             Angkatan
-            <input value={angkatan} />
+            <input
+              autoComplete="off"
+              id="angkatan"
+              onChange={setPersonData}
+              value={angkatan}
+            />
           </div>
         </Section>
         <div style={{ height: `${10}px` }}></div>

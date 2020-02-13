@@ -8,7 +8,7 @@ import {
 
 class BirBintangForm extends React.Component {
   render() {
-    const { namaPanggung, jenisPenampilan, contact } = this.props;
+    const { namaPanggung, jenisPenampilan, contact, setData } = this.props;
     return (
       <PersonFormRegistrationContainer>
         <Section>
@@ -17,7 +17,7 @@ class BirBintangForm extends React.Component {
             className="input-long"
             id="nama-panggung"
             value={namaPanggung}
-            // onChange={setPersonData}
+            onChange={setData}
             autoComplete="off"
           />
         </Section>
@@ -27,7 +27,7 @@ class BirBintangForm extends React.Component {
             className="input-long"
             id="jenis-penampilan"
             value={jenisPenampilan}
-            // onChange={setPersonData}
+            onChange={setData}
             autoComplete="off"
           />
         </Section>
@@ -37,7 +37,7 @@ class BirBintangForm extends React.Component {
             className="input-long"
             id="id-line"
             value={contact}
-            // onChange={setPersonData}
+            onChange={setData}
             autoComplete="off"
           />
         </Section>
