@@ -118,9 +118,53 @@ export const HeaderFooterContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
-  @media only screen and (max-width: 350px) {
+  .dropdown-mobile {
+    display: none;
+  }
+  .mobile-menu-button {
+    height: 50%;
+    transform: translateY(50%);
+    cursor: pointer;
+  }
+  .dropdown-mobile-container {
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    background-color: #07152e;
+    width: 60vw;
+    transition: height 1s;
+    overflow: hidden;
+  }
+  .dropdown-mobile-submenu {
+    padding: 20px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #07152e;
+  }
+  .dropdown-mobile-item {
+    padding-left: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-family: "Montserrat";
+  }
+  .dropdown-mobile-subcontainer {
+    background-color: #07152e;
+    overflow: hidden;
+    transition: height 1s;
+  }
+  .menu-down-arrow {
+    margin-left: 10px;
+  }
+  @media only screen and (max-width: 450px) {
     .logo {
       height: 35px;
+    }
+    .dropdown-mobile {
+      display: inline-block;
+    }
+    .dropdown {
+      display: none;
     }
   }
 `;

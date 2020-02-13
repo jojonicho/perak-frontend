@@ -1,3 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/destructuring-assignment */
 import React from "react";
 // import PropTypes from 'prop-types';
 
@@ -5,8 +10,75 @@ import { Link } from "react-router-dom";
 import { HeaderFooterContainer } from "./style";
 // import logoBaruTerang2 from "../../asset/logoBaruTerang2.png";
 import logoBaruTerang from "../../asset/logoBaruTerang.png";
+import mobileMenuBar from "../../asset/mobile-menu.svg";
+import downArrow from "../../asset/down-arrow.svg";
 
 class HeaderFooter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toogleMobileMenu: false,
+      toogleKlasemenMobile: false,
+      toogleSkorMobile: false,
+      overflowMenu: false,
+      mobileMenuHeight: "0px"
+    };
+
+    this.toogleMenu = this.toogleMenu.bind(this);
+    this.toogleKlasemen = this.toogleKlasemen.bind(this);
+    this.toogleSkor = this.toogleSkor.bind(this);
+    this.toogleOverflow = this.toogleOverflow.bind(this);
+  }
+
+  toogleMenu() {
+    this.setState(state => ({
+      toogleMobileMenu: !state.toogleMobileMenu,
+      toogleKlasemenMobile: false,
+      toogleSkorMobile: false,
+      mobileMenuHeight: "120px"
+    }));
+
+    if (!this.state.toogleMobileMenu) {
+      const x = this;
+      setTimeout(function() {
+        x.toogleOverflow();
+      }, 800);
+    } else if (this.state.toogleKlasemenMobile || this.state.toogleSkorMobile) {
+      const x = this;
+      setTimeout(function() {
+        x.toogleOverflow();
+        x.setState(state => ({
+          mobileMenuHeight: "0px"
+        }));
+      }, 700);
+    } else {
+      this.setState(state => ({
+        mobileMenuHeight: "0px"
+      }));
+      this.toogleOverflow();
+    }
+  }
+
+  toogleOverflow() {
+    this.setState(state => ({
+      overflowMenu: !state.overflowMenu
+    }));
+  }
+
+  toogleKlasemen() {
+    this.setState(state => ({
+      toogleKlasemenMobile: !state.toogleKlasemenMobile,
+      toogleSkorMobile: false
+    }));
+  }
+
+  toogleSkor() {
+    this.setState(state => ({
+      toogleSkorMobile: !state.toogleSkorMobile,
+      toogleKlasemenMobile: false
+    }));
+  }
+
   render() {
     const { children, color, notShown } = this.props;
     const colors = {
@@ -94,6 +166,88 @@ class HeaderFooter extends React.Component {
                     <div className="dropdown-item">
                       <h3>MOBILE LEGENDS</h3>
                     </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="dropdown-mobile">
+              <img
+                src={mobileMenuBar}
+                alt="mobile-menu"
+                className="mobile-menu-button"
+                onClick={this.toogleMenu}
+              />
+              <div
+                className="dropdown-mobile-container"
+                style={{
+                  height: this.state.mobileMenuHeight,
+                  overflow: this.state.overflowMenu ? "visible" : "hidden"
+                }}
+              >
+                <div
+                  className="dropdown-mobile-submenu"
+                  onClick={this.toogleKlasemen}
+                >
+                  KLASEMEN
+                  <img
+                    src={downArrow}
+                    alt="down-arrow"
+                    className="menu-down-arrow"
+                  />
+                </div>
+                <div
+                  className="dropdown-mobile-subcontainer"
+                  style={{
+                    height: this.state.toogleKlasemenMobile ? "150px" : "0px"
+                  }}
+                >
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">FUTSAL</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">DOTA</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">CSGO</div>
+                  </Link>
+                </div>
+                <div
+                  className="dropdown-mobile-submenu"
+                  onClick={this.toogleSkor}
+                >
+                  SKOR
+                  <img
+                    src={downArrow}
+                    alt="down-arrow"
+                    className="menu-down-arrow"
+                  />
+                </div>
+                <div
+                  className="dropdown-mobile-subcontainer"
+                  style={{
+                    height: this.state.toogleSkorMobile ? "355px" : "0px"
+                  }}
+                >
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">FUTSAL</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">CATUR</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">FIFA 2020</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">SUPER SMASH BROS</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">MARIO CART</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">CODENAMES</div>
+                  </Link>
+                  <Link to="/#" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">MOBILE LEGENDS</div>
                   </Link>
                 </div>
               </div>
