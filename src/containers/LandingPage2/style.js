@@ -151,6 +151,14 @@ export const LandingPage2Container = styled.div`
       transform: translateX(-20px) rotate(225deg);
     }
   }
+  @media only screen and (max-width: 800px) {
+    .leaf img {
+      transform: scale(0.5, 0.5);
+    }
+    .leaf {
+      transform: scale(0.5, 0.5);
+    }
+  }
 `;
 
 export const LandingSection = styled.div`
