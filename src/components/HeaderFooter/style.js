@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderFooterContainer = styled.div`
   overflow: hidden;
   width: 100%;
+  max-width: 100vw;
   h2 {
     margin: auto;
   }
