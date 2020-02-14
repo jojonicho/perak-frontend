@@ -22,7 +22,7 @@ export const routes = [
   {
     component: KlasemenPage,
     exact: true,
-    path: "/klasemen"
+    path: "/klasemen/:type"
   },
   {
     component: NoMatch,
