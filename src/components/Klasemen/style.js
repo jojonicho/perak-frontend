@@ -1,20 +1,24 @@
 import styled from "styled-components";
 
 export const KlasemenContainer = styled.div`
-  // min-height: 10vh;
   padding: 0 12vw;
   .group {
     border-radius: 3px;
     margin: 2vw 0px;
     margin-bottom: 30px;
     padding: 2.5vw;
-    background-color: #33b3a6;
+    // background-color: #33b3a6;
+    background-color: ${props => props.color};
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
   }
+  // .purple {
+  //   background-color: rgb(68, 79, 203);
+  // }
   .grouptitle {
+    color: ${props => (props.color === "#444fcb" ? "white" : "black")}
     font-size: 2.5em;
   }
   a,
@@ -67,7 +71,7 @@ export const KlasemenContainer = styled.div`
     }
     td:last-child {
       border-top-right-radius: 0.6vw;
-      border-left: 3px solid #33b3a6;
+      border-left: 3px solid ${props => props.color};
     }
     td:first-child {
       border-bottom-left-radius: 0.6vw;
@@ -85,7 +89,9 @@ export const KlasemenContainer = styled.div`
       padding: 0.15vw 0.6vw;
       height: 4.5vw;
       // min-width: 55px;
-      background: #33b3a6;
+      // background: #33b3a6;
+      background: ${props => props.color};
+
     }
 
     td {
@@ -102,13 +108,17 @@ export const KlasemenContainer = styled.div`
       color: #f0f0f0;
       border-radius: 50%;
     }
+    // .green {
+    //   background-color: #33b3a6;
+    // }
     .point {
       width: 6vw;
       height: 6vw;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #444fcb;
+      background-color: ${props =>
+        props.color === "#444fcb" ? "#F2CF35" : "#444fcb"};
       color: #f0f0f0;
       border-radius: 50%;
     }

@@ -5,15 +5,6 @@ import { KlasemenContainer } from "./style";
 import { useFetch } from "./useFetch";
 import SVG from "../RegisterSelection/SVGIcon";
 
-// class Klasemen extends React.Component {
-//   render() {
-//     return (
-//       <KlasemenContainer>
-//         <h2>Me gusta</h2>
-//       </KlasemenContainer>
-//     );
-//   }
-// }
 const Klasemen = props => {
   const { id } = props;
   const klasemenUrl = `https://perak.cs.ui.ac.id/backend/api/group/${id}/teams`;
@@ -26,7 +17,7 @@ const Klasemen = props => {
   ];
   const decorB = ["purple-ball", "purple-rect", "orange-ellipse"];
   return (
-    <KlasemenContainer>
+    <KlasemenContainer color={id > 4 ? "#F2CF35" : "#33b3a6"}>
       <div className="group">
         {loading ? (
           <Loader />
@@ -56,15 +47,19 @@ const Klasemen = props => {
                     <th>
                       <div className="stats">K</div>
                     </th>
-                    <th>
-                      <div className="stats">GM</div>
-                    </th>
-                    <th>
-                      <div className="stats">GA</div>
-                    </th>
-                    <th>
-                      <div className="stats">SG</div>
-                    </th>
+                    {id > 4 ? null : (
+                      <>
+                        <th>
+                          <div className="stats">GM</div>
+                        </th>
+                        <th>
+                          <div className="stats">GA</div>
+                        </th>
+                        <th>
+                          <div className="stats">SG</div>
+                        </th>
+                      </>
+                    )}
                     <th>
                       <div className="point">PTS</div>
                     </th>
@@ -75,7 +70,6 @@ const Klasemen = props => {
                     data.group_teams.map(team => {
                       return (
                         <tr>
-                          {/* <td>{team.id}</td> */}
                           <td>
                             <Link to={`/team/${team.id}`}>{team.name}</Link>
                           </td>
@@ -83,9 +77,13 @@ const Klasemen = props => {
                           <td>{team.win}</td>
                           <td>{team.draw}</td>
                           <td>{team.lose}</td>
-                          <td>{team.goal_masuk}</td>
-                          <td>{team.goal_kebobolan}</td>
-                          <td>{team.selisih_goal}</td>
+                          {id > 4 ? null : (
+                            <>
+                              <td>{team.goal_masuk}</td>
+                              <td>{team.goal_kebobolan}</td>
+                              <td>{team.selisih_goal}</td>
+                            </>
+                          )}
                           <td>{team.points}</td>
                         </tr>
                       );

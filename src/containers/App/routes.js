@@ -8,6 +8,7 @@ import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
 import ChallongeScore from "../ChallongeScore";
 import GroupProfile from "../../components/GroupProfile";
+import NoMatch from "../NoMatch";
 
 export const routes = [
   {
@@ -23,7 +24,7 @@ export const routes = [
   {
     component: KlasemenPage,
     exact: true,
-    path: "/klasemen"
+    path: "/klasemen/:type"
   },
   {
     component: () => <ChallongeScore gameId="dota" />,
@@ -69,6 +70,10 @@ export const routes = [
     component: GroupProfile,
     exact: true,
     path: "/team/:id"
+  },
+  {
+    component: NoMatch,
+    exact: false
   }
   // {
   //   component: RegisterSelection,
