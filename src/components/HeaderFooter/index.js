@@ -93,7 +93,7 @@ class HeaderFooter extends React.Component {
       notShown: {
         backgroundColor: "#0D2040",
         color: "white",
-        transform: "translateY(-100px)",
+        transform: "translateY(-300px)",
         transition: "0.5s"
       }
     };
