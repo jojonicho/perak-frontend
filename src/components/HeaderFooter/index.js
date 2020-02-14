@@ -111,13 +111,13 @@ class HeaderFooter extends React.Component {
               <h2 className="daftar">KLASEMEN</h2>
               <div className="dropdown-menu dropdown-menu-klasemen">
                 <div className="dropdown-col dropdown-col-klasemen">
-                  <Link to="/klasemen" className="no-decor button-menu">
+                  <Link to="/klasemen/futsal" className="no-decor button-menu">
                     <div className="dropdown-item">FUTSAL</div>
                   </Link>
-                  <Link to="/result/dota" className="no-decor button-menu">
+                  <Link to="/klasemen/dota" className="no-decor button-menu">
                     <div className="dropdown-item">DOTA</div>
                   </Link>
-                  <Link to="/result/csgo" className="no-decor button-menu">
+                  <Link to="/klasemen/csgo" className="no-decor button-menu">
                     <div className="dropdown-item">CSGO</div>
                   </Link>
                 </div>
