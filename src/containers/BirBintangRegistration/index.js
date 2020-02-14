@@ -18,6 +18,7 @@ import HeaderFooter from "../../components/HeaderFooter";
 import BirBintangForm from "../../components/BirBintangForm";
 import MinimizedPersonForm from "../../components/MinimizedPersonForm";
 import PersonilForm from "../../components/PersonilForm";
+import { realSubmit, resetRedux } from "./actions";
 
 class BirBintangRegistration extends React.Component {
   constructor() {
@@ -28,7 +29,7 @@ class BirBintangRegistration extends React.Component {
       contact: "",
       isShow: true,
       show: 0,
-      players: [["", ""]],
+      players: [{ nama: "", angkatan: "" }],
       alertMessage: null
     };
     this.setShowPlayer = this.setShowPlayer.bind(this);
@@ -39,6 +40,7 @@ class BirBintangRegistration extends React.Component {
     this.setData = this.setData.bind(this);
     this.daftar = this.daftar.bind(this);
     this.alertMessage = this.alertMessage.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   setData(e) {
@@ -71,15 +73,29 @@ class BirBintangRegistration extends React.Component {
     const newPlayers = Array.from(players);
     switch (id) {
       case "nama":
-        newPlayers[idnya][0] = value;
+        newPlayers[idnya].nama = value;
         break;
       case "angkatan":
-        newPlayers[idnya][1] = value;
+        newPlayers[idnya].angkatan = value;
         break;
       default:
         break;
     }
     this.setState({ players: newPlayers });
+  }
+
+  reset() {
+    const { props } = this;
+    props.resetRedux();
+    this.setState({
+      namaPanggung: "",
+      jenisPenampilan: "",
+      contact: "",
+      isShow: true,
+      show: 0,
+      players: [{ nama: "", angkatan: "" }],
+      alertMessage: null
+    });
   }
 
   alertMessage(msg) {
@@ -99,7 +115,7 @@ class BirBintangRegistration extends React.Component {
 
   simpan(id) {
     const { players } = this.state;
-    if (players[id][0] !== "" && players[id][1] !== "") {
+    if (players[id].nama !== "" && players[id].angkatan !== "") {
       this.setState({
         isShow: false
       });
@@ -112,10 +128,10 @@ class BirBintangRegistration extends React.Component {
     const { players, show } = this.state;
     if (
       players[show] === undefined ||
-      (players[show][0] !== "" && players[show][1] !== "")
+      (players[show].nama !== "" && players[show].angkatan !== "")
     ) {
       const newPlayers = Array.from(players);
-      newPlayers.push(["", ""]);
+      newPlayers.push({ nama: "", angkatan: "" });
       this.setState({
         players: newPlayers,
         show: newPlayers.length - 1,
@@ -134,16 +150,17 @@ class BirBintangRegistration extends React.Component {
       players,
       show
     } = this.state;
+    const { props } = this;
     if (namaPanggung === "") {
       this.alertMessage("Harap Mengisi Nama Panggung");
     } else if (jenisPenampilan === "") {
       this.alertMessage("Harap Mengisi Jenis Penampilan");
     } else if (contact === "") {
       this.alertMessage("Harap Mengisi Id Line / Whatsapp");
-    } else if (players[show][0] === "" || players[show][1] === "") {
+    } else if (players[show].nama === "" || players[show].angkatan === "") {
       this.alertMessage("Pastikan seluruh form Personil telah terisi");
     } else {
-      console.log(this.state);
+      props.realSubmit(namaPanggung, jenisPenampilan, contact, players);
     }
   }
 
@@ -158,7 +175,8 @@ class BirBintangRegistration extends React.Component {
       daftar,
       alertMessage,
       state,
-      props
+      props,
+      reset
     } = this;
     return (
       <HeaderFooter color="dark">
@@ -168,7 +186,7 @@ class BirBintangRegistration extends React.Component {
               show={state.alertMessage || props.done}
               title={props.done ? "You're registered" : state.alertMessage}
               type={props.done ? "success" : "warning"}
-              onConfirm={() => alertMessage(null)}
+              onConfirm={props.done ? () => reset() : () => alertMessage(null)}
             />
             <Title>REGISTRASI BIR BINTANG</Title>
             <Forms>
@@ -204,8 +222,8 @@ class BirBintangRegistration extends React.Component {
                         className="anjay"
                       >
                         <PersonilForm
-                          namaPersonil={personil[0]}
-                          angkatan={personil[1]}
+                          namaPersonil={personil.nama}
+                          angkatan={personil.angkatan}
                           savePlayer={() => simpan(id)}
                           setPersonData={e => setPersonData(e, id)}
                           deletePlayer={() => deletePlayer(id)}
@@ -215,8 +233,8 @@ class BirBintangRegistration extends React.Component {
                   ) : (
                     <Fade>
                       <MinimizedPersonForm
-                        namaLengkap={personil[0]}
-                        angkatan={personil[1]}
+                        namaLengkap={personil.nama}
+                        angkatan={personil.angkatan}
                         setShowPlayer={() => setShowPlayer(id)}
                         deletePlayer={id === 0 ? null : () => deletePlayer(id)}
                       />
@@ -239,12 +257,17 @@ class BirBintangRegistration extends React.Component {
 // BirBintangRegistration.propTypes = {};
 
 function mapStateToProps(state) {
-  return { state };
+  return {
+    done: state.birBintangRegistration.done,
+    loading: state.birBintangRegistration.loading
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch
+    realSubmit: (namaPanggung, jenisPenampilan, contact, personils) =>
+      dispatch(realSubmit(namaPanggung, jenisPenampilan, contact, personils)),
+    resetRedux: () => dispatch(resetRedux())
   };
 }
 
