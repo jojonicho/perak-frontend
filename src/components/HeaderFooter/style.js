@@ -137,7 +137,7 @@ export const HeaderFooterContainer = styled.div`
   .dropdown-col-left {
     border-right-width: 2px;
     border-right-style: solid;
-    border-right-color: gray;
+    border-right-color: rgba(255, 255, 255, 0.2);
   }
 
   .button-menu {
@@ -151,6 +151,10 @@ export const HeaderFooterContainer = styled.div`
   .dropdown-item {
     margin-left: auto;
     margin-right: auto;
+    font-weight: 600;
+  }
+  .button-menu:hover .dropdown-item {
+    color: #f2cf35;
   }
   .dropdown-mobile {
     display: none;

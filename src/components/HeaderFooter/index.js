@@ -111,20 +111,14 @@ class HeaderFooter extends React.Component {
               <h2 className="daftar">KLASEMEN</h2>
               <div className="dropdown-menu dropdown-menu-klasemen">
                 <div className="dropdown-col dropdown-col-klasemen">
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>FUTSAL</h3>
-                    </div>
+                  <Link to="/klasemen" className="no-decor button-menu">
+                    <div className="dropdown-item">FUTSAL</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>DOTA</h3>
-                    </div>
+                  <Link to="/result/dota" className="no-decor button-menu">
+                    <div className="dropdown-item">DOTA</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>CSGO</h3>
-                    </div>
+                  <Link to="/result/csgo" className="no-decor button-menu">
+                    <div className="dropdown-item">CSGO</div>
                   </Link>
                 </div>
               </div>
@@ -133,42 +127,28 @@ class HeaderFooter extends React.Component {
               <h2 className="daftar">SKOR</h2>
               <div className="dropdown-menu">
                 <div className="dropdown-col dropdown-col-left">
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>FUTSAL</h3>
-                    </div>
+                  <Link to="/result/futsal" className="no-decor button-menu">
+                    <div className="dropdown-item">FUTSAL</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>CATUR</h3>
-                    </div>
+                  <Link to="/result/catur" className="no-decor button-menu">
+                    <div className="dropdown-item">CATUR</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>FIFA 2020</h3>
-                    </div>
+                  <Link to="/result/fifa" className="no-decor button-menu">
+                    <div className="dropdown-item">FIFA 2020</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>SUPER SMASH BROS</h3>
-                    </div>
+                  <Link to="/result/ssbu" className="no-decor button-menu">
+                    <div className="dropdown-item">SUPER SMASH BROS</div>
                   </Link>
                 </div>
                 <div className="dropdown-col dropdown-col-right">
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>MARIO KART</h3>
-                    </div>
+                  <Link to="/result/mariokart" className="no-decor button-menu">
+                    <div className="dropdown-item">MARIO KART</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>CODENAMES</h3>
-                    </div>
+                  <Link to="/result/codenames" className="no-decor button-menu">
+                    <div className="dropdown-item">CODENAMES</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-item">
-                      <h3>MOBILE LEGENDS</h3>
-                    </div>
+                  <Link to="/result/mlbb" className="no-decor button-menu">
+                    <div className="dropdown-item">MOBILE LEGENDS</div>
                   </Link>
                 </div>
               </div>
