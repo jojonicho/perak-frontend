@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import hamburger from "../../asset/hamburger.svg";
+// import hamburger from "../../asset/hamburger.svg";
 
 export const HeaderFooterContainer = styled.div`
   overflow: hidden;
   width: 100%;
+  max-width: 100vw;
   h2 {
     margin: auto;
   }
@@ -84,58 +85,120 @@ export const HeaderFooterContainer = styled.div`
     font-weight: bold;
     font-size: 1em;
     color: #e5e6de;
+    transform: translateY(+100%);
   }
-  @media only screen and (max-width: 500px) {
-    .links {
-      display: none;
-    }
-    button,
-    input[type="submit"],
-    input[type="reset"] {
-      background: none;
-      color: inherit;
-      border: none;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
-      outline: inherit;
-    }
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: flex-end;
-      width: 45px;
-      height: 40px;
-      background-color: transparent;
-      background-image: url(${hamburger});
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
-      /* .hamburger-line-1, .hamburger-line-2, .hamburger-line-3{
-        width: 100%;
-        height: 5px;
-        border-radius: 10px;
-        background-color: #e5e6de;
-      }
-      .hamburger-line-2{
-        width: 80%;
-      }
-      .hamburger-line-3{
-        width: 45%;      
-      }       */
-    }
+  .menu-bar {
+    display: flex;
+    flex-direction: row;
   }
-  @media only screen and (max-width: 350px) {
+  .dropdown {
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+    display: inline-block;
+    height: 60px;
+  }
+  .dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: -20%;
+    top: 100%;
+    width: max-content;
+    background-color: rgba(7, 21, 46, 0.94);
+    height: 0px;
+    overflow: hidden;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: height 1s, padding-top 1s, padding-bottom 1s;
+  }
+  .dropdown:hover .dropdown-menu {
+    height: 270px !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .dropdown:hover {
+    background-color: rgba(7, 21, 46, 1);
+  }
+  .dropdown-menu-klasemen {
+    right: 0% !important;
+  }
+  .dropdown:hover .dropdown-menu-klasemen {
+    height: 200px !important;
+  }
+  .dropdown-col-klasemen {
+    width: 150px !important;
+  }
+  .dropdown-col {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  .dropdown-col-left {
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-right-color: gray;
+  }
+
+  .button-menu {
+    padding: 15px;
+    color: #e5e6de;
+    text-align: center;
+  }
+  .button-menu:hover {
+    background-color: #07152e;
+  }
+  .dropdown-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dropdown-mobile {
+    display: none;
+  }
+  .mobile-menu-button {
+    height: 50%;
+    transform: translateY(50%);
+    cursor: pointer;
+  }
+  .dropdown-mobile-container {
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    background-color: #07152e;
+    width: 60vw;
+    transition: height 1s;
+    overflow: hidden;
+  }
+  .dropdown-mobile-submenu {
+    padding: 20px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #07152e;
+  }
+  .dropdown-mobile-item {
+    padding-left: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-family: "Montserrat";
+  }
+  .dropdown-mobile-subcontainer {
+    background-color: #07152e;
+    overflow: hidden;
+    transition: height 1s;
+  }
+  .menu-down-arrow {
+    margin-left: 10px;
+  }
+  @media only screen and (max-width: 450px) {
     .logo {
       height: 35px;
     }
-    .links {
-      .link {
-        h2 {
-          font-size: 0.7em;
-        }
-      }
+    .dropdown-mobile {
+      display: inline-block;
+    }
+    .dropdown {
+      display: none;
     }
   }
 `;
