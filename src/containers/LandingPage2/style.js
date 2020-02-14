@@ -203,6 +203,12 @@ export const LandingPage2Container = styled.div`
       margin: 0 10px;
       display: none;
     }
+    .leaf:nth-child(5) {
+      left: 60%;
+    }
+    .leaf:nth-child(9) {
+      left: 65%;
+    }
   }
   @media only screen and (max-width: 1800px) {
     .carousel-gw {
