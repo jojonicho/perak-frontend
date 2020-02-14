@@ -8,6 +8,7 @@ import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
 import ChallongeScore from "../ChallongeScore";
 import GroupProfile from "../../components/GroupProfile";
+import BirBintangRegistration from "../BirBintangRegistration";
 import NoMatch from "../NoMatch";
 
 export const routes = [
@@ -70,6 +71,11 @@ export const routes = [
     component: GroupProfile,
     exact: true,
     path: "/team/:id"
+  },
+  {
+    component: BirBintangRegistration,
+    exact: true,
+    path: "/daftar/birbintang"
   },
   {
     component: NoMatch,

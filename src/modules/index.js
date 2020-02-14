@@ -9,6 +9,8 @@ import landingPageReducer from "../containers/LandingPage/reducer";
 import gameRegistrationReducer from "../containers/GameRegistration/reducer";
 //import futsalScorePageReducer from "../containers/FutsalScorePage/reducer";
 
+import birBintangRegistrationReducer from "../containers/BirBintangRegistration/reducer";
+
 export default history =>
   combineReducers({
     router: connectRouter(history),
@@ -16,6 +18,7 @@ export default history =>
     samplePage: samplePageReducer,
     registration: registrationReducer,
     landingPage: landingPageReducer,
-    gameRegistration: gameRegistrationReducer
+    gameRegistration: gameRegistrationReducer,
     //futsalScorePage: futsalScorePageReducer
+    birBintangRegistration: birBintangRegistrationReducer
   });

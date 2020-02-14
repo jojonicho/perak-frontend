@@ -12,7 +12,8 @@ class MinimizedPersonForm extends React.Component {
       email,
       nomorTelepon,
       setShowPlayer,
-      deletePlayer
+      deletePlayer,
+      angkatan
     } = this.props;
 
     const dotDot = "...";
@@ -22,9 +23,12 @@ class MinimizedPersonForm extends React.Component {
         <div className="upperMinimized">
           <div className="leftSideUpper">
             <p className="nama">
-              {namaLengkap.length > 15
-                ? namaLengkap.substring(0, 16) + dotDot
-                : namaLengkap}
+              <strong>
+                {namaLengkap.length > 10
+                  ? namaLengkap.substring(0, 11) + dotDot
+                  : namaLengkap}
+              </strong>
+              {angkatan ? ` - ${angkatan}` : null}
             </p>
             <MinimizePersonButton onClick={() => setShowPlayer()}>
               <img className="pencil" src={edit} alt="edit" /> Edit
@@ -37,27 +41,31 @@ class MinimizedPersonForm extends React.Component {
               onClick={() => deletePlayer()}
             >
               <img className="trash" src={hapus} alt="hapus" />
-              Hapus Pemain
+              Hapus
             </button>
           ) : null}
         </div>
-        <div className="garisContainer">
-          <div className="garis"></div>
-        </div>
-        <div className="bottomMinimized">
-          <div className="kontak info">
-            <b>ID LINE</b>
-            <p>{kontak}</p>
+        {kontak ? (
+          <div className="garisContainer">
+            <div className="garis"></div>
           </div>
-          <div className="telepon info">
-            <b>No Telepon</b>
-            <p>{nomorTelepon}</p>
+        ) : null}
+        {kontak ? (
+          <div className="bottomMinimized">
+            <div className="kontak info">
+              <b>ID LINE</b>
+              <p>{kontak}</p>
+            </div>
+            <div className="telepon info">
+              <b>No Telepon</b>
+              <p>{nomorTelepon}</p>
+            </div>
+            <div className="email info">
+              <b>Email</b>
+              <p>{email}</p>
+            </div>
           </div>
-          <div className="email info">
-            <b>Email</b>
-            <p>{email}</p>
-          </div>
-        </div>
+        ) : null}
       </MinimizedPersonFormContainer>
     );
   }
