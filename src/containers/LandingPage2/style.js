@@ -188,6 +188,15 @@ export const LandingPage2Container = styled.div`
       transform: translateX(-20px) rotate(225deg);
     }
   }
+  @media only screen and (max-width: 800px) {
+    .leaf img {
+      transform: scale(0.5, 0.5);
+    }
+    .leaf {
+      transform: scale(0.5, 0.5);
+    }
+  }
+
   @media only screen and (max-width: 750px) {
     .daftar-awal {
       font-size: 1em;
@@ -263,14 +272,6 @@ export const LandingPage2Container = styled.div`
   @media only screen and (max-width: 455px) {
     .carousel-gw {
       margin-top: -40px;
-      @media only screen and (max-width: 800px) {
-        .leaf img {
-          transform: scale(0.5, 0.5);
-        }
-        .leaf {
-          transform: scale(0.5, 0.5);
-        }
-      }
     }
   }
 `;

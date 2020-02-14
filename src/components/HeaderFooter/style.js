@@ -110,7 +110,7 @@ export const HeaderFooterContainer = styled.div`
     overflow: hidden;
     padding-top: 0px;
     padding-bottom: 0px;
-    transition: height 1s, padding-top 1s, padding-bottom 1s;
+    transition: height 0.5s, padding-top 0.5s, padding-bottom 0.5s;
   }
   .dropdown:hover .dropdown-menu {
     height: 270px !important;
@@ -166,7 +166,7 @@ export const HeaderFooterContainer = styled.div`
     top: 100%;
     background-color: #07152e;
     width: 60vw;
-    transition: height 1s;
+    transition: height 0.5s;
     overflow: hidden;
   }
   .dropdown-mobile-submenu {
@@ -185,7 +185,7 @@ export const HeaderFooterContainer = styled.div`
   .dropdown-mobile-subcontainer {
     background-color: #07152e;
     overflow: hidden;
-    transition: height 1s;
+    transition: height 0.5s;
   }
   .menu-down-arrow {
     margin-left: 10px;
