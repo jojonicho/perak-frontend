@@ -70,7 +70,7 @@ const Klasemen = props => {
                     data.group_teams.map(team => {
                       return (
                         <tr>
-                          <td>
+                          <td className={isFutsal ? "tim-futsal-name" : null}>
                             {isFutsal ? (
                               <Link to={`/team/${team.id}`}>{team.name}</Link>
                             ) : (

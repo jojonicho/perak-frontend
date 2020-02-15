@@ -18,7 +18,7 @@ export const KlasemenContainer = styled.div`
   //   background-color: rgb(68, 79, 203);
   // }
   .grouptitle {
-    color: ${props => (props.color === "#444fcb" ? "white" : "black")}
+    color: ${props => (props.color === "#444fcb" ? "white" : "black")};
     font-size: 2.5em;
   }
   a,
@@ -91,7 +91,6 @@ export const KlasemenContainer = styled.div`
       // min-width: 55px;
       // background: #33b3a6;
       background: ${props => props.color};
-
     }
 
     td {
@@ -127,7 +126,9 @@ export const KlasemenContainer = styled.div`
       cursor: pointer;
     } */
   }
-
+  .tim-futsal-name:hover {
+    color: rgb(68, 79, 203);
+  }
   @media screen and (max-width: 768px) {
     padding: 0px 3vw;
     .grouptitle {
