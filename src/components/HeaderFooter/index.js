@@ -184,13 +184,13 @@ class HeaderFooter extends React.Component {
                     height: this.state.toogleKlasemenMobile ? "150px" : "0px"
                   }}
                 >
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/klasemen/futsal" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">FUTSAL</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/klasemen/dota" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">DOTA</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/klasemen/csgo" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">CSGO</div>
                   </Link>
                 </div>

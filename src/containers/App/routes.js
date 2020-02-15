@@ -23,9 +23,19 @@ export const routes = [
     path: "/result/futsal"
   },
   {
-    component: KlasemenPage,
+    component: () => <KlasemenPage id="futsal" />,
     exact: true,
-    path: "/klasemen/:type"
+    path: "/klasemen/futsal"
+  },
+  {
+    component: () => <KlasemenPage id="dota" />,
+    exact: true,
+    path: "/klasemen/dota"
+  },
+  {
+    component: () => <KlasemenPage id="csgo" />,
+    exact: true,
+    path: "/klasemen/csgo"
   },
   {
     component: () => <ChallongeScore gameId="dota" />,

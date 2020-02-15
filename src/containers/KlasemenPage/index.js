@@ -6,9 +6,10 @@ import HeaderFooter from "../../components/HeaderFooter";
 import { KlasemenPageContainer } from "./style";
 
 const KlasemenPage = props => {
+  const { id } = props;
   const [state, setState] = useState({ type: null, loading: true });
   useEffect(() => {
-    setState({ type: props.match.params.type, loading: false });
+    setState({ type: id, loading: false });
   }, [setState]);
   return (
     <HeaderFooter color="dark">
