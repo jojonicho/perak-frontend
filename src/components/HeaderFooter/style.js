@@ -127,7 +127,7 @@ export const HeaderFooterContainer = styled.div`
     height: 200px !important;
   }
   .dropdown-col-klasemen {
-    width: 150px !important;
+    width: 145px !important;
   }
   .dropdown-col {
     display: flex;
