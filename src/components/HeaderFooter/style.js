@@ -204,5 +204,8 @@ export const HeaderFooterContainer = styled.div`
     .dropdown {
       display: none;
     }
+    .dropdown-mobile-item {
+      font-size: 0.93em;
+    }
   }
 `;
