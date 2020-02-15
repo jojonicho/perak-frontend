@@ -35,7 +35,7 @@ class HeaderFooter extends React.Component {
       toogleMobileMenu: !state.toogleMobileMenu,
       toogleKlasemenMobile: false,
       toogleSkorMobile: false,
-      mobileMenuHeight: "120px"
+      mobileMenuHeight: "175px"
     }));
 
     if (!this.state.toogleMobileMenu) {
@@ -239,6 +239,12 @@ class HeaderFooter extends React.Component {
                     <div className="dropdown-mobile-item">MOBILE LEGENDS</div>
                   </Link>
                 </div>
+                <Link
+                  to="daftar/birbintang"
+                  className="dropdown-mobile-submenu no-decor"
+                >
+                  DAFTAR
+                </Link>
               </div>
             </div>
           </div>
