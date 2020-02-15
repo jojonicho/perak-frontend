@@ -14,7 +14,7 @@ class NoMatch extends React.PureComponent {
             Is it functional?
           </Fade>
           <Fade right delay={2400} duration={3000}>
-            Is it worth using react?
+            Is it worth using React for this?
           </Fade>
           <Fade top delay={5400} duration={3000}>
             Is this an error page?
