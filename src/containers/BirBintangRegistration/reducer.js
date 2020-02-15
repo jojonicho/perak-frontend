@@ -3,9 +3,7 @@ import { DEFAULT_ACTION, SUBMIT, DONE, RESET } from "./constants";
 
 const initialState = {
   done: false,
-  loading: false,
-  loadBase: 0,
-  loadNow: 0
+  loading: false
 };
 
 function birBintangRegistrationReducer(state = initialState, action) {
@@ -13,9 +11,9 @@ function birBintangRegistrationReducer(state = initialState, action) {
     case DEFAULT_ACTION:
       return state;
     case SUBMIT:
-      return state;
+      return { ...state, loading: true };
     case DONE:
-      return { ...state, done: true };
+      return { ...state, done: true, loading: false };
     case RESET:
       return { ...state, done: false, loading: false, loadBase: 0, loadNow: 0 };
     default:

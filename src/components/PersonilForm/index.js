@@ -22,7 +22,7 @@ class PersonilForm extends React.Component {
             />
           </div>
           <div className="half">
-            Angkatan
+            Elemen (cth: Maung, Dosen)
             <input
               autoComplete="off"
               id="angkatan"

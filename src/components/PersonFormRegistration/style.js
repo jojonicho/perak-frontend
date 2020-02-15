@@ -103,7 +103,7 @@ export const PersonFormRegistrationContainer = styled.div`
     .half {
       width: 47%;
     }
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 645px) {
       display: block;
       .half {
         width: 100%;

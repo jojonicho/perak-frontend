@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "react-loader-spinner";
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 import SweetAlert from "sweetalert2-react";
@@ -182,6 +183,12 @@ class BirBintangRegistration extends React.Component {
       <HeaderFooter color="dark">
         <Fade>
           <RegistrationContainer>
+            {props.loading ? (
+              <div className="loading-cont">
+                <Loader type="Bars" color="#ffffff" />
+                <h4 className="white">Harap Tunggu...</h4>
+              </div>
+            ) : null}
             <SweetAlert
               show={state.alertMessage || props.done}
               title={props.done ? "You're registered" : state.alertMessage}

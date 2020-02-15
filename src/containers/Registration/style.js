@@ -131,6 +131,22 @@ export const RegistrationContainer = styled.div`
     }
   }
 
+  .loading-cont {
+    position: fixed;
+    background-color: #0f0f0f77;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    h4 {
+      color: white;
+      font-family: Montserrat;
+      font-size: 1.5rem;
+    }
+  }
   .section {
     margin: 0px auto;
     text-align: left;
