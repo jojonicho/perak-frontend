@@ -22,7 +22,7 @@ const GroupProfile = props => {
           ) : (
             <div className="container-inside">
               <img className="logo" src={data.team_logo} alt="Logo Tim" />
-              <h1>{data.name}</h1>
+              <h1 className="nama-tim">{data.name}</h1>
               <div className="line"></div>
               <h3>
                 MANAGER: <span>{data.manager}</span>

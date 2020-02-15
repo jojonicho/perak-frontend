@@ -33,7 +33,9 @@ export const GroupProfileContainer = styled.div`
     flex-direction: column;
     text-align: center;
   }
-
+  .nama-tim {
+    text-transform: uppercase;
+  }
   .logo {
     margin: 7em auto 0 auto;
     width: 17em;
@@ -59,7 +61,7 @@ export const GroupProfileContainer = styled.div`
   }
   .card-container {
     margin: 3em auto;
-    width: 47em;
+    width: 43em;
     height: 25em;
     white-space: nowrap;
     overflow-x: scroll;
