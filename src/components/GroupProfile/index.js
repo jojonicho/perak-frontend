@@ -40,7 +40,8 @@ const GroupProfile = props => {
                           player.name.split(" ")[0] === "Muhamad" ||
                           player.name.split(" ")[0] === "Mohammad" ||
                           player.name.split(" ")[0] === "Mohamad" ||
-                          player.name.split(" ")[0] === ""
+                          player.name.split(" ")[0] === "" ||
+                          player.name.split(" ")[0].length <= 2
                             ? player.name.split(" ")[1]
                             : player.name.split(" ")[0]}
                         </h4>
