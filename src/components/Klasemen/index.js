@@ -6,7 +6,7 @@ import { useFetch } from "./useFetch";
 import SVG from "../RegisterSelection/SVGIcon";
 
 const Klasemen = props => {
-  const { id } = props;
+  const { id, isFutsal } = props;
   const klasemenUrl = `https://perak.cs.ui.ac.id/backend/api/group/${id}/teams`;
 
   const { data, loading } = useFetch(klasemenUrl);
@@ -71,7 +71,11 @@ const Klasemen = props => {
                       return (
                         <tr>
                           <td>
-                            <Link to={`/team/${team.id}`}>{team.name}</Link>
+                            {isFutsal ? (
+                              <Link to={`/team/${team.id}`}>{team.name}</Link>
+                            ) : (
+                              team.name
+                            )}
                           </td>
                           <td>{team.banyak_match}</td>
                           <td>{team.win}</td>

@@ -23,10 +23,10 @@ const KlasemenPage = props => {
             </h1>
             {state.type === "futsal" ? (
               <>
-                <Klasemen id={1} />
-                <Klasemen id={2} />
-                <Klasemen id={3} />
-                <Klasemen id={4} />
+                <Klasemen id={1} isFutsal />
+                <Klasemen id={2} isFutsal />
+                <Klasemen id={3} isFutsal />
+                <Klasemen id={4} isFutsal />
               </>
             ) : (
               <>
