@@ -153,6 +153,12 @@ class HeaderFooter extends React.Component {
                 </div>
               </div>
             </div>
+            <Link to="/daftar/birbintang" className="no-decor">
+              <div className="dropdown">
+                <h2 className="daftar">DAFTAR</h2>
+              </div>
+            </Link>
+
             <div className="dropdown-mobile">
               <img
                 src={mobileMenuBar}

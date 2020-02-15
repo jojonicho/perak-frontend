@@ -102,7 +102,8 @@ export const HeaderFooterContainer = styled.div`
     position: absolute;
     display: flex;
     flex-direction: row;
-    right: -20%;
+    /* right: -20%; */
+    right: 0px;
     top: 100%;
     width: max-content;
     background-color: rgba(7, 21, 46, 0.94);
