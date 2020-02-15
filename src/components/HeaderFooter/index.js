@@ -211,25 +211,25 @@ class HeaderFooter extends React.Component {
                     height: this.state.toogleSkorMobile ? "355px" : "0px"
                   }}
                 >
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/result/futsal" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">FUTSAL</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/result/catur" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">CATUR</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/result/fifa" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">FIFA 2020</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/result/ssbu" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">SUPER SMASH BROS</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
-                    <div className="dropdown-mobile-item">MARIO CART</div>
+                  <Link to="/result/mariokart" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">MARIO KART</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/result/codenames" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">CODENAMES</div>
                   </Link>
-                  <Link to="/#" className="no-decor button-menu">
+                  <Link to="/result/mlbb" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">MOBILE LEGENDS</div>
                   </Link>
                 </div>
