@@ -44,6 +44,24 @@ export const FutsalScorePageContainer = styled.div`
   #footer-sc {
     margin-left: 15px;
   }
+  #load {
+    margin: 0px 0px 15px;
+  }
+  #button {
+    width: 220px;
+    height: 40px;
+    font-family: BigJohnPRO;
+    font-weight: 600;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #444fcb;
+    color: white;
+  }
+  #button:hover {
+    background-color: white;
+    color: #444fcb;
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 768px) {
     .title {
@@ -61,6 +79,13 @@ export const FutsalScorePageContainer = styled.div`
     }
     .blm-ada {
       font-size: 1em;
+    }
+    #button {
+      width: 170px;
+      height: 35px;
+      font-family: BigJohnPRO;
+      font-weight: 600;
+      font-size: 25px;
     }
   }
 `;

@@ -5,6 +5,7 @@ import axios from "axios";
 import Fade from "react-reveal/Fade";
 import Lottie from "react-lottie";
 import FadeIn from "react-fade-in";
+import { BarLoader } from "react-spinners";
 import { FutsalScorePageContainer, LoadingScreen } from "./style";
 import ScoreCard from "../../components/ScoreCard";
 import HeaderFooter from "../../components/HeaderFooter";
@@ -15,8 +16,10 @@ class FutsalScorePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      done: undefined
+      allData: [],
+      scoreData: [],
+      done: undefined,
+      loadingMore: undefined
     };
   }
 
@@ -26,14 +29,14 @@ class FutsalScorePage extends React.Component {
 
   getHistoryData() {
     const proxyUrl = `https://cors-anywhere.herokuapp.com/`;
-    // const proxyUrl = ``;
-    const historyUrl = `https://perak.cs.ui.ac.id/backend/api/match_history/futsal`;
+    const historyUrl = `https://perak.cs.ui.ac.id/backend/api/match_history/futsal/?size=4`;
     axios
       .get(proxyUrl + historyUrl, {})
       .then(res => {
         const { data } = res;
         this.setState({
-          data,
+          allData: data,
+          scoreData: data.result,
           done: true
         });
       })
@@ -42,9 +45,33 @@ class FutsalScorePage extends React.Component {
       });
   }
 
+  getNextData = url => {
+    const proxyUrl = `https://cors-anywhere.herokuapp.com/`;
+    axios
+      .get(proxyUrl + url, {})
+      .then(
+        this.setState({
+          loadingMore: true
+        })
+      )
+      .then(res => {
+        const { data } = res;
+        const { scoreData } = this.state;
+        const tempResult = scoreData;
+        data.result.map(item => tempResult.push(item));
+        this.setState({
+          allData: data,
+          scoreData: tempResult,
+          loadingMore: false
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   pickColor = index => {
     const i = index % 3;
-    console.log(i);
     if (i === 2) {
       return "blue";
     }
@@ -55,8 +82,9 @@ class FutsalScorePage extends React.Component {
   };
 
   renderHistory = () => {
-    const { data } = this.state;
-    const allHistory = data.map((item, index) => (
+    const { scoreData } = this.state;
+    console.log(scoreData);
+    const allHistory = scoreData.map((item, index) => (
       <ScoreCard
         index={this.pickColor(index + 1)}
         stage={item.stage}
@@ -83,7 +111,7 @@ class FutsalScorePage extends React.Component {
         preserveAspectRatio: "xMidYMid slice"
       }
     };
-    const { data, done } = this.state;
+    const { allData, scoreData, done, loadingMore } = this.state;
     return !done ? (
       <LoadingScreen>
         <FadeIn>
@@ -101,14 +129,31 @@ class FutsalScorePage extends React.Component {
                 HASIL PERTANDINGAN
               </span>
               <div className="flex-container column" id="body-cont">
-                {data.length > 0 ? (
-                  this.renderHistory(data)
+                {scoreData.length > 0 ? (
+                  this.renderHistory(scoreData)
                 ) : (
                   <h2 className="blm-ada">
                     Belum ada pertandingan yang berlangsung.
                   </h2>
                 )}
               </div>
+              {loadingMore ? (
+                <div className="container" id="load">
+                  <BarLoader height={15} width={300} color="#31B3A6" />
+                </div>
+              ) : (
+                <div className="container" id="load">
+                  {allData.next !== null && (
+                    <button
+                      type="button"
+                      onClick={() => this.getNextData(allData.next)}
+                      id="button"
+                    >
+                      Load More
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
           </FutsalScorePageContainer>
         </Fade>
