@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ChallongeScoreContainer = styled.div`
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   font-family: montserrat;
   background: #e5e5e5;
 
