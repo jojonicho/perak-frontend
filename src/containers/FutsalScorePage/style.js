@@ -57,11 +57,13 @@ export const FutsalScorePageContainer = styled.div`
     border-radius: 10px;
     background-color: #444fcb;
     color: white;
+    border: none;
   }
   #button:hover {
     background-color: white;
     color: #444fcb;
     cursor: pointer;
+    border: solid #444fcb 2px;
   }
 
   @media screen and (max-width: 768px) {
