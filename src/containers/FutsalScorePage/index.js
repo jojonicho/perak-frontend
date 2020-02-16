@@ -98,7 +98,7 @@ class FutsalScorePage extends React.Component {
           <FutsalScorePageContainer>
             <div className="flex-container column" id="score-page">
               <span className="title" id="score-title">
-                HASIL PERTANDINGAN
+                HASIL PERTANDINGAN FUTSAL
               </span>
               <div className="flex-container column" id="body-cont">
                 {data.length > 0 ? (

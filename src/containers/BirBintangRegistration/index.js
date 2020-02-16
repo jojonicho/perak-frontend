@@ -196,6 +196,10 @@ class BirBintangRegistration extends React.Component {
               onConfirm={props.done ? () => reset() : () => alertMessage(null)}
             />
             <Title>REGISTRASI BIR BINTANG</Title>
+            <p className="kominfo mb-0">
+              *Deposit Rp50.000, akan dikembalikan setelah tampil apabila tidak
+              terlambat/tidak meminta tambahan waktu
+            </p>
             <Forms>
               <BirBintangForm
                 namaPanggung={state.namaPanggung}
