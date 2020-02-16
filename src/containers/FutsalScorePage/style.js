@@ -40,6 +40,7 @@ export const FutsalScorePageContainer = styled.div`
     color: #444fcb;
     font-size: 62px;
     font-weight: 600;
+    text-align: center;
   }
   #footer-sc {
     margin-left: 15px;
