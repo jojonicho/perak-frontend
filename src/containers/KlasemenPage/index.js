@@ -32,15 +32,16 @@ const KlasemenPage = props => {
               <>
                 {state.type === "dota" ? (
                   <>
-                    <Klasemen id={5} />
-                    <Klasemen id={6} />
+                    <Klasemen id={9} />
+                    <Klasemen id={10} />
+                    <Klasemen id={11} />
                   </>
                 ) : (
                   <>
                     {state.type === "csgo" ? (
                       <>
-                        <Klasemen id={5} />
-                        <Klasemen id={6} />
+                        <Klasemen id={7} />
+                        <Klasemen id={8} />
                       </>
                     ) : (
                       <Redirect to="/" />
