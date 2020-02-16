@@ -97,6 +97,7 @@ export const HeaderFooterContainer = styled.div`
     position: relative;
     display: inline-block;
     height: 60px;
+    cursor: pointer;
   }
   .dropdown-menu {
     position: absolute;
