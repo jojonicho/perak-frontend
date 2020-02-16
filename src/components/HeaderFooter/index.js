@@ -240,7 +240,7 @@ class HeaderFooter extends React.Component {
                   </Link>
                 </div>
                 <Link
-                  to="daftar/birbintang"
+                  to="/daftar/birbintang"
                   className="dropdown-mobile-submenu no-decor"
                 >
                   DAFTAR
