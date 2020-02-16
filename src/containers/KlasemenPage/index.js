@@ -32,9 +32,9 @@ const KlasemenPage = props => {
               <>
                 {state.type === "dota" ? (
                   <>
-                    <Klasemen id={9} />
                     <Klasemen id={10} />
                     <Klasemen id={11} />
+                    <Klasemen id={12} />
                   </>
                 ) : (
                   <>
