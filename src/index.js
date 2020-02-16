@@ -10,12 +10,15 @@ import "./index.css";
 
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
+import AlwaysTop from "./components/AlwaysTop";
 
 const target = document.querySelector("#root");
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App />
+      <AlwaysTop>
+        <App />
+      </AlwaysTop>
     </ConnectedRouter>
   </Provider>,
   target
