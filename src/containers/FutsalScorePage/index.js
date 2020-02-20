@@ -97,6 +97,8 @@ class FutsalScorePage extends React.Component {
         matchDate={item.match_date}
         isAwin={item.is_a_win}
         isBwin={item.is_b_win}
+        idA={item.team_a.id}
+        idB={item.team_b.id}
       />
     ));
     return allHistory;

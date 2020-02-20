@@ -76,6 +76,20 @@ export const ScoreCardContainer = styled.div`
     margin-top: -10px;
   }
 
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    transform: scale(1.1);
+  }
+
   @media screen and (max-width: 768px) {
     .score-card {
       margin: 10px 0px;

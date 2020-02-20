@@ -1,5 +1,6 @@
 import React from "react";
 // import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import crown from "../../asset/crown.png";
 import { ScoreCardContainer } from "./style";
 
@@ -16,7 +17,9 @@ class ScoreCard extends React.Component {
       isBwin,
       teamAGoal,
       teamBGoal,
-      matchDate
+      matchDate,
+      idA,
+      idB
     } = this.props;
     // console.log(index)
     return (
@@ -24,23 +27,29 @@ class ScoreCard extends React.Component {
         <div className={`flex-container column score-card ${index}`}>
           <span className="body-txt">{stage}</span>
           <div className="flex-container row content">
-            <div className={`column teamA img-cont ${isAwin && "crown-cont"}`}>
+            <Link
+              to={`/team/${idA}`}
+              className={`column teamA img-cont ${isAwin && "crown-cont"}`}
+            >
               <div className="flex-container column">
                 {isAwin && <img src={crown} alt="" className="crown" />}
                 <img src={teamALogo} alt="" className="img-box" />
               </div>
               <span className="body-txt">{teamAName}</span>
-            </div>
+            </Link>
             <span className="score-txt">{teamAGoal}</span>
             <span className="score-txt">-</span>
             <span className="score-txt">{teamBGoal}</span>
-            <div className={`column teamB img-cont ${isBwin && "crown-cont"}`}>
+            <Link
+              to={`/team/${idB}`}
+              className={`column teamB img-cont ${isBwin && "crown-cont"}`}
+            >
               <div className="flex-container column">
                 {isBwin && <img src={crown} alt="" className="crown" />}
                 <img src={teamBLogo} alt="" className="img-box" />
               </div>
               <span className="body-txt">{teamBName}</span>
-            </div>
+            </Link>
           </div>
           <span className="match-date">{matchDate}</span>
         </div>
