@@ -3,6 +3,7 @@ import background from "../../asset/GroupProfile/background.svg";
 import backgroundPhone from "../../asset/GroupProfile/backgroundPhone.svg";
 
 export const GroupProfileContainer = styled.div`
+  background-color: #f0f0f0;
   * {
     margin: 0;
     padding: 0;
