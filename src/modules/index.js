@@ -10,6 +10,7 @@ import gameRegistrationReducer from "../containers/GameRegistration/reducer";
 //import futsalScorePageReducer from "../containers/FutsalScorePage/reducer";
 
 import birBintangRegistrationReducer from "../containers/BirBintangRegistration/reducer";
+import openTenantRegistrationReducer from "../containers/OpenTenantRegistration/reducer";
 
 export default history =>
   combineReducers({
@@ -20,5 +21,6 @@ export default history =>
     landingPage: landingPageReducer,
     gameRegistration: gameRegistrationReducer,
     //futsalScorePage: futsalScorePageReducer
+    openTenantRegistration: openTenantRegistrationReducer,
     birBintangRegistration: birBintangRegistrationReducer
   });

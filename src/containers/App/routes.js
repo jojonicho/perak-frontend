@@ -9,6 +9,7 @@ import KlasemenPage from "../KlasemenPage";
 import ChallongeScore from "../ChallongeScore";
 import GroupProfile from "../../components/GroupProfile";
 import BirBintangRegistration from "../BirBintangRegistration";
+import OpenTenantRegistration from "../OpenTenantRegistration";
 import NoMatch from "../NoMatch";
 
 export const routes = [
@@ -88,9 +89,15 @@ export const routes = [
     path: "/daftar/birbintang"
   },
   {
+    component: OpenTenantRegistration,
+    exact: true,
+    path: "/daftar/bazar"
+  },
+  {
     component: NoMatch,
     exact: false
   }
+
   // {
   //   component: RegisterSelection,
   //   exact: true,
