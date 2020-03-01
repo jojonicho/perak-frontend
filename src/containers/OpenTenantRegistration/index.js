@@ -113,7 +113,9 @@ class OpenTenantRegistration extends React.Component {
             ) : null}
             <SweetAlert
               show={state.alertMessage || props.done}
-              title={props.done ? "You're registered" : state.alertMessage}
+              title={
+                props.done ? `${state.nama} registered` : state.alertMessage
+              }
               type={props.done ? "success" : "warning"}
               onConfirm={props.done ? () => reset() : () => alertMessage(null)}
             />
