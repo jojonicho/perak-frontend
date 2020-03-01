@@ -20,7 +20,6 @@ class HeaderFooter extends React.Component {
       toogleMobileMenu: false,
       toogleKlasemenMobile: false,
       toogleSkorMobile: false,
-      toogleDaftarMobile: false,
       overflowMenu: false,
       mobileMenuHeight: "0px"
     };
@@ -28,7 +27,6 @@ class HeaderFooter extends React.Component {
     this.toogleMenu = this.toogleMenu.bind(this);
     this.toogleKlasemen = this.toogleKlasemen.bind(this);
     this.toogleSkor = this.toogleSkor.bind(this);
-    this.toogleDaftar = this.toogleDaftar.bind(this);
     this.toogleOverflow = this.toogleOverflow.bind(this);
   }
 
@@ -70,24 +68,14 @@ class HeaderFooter extends React.Component {
   toogleKlasemen() {
     this.setState(state => ({
       toogleKlasemenMobile: !state.toogleKlasemenMobile,
-      toogleSkorMobile: false,
-      toogleDaftarMobile: false
-    }));
-  }
-
-  toogleDaftar() {
-    this.setState(state => ({
-      toogleDaftarMobile: !state.toogleDaftarMobile,
-      toogleSkorMobile: false,
-      toogleKlasemenMobile: false
+      toogleSkorMobile: false
     }));
   }
 
   toogleSkor() {
     this.setState(state => ({
       toogleSkorMobile: !state.toogleSkorMobile,
-      toogleKlasemenMobile: false,
-      toogleDaftarMobile: false
+      toogleKlasemenMobile: false
     }));
   }
 
@@ -165,22 +153,11 @@ class HeaderFooter extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="dropdown">
-              <h2 className="daftar">DAFTAR</h2>
-              <div className="dropdown-menu dropdown-menu-klasemen">
-                <div className="dropdown-col dropdown-col-klasemen">
-                  <Link
-                    to="/daftar/birbintang"
-                    className="no-decor button-menu"
-                  >
-                    <div className="dropdown-item">BIR BINTANG</div>
-                  </Link>
-                  <Link to="/daftar/bazar" className="no-decor button-menu">
-                    <div className="dropdown-item">BAZAR</div>
-                  </Link>
-                </div>
+            <Link to="/daftar/birbintang" className="no-decor">
+              <div className="dropdown">
+                <h2 className="daftar">DAFTAR</h2>
               </div>
-            </div>
+            </Link>
 
             <div className="dropdown-mobile">
               <img
@@ -262,39 +239,12 @@ class HeaderFooter extends React.Component {
                     <div className="dropdown-mobile-item">MOBILE LEGENDS</div>
                   </Link>
                 </div>
-                <div
-                  className="dropdown-mobile-submenu"
-                  onClick={this.toogleDaftar}
-                >
-                  DAFTAR
-                  <img
-                    src={downArrow}
-                    alt="down-arrow"
-                    className="menu-down-arrow"
-                  />
-                </div>
-                <div
-                  className="dropdown-mobile-subcontainer"
-                  style={{
-                    height: this.state.toogleDaftarMobile ? "150px" : "0px"
-                  }}
-                >
-                  <Link
-                    to="/daftar/birbintang"
-                    className="no-decor button-menu"
-                  >
-                    <div className="dropdown-mobile-item">BIR BINTANG</div>
-                  </Link>
-                  <Link to="/daftar/bazar" className="no-decor button-menu">
-                    <div className="dropdown-mobile-item">BAZAR</div>
-                  </Link>
-                </div>
-                {/* <Link
+                <Link
                   to="/daftar/birbintang"
                   className="dropdown-mobile-submenu no-decor"
                 >
                   DAFTAR
-                </Link> */}
+                </Link>
               </div>
             </div>
           </div>
