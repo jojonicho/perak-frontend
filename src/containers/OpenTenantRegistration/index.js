@@ -91,7 +91,6 @@ class OpenTenantRegistration extends React.Component {
     this.setState({
       nama: "",
       kontak: "",
-      jenisJualan: "",
       deskripsi: "",
       setuju: false,
       other: "",
