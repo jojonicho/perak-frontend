@@ -8,7 +8,7 @@ import FutsalScorePage from "../FutsalScorePage";
 import KlasemenPage from "../KlasemenPage";
 import ChallongeScore from "../ChallongeScore";
 import GroupProfile from "../../components/GroupProfile";
-import BirBintangRegistration from "../BirBintangRegistration";
+// import BirBintangRegistration from "../BirBintangRegistration";
 import OpenTenantRegistration from "../OpenTenantRegistration";
 import NoMatch from "../NoMatch";
 
@@ -84,20 +84,19 @@ export const routes = [
     path: "/team/:id"
   },
   {
-    component: BirBintangRegistration,
-    exact: true,
-    path: "/daftar/birbintang"
-  },
-  {
     component: OpenTenantRegistration,
     exact: true,
-    path: "/daftar/bazar"
+    path: "/daftar/bazaar"
   },
   {
     component: NoMatch,
     exact: false
   }
-
+  // {
+  //   component: BirBintangRegistration,
+  //   exact: true,
+  //   path: "/daftar/birbintang"
+  // },
   // {
   //   component: RegisterSelection,
   //   exact: true,

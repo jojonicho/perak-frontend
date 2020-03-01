@@ -153,9 +153,9 @@ class HeaderFooter extends React.Component {
                 </div>
               </div>
             </div>
-            <Link to="/daftar/birbintang" className="no-decor">
+            <Link to="/daftar/bazaar" className="no-decor">
               <div className="dropdown">
-                <h2 className="daftar">DAFTAR</h2>
+                <h2 className="daftar">BAZAAR</h2>
               </div>
             </Link>
 
@@ -240,10 +240,10 @@ class HeaderFooter extends React.Component {
                   </Link>
                 </div>
                 <Link
-                  to="/daftar/birbintang"
+                  to="/daftar/bazaar"
                   className="dropdown-mobile-submenu no-decor"
                 >
-                  DAFTAR
+                  BAZAAR
                 </Link>
               </div>
             </div>
