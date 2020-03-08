@@ -13,8 +13,11 @@ import PerakTahunIni from "../../components/PerakTahunIni";
 import Section4 from "../../components/Section4";
 import Section5 from "../../components/Section5";
 
-import daun1 from "../../asset/daun1.svg";
-import daun2 from "../../asset/daun2.svg";
+// import daun1 from "../../asset/daun1.svg";
+// import daun2 from "../../asset/daun2.svg";
+
+import snow1 from "../../asset/snow1.svg";
+import snow2 from "../../asset/snow2.svg";
 
 import { LandingPage2Container, LandingSection, ApaItuSection } from "./style";
 import MedSos from "../../components/MedSos";
@@ -86,31 +89,31 @@ class LandingPage2 extends React.Component {
       <LandingPage2Container>
         <HeaderFooter color={thePosition < 50 ? "notShown" : "dark"} notShown>
           <div className="leaf">
-            <img src={daun2} alt="daun2" />
+            <img src={snow2} alt="daun2" />
           </div>
           <div className="leaf">
-            <img src={daun1} alt="daun1" />
+            <img src={snow1} alt="daun1" />
           </div>
           <div className="leaf">
-            <img src={daun1} alt="daun1" />
+            <img src={snow1} alt="daun1" />
           </div>
           <div className="leaf">
-            <img src={daun1} alt="daun1" />
+            <img src={snow1} alt="daun1" />
           </div>
           <div className="leaf">
-            <img src={daun1} alt="daun1" />
+            <img src={snow1} alt="daun1" />
           </div>
           <div className="leaf">
-            <img src={daun2} alt="daun2" />
+            <img src={snow2} alt="daun2" />
           </div>
           <div className="leaf">
-            <img src={daun2} alt="daun2" />
+            <img src={snow2} alt="daun2" />
           </div>
           <div className="leaf">
-            <img src={daun2} alt="daun2" />
+            <img src={snow2} alt="daun2" />
           </div>
           <div className="leaf">
-            <img src={daun2} alt="daun2" />
+            <img src={snow2} alt="daun2" />
           </div>
 
           <LandingSection className="landing">
