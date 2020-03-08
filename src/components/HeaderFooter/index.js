@@ -130,6 +130,9 @@ class HeaderFooter extends React.Component {
                   <Link to="/result/futsal" className="no-decor button-menu">
                     <div className="dropdown-item">FUTSAL</div>
                   </Link>
+                  <Link to="/result/csgo" className="no-decor button-menu">
+                    <div className="dropdown-item">CSGO</div>
+                  </Link>
                   <Link to="/result/catur" className="no-decor button-menu">
                     <div className="dropdown-item">CATUR</div>
                   </Link>
@@ -141,6 +144,9 @@ class HeaderFooter extends React.Component {
                   </Link>
                 </div>
                 <div className="dropdown-col dropdown-col-right">
+                  <Link to="/result/dota" className="no-decor button-menu">
+                    <div className="dropdown-item">DOTA</div>
+                  </Link>
                   <Link to="/result/mariokart" className="no-decor button-menu">
                     <div className="dropdown-item">MARIO KART</div>
                   </Link>
@@ -214,11 +220,17 @@ class HeaderFooter extends React.Component {
                 <div
                   className="dropdown-mobile-subcontainer"
                   style={{
-                    height: this.state.toogleSkorMobile ? "355px" : "0px"
+                    height: this.state.toogleSkorMobile ? "425px" : "0px"
                   }}
                 >
                   <Link to="/result/futsal" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">FUTSAL</div>
+                  </Link>
+                  <Link to="/result/dota" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">DOTA</div>
+                  </Link>
+                  <Link to="/result/csgo" className="no-decor button-menu">
+                    <div className="dropdown-mobile-item">CSGO</div>
                   </Link>
                   <Link to="/result/catur" className="no-decor button-menu">
                     <div className="dropdown-mobile-item">CATUR</div>
