@@ -6,7 +6,7 @@ export const Games = {
     bracket: (
       <iframe
         title="dota"
-        src="https://challonge.com/DotaPerak/module?theme=7707"
+        src="https://challonge.com/PerakDota/module?theme=7707"
         width="100%"
         height="500"
         frameBorder="0"
