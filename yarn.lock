@@ -676,10 +676,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@brainhubeu/react-carousel@^1.10.39":
-  version "1.10.62"
-  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.10.62.tgz#d5c299d0f846c5bf23dc41cb55bb40d07851f06d"
-  integrity sha512-IB7Slzcin2VxTHiIHbWIwYUnggFA1ma1Fws7Bt8hOz3UKEa6xvKpsDOeYuX23WSj0COr8hrjtJXvf4R0COF2aA==
+"@brainhubeu/react-carousel@^1.10.56":
+  version "1.15.3"
+  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.15.3.tgz#5e6d0631ad616fd4b160cf6f3989ba6425a538d9"
+  integrity sha512-wEOwQxzJ8efH9b87ECoNq21xCucmkxhbFymeIrzdBGAqBygvg/HTF3tylCL+c5ravxIwP8TTWRNOnfWHpi1Epg==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -3912,12 +3912,16 @@ eslint-scope@^4.0.0:
     estraverse "^4.1.1"
 
 eslint-utils@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.3.1.tgz#9a851ba89ee7c460346f97cf8939c7298827e512"
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.4.3.tgz#74fec7c54d0776b6f67e0251040b5806564e981f"
+  integrity sha512-fbBN5W2xdY45KulGXmLHZ3c3FHfVYmKg0IrAKGOkT/464PQsx2UeIzfz1RmEci+KLm1bBaAzZAh8+/E+XAeZ8Q==
+  dependencies:
+    eslint-visitor-keys "^1.1.0"
 
-eslint-visitor-keys@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
+eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
+  integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
 eslint@5.12.0:
   version "5.12.0"
@@ -9055,6 +9059,14 @@ react-is@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
 
+react-loader-spinner@^3.1.5:
+  version "3.1.14"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-3.1.14.tgz#2a201f07379c492766175609903c0f2ced57c720"
+  integrity sha512-7V+upnW+RVA/O94LIB/EQLK2uaz/TpZBHG5uNXlOXgvxvALxlxVYeEDmus5Oex2C58fiwrsRvSyu/4VRmLbZ9Q==
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.7.2"
+
 react-loading@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-loading/-/react-loading-2.0.3.tgz#e8138fb0c3e4674e481b320802ac7048ae14ffb9"
@@ -9067,6 +9079,11 @@ react-lottie@^1.2.3:
   dependencies:
     babel-runtime "^6.26.0"
     lottie-web "^5.1.3"
+
+react-multi-carousel@^2.5.0:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.5.5.tgz#f83aa1bd39d64ebbda08f724590ebe8994559fcd"
+  integrity sha512-yjRNA3KypwJHDQba1XUz1cVrcejZ9c+4cdY3ODPBj/FMVT+Vj7bE3V4wkWiHRzeYNzhaf902/pbO3cP2e9261A==
 
 react-pose@^4.0.10:
   version "4.0.10"
